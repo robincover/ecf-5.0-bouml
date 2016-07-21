@@ -1,6 +1,6 @@
 format 212
 "ecf-5.0"
-  revision 155
+  revision 157
   modified_by 2 "Jim"
 
 
@@ -40,7 +40,7 @@ format 212
   mark_for_import
   
   ncouples 15
-  key "html dir" value "C:\\xml\\ecf5\\model"
+  key "html dir" value "C:\\Users\\Jim\\OneDrive\\xml\\ecf5\\model"
   key "gxmi path" value "C:/Users/Jim/Desktop/bouml.xmi"
   key "gxmi no model" value "no"
   key "gxmi gen views" value "no"
@@ -53,7 +53,7 @@ format 212
   key "gxmi gen eclipse" value "no"
   key "gxmi comment exporter" value "no"
   key "gxmi linefeed" value "yes"
-  key "niem dir" value "C:\\xml\\niem-3.2\\niem"
+  key "niem dir" value "C:\\Users\\Jim\\OneDrive\\xml\\niem-3.2\\niem"
   key "wantlist schema" value "C:\\xml\\xml\\wantlist-2.2-annotated.xsd"
   package_ref 168066 // CIM
 

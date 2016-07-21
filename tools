@@ -81,15 +81,15 @@ tool "Generate XMI 1.2" "gxmi" Project
 tool "Generate XMI 2.x" "gxmi2" Project
 tool "Import XMI 2.x" "ixmi2" Project Package
 tool "Use case wizard" "usecasewizard" Project UseCase
-tool "Check-in" "file_control ci" Package
-tool "Check-out" "file_control co" Package
+tool "Check-in" "file_control ci" Project Package
+tool "Check-out" "file_control co" Project Package
 tool "Deploy classes" "deplcl" Project ClassView
 tool "Global Change" "global_change" Project Package ClassView DeploymentView
 tool "Uml projection" "uml_proj" Project Package ClassView
 tool "Sort" "sort" Project Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram
-tool "NIEM documentation" "java -cp /xml/niem-tools/niem-tools.jar;/xml/niem-tools/opencsv-3.5.jar Main export" Project Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
-tool "Import NIEM mapping" "java -cp /xml/niem-tools/niem-tools.jar;/xml/niem-tools/opencsv-3.5.jar Main import" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
-tool "Reset NIEM stereotype" "java -cp /xml/niem-tools/niem-tools.jar;/xml/niem-tools/opencsv-3.5.jar Main reset" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
-tool "Import NIEM schema" "java -cp /xml/niem-tools/niem-tools.jar;/xml/niem-tools/opencsv-3.5.jar Main importSchema" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
+tool "NIEM documentation" "java -cp /Users/Jim/OneDrive/xml/niem-tools/niem-tools.jar;/Users/Jim/OneDrive/xml/niem-tools/opencsv-3.5.jar Main export" Project Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
+tool "Import NIEM mapping" "java -cp /Users/Jim/OneDrive/xml/niem-tools/niem-tools.jar;/Users/Jim/OneDrive/xml/niem-tools/opencsv-3.5.jar Main import" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
+tool "Reset NIEM stereotype" "java -cp /Users/Jim/OneDrive/xml/niem-tools/niem-tools.jar;/Users/Jim/OneDrive/xml/niem-tools/opencsv-3.5.jar MainMain reset" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
+tool "Import NIEM schema" "java -cp /Users/Jim/OneDrive/xml/niem-tools/niem-tools.jar;/Users/Jim/OneDrive/xml/niem-tools/opencsv-3.5.jar Main importSchema" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
 tool "NIEM export" "" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn
 tool "NIEM import" "" Package UseCaseView ClassView ComponentView DeploymentView UseCaseDiagram SeqDiagram ColDiagram ClassDiagram ObjectDiagram StateDiagram ActivityDiagram ComponentDiagram DeploymentDiagram UseCase Component Node Artifact Inherit DependOn

@@ -6,7 +6,7 @@ marked
   class_ref 132226 // BaseMessage
 end
 selected 
-  package_ref 168194 // PIM
+  package_ref 168066 // CIM
 open
   
   package_ref 168066 // CIM
