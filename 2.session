@@ -1,14 +1,77 @@
 window_sizes 2130 1422 338 1786 1353 0
 cleanlooks_style
 marked
-  attribute_ref 130562 // confidentialityIndicator
-  classdiagram_ref 135938 // CourtPolicyQueryMessage
-  class_ref 132226 // BaseMessage
+  class_ref 147714 // ExtendedDriversLicenseInformation
+  class_ref 147586 // ExtendedPersonInformation
 end
-selected 
-  package_ref 168066 // CIM
+selected attribute_ref 154754 // iceNumber
 open
-  
-  package_ref 168066 // CIM
+  class_ref 133762 // CaseListQueryMessage
+  class_ref 134018 // MatchingCase
+  class_ref 170114 // CaseQueryCriteria
+  class_ref 145154 // CaseQueryMessage
+  class_ref 149122 // CalendarEvent
+  class_ref 148354 // CaseDocketEntry
+  class_ref 146306 // CaseInformation
+  class_ref 170242 // CaseStatus
+  class_ref 149378 // JudicialOfficer
+  class_ref 140290 // Alias
+  class_ref 163074 // Attorney
+  class_ref 131586 // Case
+  class_ref 140418 // CaseAttorneyRole
+  class_ref 138626 // CaseOrigin
+  class_ref 130690 // CoreFilingMessage
+  class_ref 131202 // DocumentMetadata
+  class_ref 162690 // DocumentRenditionMetadata
+  class_ref 142466 // ElectronicServiceInformation
+  class_ref 131842 // Person
+  class_ref 131714 // RelatedCase
+  class_ref 137474 // AllowedCodeValue
+  class_ref 137218 // CoreCodelist
+  class_ref 136834 // CourtPolicyResponseMessage
+  class_ref 137986 // ExtensionReference
+  class_ref 136962 // RuntimePolicyParameters
+  class_ref 134146 // DocumentQueryMessage
+  class_ref 134274 // DocumentResponseMessage
+  class_ref 133250 // FilingListQueryMessage
+  class_ref 133634 // MatchingFiling
+  class_ref 132994 // FilingStatusQueryMessage
+  class_ref 133122 // FilingStatusResponseMessage
+  class_ref 146050 // DocketedCase
+  class_ref 135682 // Payment
+  class_ref 145794 // RecordDocketingMessage
+  class_ref 142210 // ServiceInformationQueryMessage
+  class_ref 142594 // ServiceRecipientStatus
+  class_ref 132226 // BaseMessage
+  class_ref 145922 // ElectronicFilingCallbackMessage
+  class_ref 138114 // ElectronicFilingMessage
+  class_ref 146562 // Error
+  class_ref 147586 // ExtendedPersonInformation
+  class_ref 133378 // TimeRange
+  classview_ref 135298 // PrimitiveDataTypes
+  class_ref 183682 // AppellateCaseInformation
+  class_ref 184706 // ChargeDisposition
+  class_ref 184322 // CriminalAppellateCaseInformation
+  class_ref 184450 // Sentence
+  class_ref 144002 // Citation
+  class_ref 144386 // DrivingIncident
+  class_ref 147714 // ExtendedDriversLicenseInformation
+  class_ref 144898 // Offender
+  class_ref 184834 // ParkingViolationInformation
+  class_ref 141570 // Arrest
+  class_ref 141314 // ArrestingOfficer
+  class_ref 143106 // Booking
+  class_ref 143874 // Charge
+  class_ref 143490 // Defendant
+  class_ref 191490 // DomesticCaseOrderInformation
+  class_ref 139394 // DomesticCasePersonInformation
+  class_ref 139522 // DomesticLegalRelationshipInformation
+  class_ref 141442 // Act
+  class_ref 140930 // Custody
+  class_ref 142850 // DelinquentAct
+  class_ref 142978 // DependencyAllegation
+  class_ref 140674 // Juvenile
+  class_ref 206082 // niem
+  class_ref 225666 // niemProperty
 end
 end

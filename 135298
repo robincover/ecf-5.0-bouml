@@ -1,6 +1,6 @@
-format 210
+format 212
 "Classes" // CIM::Classes
-  revision 46
+  revision 47
   modified_by 2 "Jim"
   // class settings
   
@@ -557,8 +557,8 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError/cbrn:ErrorDescription/cbrn:ErrorCodeDescriptionText"
 	key "niem-profile:niem:Type" value "cbrn:MessageContentErrorType"
-	key "niem-profile:niem:Property" value "cbrn:ErrorCodeDescriptionText"
-	key "niem-profile:niem:BaseType" value "cbrn:MessageErrorType"
+	key "niem-profile:niem:Property" value "cbrn:ErrorDescription"
+	key "niem-profile:niem:BaseType" value "cbrnMessageErrorType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A more \"user friendly\" description of the error."
@@ -582,7 +582,7 @@ format 210
       key "niem-profile:niem:XPath" value "nc:Person"
       key "niem-profile:niem:Type" value "nc:PersonType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "s:ComplexObjectType"
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "Additional information about a person."
@@ -623,8 +623,8 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonEthnicityCode"
-	key "niem-profile:niem:BaseType" value "fbi:EthnicityCodeSimpleType"
+	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityCode)"
+	key "niem-profile:niem:BaseType" value "ucr:EthnicityCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A NIBRS code representing the nation or cultural group to which a referenced subject belongs."
@@ -645,7 +645,7 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonEthnicityText"
+	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityText)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -667,8 +667,8 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEyeColor (abstract) /nc:PersonEyeColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonEyeColorCode"
-	key "niem-profile:niem:BaseType" value "fbi:EYEColorType"
+	key "niem-profile:niem:Property" value "nc:PersonEyeColor, (nc:PersonEyeColorCode)"
+	key "niem-profile:niem:BaseType" value "ncic:EYEColorType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A code identifying the person eye color at the time the information was collected."
@@ -689,8 +689,8 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHairColor (abstract) /nc:PersonHairColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonHairColorCode"
-	key "niem-profile:niem:BaseType" value "fbi:HAICodeType"
+	key "niem-profile:niem:Property" value "nc:PersonHairColor, (nc:PersonHairColorCode)"
+	key "niem-profile:niem:BaseType" value "ncic:HAICodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A code identifying the person hair color at the time the information was collected."
@@ -733,8 +733,8 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonRaceCode"
-	key "niem-profile:niem:BaseType" value "fbi:RACCodeType"
+	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceCode)"
+	key "niem-profile:niem:BaseType" value "ncic:RACCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A code identifying the race of a person."
@@ -755,7 +755,7 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonRaceText"
+	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceText)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -777,8 +777,8 @@ format 210
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonSex (abstract) /nc:PersonSexCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonSexCode"
-	key "niem-profile:niem:BaseType" value "fbi:SEXCodeType"
+	key "niem-profile:niem:Property" value "nc:PersonSex, (nc:PersonSexCode)"
+	key "niem-profile:niem:BaseType" value "ncic:SEXCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A code identifying the gender or sex of a person."
@@ -913,9 +913,9 @@ format 210
 	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:StartDate/nc:DateRepresentation (abstract) /nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "nc:DateRange/nc:StartDate/nc:DateRepresentation (abstract) /nc:DateTime"
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value "nc:DateRangeType"
+	key "niem-profile:niem:Type" value "nc:DateRangeType"
+	key "niem-profile:niem:Property" value "nc:StartDate"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The beginning time, in the time zone of the court on the beginning date."
@@ -935,9 +935,9 @@ format 210
 	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:EndDate/nc:DateRepresentation (abstract) /nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "nc:DateRange/nc:EndDate/nc:DateRepresentation (abstract) /nc:DateTime"
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value "nc:DateRangeType"
+	key "niem-profile:niem:Type" value "nc:DateRangeType"
+	key "niem-profile:niem:Property" value "nc:EndDate"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The ending time, in the time zone of the court on the ending date.
@@ -967,7 +967,7 @@ format 210
       cpp_decl "${comment}enum ${name} {
 ${items}};
 "
-      java_decl "${comment}${@}${visibility}${final}${abstract}enum ${name}${implements} {
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
 ${items};
 ${members}}
 "
