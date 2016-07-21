@@ -1,0 +1,14 @@
+window_sizes 2130 1422 338 1786 1353 0
+cleanlooks_style
+marked
+  attribute_ref 130562 // confidentialityIndicator
+  classdiagram_ref 135938 // CourtPolicyQueryMessage
+  class_ref 132226 // BaseMessage
+end
+selected 
+  package_ref 168194 // PIM
+open
+  
+  package_ref 168066 // CIM
+end
+end
