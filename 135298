@@ -1,6 +1,6 @@
 format 212
 "Classes" // CIM::Classes
-  revision 47
+  revision 50
   modified_by 2 "Jim"
   // class settings
   
@@ -60,7 +60,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
       comment "The core information contained in an ECF 5.0 message."
       classrelation 137730 // court (<directional aggregation>)
 	relation 137730 o-->
@@ -204,8 +204,8 @@ format 212
       ncouples 8
       key "niem-profile:niem:OldXPath" value "CaseTypeSpecificInformation"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "CaseTypeSpecificInformation"
-      key "niem-profile:niem:Type" value "(abstract)"
+      key "niem-profile:niem:XPath" value "(abstract)"
+      key "niem-profile:niem:Type" value ""
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
@@ -231,7 +231,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
       comment "The date and time on which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
       classrelation 131202 // <generalisation>
 	relation 131202 ---|>
@@ -365,7 +365,7 @@ format 212
 	key "niem-profile:niem:Property" value "nc:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Include nc:StatusAugmentationPoint"
 	comment "Status of the filing as determined by the system sending the callback. Values: accepted, partially accepted (e.g., some documents but not others), rejected."
       end
 
@@ -428,7 +428,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
       comment "The base message for an electronic filing using ECF 5.0."
       classrelation 129410 // <generalisation>
 	relation 129410 ---|>
@@ -518,7 +518,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "cbrn:SystemEventType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Fix inconsistencies between ECF error codes and specification "
+      key "niem-profile:niem:Notes" value "Include cbrn:MessageContentError"
       comment "Representation of an error that occured when synchronously processing the message."
       attribute 176002 "errorCode"
 	public type class_ref 192130 // code
@@ -538,7 +538,7 @@ format 212
 	key "niem-profile:niem:Property" value "cbrn:MessageStatusCode"
 	key "niem-profile:niem:BaseType" value "cbrncl:MessageStatusCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Fix inconsistencies between ECF error codes and specification "
 	comment "A code that uniquely identifies an error.  Allowable values set forth in court policy."
       end
 
@@ -558,7 +558,7 @@ format 212
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError/cbrn:ErrorDescription/cbrn:ErrorCodeDescriptionText"
 	key "niem-profile:niem:Type" value "cbrn:MessageContentErrorType"
 	key "niem-profile:niem:Property" value "cbrn:ErrorDescription"
-	key "niem-profile:niem:BaseType" value "cbrnMessageErrorType"
+	key "niem-profile:niem:BaseType" value "cbrn:MessageErrorType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A more \"user friendly\" description of the error."
@@ -621,7 +621,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicityCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityCode)"
 	key "niem-profile:niem:BaseType" value "ucr:EthnicityCodeType"
@@ -643,7 +643,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityText"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicityText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityText)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
@@ -665,10 +665,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEyeColor (abstract) /nc:PersonEyeColorCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEyeColor (abstract) /nc:PersonEyeColorCode"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEyeColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonEyeColor, (nc:PersonEyeColorCode)"
-	key "niem-profile:niem:BaseType" value "ncic:EYEColorType"
+	key "niem-profile:niem:Property" value "nc:PersonEyeColor, (j:PersonEyeColorCode)"
+	key "niem-profile:niem:BaseType" value "ncic:EYECodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A code identifying the person eye color at the time the information was collected."
@@ -687,7 +687,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHairColor (abstract) /nc:PersonHairColorCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHairColor (abstract) /nc:PersonHairColorCode"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHairColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonHairColor, (nc:PersonHairColorCode)"
 	key "niem-profile:niem:BaseType" value "ncic:HAICodeType"
@@ -709,10 +709,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue (abstract) /nc:MeasureText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue (abstract) /nc:MeasureText"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonHeightMeasure"
-	key "niem-profile:niem:BaseType" value "nc:LengthMeasureType"
+	key "niem-profile:niem:BaseType" value "nc:MeasureType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A measurement of the height of a person."
@@ -731,7 +731,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceCode"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRaceCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceCode)"
 	key "niem-profile:niem:BaseType" value "ncic:RACCodeType"
@@ -753,7 +753,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceText"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRaceText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceText)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
@@ -775,7 +775,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSex (abstract) /nc:PersonSexCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonSex (abstract) /nc:PersonSexCode"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonSexCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonSex, (nc:PersonSexCode)"
 	key "niem-profile:niem:BaseType" value "ncic:SEXCodeType"
@@ -819,10 +819,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue (abstract) /nc:MeasureText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue (abstract) /nc:MeasureText"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonWeightMeasure"
-	key "niem-profile:niem:BaseType" value "nc:WeightMeasureType"
+	key "niem-profile:niem:BaseType" value "nc:MeasureType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A measurement of the weight of a person."
@@ -842,10 +842,10 @@ format 212
       ncouples 8
       key "niem-profile:niem:OldXPath" value "QueryResponseMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "QueryResponseMessage"
-      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:XPath" value "ecf:QueryResponseMessage"
+      key "niem-profile:niem:Type" value "ecf:QueryResponseMessageType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "A message returned in response to a message or query."
@@ -873,7 +873,7 @@ format 212
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value "nc:TextType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "A query error should be generated when:  * The query arguments are considered to be invalid by the receiver, and the query cannot be processed.  * The query represents a request for a specific data item, which cannot be retrieved. (another flavor of invalid argument) * The receiving system explicitly fails while processing the query."
       end
@@ -893,9 +893,9 @@ format 212
       key "niem-profile:niem:OldXPath" value "nc:DateRange"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:DateRange"
-      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Type" value "nc:DateRangeType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "A period of time bounded by upper and lower (to and from) dates/times."
@@ -912,7 +912,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:StartDate/nc:DateRepresentation (abstract) /nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:DateRange/nc:StartDate/nc:DateRepresentation (abstract) /nc:DateTime"
+	key "niem-profile:niem:XPath" value "nc:DateRange/nc:StartDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DateRangeType"
 	key "niem-profile:niem:Property" value "nc:StartDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
@@ -934,7 +934,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:EndDate/nc:DateRepresentation (abstract) /nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:DateRange/nc:EndDate/nc:DateRepresentation (abstract) /nc:DateTime"
+	key "niem-profile:niem:XPath" value "nc:DateRange/nc:EndDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DateRangeType"
 	key "niem-profile:niem:Property" value "nc:EndDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
