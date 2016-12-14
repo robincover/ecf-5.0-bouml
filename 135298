@@ -1,7 +1,7 @@
 format 212
 "Classes" // CIM::Classes
-  revision 50
-  modified_by 2 "Jim"
+  revision 56
+  modified_by 2 "JamesECabral"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -273,8 +273,8 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/ecf:DocumentAugmentation/ecf:FilingCompletionDate"
 	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:FilingCompletionDate"
-	key "niem-profile:niem:BaseType" value "nc:DateTimeType"
+	key "niem-profile:niem:Property" value "ecf:FilingCompletionDate, (nc:DateTime)"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "the date and time at which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
@@ -362,7 +362,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentStatus/ecf:StatusAugmentation/ecf:FilingStatusCode"
 	key "niem-profile:niem:Type" value "ecf:StatusAugmentationType"
-	key "niem-profile:niem:Property" value "nc:FilingStatusCode"
+	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Include nc:StatusAugmentationPoint"
@@ -621,9 +621,9 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicityCode"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEthnicityCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityCode)"
+	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (j:PersonEthnicityCode)"
 	key "niem-profile:niem:BaseType" value "ucr:EthnicityCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -665,7 +665,7 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEyeColor (abstract) /nc:PersonEyeColorCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEyeColorCode"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEyeColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonEyeColor, (j:PersonEyeColorCode)"
 	key "niem-profile:niem:BaseType" value "ncic:EYECodeType"
@@ -687,9 +687,9 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHairColor (abstract) /nc:PersonHairColorCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHairColorCode"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonHairColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonHairColor, (nc:PersonHairColorCode)"
+	key "niem-profile:niem:Property" value "nc:PersonHairColor, (j:PersonHairColorCode)"
 	key "niem-profile:niem:BaseType" value "ncic:HAICodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -731,9 +731,9 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRaceCode"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonRaceCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceCode)"
+	key "niem-profile:niem:Property" value "nc:PersonRace, (j:PersonRaceCode)"
 	key "niem-profile:niem:BaseType" value "ncic:RACCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -775,9 +775,9 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSex (abstract) /nc:PersonSexCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonSexCode"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonSexCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonSex, (nc:PersonSexCode)"
+	key "niem-profile:niem:Property" value "nc:PersonSex, (j:PersonSexCode)"
 	key "niem-profile:niem:BaseType" value "ncic:SEXCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -942,6 +942,34 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	comment "The ending time, in the time zone of the court on the ending date.
 "
+      end
+    end
+
+    class 909826 "QueryMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "ecf:QueryMessageType"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "ecf:QueryMessageType"
+      key "niem-profile:niem:Type" value "ecf:QueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "A query message."
+      classrelation 740994 // <generalisation>
+	relation 738818 ---|>
+	  a public
+	    classrelation_ref 740994 // <generalisation>
+	  b parent class_ref 132226 // BaseMessage
       end
     end
   end

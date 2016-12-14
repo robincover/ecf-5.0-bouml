@@ -1,7 +1,7 @@
-format 210
+format 212
 "niem-profile" // niem-profile
   revision 1
-  modified_by 2 "Jim"
+  modified_by 2 "JamesECabral"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -189,7 +189,7 @@ format 210
       cpp_decl "${comment}enum ${name} {
 ${items}};
 "
-      java_decl "${comment}${@}${visibility}${final}${abstract}enum ${name}${implements} {
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
 ${items};
 ${members}}
 "

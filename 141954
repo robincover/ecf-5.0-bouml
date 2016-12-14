@@ -1,7 +1,7 @@
 format 212
 "Messages" // CIM::Messages
-  revision 42
-  modified_by 2 "Jim"
+  revision 65
+  modified_by 2 "JamesECabral"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -83,7 +83,7 @@ format 212
 	key "niem-profile:niem:XPath" value "caselistquery:CaseListQueryMessage/caselistquery:CaseListQueryCaseParticipant"
 	key "niem-profile:niem:Type" value "caselistquery:CaseListQueryMessageType"
 	key "niem-profile:niem:Property" value "caselistquery:CaseListQueryCaseParticipant"
-	key "niem-profile:niem:BaseType" value "caselistquery:CaseParticipantType"
+	key "niem-profile:niem:BaseType" value "ecf:CaseParticipantType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -147,7 +147,7 @@ format 212
 	key "niem-profile:niem:XPath" value "caselistquery:CaseListQueryMessage/nc:DateRange"
 	key "niem-profile:niem:Type" value "caselistquery:CaseListQueryMessageType"
 	key "niem-profile:niem:Property" value "caselistquery:CaseListQueryTimeRange"
-	key "niem-profile:niem:BaseType" value "nc:DateRange"
+	key "niem-profile:niem:BaseType" value "nc:DateRangeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -417,7 +417,7 @@ format 212
       key "niem-profile:niem:XPath" value "casequery:CaseQueryCriteria"
       key "niem-profile:niem:Type" value "casequery:CaseQueryCriteriaType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "s:ComplexObjectType"
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "Criteria limiting the case information to be returned."
@@ -517,7 +517,7 @@ format 212
 	key "niem-profile:niem:XPath" value "casequery:CaseQueryCriteria/casequery:IncludeCalendarEventIndicator"
 	key "niem-profile:niem:Type" value "casequery:CaseQueryCriteriaType"
 	key "niem-profile:niem:Property" value "casequery:IncludeCalendarEventIndicator"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether requester wishes calendar event information to be included in the response."
@@ -539,7 +539,7 @@ format 212
 	key "niem-profile:niem:XPath" value "casequery:CaseQueryCriteria/casequery:IncludeDocketEntryIndicator"
 	key "niem-profile:niem:Type" value "casequery:CaseQueryCriteriaType"
 	key "niem-profile:niem:Property" value "casequery:IncludeDocketEntryIndicator"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether requester wishes docket entry information to be included in the response."
@@ -560,8 +560,8 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "casequery:CaseQueryCriteria/casequery:IncludeParticipantsIndicator"
 	key "niem-profile:niem:Type" value "casequery:CaseQueryCriteriaType"
-	key "niem-profile:niem:Property" value "asequery:IncludeParticipantsIndicator"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:Property" value "casequery:IncludeParticipantsIndicator"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether requester wishes participant information to be included in the response."
@@ -608,7 +608,7 @@ format 212
 	key "niem-profile:niem:XPath" value "casequery:CaseQueryMessage/casequery:CaseQueryCriteria"
 	key "niem-profile:niem:Type" value "casequery:CaseQueryMessageType"
 	key "niem-profile:niem:Property" value "casequery:CaseQueryCriteria"
-	key "niem-profile:niem:BaseType" value "casequery:CaseQueryCrtieriaType"
+	key "niem-profile:niem:BaseType" value "casequery:CaseQueryCriteriaType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -782,7 +782,7 @@ format 212
 	key "niem-profile:niem:XPath" value "j:CaseAugmentation/j:CaseCourtEvent/j:CourtEventSchedule/j:ScheduleDayStartTime/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:ScheduleDayType"
 	key "niem-profile:niem:Property" value "nc:ScheduleDayRepresentation, (nc:ScheduleDate), (nc:ScheduleDayStartTime)"
-	key "niem-profile:niem:BaseType" value "nc:DateType, niem-xs:time"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The scheduled start time of an event on the court calendar."
@@ -870,7 +870,7 @@ format 212
 	key "niem-profile:niem:XPath" value "j:CaseAugmentation/j:CaseCourtEvent/j:CourtEventSchedule/nc:ScheduleDayEndTime/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:ScheduleDayType"
 	key "niem-profile:niem:Property" value "nc:ScheduleDayRepresentation, (nc:ScheduleDate), (nc:ScheduleDayEndTime)"
-	key "niem-profile:niem:BaseType" value "nc:DateType, niem-xs:time"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The scheduled ending time of an event on the court calendar."
@@ -1092,7 +1092,7 @@ format 212
 	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/ecf:CourtEventAugmentation/nc:CaseFiling"
 	key "niem-profile:niem:Type" value "ecf:CourtEventAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:ConnectedDocument"
-	key "niem-profile:niem:BaseType" value "ecf:CourtEventDocumentType"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -1107,10 +1107,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "ecf:CourtEvent/ecf:ChildDocketReference"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/ecf:CourtEventAugmentation/ecf:ChildDocketReference"
+	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/ecf:CourtEventAugmentation/ecf:ChildDocket"
 	key "niem-profile:niem:Type" value "ecf:CourtEventAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:ChildDocketReference"
-	key "niem-profile:niem:BaseType" value "s:ReferenceType"
+	key "niem-profile:niem:Property" value "ecf:ChildDocket"
+	key "niem-profile:niem:BaseType" value "j:CourtEventType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -2734,7 +2734,7 @@ format 212
 	key "niem-profile:niem:XPath" value "core:CoreFilingMessage/core:FilingConnectedDocument"
 	key "niem-profile:niem:Type" value "core:CoreFilingMessageType"
 	key "niem-profile:niem:Property" value "core:FilingConnectedDocument"
-	key "niem-profile:niem:BaseType" value "ecf:DocumentType"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -2752,7 +2752,7 @@ format 212
 	key "niem-profile:niem:XPath" value "core:CoreFilingMessage/core:FilingLeadDocument"
 	key "niem-profile:niem:Type" value "core:CoreFilingMessageType"
 	key "niem-profile:niem:Property" value "core:FilingLeadDocument"
-	key "niem-profile:niem:BaseType" value "ecf:DocumentType"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -3031,7 +3031,7 @@ format 212
 	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:RedactionRequiredIndicator"
 	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:RedactionRequiredIndicator"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicator by the filer that the document must be redacted nu the court."
@@ -3045,12 +3045,12 @@ format 212
 	    classrelation_ref 139394 // documentRenditionMetadata (<directional aggregation>)
 	  b parent class_ref 162690 // DocumentRenditionMetadata
 	ncouples 8
-	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRenditionMetadata"
+	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRenditionMetadata"
+	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition"
 	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:DocumentRendition"
-	key "niem-profile:niem:BaseType" value "ecf:DocumentRenditionType"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value "Make Document metadata and rendition in FilingLeadDocuments optional."
       end
@@ -3241,10 +3241,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "ecf:DocumentRendition/ecf:DocumentRenditionMetadata/ecf:AttachmentMetadata"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/ecf:DocumentAttachment"
+	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/nc:Attachment"
 	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:DocumentAttachment"
-	key "niem-profile:niem:BaseType" value "ecf:DocumentAttachmentType"
+	key "niem-profile:niem:Property" value "nc:Attachment"
+	key "niem-profile:niem:BaseType" value "nc:BinaryType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint, nc:DocumentBinary"
       end
@@ -3262,10 +3262,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "ecf:DocumentRenditionMetadata/ecf:ColorRelevantIndicator"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/ecf:ColorRelevantIndicator"
+	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/ec:DocumentAugmentation/ecf:ColorRelevantIndicator"
 	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:ColorRelevantIndicator"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether color is or is not relevant for the presentation of the document."
@@ -3328,7 +3328,7 @@ format 212
 	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/ecf:DocumentAugmentation/ecf:DocumentSignature"
 	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:DocumentSignature"
-	key "niem-profile:niem:BaseType" value "s:ComplexObjectType"
+	key "niem-profile:niem:BaseType" value "structures:ObjectType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -3390,10 +3390,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "ecf:DocumentRenditionMetadata/ecf:RedactedIndicator"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/ecf:RedactedIndicator"
-	key "niem-profile:niem:Type" value "ecf:DocumentRenditionMetadataType"
-	key "niem-profile:niem:Property" value "ecf:RedactedIndiactor"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/ecf:DcoumentationAugmentation/ecf:RedactedIndicator"
+	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
+	key "niem-profile:niem:Property" value "ecf:RedactedIndicator"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "An indicator that sensitive information has been removed from this rendition of the document.  "
@@ -3523,7 +3523,7 @@ format 212
 	key "niem-profile:niem:XPath" value "ecf:ElectronicServiceInformation/ecf:ReceivingMDEProfileCode"
 	key "niem-profile:niem:Type" value "ecf:ElectronicServiceInformationType"
 	key "niem-profile:niem:Property" value "ecf:ReceivingMDEProfileCode"
-	key "niem-profile:niem:BaseType" value "xsd:normalizedString"
+	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Code identifying the service interaction profile being used by the receiving filing assembly MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF.
@@ -3779,7 +3779,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Organization/ecf:OrganizationAssociationAugmentation/ecf:EntityAssociationTypeCode"
 	key "niem-profile:niem:Type" value "ecf:OrganizationAssociationAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:EntityAssocitionTypeCode"
+	key "niem-profile:niem:Property" value "ecf:EntityAssociationTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Include nc:OrganizationAssociationAugmentationPoint"
@@ -3999,13 +3999,6 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	comment "Person organizational position or title."
       end
-
-      classrelation 261378 // <realization>
-	relation 259202 -_-|>
-	  a public
-	    classrelation_ref 261378 // <realization>
-	  b parent class_ref 239490 // PersonType
-      end
     end
 
     class 135426 "PersonOrganizationRelationship"
@@ -4079,7 +4072,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:PersonOrganizationAssociation/ecf:PersonOrganizationAssociationAugmentation/ecf:EntityAssociationTypeCode"
 	key "niem-profile:niem:Type" value "ecf:PersonOrganizationAssociationAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:EntityAssocitionTypeCode"
+	key "niem-profile:niem:Property" value "ecf:EntityAssociationTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -4707,10 +4700,10 @@ format 212
       ncouples 8
       key "niem-profile:niem:OldXPath" value "CoreCodelistType"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "(abstract)"
-      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:XPath" value "policyresponse:CourtCodeListType"
+      key "niem-profile:niem:Type" value "policyresponse:CourtCodeListType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value "Replace w/ genericode?"
       comment "The list in Court Policy of data elements and corresponding lists of valid codes for those elements in a particular court."
@@ -4726,10 +4719,10 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "ecfappinfo:CodelistReference"
 	key "niem-profile:niem:Type" value "ecfappinfo:CodeListReferenceType"
-	key "niem-profile:niem:Property" value "(@CanonicalURI), (@CanonicalVersionURI), (@LocationURI)"
+	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value "niem-xs:anyURI"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Use @CanonicalURI, @CanonicalVersionURI, @LocationURI"
       end
 
       attribute 145794 "elementName"
@@ -4747,7 +4740,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "ecfappinfo:CodelistReference"
 	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value "(context)"
+	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -4771,7 +4764,7 @@ format 212
       key "niem-profile:niem:XPath" value "policyresponse:CourtExtension"
       key "niem-profile:niem:Type" value "policyresponse:CourtExtensionType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "s:ComplexObjectType"
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "A structure representing the court-specific extensions for the court associated with this Court Policy."
@@ -4855,7 +4848,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:PolicyLastUpdateDate"
 	key "niem-profile:niem:Type" value "policyresponse:CourtPolicyResponseMessageType"
 	key "niem-profile:niem:Property" value "policyresponse:PolicyLastUpdateDate"
-	key "niem-profile:niem:BaseType" value "nc:Date"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value "CourtPolicy should reference nc:Metadata"
 	comment "The date and time on which a court Court Policy was last revised."
@@ -5196,8 +5189,8 @@ format 212
 	key "niem-profile:niem:OldXPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:CourtExtension/policyresponse:CourtExtensionURI"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:CourtExtension/policyresponse:CourtExtensionURI"
-	key "niem-profile:niem:Type" value "ecf:CourtExtensionType"
-	key "niem-profile:niem:Property" value "ecf:CourtExtensionURI"
+	key "niem-profile:niem:Type" value "policyresponse:CourtExtensionType"
+	key "niem-profile:niem:Property" value "policyresponse:CourtExtensionURI"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Include policyresponse:CourtExtension"
@@ -5307,11 +5300,11 @@ format 212
       key "niem-profile:niem:OldXPath" value "PublicKeyInformation"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "policyresponse:PublicKeyInformation/ds:KeyInfo"
-      key "niem-profile:niem:Type" value "ds:KeyInfoType"
+      key "niem-profile:niem:Type" value "policyresponse:PublicKeyInformationType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value "0.1"
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:Notes" value "Include ds:keyGen"
       comment "Symmetric or asymmetric keys used to encrypt and decrypt, or verify signed messages or documents exchanged with the court."
     end
 
@@ -5408,7 +5401,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:SupportCaseType"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseType"
-	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeSimpleType"
+	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
@@ -5430,7 +5423,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:SupportCaseType"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseType"
-	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeSimpleType"
+	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether the e-filing system supports electronic filing of civil cases."
@@ -5452,7 +5445,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:SupportCaseType"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseType"
-	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeSimpleType"
+	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether the e-filing system supports electronic filing of criminal cases."
@@ -5474,7 +5467,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:SupportCaseType"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseType"
-	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeSimpleType"
+	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether the e-filing system supports electronic filing of domestic cases."
@@ -5496,7 +5489,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:SupportCaseType"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseType"
-	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeSimpleType"
+	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether the e-filing system supports electronic filing of juvenile cases."
@@ -5518,7 +5511,7 @@ format 212
 	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:SupportCaseType"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseType"
-	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeSimpleType"
+	key "niem-profile:niem:BaseType" value "policyresponse:CaseTypeCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether the e-filing system supports electronic filing of traffic citation cases."
@@ -5790,6 +5783,61 @@ format 212
       classdiagramsettings member_max_width 0 end
       comment "The response to a request for a court Court Policy."
       size Letter-Landscape
+    end
+
+    class 823810 "CaseTypes"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "SupportedCaseTypes"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value "policyresponse:CaseTypeCodeType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "A list of ECF case types."
+    end
+
+    class 830338 "Operations"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "policyresponse:OperationNameType"
+      key "niem-profile:niem:Type" value "policyresponse:OperationNameType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "A list of ECF operations."
     end
   end
 
@@ -6067,7 +6115,7 @@ format 212
 	key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage/ecf:Document"
 	key "niem-profile:niem:Type" value "documentresponse:DocumentResponseMessageType"
 	key "niem-profile:niem:Property" value "ecf:Document"
-	key "niem-profile:niem:BaseType" value "ecf:DocumentType"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -6161,7 +6209,7 @@ format 212
 	key "niem-profile:niem:XPath" value "feescalculationquery:GetFeesCalculationMessage/core:ReviewFilingMessage"
 	key "niem-profile:niem:Type" value "feescalculationquery:FeesCalculationQueryMessageType"
 	key "niem-profile:niem:Property" value "core:ReviewFilingMessage"
-	key "niem-profile:niem:BaseType" value "core:ReviewFilingMessageType"
+	key "niem-profile:niem:BaseType" value "core:CoreFilingMessageType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -7039,7 +7087,7 @@ format 212
       key "niem-profile:niem:XPath" value "docketcallback:NotifyDocketingCompleteMessage"
       key "niem-profile:niem:Type" value "docketcallback:NotifyDocketingCompleteMessageType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:ElectronicFilingCallbackMessageType"
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "The message returned from the Court Record MDE to the Filing Review MDE when the functions of entering information onto the docket or register of actions and commiting a filed document(s) to the official court record have been completed, conveying the results of those functions."
@@ -7134,7 +7182,7 @@ format 212
       key "niem-profile:niem:XPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
       key "niem-profile:niem:Type" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:ElectronicFilingCallbackMessageType"
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "The asynchronous message from the Filing Review MDE to the Filing Assembly MDE conveying information concerning the court actions on the documents submitted for filing in a ReviewFilingMessage."
@@ -7396,7 +7444,7 @@ format 212
 	key "niem-profile:niem:XPath" value "cac:CardAccount/cbc:PrimaryAccountNumberID"
 	key "niem-profile:niem:Type" value "cac:CardAccountType"
 	key "niem-profile:niem:Property" value "cbc:PrimaryAccountNumberID"
-	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:BaseType" value "xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A number that idenitifies an account with a court or a financial institution.
@@ -8123,7 +8171,7 @@ format 212
       key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage"
       key "niem-profile:niem:Type" value "docket:RecordDocketingMessageType"
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:ElectronicMessageType"
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value "Include nc:Case"
       comment "Message resulting from clerk review and edit of a ReviewFilingMessage."
@@ -8206,10 +8254,10 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "RecordDocketingMessage/ReviewedDocument"
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage/ecf:ReviewedDocument"
+	key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage/docket::ReviewedDocument"
 	key "niem-profile:niem:Type" value "docket:RecordDocketingMessageType"
 	key "niem-profile:niem:Property" value "docket:ReviewedLeadDocument, docket:ReviewedConnectedDocument"
-	key "niem-profile:niem:BaseType" value "ecf:ReviewedDocumentType"
+	key "niem-profile:niem:BaseType" value "docket:ReviewedDocumentType"
 	key "niem-profile:niem:Multiplicity" value "1,1, 0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
@@ -8316,7 +8364,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "docket:ReviewedDocument/nc:DocumentStatus/nc:StatusText"
 	key "niem-profile:niem:Type" value "nc:StatusType"
-	key "niem-profile:niem:Property" value "nc:StatusDesignator (nc:StatusText)"
+	key "niem-profile:niem:Property" value "nc:StatusDesignator, (nc:StatusText)"
 	key "niem-profile:niem:BaseType" value "nc:StatusType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -8383,7 +8431,7 @@ format 212
 	key "niem-profile:niem:XPath" value "docket:ReviewedDocument/ecf:SealDocumentIndicator"
 	key "niem-profile:niem:Type" value "docket:ReviewedDocumentType"
 	key "niem-profile:niem:Property" value "ecf:SealDocumentIndicator"
-	key "niem-profile:niem:BaseType" value "niem-xsd:boolean"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Clerk instruction to court record system to seal this document."

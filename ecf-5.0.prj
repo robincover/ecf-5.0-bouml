@@ -1,7 +1,7 @@
 format 212
 "ecf-5.0"
-  revision 162
-  modified_by 2 "Jim"
+  revision 201
+  modified_by 2 "JamesECabral"
 
 
   
@@ -39,9 +39,9 @@ format 212
 
   mark_for_import
   
-  ncouples 15
-  key "html dir" value "C:\\Users\\Jim\\OneDrive\\xml\\ecf5\\model"
-  key "gxmi path" value "C:/Users/Jim/Desktop/bouml.xmi"
+  ncouples 16
+  key "html dir" value "C:\\Users\\JamesECabral\\OneDrive\\xml\\ecf5\\model"
+  key "gxmi path" value "C:\\Users\\JamesECabral\\Desktop\\bouml.xmi"
   key "gxmi no model" value "no"
   key "gxmi gen views" value "no"
   key "gxmi encoding" value "UTF-8"
@@ -53,13 +53,12 @@ format 212
   key "gxmi gen eclipse" value "no"
   key "gxmi comment exporter" value "no"
   key "gxmi linefeed" value "yes"
-  key "niem dir" value "C:\\Users\\Jim\\OneDrive\\xml\\niem-3.2\\niem"
-  key "wantlist schema" value "C:\\xml\\xml\\wantlist-2.2-annotated.xsd"
+  key "niem dir" value "C:\\Users\\JamesECabral\\OneDrive\\xml\\niem-3.2\\niem"
+  key "" value ""
+  key "xsd dir" value "C:\\Users\\JamesECabral\\OneDrive\\xml\\ecf5\\xsd"
   package_ref 168066 // CIM
 
-  package_ref 168194 // PIM
-
-  package_ref 168322 // PSM
-
   package_ref 161538 // niem-profile
+
+  package_ref 174850 // PIM
 end
