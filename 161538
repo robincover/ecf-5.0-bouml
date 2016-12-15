@@ -77,7 +77,7 @@ format 212
       key "stereotypeCheck" value ""
       key "stereotypeSetParameters" value ""
       key "stereotypeCheckParameters" value ""
-      key "stereotypeApplyOn" value "Attribute Class Relation"
+      key "stereotypeApplyOn" value "Attribute Class ClassInstance Relation"
       key "stereotypeIconPath" value ""
       attribute 246018 "OldXPath"
 	public explicit_type ""

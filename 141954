@@ -1,6 +1,6 @@
 format 212
 "Messages" // CIM::Messages
-  revision 65
+  revision 70
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,6 +26,85 @@ format 212
   activitydiagramsettings
    end
   
+  classview 197378 "CancelFilingMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 1498626 "CancelFilingMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "cancel:CancelFilingMessage"
+      key "niem-profile:niem:Type" value "cancel:CancelFilingMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "This is a request from the filer to the reviewer to cancel a previously submitted filing."
+      classrelation 1254914 // <generalisation>
+	relation 1252738 ---|>
+	  a public
+	    classrelation_ref 1254914 // <generalisation>
+	  b parent class_ref 138114 // ElectronicFilingMessage
+      end
+    end
+
+    classdiagram 192258 "CancelFilingMessage"
+      classdiagramsettings member_max_width 0 end
+      size Letter-Landscape
+    end
+
+    classinstance 3147010 "CancelFilingMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 1498626 // CancelFilingMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "cancel:CancelFilingMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "cancel:CancelFilingMessage"
+      key "niem-profile:niem:BaseType" value "cancel:CancelFilingMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
+  end
+
   classview 156034 "CaseListQueryMessage"
     
     classdiagramsettings member_max_width 0 end
@@ -157,6 +236,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       comment "This is a query for a list of cases that match a set of criteria including case participants, case classification, case status, and date of the case was initiated."
       size Legal-Landscape
+    end
+
+    classinstance 3146626 "CaseListQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 133762 // CaseListQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "caselistquery:CaseListQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "caselistquery:CaseListQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "caselistquery:CaseListQueryMessage"
+      key "niem-profile:niem:BaseType" value "caselistquery:CaseListQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -381,6 +478,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       comment "A synchronous response to a GetCaseListQueryMessage."
       size Letter-Landscape
+    end
+
+    classinstance 3146754 "CaseListResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 133890 // CaseListResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "caselistresponse:CaseListResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "caselistresponse:CaseListResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "caselistresponse:CaseListResponseMessage"
+      key "niem-profile:niem:BaseType" value "caselistresponse:CaseListResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -640,6 +755,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       comment "A message requesting a list of cases from a court case management information system conforming to the parameter or parameters identified in the message."
       size Letter-Landscape
+    end
+
+    classinstance 3146498 "CaseQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 145154 // CaseQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "casequery:CaseQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "casequery:CaseQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "casequery:CaseQueryMessage"
+      key "niem-profile:niem:BaseType" value "casequery:CaseQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -1662,6 +1795,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       comment "The response to a GetCaseInformationQuery."
       size Letter-Landscape
+    end
+
+    classinstance 3146882 "CaseResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 145282 // CaseResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "caseresponse:CaseResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "caseresponse:CaseResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "caseresponse:CaseResponseMessage"
+      key "niem-profile:niem:BaseType" value "caseresponse:CaseResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -4311,6 +4462,24 @@ format 212
       comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
       size Letter-Landscape
     end
+
+    classinstance 1650306 "CoreFilingMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 130690 // CoreFilingMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "core:CoreFilingMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "core:CoreFilingMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "core:CoreFilingMessage"
+      key "niem-profile:niem:BaseType" value "core:CoreFilingMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 166018 "CourtDateAllocationRequestMessage"
@@ -4359,6 +4528,24 @@ format 212
     classdiagram 178306 "CourtDateAlloicationRequestMessage"
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
+    end
+
+    classinstance 3147138 "CourtDateAllocationRequestMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 198914 // CourtDateAllocationRequestMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -4409,6 +4596,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
     end
+
+    classinstance 3147266 "CourtDateAllocationResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 199042 // CourtDateAllocationResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 165890 "CourtDateReservationRequestMessage"
@@ -4458,6 +4663,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
     end
+
+    classinstance 3147394 "CourtDateReservationRequestMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 199170 // CourtDateReservationRequestMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 166146 "CourtDateReservationResponseMessage"
@@ -4506,6 +4729,24 @@ format 212
     classdiagram 178690 "CourtDateReservationResponseMessage"
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
+    end
+
+    classinstance 3147522 "CourtDateReservationResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 199298 // CourtDateReservationResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -4558,6 +4799,24 @@ format 212
       classdiagramsettings member_max_width 0 end
       comment "A request for a court's Court Policy."
       size Letter-Landscape
+    end
+
+    classinstance 3147650 "CourtPolicyQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 130562 // CourtPolicyQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "policyquery:CourtPolicyQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "policyquery:CourtPolicyQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "policyquery:CourtPolicyQueryMessage"
+      key "niem-profile:niem:BaseType" value "policyquery:CourtPolicyQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -5839,6 +6098,24 @@ ${members}};
       key "niem-profile:niem:Notes" value ""
       comment "A list of ECF operations."
     end
+
+    classinstance 3147778 "CourtPolicyResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 136834 // CourtPolicyResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "policyresponse:CourtPolicyResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "policyresponse:CourtPolicyResponseMessage"
+      key "niem-profile:niem:BaseType" value "policyresponse:CourtPolicyResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 165634 "CourtScheduleQueryMessage"
@@ -5887,6 +6164,24 @@ ${members}};
     classdiagram 178818 "CourtScheduleQueryMessage"
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
+    end
+
+    classinstance 3147906 "CourtScheduleQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 199426 // CourtScheduleQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -5937,6 +6232,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
     end
+
+    classinstance 3148034 "CourtScheduleResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 199554 // CourtScheduleResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 156930 "DocumentQueryMessage"
@@ -5967,10 +6280,10 @@ ${members}};
       mysql_decl ""
       
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "documentquery:DocumentQueryMessageType"
+      key "niem-profile:niem:OldXPath" value "documentquery:DocumentQueryMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessageType"
-      key "niem-profile:niem:Type" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:Type" value "documentquery:DocumentQueryMessageType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:QueryMessageType"
       key "niem-profile:niem:Multiplicity" value ""
@@ -6032,6 +6345,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "The base information contained in any query message."
       size Letter-Landscape
+    end
+
+    classinstance 3148162 "DocumentQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 134146 // DocumentQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:BaseType" value "documentquery:DocumentQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -6148,6 +6479,24 @@ ${members}};
       comment "The court response to a request for an electronic document in the court official record."
       size Letter-Landscape
     end
+
+    classinstance 3148290 "DocumentResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 134274 // DocumentResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "documentresponse:DocumentResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "documentresponse:DocumentResponseMessage"
+      key "niem-profile:niem:BaseType" value "documentresponse:DocumentResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 157186 "FeesCalculationQueryMessage"
@@ -6220,6 +6569,24 @@ ${members}};
       comment "This query is a request for the total amount of court fees required for filing of one or more documents in a case.
 "
       size Letter-Landscape
+    end
+
+    classinstance 3148418 "FeesCalculationQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 134402 // FeesCalculationQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "feescalculationquery:FeesCalculationQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "feescalculationquery:FeesCalculationQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "feescalculationquery:FeesCalculationQueryMessage"
+      key "niem-profile:niem:BaseType" value "feescalculationquery:FeesCalculationQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -6320,6 +6687,24 @@ ${members}};
       comment "The response to a CalculatedFeesQueryMessage, which may either be 0 indicating no fee is due, a currency amount indicating the fee due upon filing, or unknown indicating that the court case management information system is unable to calculate the fee for the proposed filing.
 "
       size Letter-Landscape
+    end
+
+    classinstance 3148546 "FeesCalculationResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 134530 // FeesCalculationResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "feescalculationresponse:FeesCalculationResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "feescalculationresponse:FeesCalculationResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "feescalculationresponse:FeesCalculationResponseMessage"
+      key "niem-profile:niem:BaseType" value "feescalculationresponse:FeesCalculationResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -6434,6 +6819,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "This is query to get a list of filings by Filer Identification, Case Identifier, or time period."
       size Letter-Landscape
+    end
+
+    classinstance 3148674 "FilingListQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 133250 // FilingListQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "filinglistquery:FilingListQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "filinglistquery:FilingListQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "filinglistquery:FilingListQueryMessage"
+      key "niem-profile:niem:BaseType" value "filinglistquery:FilingListQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -6680,6 +7083,24 @@ ${members}};
       comment "A court response to a FilingListQueryMessage."
       size Letter-Landscape
     end
+
+    classinstance 3148802 "FilingListResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 133506 // FilingListResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "filinglistresponse:FilingListResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "filinglistresponse:FilingListResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "filinglistresponse:FilingListResponseMessage"
+      key "niem-profile:niem:BaseType" value "filinglistresponse:FilingListResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 157698 "FilingStatusQueryMessage"
@@ -6797,6 +7218,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "This is query to get a filing status by Filing Number."
       size Letter-Landscape
+    end
+
+    classinstance 3148930 "FilingStatusQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 132994 // FilingStatusQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "filingstatusquery:FilingStatusQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "filingstatusquery:FilingStatusQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "filingstatusquery:FilingStatusQueryMessage"
+      key "niem-profile:niem:BaseType" value "filingstatusquery:FilingStatusQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -6960,6 +7399,24 @@ ${members}};
       comment "A court response to a FilingStatusQueryMessage."
       size Letter-Landscape
     end
+
+    classinstance 3149058 "FilingStatusResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 133122 // FilingStatusResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "filingstatusresponse:FilingStatusResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "filingstatusresponse:FilingStatusResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "filingstatusresponse:FilingStatusResponseMessage"
+      key "niem-profile:niem:BaseType" value "filingstatusresponse:FilingStatusResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 157954 "MessageReceiptMessage"
@@ -7052,9 +7509,27 @@ ${members}};
       comment "A message returned synchronously to indicate receipt by an MDE of another message.  The name \"MessageReceipt\" suggested by S. Durham June 30 2005, and adopted by consensus on a TC call that day. The intent is that this will serve as the synchronous reply to all MDE operations that have an additional, asynchronous callback."
       size Letter-Landscape
     end
+
+    classinstance 3149186 "MessageReceiptMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 145666 // MessageReceiptMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "messagereceipt:MessageReceiptMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "cbrn:MessageStatus"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "cbrn:MessageStatus"
+      key "niem-profile:niem:BaseType" value "cbrn:MessageStatusType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
-  classview 158338 "NotifyDocketingCompletekMessage"
+  classview 158338 "NotifyDocketingCompleteMessage"
     
     classdiagramsettings member_max_width 0 end
     
@@ -7103,6 +7578,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "The message returned from the Court Record MDE to the Filing Review MDE when the functions of entering information onto the docket or register of actions and commiting a filed document(s) to the official court record have been completed, conveying the results of those functions."
       size Letter-Landscape
+    end
+
+    classinstance 3149314 "NotifyDocketingCompleteMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 132610 // NotifyDocketingCompleteMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "docketcallback:NotifyDocketingCompleteMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "docketcallback:NotifyDocketingCompleteMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "docketcallback:NotifyDocketingCompleteMessage"
+      key "niem-profile:niem:BaseType" value "docketcallback:NotifyDocketingCompleteMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -7198,6 +7691,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "The asynchronous message from the Filing Review MDE to the Filing Assembly MDE conveying information concerning the court actions on the documents submitted for filing in a ReviewFilingMessage."
       size Letter-Landscape
+    end
+
+    classinstance 3149442 "NotifyFilingReviewCompleteMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 132738 // NotifyFilingReviewCompleteMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
+      key "niem-profile:niem:BaseType" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -8114,6 +8625,24 @@ ${members}};
       comment "The payment submitted with a filing.  The payment may consist of a fee for filing of the document(s) submitted, or for a fine or other payment due to the court."
       size Letter-Landscape
     end
+
+    classinstance 3149570 "PaymentMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 135682 // Payment
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "cac:Payment"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "cac:Payment"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "cac:Payment"
+      key "niem-profile:niem:BaseType" value "cac:PaymentType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 158210 "PaymentReceiptMessage"
@@ -8443,6 +8972,24 @@ ${members}};
       comment "Message resulting from clerk review and edit of a ReviewFilingMessage."
       size Letter-Landscape
     end
+
+    classinstance 3149698 "RecordDocketingMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 145794 // RecordDocketingMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "docket:RecordDocketingMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "docket:RecordDocketingMessage"
+      key "niem-profile:niem:BaseType" value "docket:RecordDocketingMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 165506 "ServeProcessMessage"
@@ -8491,6 +9038,24 @@ ${members}};
     classdiagram 178050 "ServeProcessMessage"
       classdiagramsettings member_max_width 0 end
       size Letter-Landscape
+    end
+
+    classinstance 3149826 "ServeProcessMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 198658 // ServeProcessMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -8565,6 +9130,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "A message requesting information concerning the persons entitled to services of filings in a particular court case, together with the electronic addresses and message profiles of their Filing Assembly MDEs and their physical addresses if they are not currently using a Filing Assembly MDE."
       size Letter-Landscape
+    end
+
+    classinstance 3149954 "ServiceInformationQueryMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 142210 // ServiceInformationQueryMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "serviceinformationquery:ServiceInformationQueryMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "serviceinformationquery:ServiceInformationQueryMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "serviceinformationquery:ServiceInformationQueryMessage"
+      key "niem-profile:niem:BaseType" value "serviceinformationquery:ServiceInformationQueryMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -8653,6 +9236,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "The response to a serviceInformationQueryMessage, setting forth the requested information."
       size Letter-Landscape
+    end
+
+    classinstance 3150082 "ServiceInformationResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 142338 // ServiceInformationResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "serviceinformationresponse:ServiceInformationResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "serviceinformationresponse:ServiceInformationResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "serviceinformationresponse:ServiceInformationResponseMessage"
+      key "niem-profile:niem:BaseType" value "serviceinformationresponse:ServiceInformationResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 
@@ -8811,6 +9412,24 @@ ${members}};
       classdiagramsettings member_max_width 0 end
       comment "A synchronous response by a Filing Assembly MDE acknowledging receipt of a service message for one of its clients."
       size Letter-Landscape
+    end
+
+    classinstance 3150210 "ServiceReceiptMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 142082 // ServiceReceiptMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "ServiceReceiptMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "cbrn:MessageStatus"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "cbrn:MessageStatus"
+      key "niem-profile:niem:BaseType" value "cbrn:MessageStatusType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 end

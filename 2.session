@@ -1,11 +1,10 @@
-window_sizes 2714 1684 739 1969 1615 0
+window_sizes 2011 1021 739 1266 952 0
 cleanlooks_style
-selected 
-  package_ref 129 // ecf-5.0
+selected classinstance_ref 3159554 // CriminalCaseInformation
 open
+  classview_ref 155522 // CivilCase
+  classview_ref 155650 // CriminalCase
   
-  package_ref 168066 // CIM
-  
-  package_ref 174850 // PIM
+  package_ref 174594 // PIM
 end
 end

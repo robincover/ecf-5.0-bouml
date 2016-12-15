@@ -1,6 +1,6 @@
 format 212
 "Classes" // CIM::Classes
-  revision 56
+  revision 57
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -498,6 +498,7 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
+
     end
 
     class 146562 "Error"

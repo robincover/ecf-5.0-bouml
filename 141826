@@ -1,6 +1,6 @@
 format 212
 "CaseTypeSpecificMessages" // CIM::CaseTypeSpecificMessages
-  revision 64
+  revision 65
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1359,7 +1359,7 @@ BankruptcyCase/Debtor.Organization"
       end
     end
 
-    classdiagram 134530 "BankrupctyCase"
+    classdiagram 134530 "BankruptcyCase"
       classdiagramsettings member_max_width 0 end
       comment "A refernce to a party (person or organization) in the Review Filing message on whose behalf, or against whom, a bankruptcy petition is filed."
       size Letter-Landscape
@@ -3652,6 +3652,24 @@ BankruptcyCase/Debtor.Organization"
       comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
       size Letter-Landscape
     end
+
+    classinstance 3159426 "CivilCaseInformation"
+      stereotype "niem-profile:niem"
+      type class_ref 138370 // CivilCaseInformation
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "civil:CaseAugmentation"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "civil:CaseAugmentation"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "civil:CaseAugmentation"
+      key "niem-profile:niem:BaseType" value "civil:CaseAugmentationType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
   end
 
   classview 155650 "CriminalCase"
@@ -5050,6 +5068,24 @@ BankruptcyCase/Debtor.Organization"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       comment "Information required to initiate a new criminal case in a court.  \"Criminal\" includes felonies and misdemeanors."
       size Letter-Landscape
+    end
+
+    classinstance 3159554 "CriminalCaseInformation"
+      stereotype "niem-profile:niem"
+      type class_ref 143618 // CriminalCaseInformation
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "criminal:CaseAugmentation"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "criminal:CaseAugmentation"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "criminal:CaseAugmentation"
+      key "niem-profile:niem:BaseType" value "criminal:CaseAugmentationType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
     end
   end
 

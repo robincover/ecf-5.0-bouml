@@ -1,4 +1,4 @@
-format 209
+format 212
 
 classcanvas 128002 class_ref 135938 // FilingPayment
   classdiagramsettings hide_attributes yes member_max_width 0 show_infonote yes end
@@ -8,7 +8,7 @@ classcanvas 128002 class_ref 135938 // FilingPayment
     end
     "See PaymentMessage
 "
-      xyzwh 504 103 2000 182 57
+      xyzwh 507 107 2000 195 85
 end
 line 128258 -_-_
   from ref 128002 z 2001 to ref 128130
