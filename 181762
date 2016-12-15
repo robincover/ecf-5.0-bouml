@@ -1,6 +1,6 @@
 format 212
 "NIEMSubset" // PIM::NIEMSubset
-  revision 5
+  revision 2
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -4848,9 +4848,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/local,abstract"
-      key "Notes" value ""
       comment "abstract type"
     end
   end

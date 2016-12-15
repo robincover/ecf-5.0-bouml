@@ -1,6 +1,6 @@
 format 212
 "NIEMExtension" // PIM::NIEMExtension
-  revision 5
+  revision 2
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -50,9 +50,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellantInCustodyIndicator"
-      key "Notes" value ""
       comment "Indicator that the appellant is currently in custody."
     end
 
@@ -66,9 +65,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCaseAddedPartyType"
-      key "Notes" value ""
       comment "Party added to the appeal that was not  a party in the original case.  For instance, the attorney in the original case may appeal sanctions against the attorney by the court."
       classrelation 1259394 // <generalisation>
 	relation 1257218 ---|>
@@ -264,9 +262,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCaseJurisdictionBasisText"
-      key "Notes" value ""
       comment "The basis for the jurisdiction of the appellate court in the case."
     end
 
@@ -276,9 +273,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCaseParty"
-      key "Notes" value ""
       comment "An identifier assigned to a party being added to the appeal."
     end
 
@@ -288,9 +284,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCasePartyAddedReasonText"
-      key "Notes" value ""
       comment "The reason a party is being added to the appeal."
     end
 
@@ -300,9 +295,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCasePartyRemovedReasonText"
-      key "Notes" value ""
       comment "The reason a party is being removed from the appeal."
     end
 
@@ -312,9 +306,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCaseRemovedParty"
-      key "Notes" value ""
       comment "Party to the original case that is not party to the appeal."
     end
 
@@ -376,9 +369,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCaseSettlementRequestText"
-      key "Notes" value ""
       comment "A request for diversion to a settlement program in the appellate court."
     end
 
@@ -388,9 +380,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCivilCase"
-      key "Notes" value ""
       comment "Additional information specific to civil appellate cases."
     end
 
@@ -404,9 +395,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCivilCaseType"
-      key "Notes" value ""
       comment "Additional information specific to civil appellate cases."
       classrelation 1259522 // <generalisation>
 	relation 1257346 ---|>
@@ -437,9 +427,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCourtRuleCase"
-      key "Notes" value ""
       comment "Additional information specific to court rule appellate cases."
     end
 
@@ -453,9 +442,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,AppellateCourtRuleCaseType"
-      key "Notes" value ""
       comment "Additional information specific to court rule appellate cases."
       classrelation 1259650 // <generalisation>
 	relation 1257474 ---|>
@@ -513,9 +501,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,FeesWaivedIndicator"
-      key "Notes" value ""
       comment "Indicator that filing fees were waived or deferred in the case in the lower court."
     end
 
@@ -525,9 +512,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,OriginalCaseTrialCategoryText"
-      key "Notes" value ""
       comment "The type of trial in the lower court (e.g. bench, jury)."
     end
 
@@ -537,9 +523,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,RuleCollectionNumber"
-      key "Notes" value ""
       comment "An organized set or book of rules of the court that include the rule(s) in question."
     end
 
@@ -549,9 +534,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/appellate,RuleCollectionText"
-      key "Notes" value ""
       comment "A rule number (including rule subsection) in question.  Each rule number must refer to a specific rule within the rule collection."
     end
   end
@@ -580,9 +564,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/caselistquery,CaseListQueryCaseParticipant"
-      key "Notes" value ""
       comment "Information describing a participant when a query seeks information about the cases in which the person or organization is a participant."
     end
 
@@ -644,9 +627,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/caselistquery,CaseListQueryTimeRange"
-      key "Notes" value ""
       comment " The beginning and ending filing dates/times of cases about which information is sought in this query."
     end
   end
@@ -679,9 +661,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/caselistresponse,CaseListResponseMessageType"
-      key "Notes" value ""
       comment "A synchronous response to a GetCaseListQueryMessage.
 "
       classrelation 1254658 // <generalisation>
@@ -732,9 +713,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,CalendarEventTimeRange"
-      key "Notes" value ""
       comment "A filter criterion for calendar events. If present, the response should only include calendar events that fall between the from and to dates and times."
     end
 
@@ -744,9 +724,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,CalendarEventTypeCodeFilterText"
-      key "Notes" value ""
       comment "Filter criterion indicating that only calendar entries of a specified type are being requested."
     end
 
@@ -756,9 +735,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,CaseQueryCriteria"
-      key "Notes" value ""
       comment "Criteria limiting the case information to be returned."
     end
 
@@ -772,9 +750,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,CaseQueryCriteriaType"
-      key "Notes" value ""
       comment "Criteria limiting the case information to be returned."
       classrelation 1254786 // <generalisation>
 	relation 1252610 ---|>
@@ -899,9 +876,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,CaseQueryMessageType"
-      key "Notes" value ""
       comment "A message requesting a list of cases from a court case management information system conforming to the parameter or parameters identified in the message."
       classrelation 1254914 // <generalisation>
 	relation 1252738 ---|>
@@ -932,9 +908,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,DocketEntryTimeRange"
-      key "Notes" value ""
       comment "A filter criterion for docket entries. If present, the response should only include docket entries that fall between the from and to dates and times."
     end
 
@@ -944,9 +919,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,DocketEntryTypeCodeFilterText"
-      key "Notes" value ""
       comment "Filter criterion indicating that only docket entries of a specified type are being requested."
     end
 
@@ -956,9 +930,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,IncludeCalendarEventIndicator"
-      key "Notes" value ""
       comment "Indicates whether requester wishes calendar event information to be included in the response."
     end
 
@@ -968,9 +941,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,IncludeDocketEntryIndicator"
-      key "Notes" value ""
       comment "Indicates whether requester wishes docket entry information to be included in the response."
     end
 
@@ -980,9 +952,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/casequery,IncludeParticipantsIndicator"
-      key "Notes" value ""
       comment "Indicates whether requester wishes participant information to be included in the response."
     end
   end
@@ -1015,9 +986,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/caseresponse,CaseResponseMessageType"
-      key "Notes" value ""
       comment "The response to a GetCaseInformationQuery.
 "
       classrelation 1255426 // <generalisation>
@@ -1072,9 +1042,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/citation,CitationAugmentationType"
-      key "Notes" value ""
       comment "Representation of when the offender is required to appear in court on this citation."
       attribute 1530370 "CourtAppearance"
 	public type class_ref 1481858 // CourtAppearanceType
@@ -1132,9 +1101,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/citation,DrivingIncidentAugmentationType"
-      key "Notes" value ""
       comment "A monetary amount of property damage done during the incident."
       attribute 1530626 "ItemTotalDamageValue"
 	public type class_ref 1483138 // ItemValueType
@@ -1173,9 +1141,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/citation,ParkingMeterSpaceNumber"
-      key "Notes" value ""
       comment "An identifier for a parking space or meter."
     end
 
@@ -1185,9 +1152,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/citation,RedLightCameraIndicator"
-      key "Notes" value ""
       comment "An indicator that a automated camera was used to detect traffic signal violations."
     end
 
@@ -1201,9 +1167,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/citation,SubjectAugmentationType"
-      key "Notes" value ""
       comment "A blood-alcohol percentage reading from a Blood Alcohol Test (BAC Test). A blank value represents not tested."
       attribute 1530882 "PersonBloodAlcoholContentNumberText"
 	public type class_ref 1472258 // TextType
@@ -1460,9 +1425,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,CivilClassActionIndicator"
-      key "Notes" value ""
       comment "Whether the filer is requesting that this case proceed as a class action."
     end
 
@@ -1472,9 +1436,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,DecedentEstateCase"
-      key "Notes" value ""
       comment "Information about a case administering and distributing the assets of a testate or intestate decedent."
     end
 
@@ -1551,9 +1514,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,FiduciaryCase"
-      key "Notes" value ""
       comment "InfInformation about a guardianship, conservatorship, trust, or mental health case."
     end
 
@@ -1567,9 +1529,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,FiduciaryCaseType"
-      key "Notes" value ""
       comment "Information about a guardianship, conservatorship, trust, or mental health case."
       classrelation 1260162 // <generalisation>
 	relation 1257986 ---|>
@@ -1600,9 +1561,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,FiduciaryTypeCode"
-      key "Notes" value ""
       comment "Legal description of the role of the fiduciary.  This is needed in addition to the Case Role Code (in the Review Filing message structure) because that code only defines the roles of other actors and other parties; the fiduciary per the specification is the initiating party. Examples: guardian, trustee, conservator of the person, conservator of the estate."
     end
 
@@ -1612,9 +1572,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,JurisdictionalGroundsCode"
-      key "Notes" value ""
       comment "The grounds for invoking the jurisdiction of a limited jurisdiction court.  Allowed values set forth in Court policy. Not used in general jurisdiction courts."
     end
 
@@ -1624,9 +1583,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,JuryDemandIndicator"
-      key "Notes" value ""
       comment "Whether filer invokes the right to trial by jury."
     end
 
@@ -1636,9 +1594,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,ReliefTypeCode"
-      key "Notes" value ""
       comment "Indicator of the type of relief requested in the case, e.g., damages, equitable relief (injunction).  Allowable values defined in Court Policy."
     end
 
@@ -1648,9 +1605,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/civil,WillFilingDate"
-      key "Notes" value ""
       comment "Date on which the will of the decesaed person was filed in the court."
     end
   end
@@ -1683,9 +1639,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/core,CoreFilingMessageType"
-      key "Notes" value ""
       comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
       classrelation 1255554 // <generalisation>
 	relation 1253378 ---|>
@@ -1746,9 +1701,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/core,FilingConnectedDocument"
-      key "Notes" value ""
       comment "A document included in a Filing that supports the Document.  This document is not separately entered on the docket or register of actions."
     end
 
@@ -1758,9 +1712,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/core,FilingLeadDocument"
-      key "Notes" value ""
       comment "The pleading, motion or order that is the main document in a Filing. A Document may have Attachments."
     end
 
@@ -1770,9 +1723,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/core,ReviewFilingMessage"
-      key "Notes" value ""
       comment "The filing transaction for which fees are to be calculated."
     end
   end
@@ -1807,7 +1759,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/criminal,CaseAugmentationType"
-      key "Notes" value "; Include nc:CaseAugmentationPoint"
+      key "Notes" value "Include nc:CaseAugmentationPoint"
       comment "A sentence associated with a specific charge in a case. A sentence may have multiple components (prison, probation, post-incarceration supervision/probation fine, etc.)."
       attribute 1529858 "Sentence"
 	public type class_ref 1481730 // SentenceType
@@ -1937,9 +1889,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/criminal,PreliminaryHearingEstimatedDuration"
-      key "Notes" value ""
       comment "The prosecutor estimate of the time that will be required to conduct a preliminary hearing."
     end
 
@@ -1949,9 +1900,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/criminal,ProsecutionRecommendedBailText"
-      key "Notes" value ""
       comment "The bail amount recommended by the prosecutor.
 "
     end
@@ -2023,9 +1973,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/docket,CorrectedCoreFiling"
-      key "Notes" value ""
       comment "The complete CoreFilingMessage sumbitted for review with any corrections applied by the clerk prior to accepting into the court record."
     end
 
@@ -2035,9 +1984,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/docket,FilingReviewCommentsText"
-      key "Notes" value ""
       comment "Comments provided by the clerk to the court record system during review."
     end
 
@@ -2143,9 +2091,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/docket,ReviewedConnectedDocument"
-      key "Notes" value ""
       comment "This association will be present for each document that the clerk review process approves for sending to the court record system (where it may be rejected or recorded.)"
     end
 
@@ -2237,9 +2184,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/docket,ReviewedLeadDocument"
-      key "Notes" value ""
       comment "This association will be present for each document that the clerk review process approves for sending to the court record system (where it may be rejected or recorded.)"
     end
 
@@ -2249,9 +2195,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/docket,SealCaseIndicator"
-      key "Notes" value ""
       comment "Instruction from the clerk to the court record to represent this case as \"sealed.\""
     end
   end
@@ -2284,9 +2229,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/docketcallback,NotifyDocketingCompleteMessageType"
-      key "Notes" value ""
       comment "The message returned from the Court Record MDE to the Filing Review MDE when the functions of entering information onto the docket or register of actions and commiting a filed document(s) to the official court record have been completed, conveying the results of those functions."
       classrelation 1258242 // <generalisation>
 	relation 1256066 ---|>
@@ -2554,9 +2498,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,CaseContestedIndicator"
-      key "Notes" value ""
       comment "Whether a divorce is contested."
     end
 
@@ -2645,9 +2588,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,ChildSuportText"
-      key "Notes" value ""
       comment "Description of temporary child support award that the court is being asked to order."
     end
 
@@ -2657,9 +2599,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,CourtFindingsText"
-      key "Notes" value ""
       comment "A description of the findings of the court."
     end
 
@@ -2669,9 +2610,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,CustodyDescriptionText"
-      key "Notes" value ""
       comment "Description of temporary custody award that court is being asked to include in the order."
     end
 
@@ -2681,9 +2621,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,DomesticCaseOrderTypeText"
-      key "Notes" value ""
       comment "Category of order, including Establish, Modify, Enforce, Modify and Enforce, and Vacate."
     end
 
@@ -2693,9 +2632,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,DomesticCasePerson"
-      key "Notes" value ""
       comment " Information about persons in this domestic case."
     end
 
@@ -2705,9 +2643,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,DomesticViolencePetition"
-      key "Notes" value ""
       comment "Information concerning a petition for domestic violence restraining or protective order."
     end
 
@@ -2721,9 +2658,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,DomesticViolencePetitionType"
-      key "Notes" value ""
       comment "Information concerning a petition for domestic violence restraining or protective order."
       classrelation 1260418 // <generalisation>
 	relation 1258242 ---|>
@@ -2844,9 +2780,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,FinancialObligation"
-      key "Notes" value ""
       comment "A responsibility of a party in a case ordered by a court."
     end
 
@@ -2860,9 +2795,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,FinancialObligationType"
-      key "Notes" value ""
       comment "A financial responsibility of a party in a case ordered by a court."
       classrelation 1260546 // <generalisation>
 	relation 1258370 ---|>
@@ -2923,9 +2857,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,IncomeAttachedIndicator"
-      key "Notes" value ""
       comment "Indicates whether the responsible party income should be attached."
     end
 
@@ -2935,9 +2868,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,NoContactCode"
-      key "Notes" value ""
       comment "Means of communication with initiating party that the court is being asked to prohibit.  Allowed values to be set forth in Court Policy."
     end
 
@@ -2947,9 +2879,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,ObligationPaymentAmount"
-      key "Notes" value ""
       comment "he amount owed each payment period."
     end
 
@@ -2959,9 +2890,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,RequestToVacateCode"
-      key "Notes" value ""
       comment "Designation of place that abuser will be ordered to vacate.  Allowable values to be set forth in Court Policy."
     end
 
@@ -2971,9 +2901,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,RequestToVacateText"
-      key "Notes" value ""
       comment "Open text designation of place that abuser will be ordered to vacate.  This should contain a description of the place, and its location."
     end
 
@@ -2983,9 +2912,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,RespondentDangerAlertindicator"
-      key "Notes" value ""
       comment "Whether the person against whom a proposed order would be entered should be considered a danger to others, including law enforcement officers responding to a domestic disturbance call."
     end
 
@@ -2995,9 +2923,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/domestic,StayawayDistanceText"
-      key "Notes" value ""
       comment "Description of the distance abuser must maintain from abused person(s)."
     end
   end
@@ -3026,9 +2953,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,AffectedPartyID"
-      key "Notes" value ""
       comment "Identifier recognized by the court as being unique within this case,and used to identify a party other than the filer who is affected by the document."
     end
 
@@ -3044,7 +2970,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/ecf,CaseAugmentationType"
-      key "Notes" value "; Is this redundant with other persons/organizations in the case (e.g. CaseOtherEntity)?"
+      key "Notes" value "Is this redundant with other persons/organizations in the case (e.g. CaseOtherEntity)?"
       comment "An official name of a Case.  No title exists when the message is initiating a new case."
       attribute 1515266 "CaseShortTitleText"
 	public type class_ref 1472258 // TextType
@@ -3155,9 +3081,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CaseOtherEntityAttorney"
-      key "Notes" value ""
       comment "Attorney representing an \"other party\" in this case."
     end
 
@@ -3179,9 +3104,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CaseParticipantRoleCode"
-      key "Notes" value ""
       comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust).
 "
     end
@@ -3260,9 +3184,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CaseShortTitleText"
-      key "Notes" value ""
       comment "An official name of a Case.  No title exists when the message is initiating a new case."
     end
 
@@ -3272,9 +3195,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CauseOfActionCode"
-      key "Notes" value ""
       comment "The legal ground on which the request for relief is based.  Allowed values set forth in court policy. Example: the basis(es) for relief in a civil case; the grounds for divorce in a state that does not recognize no-fault divorce; grounds for entry of an order of protection in a domestic violence case."
     end
 
@@ -3284,9 +3206,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ChildDocket"
-      key "Notes" value ""
       comment "An entry on the docket or register of actions that is a child of the current docket entry."
     end
 
@@ -3296,9 +3217,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ColorRelevantIndicator"
-      key "Notes" value ""
       comment "Indicates whether color is or is not relevant for the presentation of the document."
     end
 
@@ -3308,9 +3228,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ConnectedDocument"
-      key "Notes" value ""
       comment "The pleading, motion or order that is the subject of this docket entry."
     end
 
@@ -3320,9 +3239,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventActor"
-      key "Notes" value ""
       comment " The actor who performed the action as set forth in the docket entry."
     end
 
@@ -3336,9 +3254,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventActorType"
-      key "Notes" value ""
       comment "The actor who performed the action as set forth in the docket entry. E.g. the person who filed the document.  Does not include the name of the court clerk composing the docket entry."
       classrelation 1255170 // <generalisation>
 	relation 1252994 ---|>
@@ -3373,9 +3290,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventAugmentationType"
-      key "Notes" value ""
       comment "A code referring to the location in a court of the calendar event."
       attribute 1516674 "CourtEventLocationCode"
 	public type class_ref 1472258 // TextType
@@ -3504,9 +3420,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventEnteredOnDocketDate"
-      key "Notes" value ""
       comment "Date and time of entry into the court record."
     end
 
@@ -3516,9 +3431,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventLocationCode"
-      key "Notes" value ""
       comment "A code referring to the location in a court of the calendar event."
     end
 
@@ -3528,9 +3442,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventLocationText"
-      key "Notes" value ""
       comment "A textual description of the location in a court of the calendar event."
     end
 
@@ -3540,9 +3453,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventOnBehalfOfActor"
-      key "Notes" value ""
       comment "The actor on whose behalf the filing was submitted to the court as set forth in the docket entry."
     end
 
@@ -3589,9 +3501,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,CourtEventTypeCode"
-      key "Notes" value ""
       comment "Code to categorize the docket entry. E.g. motion, hearing, complaint. Allowable values set forth in court policy."
     end
 
@@ -3601,9 +3512,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,Document"
-      key "Notes" value ""
       comment "The pleading, motion or order that is returned in this response."
     end
 
@@ -3619,7 +3529,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/ecf,DocumentAugmentationType"
-      key "Notes" value "; Make Document metadata and rendition in FilingLeadDocuments optional.; Include nc:DocumentAugmentationPoint, nc:DocumentBinary"
+      key "Notes" value "Make Document metadata and rendition in FilingLeadDocuments optional.; Include nc:DocumentAugmentationPoint, nc:DocumentBinary"
       comment "A document included in a Filing that supports the lead Document. This document is not separately entered on the docket or register of actions."
       attribute 1517954 "ConnectedDocument"
 	public type class_ref 1474306 // DocumentType
@@ -3899,9 +3809,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,DocumentHash"
-      key "Notes" value ""
       comment "A hash of the document as it appears in the court record.  This attribute will be populated by either the clerk review process or the court record system.  If the latter, then it will be absent in the RecordDocketingMessage.  It will also be absent in callbacks for rejected documents."
     end
 
@@ -3923,9 +3832,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,DocumentSignature"
-      key "Notes" value ""
       comment "Information describing or constituting the signature on a document submitted to a court for filing"
     end
 
@@ -3939,9 +3847,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,DocumentSignatureType"
-      key "Notes" value ""
       comment "Information describing or constituting the signature on a document submitted to a court for filing."
       classrelation 1255682 // <generalisation>
 	relation 1253506 ---|>
@@ -3987,9 +3894,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ElectronicServiceInformation"
-      key "Notes" value ""
       comment "Information needed by the filing assembly MDE to electronically serve this organization with a copy of a filing."
     end
 
@@ -4003,9 +3909,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ElectronicServiceInformationType"
-      key "Notes" value ""
       comment "Information provided by the filing assembly MDE to the court identifying the persons being served electronically with a copy of this document. This information can constitute the certificate of service for service performed electronically. This information is also provided by the filing assembly MDE to service MDEs to identify persons to whom the service MDEs are required to deliver the filing."
       classrelation 1255810 // <generalisation>
 	relation 1253634 ---|>
@@ -4079,9 +3984,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,FeeExceptionReasonCode"
-      key "Notes" value ""
       comment "A code for the reason why a filer does not have to pay an otherwise applicable payment.  Allowable values set forth in Court Policy. Examples are in forma pauperis status granted or a fee waiver application submitted with the filing.."
     end
 
@@ -4091,9 +3995,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,FeeExceptionSupportingText"
-      key "Notes" value ""
       comment "Any text needed to support the exemption assertion (reference to a court order, etc.)"
     end
 
@@ -4103,9 +4006,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,FilingAttorneyID"
-      key "Notes" value ""
       comment "Identifier recognized by the court as being unique within this case,and used to identify the attorney who is filing this document.  Not present for pro se litigants."
     end
 
@@ -4115,9 +4017,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,FilingCompletionDate"
-      key "Notes" value ""
       comment "the date and time at which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
     end
 
@@ -4127,9 +4028,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,FilingPartyID"
-      key "Notes" value ""
       comment "Identifier recognized by the court as being unique within this case,and used to identify the party on whose behalf this document is being filed."
     end
 
@@ -4155,9 +4055,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,IncidentAugmentationType"
-      key "Notes" value ""
       comment "Code indicating the existence of a factor that, under state law, heightens the seriousness of the charge and would subject an adult to increase punishment. Allowable values set forth in Court Policy. Examples: Use of deadly weapon, use of gun."
       attribute 1536642 "ChargeSpecialAllegationText"
 	public type class_ref 1472258 // TextType
@@ -4185,9 +4084,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,InsuranceType"
-      key "Notes" value ""
       comment "Insurance coverage for an individual."
       classrelation 1260674 // <generalisation>
 	relation 1258498 ---|>
@@ -4274,9 +4172,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,OrganizationAugmentationType"
-      key "Notes" value ""
       comment "Information needed by the filing assembly MDE to electronically serve this organization with a copy of a filing."
       attribute 1521410 "ElectronicServiceInformation"
 	public type class_ref 1492098 // ElectronicServiceInformationType
@@ -4300,9 +4197,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,PayerNameText"
-      key "Notes" value ""
       comment "Name of the payer of the FilingPayment."
     end
 
@@ -4316,9 +4212,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,PersonAssociationAugmentationType"
-      key "Notes" value ""
       comment "A code for the type of relationship between two persons, between two organizations, or between a person and an organization in a case.  Allowable values are set forth in Court Policy.  Examples include parent/child, subsidiary corporation, and chief executive officer."
       attribute 1522178 "EntityAssociationTypeCode"
 	public type class_ref 1472258 // TextType
@@ -4346,9 +4241,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,PersonAugmentationType"
-      key "Notes" value ""
       comment "Information useable to contact this person, such as address, telephone number(s), and email address."
       attribute 1521666 "ContactInformation"
 	public type class_ref 1478018 // ContactInformationType
@@ -4463,9 +4357,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,PersonOrganizationAssociationAugmentationType"
-      key "Notes" value ""
       comment "A code for the type of relationship between two persons, between two organizations, or between a person and an organization in a case.  Allowable values are set forth in Court Policy.  Examples include parent/child, subsidiary corporation, and chief executive officer."
       attribute 1522050 "EntityAssociationTypeCode"
 	public type class_ref 1472258 // TextType
@@ -4493,9 +4386,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,QueryMessageType"
-      key "Notes" value ""
       comment "A query message."
       classrelation 1259266 // <generalisation>
 	relation 1257090 ---|>
@@ -4515,9 +4407,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,QueryResponseMessageType"
-      key "Notes" value ""
       comment "A message returned in response to a message or query."
       classrelation 1259138 // <generalisation>
 	relation 1256962 ---|>
@@ -4533,9 +4424,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ReceivingMDELocationID"
-      key "Notes" value ""
       comment "The location of the filing assembly MDE associated with the person receiving service."
     end
 
@@ -4545,9 +4435,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,ReceivingMDEProfileCode"
-      key "Notes" value ""
       comment "Code identifying the service interaction profile being used by the receiving filing assembly MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF.
 "
     end
@@ -4558,9 +4447,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,RedactedIndicator"
-      key "Notes" value ""
       comment "An indicator that sensitive information has been removed from this rendition of the document.  "
     end
 
@@ -4570,9 +4458,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,RedactionRequiredIndicator"
-      key "Notes" value ""
       comment "Indicator by the filer that the document must be redacted nu the court."
     end
 
@@ -4586,9 +4473,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,RelatedActivityAssocationAugmentationType"
-      key "Notes" value ""
       comment "Nature of the relationship between the current case and the related case.  Allowable values to be set forth in Court Policy. Examples: associated, consolidated, related."
       attribute 1522306 "RelatedCaseAssociationTypeCode"
 	public type class_ref 1472258 // TextType
@@ -4612,9 +4498,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,RelatedCaseAssociationTypeCode"
-      key "Notes" value ""
       comment "Nature of the relationship between the current case and the related case.  Allowable values to be set forth in Court Policy. Examples: associated, consolidated, related."
     end
 
@@ -4624,9 +4509,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,SealDocumentIndicator"
-      key "Notes" value ""
       comment "Clerk instruction to court record system to seal this document."
     end
 
@@ -4636,9 +4520,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,SendingMDELocationID"
-      key "Notes" value ""
       comment "Location for the MDE to which asynchronous and service messages can be sent. This unique location is self-assigned by the MDE."
     end
 
@@ -4648,9 +4531,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,SendingMDEProfileCode"
-      key "Notes" value ""
       comment "Code identifying the service interaction profile being used by the sending filing assembly MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF."
     end
 
@@ -4662,7 +4544,7 @@ format 212
         end
       ncouples 2
       key "URI" value "http://local/ecf,ServiceRecipeintID"
-      key "Notes" value "; Include cbrn:MessageStatusAugmentationPoint"
+      key "Notes" value "Include cbrn:MessageStatusAugmentationPoint"
       comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the submitterID for filings in this case, and asynchronous responses to filings."
     end
 
@@ -4672,9 +4554,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,Signature"
-      key "Notes" value ""
       comment "The data or information representing this signature.  It must be valid according to the profile identified by the associated signatureProfileIdentifier."
     end
 
@@ -4684,9 +4565,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,SignatureProfileID"
-      key "Notes" value ""
       comment "An identifier from the Court Filing specification that indicates the Signature Profile governing the structure of this signature."
     end
 
@@ -4696,9 +4576,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/ecf,SpecialHandlingInstructionsText"
-      key "Notes" value ""
       comment "Any additional instructions for printing of a document (such as printing on front and back of the same page or printing on a particular color paper).
 "
     end
@@ -4760,7 +4639,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/ecf,SubjectAugmentationType"
-      key "Notes" value "; Include j:SubjectSupervision, j:SubjectAugmentationPoint"
+      key "Notes" value "Include j:SubjectSupervision, j:SubjectAugmentationPoint"
       comment " A juvenile arrested."
       attribute 1532930 "Juvenile"
 	public type class_ref 1486978 // JuvenileType
@@ -4886,9 +4765,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/feescalculationquery,FeesCalculationQueryMessageType"
-      key "Notes" value ""
       comment "This query is a request for the total amount of court fees required for filing of one or more documents in a case.
 "
       classrelation 1257474 // <generalisation>
@@ -4939,9 +4817,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/feescalculationresponse,FeesCalculationAmount"
-      key "Notes" value ""
       comment "A total of all fees required to submit a document."
     end
 
@@ -4955,9 +4832,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/feescalculationresponse,FeesCalculationResponseMessageType"
-      key "Notes" value ""
       comment "The response to a CalculatedFeesQueryMessage, which may either be 0 indicating no fee is due, a currency amount indicating the fee due upon filing, or unknown indicating that the court case management information system is unable to calculate the fee for the proposed filing.
 "
       classrelation 1257602 // <generalisation>
@@ -5012,9 +4888,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/filinglistquery,FilingListQueryMessageType"
-      key "Notes" value ""
       comment "This is query to get a list of filings by Filer Identification, Case Identifier, or time period."
       classrelation 1257730 // <generalisation>
 	relation 1255554 ---|>
@@ -5098,9 +4973,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/filinglistresponse,FilingListResponseMessageType"
-      key "Notes" value ""
       comment "A court response to a FilingListQueryMessage."
       classrelation 1257858 // <generalisation>
 	relation 1255682 ---|>
@@ -5281,9 +5155,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/juvenile,JuvenileAugmentationType"
-      key "Notes" value ""
       comment "Indicator whether a minor has been adjudicated an emancipated person by a court."
       attribute 1536770 "PersonEmacipatedIndicator"
 	public type class_ref 1473538 // boolean
@@ -5326,9 +5199,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/juvenile,JuvenileCaseAugmentationType"
-      key "Notes" value ""
       comment "An action or behavior of a juvenile that makes the juvenile potentially subject to adjudication by the juvenile court as a delinquent."
       attribute 1537026 "DelinquentAct"
 	public type class_ref 1482114 // IncidentType
@@ -5386,9 +5258,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/juvenile,JuvenilePlacementOrganizationAssociationType"
-      key "Notes" value ""
       comment "An entity to whom the care of a juvenile is committed."
       classrelation 1260930 // <generalisation>
 	relation 1258754 ---|>
@@ -5419,9 +5290,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/juvenile,PersonEmacipatedIndicator"
-      key "Notes" value ""
       comment "Indicator whether a minor has been adjudicated an emancipated person by a court."
     end
 
@@ -5431,9 +5301,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/juvenile,PlacementOrganization"
-      key "Notes" value ""
       comment "The value of the Organization.ID property in the ReviewFiling message linking this organization to the appropriate other actor element."
     end
 
@@ -5459,9 +5328,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/juvenile,StatusOffenseActCodeType"
-      key "Notes" value ""
       comment "A list of status offenses."
       classrelation 1261058 // <generalisation>
 	relation 1258882 ---|>
@@ -5500,9 +5368,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/payment,PaymentType"
-      key "Notes" value ""
       comment "The payment submitted with a filing.  The payment may consist of a fee for filing of the document(s) submitted, or for a fine or other payment due to the court."
       classrelation 1258498 // <generalisation>
 	relation 1256322 ---|>
@@ -5627,9 +5494,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,CaseTypeCodeType"
-      key "Notes" value ""
       comment "A list of ECF case types."
       classrelation 1256962 // <generalisation>
 	relation 1254786 ---|>
@@ -5667,9 +5533,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,CourtCodelist"
-      key "Notes" value ""
       comment "The list of data elements and corresponding lists of valid codes for those elements used in this court."
     end
 
@@ -5685,7 +5550,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/policyresponse,CourtExtensionType"
-      key "Notes" value "; Include policyresponse:CourtExtension"
+      key "Notes" value "Include policyresponse:CourtExtension"
       comment "A structure representing the court-specific extensions for the court associated with this Court Policy."
       classrelation 1256322 // <generalisation>
 	relation 1254146 ---|>
@@ -5718,7 +5583,7 @@ format 212
         end
       ncouples 2
       key "URI" value "http://local/policyresponse,CourtExtensionURI"
-      key "Notes" value "; Include policyresponse:CourtExtension"
+      key "Notes" value "Include policyresponse:CourtExtension"
       comment "A structure representing the specific court extension."
     end
 
@@ -5734,7 +5599,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/policyresponse,CourtPolicyResponseMessageType"
-      key "Notes" value "; CourtPolicy should reference nc:Metadata"
+      key "Notes" value "CourtPolicy should reference nc:Metadata"
       comment "The response to a request for a court Court Policy."
       classrelation 1256450 // <generalisation>
 	relation 1254274 ---|>
@@ -5810,9 +5675,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,DevelopmentPolicyParameters"
-      key "Notes" value ""
       comment "The response to a request for a court Court Policy."
     end
 
@@ -5828,7 +5692,7 @@ format 212
       
       ncouples 2
       key "URI" value "http://local/policyresponse,DevelopmentPolicyParametersType"
-      key "Notes" value "; AllowedCodeValue should reference nc:Metadata"
+      key "Notes" value "AllowedCodeValue should reference nc:Metadata"
       comment "A structure representing a court-specific data structure passed to a particular operation on a particular MDE."
       classrelation 1256578 // <generalisation>
 	relation 1254402 ---|>
@@ -5946,9 +5810,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,ExpirationDate"
-      key "Notes" value ""
       comment "The date and time on which the value was or will be terminated."
     end
 
@@ -5962,9 +5825,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,OperationNameType"
-      key "Notes" value ""
       comment "A list of ECF operations."
       classrelation 1257090 // <generalisation>
 	relation 1254914 ---|>
@@ -5992,9 +5854,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,PolicyVersionID"
-      key "Notes" value ""
       comment "The version of court policy reported by this message.  Up to the court to define the format of this, and describe in human-readable court policy."
     end
 
@@ -6004,9 +5865,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,PublicKeyInformation"
-      key "Notes" value ""
       comment "Symmetric or asymmetric codes used by this court to encrypt and decrypt a message or document."
     end
 
@@ -6038,9 +5898,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,RuntimePolicyParameters"
-      key "Notes" value ""
       comment "Within Court Policy, the policies that are accessed dynamically by applications interacting with a court."
     end
 
@@ -6054,9 +5913,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,RuntimePolicyParametersType"
-      key "Notes" value ""
       comment "Within Court Policy, the policies that are accessed dynamically by applications interacting with a court."
       classrelation 1256834 // <generalisation>
 	relation 1254658 ---|>
@@ -6102,9 +5960,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,SupportedCaseType"
-      key "Notes" value ""
       comment "A structure containing indicators that signal support by the e-filing system for each ECF case type."
     end
 
@@ -6114,9 +5971,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,SupportedMessageProfileCode"
-      key "Notes" value ""
       comment "A message profile approved for use with ECF by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that are supported in a particualr court.  Identifiers for supported profiles are set forth in Court Policy."
     end
 
@@ -6126,9 +5982,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,SupportedOperationName"
-      key "Notes" value ""
       comment "A structure containing indicators that signal support by the e-filing system for optional ECF operations. E.g. particular queries."
     end
 
@@ -6138,9 +5993,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/policyresponse,SupportedSignatureProfileCode"
-      key "Notes" value ""
       comment "A signature profile approved for use with ECF 3.0 by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that are supported in a particualr court.  Identifiers for supported profiles are set forth in Court Policy."
     end
   end
@@ -6173,9 +6027,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/reviewfilingcallback,NotifyFilingReviewCompleteMessageType"
-      key "Notes" value ""
       comment "The asynchronous message from the Filing Review MDE to the Filing Assembly MDE conveying information concerning the court actions on the documents submitted for filing in a ReviewFilingMessage."
       classrelation 1258370 // <generalisation>
 	relation 1256194 ---|>
@@ -6214,9 +6067,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/serviceinformationquery,ServiceInformationQueryMessageType"
-      key "Notes" value ""
       comment "A message requesting information concerning the persons entitled to services of filings in a particular court case, together with the electronic addresses and message profiles of their Filing Assembly MDEs and their physical addresses if they are not currently using a Filing Assembly MDE."
       classrelation 1258882 // <generalisation>
 	relation 1256706 ---|>
@@ -6270,9 +6122,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/serviceinformationresponse,ServiceInformationResponseMessageType"
-      key "Notes" value ""
       comment "The response to a serviceInformationQueryMessage, setting forth the requested information."
       classrelation 1259010 // <generalisation>
 	relation 1256834 ---|>
@@ -6303,9 +6154,8 @@ format 212
         end
       relations
         end
-      ncouples 2
+      ncouples 1
       key "URI" value "http://local/serviceinformationresponse,ServiceRecipient"
-      key "Notes" value ""
       comment "The entity to be served in this case."
     end
   end

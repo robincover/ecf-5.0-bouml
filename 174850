@@ -1,6 +1,6 @@
 format 212
 "PIM" // PIM
-  revision 8
+  revision 10
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -31,5 +31,4 @@ format 212
   package_ref 181762 // NIEMSubset
 
   package_ref 181890 // NIEMExtension
-
 end
