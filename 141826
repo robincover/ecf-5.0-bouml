@@ -1,6 +1,6 @@
 format 212
 "CaseTypeSpecificMessages" // CIM::CaseTypeSpecificMessages
-  revision 65
+  revision 72
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -150,7 +150,7 @@ format 212
 	key "niem-profile:niem:Property" value "appellate:ApppellateCaseAddedParty"
 	key "niem-profile:niem:BaseType" value "appellate:AppellateCaseAddedPartyType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "Include j:AppellateCaseAutmentationPoint"
+	key "niem-profile:niem:Notes" value ""
       end
 
       attribute 214274 "appellantInCustodyIndicator"
@@ -215,7 +215,7 @@ format 212
 	key "niem-profile:niem:Property" value "nc:CaseDispositionFinalDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:AppellateCaseOriginalCase"
+	key "niem-profile:niem:Notes" value ""
 	comment "If the case has been terminated in the lower court, the date on which the case was disposed or dismissed.  In a criminal decision, this is the date of Judgment and Sentence.  In a civil decision, this is typically the date of the final Judgment determining all issues as to all parties."
       end
 
@@ -398,6 +398,51 @@ format 212
 	key "niem-profile:niem:Property" value "appellate:AppellateCaseRemovedParty"
 	key "niem-profile:niem:BaseType" value "appellate:AppellateCaseRemovedPartyType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 5929218 "caseExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value " j:AppellateCase/ j:AppellateCaseAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value " j:AppellateCase/ j:AppellateCaseAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:AppellateCaseType"
+	key "niem-profile:niem:Property" value " j:AppellateCaseAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a case."
+      end
+
+      attribute 5929346 "originalCase"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:AppellateCase/j:AppellateCaseOriginalCase"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "j:AppellateCase/j:AppellateCaseOriginalCase"
+	key "niem-profile:niem:Type" value "j:AppellateCaseType"
+	key "niem-profile:niem:Property" value "j:AppellateCaseOriginalCase"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
       end
     end
@@ -1402,7 +1447,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:CitationAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "A charge issued by a law enforcement officer for a \"violation\" requiring the person charged to plead guilty to the charge or to appear in court to contest the charge.  A citation is issued in lieu of an arrest and booking.  \"Violations\" are a subset of \"charges\" for which a law enforcement officer is authorized to issue a citation in lieu of arrest and booking.  Examples:  traffic ticket, parking ticket or ticket issued for some other ordinance violation such as barking dog or illegal dumping.
 "
       classrelation 182018 // <generalisation>
@@ -1714,6 +1759,29 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "The place where an alleged violation occurred."
       end
+
+      attribute 5929474 "caseExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:Citation/j:CitationAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:CitationType"
+	key "niem-profile:niem:Property" value "j:CitationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a case."
+      end
     end
 
     class 144130 "CitationAgency"
@@ -1734,7 +1802,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:OrganizationAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The law enforcement agency employing the law enforcement officer who issues a citation."
       attribute 168194 "lawEnforcementAgencyName"
 	public explicit_type "string"
@@ -1845,7 +1913,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "ecf:CitationCase includes ecf:CitationCaseAugmentation which includes j:CourtAppearance"
+      key "niem-profile:niem:Notes" value ""
       comment "Representation of when the offender is required to appear in court."
       attribute 173698 "timeOfCourtAppearance"
 	public type class_ref 156034 // dateTime
@@ -1995,7 +2063,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:IncidentType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:DrivingIncidentAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The incident from which a traffic ticket arose."
       attribute 169474 "accidentInvolvedIndicator"
 	public explicit_type "bool"
@@ -2270,6 +2338,29 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 5929602 "activityExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "citation:DrivingIncident/j:IncidentAugmentation"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:DrivingIncident/j:DrivingIncidentAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:DrivingIncidentType"
+	key "niem-profile:niem:Property" value "j:DrivingIncidentAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an activity."
+      end
     end
 
     class 147714 "ExtendedDriversLicenseInformation"
@@ -2285,12 +2376,12 @@ BankruptcyCase/Debtor.Organization"
       ncouples 8
       key "niem-profile:niem:OldXPath" value "nc:DrivingRestriction"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "j:DriverLicenseBase"
-      key "niem-profile:niem:Type" value "j:DriverLicenseBaseType"
+      key "niem-profile:niem:XPath" value "j:DriverLicense"
+      key "niem-profile:niem:Type" value "j:DriverLicenseType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:DrivingRestriction"
+      key "niem-profile:niem:Notes" value ""
       comment "Additional information about a drivers license."
       attribute 180738 "licenseIssueDate"
 	public type class_ref 128386 // date
@@ -2327,7 +2418,7 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:DriverLicenseBase/nc:DriverLicenseBase/nc:DrivingRestriction/nc:DrivingRestrictionCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:DriverLicenseBase/j:DrivingRestriction/j:CrashDrivingRestrictionCode"
+	key "niem-profile:niem:XPath" value "j:DriverLicenseBase/j:DriverLicenseRestriction/j:CrashDrivingRestrictionCode"
 	key "niem-profile:niem:Type" value "j:DrivingRestrictionType"
 	key "niem-profile:niem:Property" value "j:DrivingRestrictionValue, (j:CrashDrivingRestrictionCode)"
 	key "niem-profile:niem:BaseType" value "mmucc:DrivingRestrictionCodeType"
@@ -2349,7 +2440,7 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:DriverLicenseBase/nc:DrivingRestriction/nc:DrivingRestrictionEndDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:DriverLicenseBase/j:DrivingRestriction/j:DrivingRestrictionEndDate"
+	key "niem-profile:niem:XPath" value "j:DriverLicenseBase/j:DriverLicenseRestriction/j:DrivingRestrictionEndDate"
 	key "niem-profile:niem:Type" value "j:DrivingRestrictionType"
 	key "niem-profile:niem:Property" value "j:DrivingRestrictionEndDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
@@ -2371,13 +2462,36 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:DriverLicenseBase/nc:DriverLicenseBase/nc:DrivingRestriction/nc:DrivingRestrictionText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:DriverLicenseBase/j:DrivingRestriction/j:DrivingRestrictionText"
+	key "niem-profile:niem:XPath" value "j:DriverLicenseBase/j:DriverLicenseRestriction/j:DrivingRestrictionText"
 	key "niem-profile:niem:Type" value "j:DrivingRestrictionType"
 	key "niem-profile:niem:Property" value "j:DrivingRestrictionValue, (j:DrivingRestrictionText)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Text description of driving restrictions placed on a driver."
+      end
+
+      attribute 5929730 "licenseRestriction"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:DriverLicenseBase/nc:DrivingRestriction"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "j:DriverLicense/j:DriverLicenseRestriction"
+	key "niem-profile:niem:Type" value "j:DriverLicenseType"
+	key "niem-profile:niem:Property" value "j:DriverLicenseRestriction"
+	key "niem-profile:niem:BaseType" value "j:DrivingRestrictionType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A retriction to a driver license."
       end
     end
 
@@ -2399,7 +2513,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:SubjectAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "A person named in a citation alleged to have violated a statute or ordinance."
       attribute 172674 "bloodAlcoholContentNumber"
 	public explicit_type "float"
@@ -2480,6 +2594,29 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value "Add a specific element for filer ID?"
 	comment "The unique identifier assigned by the court at the time a person is first associated with a case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this element blank.  This identifier is used to link other information in the case to a particular person."
       end
+
+      attribute 5929858 "personExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "citation:CitationSubject/ecf:PersonAugmentation"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "j:CitationSubject/j:SubjectAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:SubjectType"
+	key "niem-profile:niem:Property" value "j:SubjectAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a person."
+      end
     end
 
     class 184834 "ParkingViolationInformation"
@@ -2500,7 +2637,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:CitationAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "Information about a parking violation."
       attribute 216706 "parkingMeterSpaceNumber"
 	public type class_ref 156162 // id
@@ -2648,7 +2785,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:VehicleType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:VehicleAugmentationPoint, nc:ConveyanceRegistrationPlateIdentification"
+      key "niem-profile:niem:Notes" value ""
       comment "Information describing a motor vehicle."
       classrelation 183938 // operatorInsurance (<directional aggregation>)
 	relation 181762 o-->
@@ -2905,6 +3042,52 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "A year which is assigned to a vehicle by the manufacturer."
       end
+
+      attribute 5929986 "vehicleExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Vehicle"
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Vehicle/nc:VehicleAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:VehicleType"
+	key "niem-profile:niem:Property" value "nc:VehicleAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a vehicle"
+      end
+
+      attribute 5930114 "vehicleRegistration"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Vehicle/nc:ConveyanceRegistrationPlateIdentification"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Vehicle/citation:VehicleAugmentation/j:ConveyanceRegistration"
+	key "niem-profile:niem:Type" value "citation:VehicleAugmentationType"
+	key "niem-profile:niem:Property" value "j:ConveyanceRegistration"
+	key "niem-profile:niem:BaseType" value "j:ConveyanceRegistationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A registration for a vehicle."
+      end
     end
 
     class 144642 "ViolatedStatute"
@@ -2925,7 +3108,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:Statute"
+      key "niem-profile:niem:Notes" value ""
       comment "The statutory or ordinance section a defendant or violator is alleged to have committed.  May include a probation violation.
 "
       attribute 171138 "offenseCodeBookName"
@@ -3037,11 +3220,34 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "The federal, state, county, municipal, or other public entity under whose authority the statute or ordinance was enacted."
       end
+
+      attribute 6173186 "statute"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:ViolatedStatuteAssociation/j:StatuteReference"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:ViolatedStatuteAssociation/j:Statute"
+	key "niem-profile:niem:Type" value "j:ViolatedStatuteAssociationType"
+	key "niem-profile:niem:Property" value "j:Statute"
+	key "niem-profile:niem:BaseType" value "j:StatuteType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A statute violated."
+      end
     end
 
     classdiagram 134658 "CitationCase"
       classdiagramsettings member_max_width 0 end
-      size Letter-Landscape
+      size D-Landscape
     end
   end
 
@@ -3107,7 +3313,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "civil:AmountInControversy"
 	key "niem-profile:niem:BaseType" value "nc:AmountType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Include nc:CaseAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "The amount set forth in an ad damnum clause in a complaint, counter claim, or cross complaint."
       end
 
@@ -3313,14 +3519,14 @@ BankruptcyCase/Debtor.Organization"
       mysql_decl ""
       
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "DecedentEstateCase"
+      key "niem-profile:niem:OldXPath" value "civil:DecedentEstateCase"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "civil:DecedentEstateCase"
       key "niem-profile:niem:Type" value "civil:DecedentEstateCaseType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include civil:Decendent based on nc:PersonType"
+      key "niem-profile:niem:Notes" value ""
       comment "Information about a case administering and distributing the assets of a testate or intestate decedent."
       attribute 153602 "dateOfDeath"
 	public type class_ref 128386 // date
@@ -3386,6 +3592,23 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The name of the deceased person."
+      end
+
+      classrelation 3264770 // decedent (<directional aggregation>)
+	relation 3262594 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "decedent" multiplicity "1" public
+	    classrelation_ref 3264770 // decedent (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131842 // Person
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "civil:DecedentEstateCase/civil:Decedent"
+	key "niem-profile:niem:Type" value "civil:DecedentEstateCaseType"
+	key "niem-profile:niem:Property" value "civil:Decedent"
+	key "niem-profile:niem:BaseType" value "nc:PersonType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -3488,7 +3711,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:PersonBirthDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Include nc:PersonAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "The date on which a person was born."
       end
 
@@ -3650,7 +3873,7 @@ BankruptcyCase/Debtor.Organization"
     classdiagram 134786 "CivilCase"
       classdiagramsettings member_max_width 0 end
       comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
-      size Letter-Landscape
+      size A
     end
 
     classinstance 3159426 "CivilCaseInformation"
@@ -3661,12 +3884,12 @@ BankruptcyCase/Debtor.Organization"
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "civil:CaseAugmentation"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "civil:CaseAugmentation"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "civil:CaseAugmentation"
-      key "niem-profile:niem:BaseType" value "civil:CaseAugmentationType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -3816,7 +4039,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "j:OrganizationIdentification, (j:OrganizationORIIdentification)"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:Arrest/j:ArrestAgency"
+	key "niem-profile:niem:Notes" value ""
 	comment "An alphanumeric identifier issued by the FBI to identify a specific criminal justice agency, in this instance the law enforcement agency which made the arrest. (Ex.  AZ0071300, etc.)"
       end
 
@@ -3932,7 +4155,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "j:WarrantExtraditionLimitation, (j:WarrantExtraditionLimitationCode)"
 	key "niem-profile:niem:BaseType" value "ncic:EXLCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:ArrestWarrant"
+	key "niem-profile:niem:Notes" value ""
 	comment "A code identifying the type of limitation placed on the extradition of a subject from an area outside the immediate jurisdiction of the issuing court."
       end
 
@@ -3968,12 +4191,81 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCaseJuvenile"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "j:Arrest/j:ArrestSubject/ecf:SugjectAugmentation/cyfs:Juvenile"
+	key "niem-profile:niem:XPath" value "j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/cyfs:Juvenile"
 	key "niem-profile:niem:Type" value "ecf:SubjectAugmentationType"
 	key "niem-profile:niem:Property" value "cyfs:Juvenile"
 	key "niem-profile:niem:BaseType" value "cyfs:JuvenileType"
 	key "niem-profile:niem:Multiplicity" value ""
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 6173314 "arrestingAgency"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Arrest/j:ArrestAgency"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "j:Arrest/j:ArrestAgency"
+	key "niem-profile:niem:Type" value "j:ArrestType"
+	key "niem-profile:niem:Property" value "j:ArrestAgency"
+	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The law enforcement agency that performed an arrest."
+      end
+
+      attribute 6173442 "arrestingUnit"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Arrest/j:ArrestOfficialUnit"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "j:Arrest/j:ArrestOfficial/j:EnforcementOfficialUnit"
+	key "niem-profile:niem:Type" value "j:EnforcementOfficialType"
+	key "niem-profile:niem:Property" value "j:EnforcementOfficialUnit"
+	key "niem-profile:niem:BaseType" value "j:EnforcementUnitType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The unit of a law enforcement agency performing an arrest."
+      end
+
+      attribute 6173698 "arrestWarrant"
+	public explicit_type ""
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Arrest/j:ArrestWarrant"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:Arrest/j:ArrestWarrant"
+	key "niem-profile:niem:Type" value "j:ArrestType"
+	key "niem-profile:niem:Property" value "j:ArrestWarrant"
+	key "niem-profile:niem:BaseType" value "j:WarrantType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An arrest warrant associated with an arrest."
       end
     end
 
@@ -3995,7 +4287,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:EnforcementOfficialUnit"
+      key "niem-profile:niem:Notes" value ""
       comment "An employee of a law enforcement agency who effects an arrest."
       attribute 157186 "arrestingAgencyORI"
 	public type class_ref 156162 // id
@@ -4015,7 +4307,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "j:OrganizationIdentification, (j:OrganizationORIIdentification)"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include nc:OrganizationAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "Official FBI-issued identifier for a law enforcement agency."
       end
 
@@ -4104,7 +4396,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:BookingAgency"
+      key "niem-profile:niem:Notes" value ""
       comment "Details about an administrative step taken after an arrested subject is brought to a police station or detention facility, which involves entry of the subject name and other relevant facts on the police blotter, and which may also include photographing, fingerprinting, and the like."
       attribute 160770 "bookingAgencyID"
 	public type class_ref 156162 // id
@@ -4197,6 +4489,29 @@ BankruptcyCase/Debtor.Organization"
 	comment "The date and time at which a booking commences, recorded on the basis of \"military time\" in which the hours are numbered from 0 to 23.  Example: 10:00 pm is recorded as 22:00.
 "
       end
+
+      attribute 6173570 "bookingAgency"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Arrest/j:Booking/j:BookingAgency"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "j:Arrest/j:Booking/j:BookingAgency"
+	key "niem-profile:niem:Type" value "j:BookingType"
+	key "niem-profile:niem:Property" value "j:BookingAgency"
+	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The law enforcement agency that performed a booking."
+      end
     end
 
     class 143874 "Charge"
@@ -4238,7 +4553,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "criminal:ChargeAmendedIndicator"
 	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:ChargeAugmentationPoint, j:ChargeEnhancingAllegationCharge, j:ChargeSeverityLevel, j:ChargeStuatute"
+	key "niem-profile:niem:Notes" value ""
 	comment "An indicator that the charge submitted amends an earlier submitted charge.
 "
       end
@@ -4632,6 +4947,98 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "Free form text describing the details of the charge allegation."
       end
+
+      attribute 6173826 "chargeExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "j:Charge/j:ChargeAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:ChargeType"
+	key "niem-profile:niem:Property" value "j:ChargeAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a charge."
+      end
+
+      attribute 6173954 "chargeEnhancingAllegation"
+	public explicit_type ""
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Charge/j:ChargeEnhancingAllegationCharge"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:Charge/j:ChargeEnhancingAllegationCharge"
+	key "niem-profile:niem:Type" value "j:ChargeType"
+	key "niem-profile:niem:Property" value "j:ChargeEnhancingAllegationCharge"
+	key "niem-profile:niem:BaseType" value "j:ChargeType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An enhancement to a charge."
+      end
+
+      attribute 6174082 "chargeSeverity"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Charge/j:ChargeSeverityLevel"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "j:Charge/j:ChargeSeverityLevel"
+	key "niem-profile:niem:Type" value "j:ChargeType"
+	key "niem-profile:niem:Property" value "j:ChargeSeverityLevel"
+	key "niem-profile:niem:BaseType" value "j:SeverityLevelType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The severity of a charge."
+      end
+
+      attribute 6174210 "statute"
+	public explicit_type ""
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:Charge/j:ChargeStatute"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:Charge/j:ChargeStatute"
+	key "niem-profile:niem:Type" value "j:ChargeType"
+	key "niem-profile:niem:Property" value "j:ChargeStatute"
+	key "niem-profile:niem:BaseType" value "j:StatuteType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "The statute associated with a charge."
+      end
     end
 
     class 143618 "CriminalCaseInformation"
@@ -4669,7 +5076,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "j:Arrest"
 	key "niem-profile:niem:BaseType" value "j:ArrestType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Include nc:CaseAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
       end
 
       classrelation 184706 // <generalisation>
@@ -4861,7 +5268,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "ecf:SubjectWarrantIssuedIndicator"
 	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:SubjectSupervision, j:SubjectAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "Indicates whether an arrest warrant has been issued against the defendant."
       end
 
@@ -5062,12 +5469,58 @@ BankruptcyCase/Debtor.Organization"
 	comment "Unique number assigned to persons by the Department of Public Safety (or similar state agency) based on fingerprint identification. 
 "
       end
+
+      attribute 6361730 "personExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:Subject/j:SubjectAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:SubjectType"
+	key "niem-profile:niem:Property" value "j:SubjectAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a person."
+      end
+
+      attribute 6361858 "supervision"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:SupervisionCustodyStatus"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "j:Subject/j:SubjectSupervision"
+	key "niem-profile:niem:Type" value "j:SubjectType"
+	key "niem-profile:niem:Property" value "j:SubjectSupervision"
+	key "niem-profile:niem:BaseType" value "nc:SupervisionType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The supervision of a defendant."
+      end
     end
 
     classdiagram 134914 "CriminalCase"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       comment "Information required to initiate a new criminal case in a court.  \"Criminal\" includes felonies and misdemeanors."
-      size Letter-Landscape
+      size C
     end
 
     classinstance 3159554 "CriminalCaseInformation"
@@ -5137,7 +5590,7 @@ BankruptcyCase/Debtor.Organization"
 	mysql_decl ""
 	MysqlColumn
 	ncouples 8
-	key "niem-profile:niem:OldXPath" value "ChildSupportPetition/JurisdictionReasonText"
+	key "niem-profile:niem:OldXPath" value "domestic:DomesticCaseChildSupportPetition/domestic:JurisdictionReasonText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "cyfs:ChildSupportEnforcementCase/cyfs:SupportingGroundsDescriptionText"
 	key "niem-profile:niem:Type" value "cyfs:ChildSupportEnforcementCaseType"
@@ -5156,14 +5609,31 @@ BankruptcyCase/Debtor.Organization"
 	    classrelation_ref 193410 // parentRelationship (<directional aggregation>)
 	  b parent class_ref 139650 // ParentRelationship
 	ncouples 8
-	key "niem-profile:niem:OldXPath" value "ChildSupportPetition/ParentRelationship"
+	key "niem-profile:niem:OldXPath" value "domestic:DomesticChildSupportPetition/nc:ImmediateFamilyAssociation"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "cyfs:PersonCaseAssociation"
+	key "niem-profile:niem:XPath" value "cyfs:PersonCaseAssociation/nc:Person"
 	key "niem-profile:niem:Type" value "cyfs:PersonCaseAssociationType"
 	key "niem-profile:niem:Property" value "nc:Person"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value "Include cyfs:PersonCaseAssociation with nc:Person (parent) and nc:case (cyfs:ChildSupportEnforcementCase)"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      classrelation 3360002 // case (<directional aggregation>)
+	relation 3357826 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    classrelation_ref 3360002 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "domestic:domesticCaseChildSupportPetition"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "cyfs:PersonCaseAssociation/cyfs:ChildSupportEnforcementCase"
+	key "niem-profile:niem:Type" value "cyfs:PersonCaseAssociationType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -5212,7 +5682,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "ecf:CaseCauseOfActionCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include nc:CaseAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "The legal ground on which the request for relief is based.  Allowed values set forth in court policy. Example: the basis(es) for relief in a civil case; the grounds for divorce in a state that does not recognize no-fault divorce; grounds for entry of an order of protection in a domestic violence case."
       end
 
@@ -5228,7 +5698,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Case/domestic:CaseAugmentation/cyfs:ChildSupportEnforcementCase"
 	key "niem-profile:niem:Type" value "domestic:CaseAugmentationType"
-	key "niem-profile:niem:Property" value "cyfs:ChildSupportEnforcementCase"
+	key "niem-profile:niem:Property" value "cyfs:ChildSupportEnforcementCase, cyfs:PersonCaseAssociation"
 	key "niem-profile:niem:BaseType" value "cyfs:ChildSupportEnforcementCaseType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value "Resolve overlap of new child support enforcement elements with ECF domestic case type"
@@ -6152,7 +6622,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:ObligationRecurrence, nc:OblicationExemption"
+      key "niem-profile:niem:Notes" value ""
       comment "A responsibility of a party in a case ordered by a court."
       attribute 224258 "comment"
 	public explicit_type "string"
@@ -6307,6 +6777,52 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "The type of unreimbursed percentage (e.g. medical, tuition)."
       end
+
+      attribute 6361986 "recurrence"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Obligation/nc:ObligationRecurrence"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "nc:Obligation/nc:ObligationRecurrence"
+	key "niem-profile:niem:Type" value "nc:ObligationType"
+	key "niem-profile:niem:Property" value "nc:ObligationRecurrence"
+	key "niem-profile:niem:BaseType" value "nc:ObligationRecurrentType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The recurrence of an obligation."
+      end
+
+      attribute 6362114 "exemption"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Obligation/nc:ObligationExemption"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "nc:Obligation/nc:ObligationExemption"
+	key "niem-profile:niem:Type" value "nc:ObligationType"
+	key "niem-profile:niem:Property" value "nc:ObligationExemption"
+	key "niem-profile:niem:BaseType" value "nc:ObligationExemptionType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "An exemption to an obligation."
+      end
     end
 
     class 139650 "ParentRelationship"
@@ -6460,7 +6976,7 @@ BankruptcyCase/Debtor.Organization"
     classdiagram 135042 "DomesticCase"
       classdiagramsettings member_max_width 0 end
       comment "Information required to initiate a new domestic case in a court.  \"Domestic\" includes divorces, legal separations, annulment, child custody and visitation, paternity, child support, and domestic violence cases."
-      size Letter-Landscape
+      size C
     end
   end
 
@@ -6612,7 +7128,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:SupervisionFacility"
+      key "niem-profile:niem:Notes" value ""
       comment "Information concerning the custody of the defendant."
       attribute 156162 "custodyStatusCode"
 	public type class_ref 192130 // code
@@ -6657,6 +7173,29 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "The identifier for the facility in which the defendant or juvenile is detained.  Allowable values are set forth in Court Policy."
       end
+
+      attribute 6362242 "detentionCenter"
+	public explicit_type ""
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Supervision/nc:SupervisionFacility"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "nc:Supervision/nc:SupervisionFacility"
+	key "niem-profile:niem:Type" value "nc:SupervisionType"
+	key "niem-profile:niem:Property" value "nc:SupervisionFacility"
+	key "niem-profile:niem:BaseType" value "nc:FacilityType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A juvenile detention center."
+      end
     end
 
     class 142850 "DelinquentAct"
@@ -6677,7 +7216,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:IncidentAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The statutory or ordinance section, the violation of which would constitute a crime if committed by an adult. May include a probation violation."
       classrelation 130434 // <generalisation>
 	relation 130434 ---|>
@@ -6796,6 +7335,29 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "Code designating the statutory or ordinance section, the violation of which would constitute a crime if committed by an adult. May include a probation violation."
       end
+
+      attribute 6362370 "activityExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "cyfs:DelinquentAct/j:IncidentAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "cyfs:DelinquentAct/nc:IncidentAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:IncidentType"
+	key "niem-profile:niem:Property" value "nc:IncidentAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point to an activity."
+      end
     end
 
     class 142978 "DependencyAllegation"
@@ -6881,7 +7443,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include cyfs:JuvenileAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "A minor who is the subject of a delinquency or dependency case."
       classrelation 194946 // custody (<directional aggregation>)
 	relation 192770 o-->
@@ -6959,7 +7521,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "j:SubjectIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:Subject,  j:RegisteredSexOffender"
+	key "niem-profile:niem:Notes" value ""
 	comment "Identifier assigned by the Immigration and Customs Enforcement Bureau of the U.S. Department of Homeland Security."
       end
 
@@ -7087,6 +7649,98 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "Identifier assigned by state police or other statewide entity to link multiple cases to the same subject. Example: OBTS Number."
       end
+
+      attribute 6362498 "personExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cyfs:Juvenile/cyfs:JuvenileAugmentationPoint"
+	key "niem-profile:niem:Type" value "cyfs:JuvenileType"
+	key "niem-profile:niem:Property" value "cyfs:JuvenileAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a person."
+      end
+
+      attribute 6362626 "subject"
+	public explicit_type ""
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "juvenile:Juvenile"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "cyfs:Juvenile/juvenile:JuvenileAugmentation/j:Subject"
+	key "niem-profile:niem:Type" value "juvenile:JuvenileAugmentationType"
+	key "niem-profile:niem:Property" value "j:Subject"
+	key "niem-profile:niem:BaseType" value "1,1"
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A juvenile subject."
+      end
+
+      attribute 6362754 "sexOffenderRegistration"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "juvenile:Juvenile/j:RegisteredSexOffender"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "cyfs:Juvenile/juvenile:JuvenileAugmentation/j:RegisteredSexOffender"
+	key "niem-profile:niem:Type" value "juvenile:JuvenileAugmentationType"
+	key "niem-profile:niem:Property" value "j:RegisteredSexOffender"
+	key "niem-profile:niem:BaseType" value "j:RegisteredOffenderType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A juvenile sex offender registration."
+      end
+
+      attribute 6432130 "juvenileExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cyfs:Juvenile/juvenile:JuvenileAugmentation"
+	key "niem-profile:niem:Type" value "juvenile:JuvenileAugmentationType"
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value "structures:AugmentationType"
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension for a juvenile."
+      end
     end
 
     class 140546 "JuvenileCase"
@@ -7107,7 +7761,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:CaseType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:CaseAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "A delinquency or dependency case."
       classrelation 194434 // <generalisation>
 	relation 192258 ---|>
@@ -7294,7 +7948,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "cyfs:PlacementType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include cyfs:JuvenilePlacementAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "Information about the person or organization orther than parent or guardian with whom the juvenile lives. Examples: Foster home, foster parents, state institution, hospital, shelter."
       attribute 156546 "placementStartDate"
 	public type class_ref 128386 // date
@@ -7339,6 +7993,29 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "Code indicating the type of placement. Allowable values set forth in Court Policy."
       end
+
+      attribute 6362882 "activityExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cyfs:JuvenilePlacement/cyfs:PlacementAugmentationPoint"
+	key "niem-profile:niem:Type" value "cyfs:PlacementType"
+	key "niem-profile:niem:Property" value "cyfs:PlacementAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an activity."
+      end
     end
 
     class 141954 "PlacementOrganization"
@@ -7352,20 +8029,30 @@ BankruptcyCase/Debtor.Organization"
       mysql_decl ""
       
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "juvenile:PlacementEntity"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/juvenile:JuvenilePlacementOrganizationAssociation"
-      key "niem-profile:niem:Type" value "juvenile:JuvenilePlacementOrganizationAssociationType"
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "nc:AssociationType"
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "An entity to whom the care of a juvenile is committed."
       classrelation 129666 // <generalisation>
 	relation 129666 ---|>
+	  stereotype "niem-profile:niem"
 	  a public
 	    classrelation_ref 129666 // <generalisation>
 	  b parent class_ref 141058 // Placement
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
       end
 
       attribute 158466 "organizationOtherActorIDReference"
@@ -7381,10 +8068,10 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "juvenile:PlacementEntity/nc:EntityOrganizationReference"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/juvenile:JuvenilePlacementOrganizationAssociation/juvenile:PlacementOrganization"
-	key "niem-profile:niem:Type" value "juvenile:JuvenilePlacementOrganizationAssociationType"
-	key "niem-profile:niem:Property" value "juvenile:PlacementOrganization"
-	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
+	key "niem-profile:niem:XPath" value "cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/cyfs:JuvenilePlacementFacilityAssociation/juvenile:PlacementOrganization"
+	key "niem-profile:niem:Type" value "cyfs:JuvenilePlacementFacilityAssociationType"
+	key "niem-profile:niem:Property" value "cyfs:PlacementFacility"
+	key "niem-profile:niem:BaseType" value "nc:FacilityType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The value of the Organization.ID property in the ReviewFiling message linking this organization to the appropriate other actor element."
@@ -7403,12 +8090,12 @@ BankruptcyCase/Debtor.Organization"
       
       ncouples 8
       key "niem-profile:niem:OldXPath" value "juvenile:PlacementEntity"
-      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:OldMultiplicity" value "1,1"
       key "niem-profile:niem:XPath" value "cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/cyfs:JuvenilePlacementPersonAssociation"
-      key "niem-profile:niem:Type" value "cyfs:JuvenilePlacementPersonAssociationType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "nc:AssociationType"
-      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Type" value "juvenile:PlacementAugmentationType"
+      key "niem-profile:niem:Property" value "cyfs:JuvenilePlacementPersonAssociation"
+      key "niem-profile:niem:BaseType" value "cyfs:JuvenilePlacementPersonAssociationType"
+      key "niem-profile:niem:Multiplicity" value "1,1"
       key "niem-profile:niem:Notes" value ""
       comment "The person to whom the care of a juvenile is committed."
       classrelation 129538 // <generalisation>

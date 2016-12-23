@@ -1,9 +1,12 @@
-window_sizes 2011 1021 739 1266 952 0
-cleanlooks_style
+window_sizes 3840 2035 641 3189 1741 215
+
 selected classinstance_ref 3159554 // CriminalCaseInformation
 open
-  classview_ref 155522 // CivilCase
-  classview_ref 155650 // CriminalCase
+  classview_ref 155138 // AppellateCase
+  class_ref 143618 // CriminalCaseInformation
+  classview_ref 155778 // DomesticCase
+  
+  package_ref 161538 // niem-profile
   
   package_ref 174594 // PIM
 end

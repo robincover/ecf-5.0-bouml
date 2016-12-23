@@ -1,7 +1,7 @@
-format 210
+format 212
 "CIM" // CIM
-  revision 1
-  modified_by 2 "Jim"
+  revision 13
+  modified_by 2 "JamesECabral"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -26,6 +26,95 @@ format 210
   activitydiagramsettings
    end
   
+  componentview 128002 "Components"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    component 128642 "ECFSystem"
+      component 128386 "Service"
+	provided_classes
+	  class_ref 130434 // ServiceMDE
+	end
+      end
+
+      component 128258 "CourtRecord"
+	provided_classes
+	  class_ref 129538 // CourtRecordMDE
+	end
+      end
+
+      component 128130 "FilingReview"
+	provided_classes
+	  class_ref 129282 // FilingReviewMDE
+	end
+	required_classes
+	  class_ref 129538 // CourtRecordMDE
+	  class_ref 129410 // FilingAssemblyMDE
+	  class_ref 130434 // ServiceMDE
+	end
+      end
+
+      component 128002 "FilingAssembly"
+	provided_classes
+	  class_ref 129410 // FilingAssemblyMDE
+	end
+	required_classes
+	  class_ref 198786 // CourtSchedulingMDE
+	  class_ref 129282 // FilingReviewMDE
+	  class_ref 130434 // ServiceMDE
+	end
+      end
+
+      component 128514 "CourtScheduling"
+	provided_classes
+	  class_ref 198786 // CourtSchedulingMDE
+	end
+      end
+    end
+
+    component 128770 "Filer"
+      simplerelation 128002
+	-_->
+	  on component_ref 128002 // FilingAssembly
+      end
+    end
+
+    component 128898 "Clerk"
+      simplerelation 128386
+	-_->
+	  on component_ref 128130 // FilingReview
+      end
+    end
+
+    component 129026 "CMS/DMS"
+      simplerelation 128514
+	-_->
+	  on component_ref 128258 // CourtRecord
+      end
+
+      simplerelation 128642
+	-_->
+	  on component_ref 128514 // CourtScheduling
+      end
+    end
+
+    component 129154 "Legal CMS"
+    end
+
+    component 129282 "Service Recipient"
+      simplerelation 128130
+	-_->
+	  on component_ref 128386 // Service
+      end
+    end
+
+    componentdiagram 185602 "Components"
+      componentdiagramsettings draw_all_relations no
+       end
+      size Letter-Landscape
+    end
+  end
+
   usecaseview 141058 "Use Case"
     
     usecasediagramsettings end
@@ -194,7 +283,7 @@ format 210
 ${members}};
 ${inlines}
 "
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
 ${members}}
 "
       php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
@@ -212,177 +301,11 @@ ${members}};
     end
   end
 
-  usecaseview 134530 "Process"
-    
-    usecasediagramsettings end
-    
-    sequencediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    classdiagramsettings member_max_width 0 end
-    
-    objectdiagramsettings end
-    
-    statediagramsettings
-     end
-    
-    activitydiagramsettings
-     end
-    classinstance 134914 "Court Record MDE"
-      type class_ref 129538 // CourtRecordInterface
-      attributes
-        end
-      relations
-        end
-    end
-
-    classinstance 141442 "Court Scheduling MDE"
-      type class_ref 198786 // CourtSchedulingInterface
-      attributes
-        end
-      relations
-        end
-    end
-
-    classinstance 134658 "Filing Assembly MDE"
-      type class_ref 129410 // FilingReviewCallbackInterface
-      attributes
-        end
-      relations
-        end
-    end
-
-    classinstance 134786 "Filing Review MDE"
-      type class_ref 129282 // FilingReviewInterface
-      attributes
-        end
-      relations
-        end
-    end
-
-    classinstance 134530 "Service MDE"
-      type class_ref 130434 // ServiceInterface
-      attributes
-        end
-      relations
-        end
-    end
-
-    sequencediagram 158466 "FilingSequenceDiagram"
-      sequencediagramsettings end
-      overlapping_bars size Letter-Landscape
-    end
-
-    sequencediagram 178178 "SchedulingSequenceDiagram"
-      sequencediagramsettings end
-      overlapping_bars size Letter-Landscape
-    end
-  end
-
-  componentview 128002 "Components"
-    //component diagram settings
-    componentdiagramsettings
-     end
-    component 128642 "ECFSystem"
-      component 128386 "Service"
-	provided_classes
-	  class_ref 130434 // ServiceInterface
-	end
-      end
-
-      component 128258 "CourtRecord"
-	provided_classes
-	  class_ref 129538 // CourtRecordInterface
-	  class_ref 232194 // CourtRecordQueryInterface
-	end
-	required_classes
-	  class_ref 232450 // RecordDocketingCallbackInterface
-	end
-      end
-
-      component 128130 "FilingReview"
-	provided_classes
-	  class_ref 129282 // FilingReviewInterface
-	  class_ref 232322 // FilingReviewQueryInterface
-	  class_ref 232450 // RecordDocketingCallbackInterface
-	end
-	required_classes
-	  class_ref 129538 // CourtRecordInterface
-	  class_ref 232194 // CourtRecordQueryInterface
-	  class_ref 129410 // FilingReviewCallbackInterface
-	  class_ref 130434 // ServiceInterface
-	end
-      end
-
-      component 128002 "FilingAssembly"
-	provided_classes
-	  class_ref 129410 // FilingReviewCallbackInterface
-	end
-	required_classes
-	  class_ref 232194 // CourtRecordQueryInterface
-	  class_ref 198786 // CourtSchedulingInterface
-	  class_ref 129282 // FilingReviewInterface
-	  class_ref 232322 // FilingReviewQueryInterface
-	  class_ref 130434 // ServiceInterface
-	end
-      end
-
-      component 128514 "CourtScheduling"
-	provided_classes
-	  class_ref 198786 // CourtSchedulingInterface
-	end
-      end
-    end
-
-    componentdiagram 185602 "Components"
-      componentdiagramsettings draw_all_relations no
-       end
-      size Letter-Landscape
-    end
-
-    component 128770 "Filer"
-      simplerelation 128002
-	-_->
-	  on component_ref 128002 // FilingAssembly
-      end
-    end
-
-    component 128898 "Clerk"
-      simplerelation 128386
-	-_->
-	  on component_ref 128130 // FilingReview
-      end
-    end
-
-    component 129026 "CMS/DMS"
-      simplerelation 128514
-	-_->
-	  on component_ref 128258 // CourtRecord
-      end
-
-      simplerelation 128642
-	-_->
-	  on component_ref 128514 // CourtScheduling
-      end
-    end
-
-    component 129154 "Legal CMS"
-    end
-
-    component 129282 "Service Recipient"
-      simplerelation 128130
-	-_->
-	  on component_ref 128386 // Service
-      end
-    end
-  end
-
-  package_ref 141954 // Messages
-
-  package_ref 135298 // Classes
+  package_ref 135298 // BaseTypes
 
   package_ref 141826 // CaseTypeSpecificMessages
+
+  package_ref 141954 // Messages
 
   classview 148610 "Operations"
     
@@ -400,10 +323,43 @@ ${members}};
     
     activitydiagramsettings
      end
-    class 232194 "CourtRecordQueryInterface"
+    class 2087554 "CourtPolicyMDE"
+      visibility package stereotype "interface"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128770 "getPolicy"
+	public return_type class_ref 136834 // CourtPolicyResponseMessage
+	nparams 1
+	  param in name "query" type class_ref 130562 // CourtPolicyQueryMessage
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 129538 "CourtRecordMDE"
       visibility protected stereotype "interface"
       cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
 ${members}}
 "
       php_decl "${comment}interface ${name}${extends} {
@@ -416,10 +372,23 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 129666 "getServiceInformation"
-	public return_type class_ref 142338 // ServiceInformationResponseMessage
+      comment "The list of operations supported by the Court Record MDE."
+      operation 169474 "getDocumentStampInformation"
+	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
-	  param in name "query" type class_ref 142210 // ServiceInformationQueryMessage
+	  param in name "" type class_ref 2107138 // GetDocumentStampInformationMessage
+	
+	
+	
+	
+	
+	comment "This operation is a request for the information to be included on document stamps.  This operation is implemented by the system responsible for providing the document stamp information.  The operation is invoked by the system responsible for performing the stamping."
+      end
+
+      operation 149634 "allocateCourtDate"
+	public return_type class_ref 199042 // CourtDateAllocationResponseMessage
+	nparams 1
+	  param in name "" type class_ref 198914 // CourtDateAllocationRequestMessage
 	
 	
 	
@@ -427,10 +396,10 @@ ${members}};
 	
       end
 
-      operation 129410 "getDocument"
-	public return_type class_ref 134274 // DocumentResponseMessage
+      operation 129282 "getCase"
+	public return_type class_ref 145282 // CaseResponseMessage
 	nparams 1
-	  param in name "query" type class_ref 134146 // DocumentQueryMessage
+	  param in name "query" type class_ref 145154 // CaseQueryMessage
 	
 	
 	
@@ -449,35 +418,28 @@ ${members}};
 	
       end
 
-      operation 129282 "getCase"
-	public return_type class_ref 145282 // CaseResponseMessage
+      operation 129410 "getDocument"
+	public return_type class_ref 134274 // DocumentResponseMessage
 	nparams 1
-	  param in name "query" type class_ref 145154 // CaseQueryMessage
+	  param in name "query" type class_ref 134146 // DocumentQueryMessage
 	
 	
 	
 	
 	
       end
-    end
 
-    class 129538 "CourtRecordInterface"
-      visibility public stereotype "interface"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
-${members}}
-"
-      php_decl "${comment}interface ${name}${extends} {
-${members}}
-"
-      python_2_2 python_decl ""
-      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      comment "The list of operations supported by the Court Record MDE."
+      operation 129666 "getServiceInformation"
+	public return_type class_ref 142338 // ServiceInformationResponseMessage
+	nparams 1
+	  param in name "query" type class_ref 142210 // ServiceInformationQueryMessage
+	
+	
+	
+	
+	
+      end
+
       operation 129026 "recordFiling"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
@@ -490,10 +452,10 @@ ${members}};
       end
     end
 
-    class 198786 "CourtSchedulingInterface"
-      visibility public stereotype "interface"
+    class 198786 "CourtSchedulingMDE"
+      visibility protected stereotype "interface"
       cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
 ${members}}
 "
       php_decl "${comment}interface ${name}${extends} {
@@ -506,11 +468,11 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      comment "The list of operations supported by the Court Scheduling MDE."
-      operation 149634 "allocateCourtDate"
-	public return_type class_ref 199042 // CourtDateAllocationResponseMessage
+      comment "The Court Scheduling MDE is to provide the capability for the filer to submit a request a hearing or calendar date (CourtScheduletQueryMessage) along with the electronic document filing.  This is because many court document filings are made specifically to schedule hearings or conference meetings. The MDE provides the ability for the court to respond to the request (allocateCourtDate).  And it also allows for the participant to query the court calendar for a specific date and/or time (CourtScheduletQueryMessage)."
+      operation 149378 "getCourtSchedule"
+	public return_type class_ref 199554 // CourtScheduleResponseMessage
 	nparams 1
-	  param in name "" type class_ref 198914 // CourtDateAllocationRequestMessage
+	  param in name "" type class_ref 199426 // CourtScheduleQueryMessage
 	
 	
 	
@@ -518,10 +480,10 @@ ${members}};
 	
       end
 
-      operation 149378 "getCourtSchedule"
-	public return_type class_ref 199554 // CourtScheduleResponseMessage
+      operation 156162 "notifyCourtDate"
+	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
-	  param in name "" type class_ref 199426 // CourtScheduleQueryMessage
+	  param in name "" type class_ref 199298 // CourtDateReservationResponseMessage
 	
 	
 	
@@ -541,10 +503,10 @@ ${members}};
       end
     end
 
-    class 129410 "FilingReviewCallbackInterface"
-      visibility public stereotype "interface"
+    class 129410 "FilingAssemblyMDE"
+      visibility protected stereotype "interface"
       cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
 ${members}}
 "
       php_decl "${comment}interface ${name}${extends} {
@@ -558,6 +520,17 @@ ${members}};
       mysql_decl ""
       
       comment "The list of operations supported by the Filing Assembly MDE."
+      operation 156418 "notifyCourtDate"
+	public return_type class_ref 145666 // MessageReceiptMessage
+	nparams 1
+	  param in name "" type class_ref 199298 // CourtDateReservationResponseMessage
+	
+	
+	
+	
+	
+      end
+
       operation 128898 "notifyFilingReviewComplete"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
@@ -570,10 +543,10 @@ ${members}};
       end
     end
 
-    class 129282 "FilingReviewInterface"
+    class 129282 "FilingReviewMDE"
       visibility public stereotype "interface"
       cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
 ${members}}
 "
       php_decl "${comment}interface ${name}${extends} {
@@ -587,35 +560,16 @@ ${members}};
       mysql_decl ""
       
       comment "The list of operations supported by the Filing Review MDE."
-      operation 128130 "reviewFiling"
-	public return_type class_ref 145666 // MessageReceiptMessage
-	nparams 2
-	  param in name "message" explicit_type "ReviewFiling"
-	  param in name "payment" type class_ref 135682 // Payment
+      operation 156290 "cancelFiling"
+	public return_type class_ref 1498626 // CancelFilingMessage
+	nparams 0
 	
 	
 	
 	
 	
       end
-    end
 
-    class 232322 "FilingReviewQueryInterface"
-      visibility protected stereotype "interface"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
-${members}}
-"
-      php_decl "${comment}interface ${name}${extends} {
-${members}}
-"
-      python_2_2 python_decl ""
-      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
       operation 128386 "getFeesCalculation"
 	public return_type class_ref 134530 // FeesCalculationResponseMessage
 	nparams 1
@@ -627,10 +581,10 @@ ${members}};
 	
       end
 
-      operation 128770 "getPolicy"
-	public return_type class_ref 136834 // CourtPolicyResponseMessage
+      operation 128514 "getFilingList"
+	public return_type class_ref 133506 // FilingListResponseMessage
 	nparams 1
-	  param in name "query" type class_ref 130562 // CourtPolicyQueryMessage
+	  param in name "query" type class_ref 133250 // FilingListQueryMessage
 	
 	
 	
@@ -649,28 +603,6 @@ ${members}};
 	
       end
 
-      operation 128514 "getFilingList"
-	public return_type class_ref 133506 // FilingListResponseMessage
-	nparams 1
-	  param in name "query" type class_ref 133250 // FilingListQueryMessage
-	
-	
-	
-	
-	
-      end
-    end
-
-    class 232450 "RecordDocketingCallbackInterface"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
       operation 128258 "notifyDocketingComplete"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
@@ -681,12 +613,36 @@ ${members}};
 	
 	
       end
+
+      operation 128130 "reviewFiling"
+	public return_type class_ref 145666 // MessageReceiptMessage
+	nparams 2
+	  param in name "message" explicit_type "ReviewFiling"
+	  param in name "payment" type class_ref 135682 // Payment
+	
+	
+	
+	
+	
+      end
+
+      operation 169602 "returnDocumentStampInformation"
+	public return_type class_ref 145666 // MessageReceiptMessage
+	nparams 1
+	  param in name "" type class_ref 2113666 // ReturnDocumentStampInformationMessage
+	
+	
+	
+	
+	
+	comment "This is the asynchronous callback in response to the GetDocumentStampInformation request.  This operation is implemented by the system responsible for performing the stamping and is invoked by the system responsible for providing the information for the stamps."
+      end
     end
 
-    class 130434 "ServiceInterface"
-      visibility public stereotype "interface"
+    class 130434 "ServiceMDE"
+      visibility protected stereotype "interface"
       cpp_decl ""
-      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
 ${members}}
 "
       php_decl "${comment}interface ${name}${extends} {
@@ -721,6 +677,17 @@ ${members}};
 	
 	
       end
+    end
+
+    sequencediagram 205314 "FilingSequenceDiagram"
+      sequencediagramsettings shadow yes gradient none end
+      fragment_color lightgray 
+      overlapping_bars size Letter-Landscape
+    end
+
+    sequencediagram 205442 "SchedulingSequenceDiagram"
+      sequencediagramsettings end
+      overlapping_bars size Letter-Landscape
     end
   end
 end

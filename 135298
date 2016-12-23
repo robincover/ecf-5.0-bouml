@@ -1,6 +1,6 @@
 format 212
-"Classes" // CIM::Classes
-  revision 57
+"BaseTypes" // CIM::BaseTypes
+  revision 67
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -60,7 +60,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The core information contained in an ECF 5.0 message."
       classrelation 137730 // court (<directional aggregation>)
 	relation 137730 o-->
@@ -231,7 +231,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The date and time on which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
       classrelation 131202 // <generalisation>
 	relation 131202 ---|>
@@ -365,7 +365,7 @@ format 212
 	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include nc:StatusAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "Status of the filing as determined by the system sending the callback. Values: accepted, partially accepted (e.g., some documents but not others), rejected."
       end
 
@@ -428,7 +428,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The base message for an electronic filing using ECF 5.0."
       classrelation 129410 // <generalisation>
 	relation 129410 ---|>
@@ -499,6 +499,35 @@ format 212
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
 
+      classrelation 1268226 // <directional aggregation>
+	relation 1266050 o-->
+	  a role_name "" multiplicity "1,1" public
+	    classrelation_ref 1268226 // <directional aggregation>
+	  b parent class_ref 131586 // Case
+      end
+
+      attribute 6361602 "documentExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a document."
+      end
     end
 
     class 146562 "Error"
@@ -519,7 +548,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "cbrn:SystemEventType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include cbrn:MessageContentError"
+      key "niem-profile:niem:Notes" value ""
       comment "Representation of an error that occured when synchronously processing the message."
       attribute 176002 "errorCode"
 	public type class_ref 192130 // code
@@ -563,6 +592,29 @@ format 212
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A more \"user friendly\" description of the error."
+      end
+
+      attribute 5929090 "contentError"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError"
+	key "niem-profile:niem:Type" value "cbrn:MessageStatusType"
+	key "niem-profile:niem:Property" value "cbrn:MessageContentError"
+	key "niem-profile:niem:BaseType" value "cbrn:MessageContentErrorType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A content error message."
       end
     end
 
@@ -973,6 +1025,50 @@ format 212
 	  b parent class_ref 132226 // BaseMessage
       end
     end
+
+    class 3381890 "Identification"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationID"
+      key "niem-profile:niem:OldMultiplicity" value "0,1"
+      key "niem-profile:niem:XPath" value "nc:Identification/nc:IdentificationID"
+      key "niem-profile:niem:Type" value "nc:IdentificationType"
+      key "niem-profile:niem:Property" value "nc:IdentificationID"
+      key "niem-profile:niem:BaseType" value "niem-xs:string"
+      key "niem-profile:niem:Multiplicity" value "0,1"
+      key "niem-profile:niem:Notes" value ""
+      comment "An identifier"
+    end
+
+    class 3416322 "Date"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "nc:DateType/nc:DateRepresentation"
+      key "niem-profile:niem:OldMultiplicity" value "1,1"
+      key "niem-profile:niem:XPath" value "nc:DateType/nc:DateRepresentation"
+      key "niem-profile:niem:Type" value "nc:DateType"
+      key "niem-profile:niem:Property" value "nc:DateRepresentation, (nc:Date)"
+      key "niem-profile:niem:BaseType" value "abstract"
+      key "niem-profile:niem:Multiplicity" value "1,1"
+      key "niem-profile:niem:Notes" value ""
+      comment "A date."
+    end
   end
 
   classview 135298 "PrimitiveDataTypes"
@@ -991,30 +1087,6 @@ format 212
     
     activitydiagramsettings
      end
-    class 192130 "code"
-      visibility public stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
-${items}};
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
-${members}}
-"
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
-"
-      python_2_2 python_decl "class ${name}:
-${docstring}${members}
-"
-      idl_decl "${comment}enum ${name} {
-${items}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      comment "A set of alpha or numeric characters to be used to represent a stated value."
-    end
-
     class 163330 "address"
       visibility package stereotype "type"
       cpp_decl ""
@@ -1054,6 +1126,30 @@ ${items}};
       comment "A digital representation of an object encoded in a binary format."
     end
 
+    class 192130 "code"
+      visibility public stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "A set of alpha or numeric characters to be used to represent a stated value."
+    end
+
     class 128386 "date"
       visibility public stereotype "type"
       cpp_decl ""
@@ -1091,6 +1187,19 @@ ${items}};
       mysql_decl ""
       
       comment "An amount of time."
+    end
+
+    class 2113794 "extension"
+      visibility package stereotype "type"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "An extension point for adding custom content to the data model."
     end
 
     class 156162 "id"

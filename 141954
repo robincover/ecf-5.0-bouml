@@ -1,6 +1,6 @@
 format 212
 "Messages" // CIM::Messages
-  revision 70
+  revision 86
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -73,11 +73,56 @@ ${members}};
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "This is a request from the filer to the reviewer to cancel a previously submitted filing."
-      classrelation 1254914 // <generalisation>
-	relation 1252738 ---|>
+      classrelation 1261442 // <generalisation>
+	relation 1259266 ---|>
 	  a public
-	    classrelation_ref 1254914 // <generalisation>
-	  b parent class_ref 138114 // ElectronicFilingMessage
+	    classrelation_ref 1261442 // <generalisation>
+	  b parent class_ref 909826 // QueryMessage
+      end
+
+      attribute 1544450 "documentIdentification"
+	public type class_ref 156162 // id
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cancel:CancelFilingMessage/nc:DocumentIdentification"
+	key "niem-profile:niem:Type" value "cancel:CancelFilingMessageType"
+	key "niem-profile:niem:Property" value "nc:DocumentIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 1544834 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cancel:CancelFilingMessageType/cancel:CancelFilingMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "cancel:CancelFilingMessageType"
+	key "niem-profile:niem:Property" value "cancel:CancelFilingMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -96,12 +141,137 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "cancel:CancelFilingMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "cancel:CancelFilingMessage"
-      key "niem-profile:niem:BaseType" value "cancel:CancelFilingMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+    end
+  end
+
+  classview 203906 "CancelFilingResponseMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 211970 "CancelFilingResponseMessage"
+      classdiagramsettings member_max_width 0 end
+      size Letter-Landscape
+    end
+
+    class 2094082 "CancelFilingResponseMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "cancelresponse:CancelFilingResponseMessage"
+      key "niem-profile:niem:Type" value "cancelresponse:CancelFilingResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "ecf:QueryResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      classrelation 1261570 // <generalisation>
+	relation 1259394 ---|>
+	  a public
+	    classrelation_ref 1261570 // <generalisation>
+	  b parent class_ref 132866 // ResponseMessage
+      end
+
+      attribute 1544578 "documentIdentification"
+	public type class_ref 156162 // id
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cancelresponse:CancelFilingResponseMessage/ncCaseFiling/nc:DocumentIdentification"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 1544706 "filingStatus"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cancelresponse:CancelFilingResponseMessage/nc:CaseFiling/nc:DocumentStatus/nc:StatusDescriptionText"
+	key "niem-profile:niem:Type" value "nc:StatusType"
+	key "niem-profile:niem:Property" value "nc:StatusDescriptionText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value "Genericode code list gc/ECF-4.0-FilingStatusCode.gc"
+	comment "Details about the status of a court processing of a ReviewFilingMessage submitted to it, and of its processing of the documents contained within that message."
+      end
+
+      attribute 1544962 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cancelresponse:CancelFilingResponseMessage/cancelresponse:CancelFilingResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "cancelresponse:CancelFilingResponseMessageType"
+	key "niem-profile:niem:Property" value "cancelresponse:CancelFilingResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+    end
+
+    classinstance 4665474 "CancelFilingResponseMessage"
+      type class_ref 2094082 // CancelFilingResponseMessage
+      attributes
+        end
+      relations
+        end
     end
   end
 
@@ -140,7 +310,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:QueryMessageType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:Case"
+      key "niem-profile:niem:Notes" value ""
       comment "This is a query for a list of cases that match a set of criteria including case participants, case classification, case status, and date of the case was initiated."
       classrelation 128642 // <generalisation>
 	relation 128642 ---|>
@@ -230,6 +400,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 1545090 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "caselistquery:CaseListQueryMessage/caselistquery:CaseListQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "caselistquery:CaseListQueryMessageType"
+	key "niem-profile:niem:Property" value "caselistquery:CaseListQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 135298 "CaseListQueryMessage"
@@ -246,12 +439,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "caselistquery:CaseListQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "caselistquery:CaseListQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "caselistquery:CaseListQueryMessage"
-      key "niem-profile:niem:BaseType" value "caselistquery:CaseListQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -285,9 +478,9 @@ ${members}};
       mysql_decl ""
       
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "caselistresponse:CaseListResponseMessageType"
+      key "niem-profile:niem:OldXPath" value "caselistresponse:CaseListResponseMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "caselistresponse:CaseListResponseMessageType"
+      key "niem-profile:niem:XPath" value "caselistresponse:CaseListResponseMessage"
       key "niem-profile:niem:Type" value "caselistresponse:CaseListResponseMessageType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:QueryResponseMessageType"
@@ -318,6 +511,29 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:CaseType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 1545218 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "caselistresponse:CaseListResponseMessage/caselistresponse:CaseListResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "caselistresponse:CaseListResponseMessageType"
+	key "niem-profile:niem:Property" value "caselistresponse:CaseListResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -447,7 +663,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "ecf:PersonCaseAssociationTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:AssociationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include cyfs:PersonCaseAssociationAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "A code for the relationship of a person to a case.  Allowable values set forth in Court Policy."
       end
 
@@ -472,6 +688,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "An official name of a Case.  No title exists when the message is initiating a new case."
       end
+
+      attribute 4252418 "associationExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cyfs:PersonCaseAssociation/cyfs:PersonCaseAssociationAugmentationPoint"
+	key "niem-profile:niem:Type" value "cyfs:PersonCaseAssociationType"
+	key "niem-profile:niem:Property" value "cyfs:PersonCaseAssociationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an association"
+      end
     end
 
     classdiagram 135426 "CaseListResponseMessage"
@@ -488,12 +727,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "caselistresponse:CaseListResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "caselistresponse:CaseListResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "caselistresponse:CaseListResponseMessage"
-      key "niem-profile:niem:BaseType" value "caselistresponse:CaseListResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -749,6 +988,46 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Court case number."
       end
+
+      attribute 1545346 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "casequery:CaseQueryMessage/casequery:CaseQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "casequery:CaseQueryMessageType"
+	key "niem-profile:niem:Property" value "casequery:CaseQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 3360130 // case (<directional aggregation>)
+	relation 3357954 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    classrelation_ref 3360130 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "caselistquery:CaseListQueryMessage/nc:Case"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "caselistquery:CaseListQueryMessage/nc:Case"
+	key "niem-profile:niem:Type" value "caselistquery:CaseListQueryMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
     end
 
     classdiagram 135554 "CaseQueryMessage"
@@ -765,12 +1044,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "casequery:CaseQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "casequery:CaseQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "casequery:CaseQueryMessage"
-      key "niem-profile:niem:BaseType" value "casequery:CaseQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -811,7 +1090,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:CourtEventAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The actor on whose behalf the filing was submitted to the court as set forth in the docket entry."
       attribute 183042 "actorIDReference"
 	public type class_ref 156162 // id
@@ -833,6 +1112,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A reference to an actor elsewhere in this message."
+      end
+
+      attribute 6363010 "activityExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/j:CourtEventAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:CourtEventType"
+	key "niem-profile:niem:Property" value "j:CourtEventAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an activity."
       end
     end
 
@@ -897,7 +1199,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:CourtEventSchedule, j:CourtEventAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "Details about an event on the court calendar."
       attribute 183170 "eventFromTime"
 	public type class_ref 156034 // dateTime
@@ -1008,6 +1310,52 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "The scheduled ending time of an event on the court calendar."
       end
+
+      attribute 4252546 "activityExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/j:CourtEventAugmentationPoint"
+	key "niem-profile:niem:Type" value "j:CourtEventType"
+	key "niem-profile:niem:Property" value "j:CourtEventAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing activity."
+      end
+
+      attribute 4252674 "eventSchedule"
+	public explicit_type ""
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "j:CaseCourtEvent/j:CourtEventSchedule"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/j:CourtEventSchedule"
+	key "niem-profile:niem:Type" value "j:CourtEventType"
+	key "niem-profile:niem:Property" value "j:CourtEventSchedule"
+	key "niem-profile:niem:BaseType" value "nc:ScheduleType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "The schedule associated with a court event."
+      end
     end
 
     class 148354 "CaseDocketEntry"
@@ -1028,7 +1376,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:CourtEventAugmentationPoint, j:CourtEventSchedule"
+      key "niem-profile:niem:Notes" value ""
       comment "An entry in the docket or register of actions for a case."
       classrelation 155266 // actedOnBehalfOf (<directional aggregation>)
 	relation 153090 o-->
@@ -1267,7 +1615,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:CaseAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "Information about a court case."
       classrelation 154498 // caseDocketEntry (<directional aggregation>)
 	relation 152322 o-->
@@ -1428,6 +1776,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 4252802 "caseAugmentation"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Case/nc:CaseAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Case/nc:CaseAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:CaseType"
+	key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a case."
+      end
     end
 
     class 149506 "CaseParticipant"
@@ -1525,6 +1896,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 1545474 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "caseresponse:CaseResponseMessage/caseresponse:CaseResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "caseresponse:CaseResponseMessageType"
+	key "niem-profile:niem:Property" value "caseresponse:CaseResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     class 170242 "CaseStatus"
@@ -1590,6 +1984,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "The date on which the current status was determined."
       end
+
+      attribute 5928962 "statusExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Statu/nc:StatusAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Status/nc:StatusAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:StatusType"
+	key "niem-profile:niem:Property" value "nc:StatusAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a status"
+      end
     end
 
     class 148610 "ConnectedDocument"
@@ -1610,7 +2027,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include "
+      key "niem-profile:niem:Notes" value ""
       comment "A document included in a Filing that supports the lead Document.  This document is not separately entered on the docket or register of actions."
       attribute 182658 "docketDocumentID"
 	public type class_ref 156162 // id
@@ -1705,7 +2122,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The pleading, motion or order that is the main document in a Filing. A Document may have Attachments."
       classrelation 155010 // connectedDocument (<directional aggregation>)
 	relation 152834 o-->
@@ -1745,6 +2162,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Identifier that uniquely identifies the document in the court record (e.g. the court DMS). Assumed to be unique within a particular case and particular court."
+      end
+
+      attribute 4252930 "documentExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Document/nc:DocumentAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Document/nc:DocumentAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a document."
       end
     end
 
@@ -1805,12 +2245,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "caseresponse:CaseResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "caseresponse:CaseResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "caseresponse:CaseResponseMessage"
-      key "niem-profile:niem:BaseType" value "caseresponse:CaseResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -1912,7 +2352,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "j:OrganizationAlternateName"
 	key "niem-profile:niem:BaseType" value "j:OrganizationAlternateNameType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Include j:OrganizationAlternateNameCategory, (j:OrganizationAlternateNameCategoryCode)"
+	key "niem-profile:niem:Notes" value ""
       end
 
       classrelation 145282 // person (<directional aggregation>)
@@ -1931,6 +2371,29 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:PersonNameType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 4253058 "nameExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "j:OrganizationAlternateName/j:OrganizationAlternateNameCategoryCode"
+	key "niem-profile:niem:Type" value "j:OrganizationAlternateNameType"
+	key "niem-profile:niem:Property" value "j:OrganizationAlternateNameCategory, (j:OrganizationAlternateNameCategoryCode)"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an organization name."
       end
     end
 
@@ -2045,8 +2508,31 @@ ${members}};
 	key "niem-profile:niem:Property" value "j:JudicialOfficialBarIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include j:JudicialOfficialBarMembership"
+	key "niem-profile:niem:Notes" value ""
 	comment "An identifier assigned to an attorney by the bar association."
+      end
+
+      attribute 4253186 "barMembership"
+	public type class_ref 2113794 // extension
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseOfficial/j:JudicialOfficialBarMembership/"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseOfficial/j:JudicialOfficialBarMembership"
+	key "niem-profile:niem:Type" value "j:JudicialOfficialType"
+	key "niem-profile:niem:Property" value "j:JudicialOfficialBarMembership"
+	key "niem-profile:niem:BaseType" value "j:JudicialOfficialBarMembership"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A membership in an attorney association."
       end
     end
 
@@ -2070,7 +2556,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include j:CaseAugmentation"
+      key "niem-profile:niem:Notes" value ""
       comment "Information needed to initiate a court case. The presence of caseTrackingIdentifier is the indicator of whether this is an existing case (present) or new case (absent). For existing cases, caseTrackingIdentifier and shortCaseTitle are mandatory; caseTypeCode is not allowed. For new cases, shortCaseTitle and caseTypeCode are mandatory; caseTrackingIdentifier is not allowed."
       classrelation 145922 // alias (<directional aggregation>)
 	relation 143746 o-->
@@ -2467,6 +2953,36 @@ ${members}};
 	comment "The abbreviated name of a case.   Examples: Smith v. Jones, et al.; State v. Alexander. No title exists when the message is initiating a new case.
 "
       end
+
+      attribute 4253314 "caseExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation"
+	key "niem-profile:niem:Type" value "nc:CaseType"
+	key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (j:CaseAugmentation)"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a case."
+      end
+
+      classrelation 3360386 // <directional aggregation>
+	relation 3358210 o-->
+	  a role_name "" public
+	    classrelation_ref 3360386 // <directional aggregation>
+	  b parent class_ref 131586 // Case
+      end
     end
 
     class 140418 "CaseAttorneyRole"
@@ -2610,7 +3126,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:ActivityType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:CaseAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The prior court, police, or prosecutor case from which this case originates. Examples: case appealed to this court from a lower court; case transferred to or removed to this court; case remanded to this court; original proceeding in this court; in some courts, a designation that this case is a reopening of a proceeding in the same court. In the criminal and juvenile delinquency contexts a police incident report number, a prosecution case number, a grand jury case number, or a criminal case bound over to this court for trial from a limited jurisdiction court."
       attribute 149634 "caseTitle"
 	public explicit_type "string"
@@ -2801,8 +3317,122 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "nc:ContactInformation includes nc:ContactEmailID, nc:ContactMailingAddress, nc:ContactTelephoneNumber, nc:ContactFaxNumber, nc:ContactEntity, nc:ContactEntityDescriptionText, and nc:ContactResponder"
+      key "niem-profile:niem:Notes" value "Include nc:ContactEntity?"
       comment "The preferred contact for a person or organization, such as address, telephone number, or email address."
+      attribute 4253442 "emailAddress"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactEmailID"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactEmailID"
+	key "niem-profile:niem:Type" value "nc:ContactInformationType"
+	key "niem-profile:niem:Property" value "nc:ContactMeans, (nc:ContactEmailID)"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An email address."
+      end
+
+      attribute 4253570 "mailingAddress"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactMailingAddress"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactMailingAddress"
+	key "niem-profile:niem:Type" value "nc:ContactInformationType"
+	key "niem-profile:niem:Property" value "nc:ContactMeans, (nc:ContactMailingAddress)"
+	key "niem-profile:niem:BaseType" value "nc:AddressType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A mailing address."
+      end
+
+      attribute 4253698 "telephoneNumber"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber"
+	key "niem-profile:niem:Type" value "nc:ContactInformationType"
+	key "niem-profile:niem:Property" value "nc:ContactMeans, (nc:ContactTelephoneNumber)"
+	key "niem-profile:niem:BaseType" value "nc:TelephoneNumberType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A telephone number	"
+      end
+
+      attribute 4260226 "contactDescription"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactEntityDescriptionText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactEntityDescriptionText"
+	key "niem-profile:niem:Type" value "nc:ContactInformationType"
+	key "niem-profile:niem:Property" value "nc:ContactEntityDescriptionText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A description of a contact."
+      end
+
+      attribute 4260354 "responder"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactResponder"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactResponder"
+	key "niem-profile:niem:Type" value "nc:ContactInformationType"
+	key "niem-profile:niem:Property" value "nc:ContactResponder"
+	key "niem-profile:niem:BaseType" value "nc:PersonType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A person who responds to calls on behalf of the contact."
+      end
     end
 
     class 130690 "CoreFilingMessage"
@@ -2906,6 +3536,29 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 281986 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "core:CoreFilingMessage/core:CoreFilingMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "core:CoreFilingMessageType"
+	key "niem-profile:niem:Property" value "core:CoreFilingMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -3051,7 +3704,7 @@ ${members}};
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value "structures:ObjectType"
 	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "Additional metadata for a filed ocument."
       end
 
@@ -3397,7 +4050,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "nc:Attachment"
 	key "niem-profile:niem:BaseType" value "nc:BinaryType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint, nc:DocumentBinary"
+	key "niem-profile:niem:Notes" value ""
       end
 
       attribute 197250 "colorRelevanceIndicator"
@@ -3433,13 +4086,13 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 8
-	key "niem-profile:niem:OldXPath" value "ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryLocationURI"
+	key "niem-profile:niem:OldXPath" value "ecf:DocumentRenditionMetadata/nc:DocumentBinary"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/nc:DocumentBinary/nc:BinaryURI"
-	key "niem-profile:niem:Type" value "nc:BinaryType"
-	key "niem-profile:niem:Property" value "nc:BinaryURI"
-	key "niem-profile:niem:BaseType" value "niem-xs:anyURI"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/nc:DocumentBinary"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentBinary"
+	key "niem-profile:niem:BaseType" value "nc:BinaryType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "Embedded document data, in an encoded form acceptable to be included within XML."
       end
@@ -3548,6 +4201,28 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "An indicator that sensitive information has been removed from this rendition of the document.  "
+      end
+
+      attribute 4260482 "documentBinaryURI"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryLocationURI"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "ecf:DocumentRendition/nc:DocumentBinary/nc:BinaryURI"
+	key "niem-profile:niem:Type" value "nc:BinaryType"
+	key "niem-profile:niem:Property" value "nc:BinaryURI"
+	key "niem-profile:niem:BaseType" value "niem-xs:anyURI"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -3722,7 +4397,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:Person, nc:Employer"
+      key "niem-profile:niem:Notes" value ""
       comment "Employment of an individual by an organization."
       attribute 197890 "employeeLocation"
 	public type class_ref 163330 // address
@@ -3744,6 +4419,40 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The address of an employer."
+      end
+
+      classrelation 2418178 // person (<directional aggregation>)
+	relation 2416002 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "person" multiplicity "1" public
+	    classrelation_ref 2418178 // person (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131842 // Person
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:PersonEmploymentAssociation/nc:Person"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "nc:PersonEmploymentAssociation/nc:Person"
+	key "niem-profile:niem:Type" value "nc:PersonEmploymentAssociationType"
+	key "niem-profile:niem:Property" value "nc:Employee"
+	key "niem-profile:niem:BaseType" value "nc:PersonType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      classrelation 2418306 // organization (<directional aggregation>)
+	relation 2416130 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "organization" multiplicity "1" public
+	    classrelation_ref 2418306 // organization (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131970 // Organization
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:PersonEmploymentAssociation/nc:Organization"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "nc:PersonEmploymentAssociation/nc:Organization"
+	key "niem-profile:niem:Type" value "nc:PersonEmploymentAssociationType"
+	key "niem-profile:niem:Property" value "nc:Employer"
+	key "niem-profile:niem:BaseType" value "nc:EntityType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -3767,6 +4476,51 @@ ${members}};
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "A person, organization, or property."
+      attribute 4260610 "person"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:Person"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Entity/nc:Person"
+	key "niem-profile:niem:Type" value "nc:EntityType"
+	key "niem-profile:niem:Property" value "nc:EntityRepresentation, (nc:EntityPerson)"
+	key "niem-profile:niem:BaseType" value "nc:PersonType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A person entity"
+      end
+
+      attribute 4260738 "organization"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:Organization"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Entity/nc:Organization"
+	key "niem-profile:niem:Type" value "nc:EntityType"
+	key "niem-profile:niem:Property" value "nc:EntityRepresentation, (nc:EntityOrganization)"
+	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "An organzation entity."
+      end
     end
 
     class 131970 "Organization"
@@ -3787,7 +4541,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:OrganizationAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "A structure that describes a unit which conducts some sort of business or operations."
       classrelation 155778 // <generalisation>
 	relation 153602 ---|>
@@ -3875,6 +4629,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value "Add a specific element for filer ID?"
 	comment "The unique identifier assigned by the court at the time the organization is first associated with the case.  If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this blank."
       end
+
+      attribute 4260866 "organizationExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Organization/nc:OrganizaitonAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Organization/nc:OrganizaitonAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:OrganizationType"
+	key "niem-profile:niem:Property" value "nc:OrganizationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an organization."
+      end
     end
 
     class 136706 "OrganizationRelationship"
@@ -3933,8 +4710,31 @@ ${members}};
 	key "niem-profile:niem:Property" value "ecf:EntityAssociationTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include nc:OrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "A code for the type of relationship between two persons, between two organizations, or between a person and an organization in a case.  Allowable values are set forth in Court Policy.  Examples include parent/child, subsidiary corporation, and chief executive officer."
+      end
+
+      attribute 4260994 "associationAugmentation"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:OrganizationAssociation/nc:OrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:OrganizationAssociation/nc:OrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:OrganizationAssociationType"
+	key "niem-profile:niem:Property" value "nc:OrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extensiun point for an association."
       end
     end
 
@@ -3956,7 +4756,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:PersonAugmentationPoint, nc:PersonLanguage, nc:PersonCapability"
+      key "niem-profile:niem:Notes" value ""
       comment "The person playing a role in a case."
       classrelation 141314 // <generalisation>
 	relation 139650 ---|>
@@ -4150,6 +4950,75 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Person organizational position or title."
       end
+
+      attribute 4261122 "personExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a person."
+      end
+
+      attribute 4261250 "language"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonPrimaryLanguage"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonPrimaryLanguage"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonPrimaryLanguage"
+	key "niem-profile:niem:BaseType" value "nc:PersonLanguageType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A language primarily spoken by a person."
+      end
+
+      attribute 4261378 "capability"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonCapability"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonCapability"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonCapability"
+	key "niem-profile:niem:BaseType" value "nc:CapabilityType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A capability or lack thereof of a person	"
+      end
     end
 
     class 135426 "PersonOrganizationRelationship"
@@ -4187,7 +5056,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "nc:Organization"
 	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value "Include nc:PersonOrganizationAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
       end
 
       classrelation 145154 // person (<directional aggregation>)
@@ -4229,6 +5098,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "A code for the type of relationship between two persons, between two organizations, or between a person and an organization in a case.  Allowable values are set forth in Court Policy.  Examples include parent/child, subsidiary corporation, and chief executive officer."
       end
+
+      attribute 4261506 "associationExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:PersonOrganizationAssociation/nc:PersonOrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:PersonOrganizationAssociation/nc:PersonOrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:PersonOrganizationAssociationType"
+	key "niem-profile:niem:Property" value "nc:PersonOrganizationAssociationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an association."
+      end
     end
 
     class 135298 "PersonRelationship"
@@ -4249,7 +5141,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:PersonAssociationAugmentationPoint"
+      key "niem-profile:niem:Notes" value ""
       comment "The relationship of a person to another person in a case.  Allowable values set forth in Court Policy."
       classrelation 142466 // person (<directional aggregation>)
 	relation 140418 o-->
@@ -4289,6 +5181,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A code for the type of relationship between two persons, between two organizations, or between a person and an organization in a case.  Allowable values are set forth in Court Policy.  Examples include parent/child, subsidiary corporation, and chief executive officer."
+      end
+
+      attribute 4261634 "associationExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:PersonAssociation/nc:PersonAssociationAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:PersonAssociation/nc:PersonAssociationAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:PersonAssociationType"
+	key "niem-profile:niem:Property" value "nc:PersonAssociationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an association."
       end
     end
 
@@ -4375,14 +5290,14 @@ ${members}};
       mysql_decl ""
       
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "RelatedCaseAssociation"
+      key "niem-profile:niem:OldXPath" value "nc:RelatedCaseAssociation"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:RelatedCaseAssociation"
       key "niem-profile:niem:Type" value "nc:RelatedActivityAssociationType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:RelatedActivityAssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:RelatedActivityAssociationAugmentationPoint, nc:Activity"
+      key "niem-profile:niem:Notes" value ""
       comment "Case or cases sharing characteristics, such as common parties or events, with this case."
       attribute 133378 "associationTypeCode"
 	public type class_ref 192130 // code
@@ -4397,8 +5312,8 @@ ${members}};
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "RelatedCaseAssociation/RelatedCaseAssociationTypeCode"
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:RelatedCaseAssociation/ecf:RelatedActivityAssocationAugmentation/ecf:RelatedCaseAssociationTypeCode"
-	key "niem-profile:niem:Type" value "ecf:RelatedActivityAssocationAugmentationType"
+	key "niem-profile:niem:XPath" value "nc:RelatedCaseAssociation/ecf:RelatedActivityAssociationAugmentation/ecf:RelatedCaseAssociationTypeCode"
+	key "niem-profile:niem:Type" value "ecf:RelatedActivityAssociationAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:RelatedCaseAssociationTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
@@ -4449,18 +5364,41 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Name of court in which the related case was filed. CourtID is not used here, because the court may not be a participant in electronic filing."
       end
+
+      attribute 4261762 "associationExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "nc:RelatedCaseAssociation/nc:RelatedCaseAssociationAugmentationPoint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:RelatedCaseAssociation/nc:RelatedCaseAssociationAugmentationPoint"
+	key "niem-profile:niem:Type" value "nc:RelatedActivityAssociationType"
+	key "niem-profile:niem:Property" value "nc:RelatedActivityAssociationAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for an association.	"
+      end
     end
 
     classdiagram 164994 "Case"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       comment "The relationship between two organizations in this case."
-      size Letter-Landscape
+      size D-Landscape
     end
 
     classdiagram 135810 "CoreFilingMessage"
-      classdiagramsettings draw_all_relations no member_max_width 0 end
+      classdiagramsettings draw_all_relations no show_members_stereotype no member_max_width 0 class_drawing_mode class end
       comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
-      size Letter-Landscape
+      size C
     end
 
     classinstance 1650306 "CoreFilingMessage"
@@ -4471,12 +5409,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "core:CoreFilingMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "core:CoreFilingMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "core:CoreFilingMessage"
-      key "niem-profile:niem:BaseType" value "core:CoreFilingMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -4511,17 +5449,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "allocaterequest:CourtDateAllocationRequestMessage"
+      key "niem-profile:niem:Type" value "allocaterequest:CourtDateAllocationRequestMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222338 // <generalisation>
 	relation 220162 ---|>
 	  a public
 	    classrelation_ref 222338 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
+      end
+
+      attribute 1545602 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "allocaterequest:CourtDateAllocationRequestMessage/allocaterequest:CourtDateAllocationRequestMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "allocaterequest:CourtDateAllocationRequestMessageType"
+	key "niem-profile:niem:Property" value "allocaterequest:CourtDateAllocationRequestMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -4578,17 +5539,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "allocateresponse:CourtDateAllocationResponseMessage"
+      key "niem-profile:niem:Type" value "allocateresponse:CourtDateAllocationResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222466 // <generalisation>
 	relation 220290 ---|>
 	  a public
 	    classrelation_ref 222466 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
+      end
+
+      attribute 1545730 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "allocateresponse:CourtDateAllocationResponseMessage/allocateresponse:CourtDateAllocationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "allocateresponse:CourtDateAllocationResponseMessageType"
+	key "niem-profile:niem:Property" value "allocateresponse:CourtDateAllocationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -4645,17 +5629,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "reserverequest:CourtDateReservationRequestMessage"
+      key "niem-profile:niem:Type" value "reserverequest:CourtDateReservationRequestMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222594 // <generalisation>
 	relation 220418 ---|>
 	  a public
 	    classrelation_ref 222594 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
+      end
+
+      attribute 1545858 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "reserverequest:CourtDateReservationRequestMessage/reserverequest:CourtDateReservationRequestMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "reserverequest:CourtDateReservationRequestMessageType"
+	key "niem-profile:niem:Property" value "reserverequest:CourtDateReservationRequestMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -4712,17 +5719,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "reserveresponse:CourtDateReservationResponseMessage"
+      key "niem-profile:niem:Type" value "reserveresponse:CourtDateReservationResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222722 // <generalisation>
 	relation 220546 ---|>
 	  a public
 	    classrelation_ref 222722 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
+      end
+
+      attribute 1545986 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "reserveresponse:CourtDateReservationResponseMessage/reserveresponse:CourtDateReservationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "reserveresponse:CourtDateReservationResponseMessageType"
+	key "niem-profile:niem:Property" value "reserveresponse:CourtDateReservationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -4793,6 +5823,29 @@ ${members}};
 	    classrelation_ref 156034 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
       end
+
+      attribute 1546114 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "policyquery:CourtPolicyQueryMessage/policyquery:CourtPolicyQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "policyquery:CourtPolicyQueryMessageType"
+	key "niem-profile:niem:Property" value "policyquery:CourtPolicyQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 135938 "CourtPolicyQueryMessage"
@@ -4809,12 +5862,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "policyquery:CourtPolicyQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "policyquery:CourtPolicyQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "policyquery:CourtPolicyQueryMessage"
-      key "niem-profile:niem:BaseType" value "policyquery:CourtPolicyQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -5152,6 +6205,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 1546242 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:CourtPolicyResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "policyresponse:CourtPolicyResponseMessageType"
+	key "niem-profile:niem:Property" value "policyresponse:CourtPolicyResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     class 137602 "DevelopmentPolicyParameters"
@@ -5452,7 +6528,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "policyresponse:CourtExtensionURI"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include policyresponse:CourtExtension"
+	key "niem-profile:niem:Notes" value ""
 	comment "An XML Schema document that defines the allowable structure of the court-specific argument to this MDE operation."
       end
 
@@ -5543,6 +6619,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Name of an MDE operation."
       end
+
+      attribute 4261890 "corutExtension"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:CourtExtension"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "policyresponse:DevelopmentPolicyParameters/policyresponse:CourtExtension"
+	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyParametersType"
+	key "niem-profile:niem:Property" value "policyresponse:CourtExtension"
+	key "niem-profile:niem:BaseType" value "policyresponse:CourtExtensionType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A court extension to ECF."
+      end
     end
 
     class 137090 "PublicKeyInformation"
@@ -5562,7 +6661,7 @@ ${members}};
       key "niem-profile:niem:Type" value "policyresponse:PublicKeyInformationType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
-      key "niem-profile:niem:Multiplicity" value "0.1"
+      key "niem-profile:niem:Multiplicity" value "0,1"
       key "niem-profile:niem:Notes" value "Include ds:keyGen"
       comment "Symmetric or asymmetric keys used to encrypt and decrypt, or verify signed messages or documents exchanged with the court."
     end
@@ -6107,12 +7206,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "policyresponse:CourtPolicyResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "policyresponse:CourtPolicyResponseMessage"
-      key "niem-profile:niem:BaseType" value "policyresponse:CourtPolicyResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -6147,17 +7246,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "schedulerequest:CourtScheduleQueryMessage"
+      key "niem-profile:niem:Type" value "schedulerequest:CourtScheduleQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222850 // <generalisation>
 	relation 220674 ---|>
 	  a public
 	    classrelation_ref 222850 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
+      end
+
+      attribute 1546370 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:CourtScheduleQueryMessage/schedulerequest:CourtScheduleQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "schedulerequest:CourtScheduleQueryMessageType"
+	key "niem-profile:niem:Property" value "schedulerequest:CourtScheduleQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -6214,17 +7336,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "scheduleresponse:CourtScheduleResponseMessage"
+      key "niem-profile:niem:Type" value "scheduleresponse:CourtScheduleResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222978 // <generalisation>
 	relation 220802 ---|>
 	  a public
 	    classrelation_ref 222978 // <generalisation>
 	  b parent class_ref 132866 // ResponseMessage
+      end
+
+      attribute 1546498 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "scheduleresponse:CourtScheduleResponseMessage/scheduleresponse:CourtScheduleResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "scheduleresponse:CourtScheduleResponseMessageType"
+	key "niem-profile:niem:Property" value "scheduleresponse:CourtScheduleResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -6287,7 +7432,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:QueryMessageType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:Case, nc:Document"
+      key "niem-profile:niem:Notes" value ""
       comment "The base information contained in any query message."
       classrelation 128898 // <generalisation>
 	relation 128898 ---|>
@@ -6339,6 +7484,63 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "A number used to identify a document in electronic form in the court official record.  Should be the Document ID assigned by the court at the time of Record Docketing."
       end
+
+      attribute 1546626 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessage/documentquery:DocumentQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "documentquery:DocumentQueryMessageType"
+	key "niem-profile:niem:Property" value "documentquery:DocumentQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 2418434 // case (<directional aggregation>)
+	relation 2416258 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "0..1" public
+	    classrelation_ref 2418434 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "documentquery:DocumentQueryMessage/nc:Case"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessage/nc:Case"
+	key "niem-profile:niem:Type" value "documentquery:DocumentQueryMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      classrelation 3360258 // document (<directional aggregation>)
+	relation 3358082 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "document" multiplicity "1" public
+	    classrelation_ref 3360258 // document (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131074 // Document
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "documentquery:DocumentQueryMessage/nc:Case/nc:CaseDocketID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessage/nc:Document"
+	key "niem-profile:niem:Type" value "documentquery:DocumentQueryMessageType"
+	key "niem-profile:niem:Property" value "nc:Document"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
     end
 
     classdiagram 136194 "DocumentQueryMessage"
@@ -6355,12 +7557,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "documentquery:DocumentQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "documentquery:DocumentQueryMessage"
-      key "niem-profile:niem:BaseType" value "documentquery:DocumentQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -6401,7 +7603,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:QueryResponseMessageType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:Case, nc:Document"
+      key "niem-profile:niem:Notes" value ""
       comment "The court response to a request for an electronic document in the court official record.
 "
       classrelation 129026 // <generalisation>
@@ -6443,9 +7645,9 @@ ${members}};
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "documentresponse:DocumentResponseMessage/ecf:Document"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage/ecf:Document"
+	key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage/nc:Document"
 	key "niem-profile:niem:Type" value "documentresponse:DocumentResponseMessageType"
-	key "niem-profile:niem:Property" value "ecf:Document"
+	key "niem-profile:niem:Property" value "nc:Document"
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -6472,6 +7674,46 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the serviceRecipientID for subsequent filings in this case, and asynchronous responses to this filing."
       end
+
+      attribute 1546754 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage/documentresponse:DocumentResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "documentresponse:DocumentResponseMessageType"
+	key "niem-profile:niem:Property" value "documentresponse:DocumentResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 2418562 // case (<directional aggregation>)
+	relation 2416386 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "0..1" public
+	    classrelation_ref 2418562 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "documentresponse:DocumentResponseMessage/j:CaseCourt"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage/nc:Case"
+	key "niem-profile:niem:Type" value "documentresponse:DocumentResponseMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+      end
     end
 
     classdiagram 136322 "DocumentResponseMessage"
@@ -6488,12 +7730,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "documentresponse:DocumentResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "documentresponse:DocumentResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "documentresponse:DocumentResponseMessage"
-      key "niem-profile:niem:BaseType" value "documentresponse:DocumentResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -6530,7 +7772,7 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value "feescalculationquery:FeesCalculationQueryMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "feescaculationquery:GetFeesCalculationMessage"
+      key "niem-profile:niem:XPath" value "feescalculationquery:FeesCalculationQueryMessage"
       key "niem-profile:niem:Type" value "feescalculationquery:FeesCalculationQueryMessageType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
@@ -6555,12 +7797,35 @@ ${members}};
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "feescalculationquery:FeesCalculationQueryMessage/core:CoreFilingMessage"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "feescalculationquery:GetFeesCalculationMessage/core:ReviewFilingMessage"
+	key "niem-profile:niem:XPath" value "feescalculationquery:FeesCalculationQueryMessageType/core:ReviewFilingMessage"
 	key "niem-profile:niem:Type" value "feescalculationquery:FeesCalculationQueryMessageType"
 	key "niem-profile:niem:Property" value "core:ReviewFilingMessage"
 	key "niem-profile:niem:BaseType" value "core:CoreFilingMessageType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 1546882 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "feescalculationquery:FeesCalculationQueryMessagefeescalculationquery:FeesCalculationQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "feescalculationquery:FeesCalculationQueryMessageType"
+	key "niem-profile:niem:Property" value "feescalculationquery:FeesCalculationQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -6579,12 +7844,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "feescalculationquery:FeesCalculationQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "feescalculationquery:FeesCalculationQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "feescalculationquery:FeesCalculationQueryMessage"
-      key "niem-profile:niem:BaseType" value "feescalculationquery:FeesCalculationQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -6680,6 +7945,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "A total of all fees required to submit a document."
       end
+
+      attribute 1547010 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "feescalculationresponse:FeesCalculationResponseMessage/feescalculationresponse:FeesCalculationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "feescalculationresponse:FeesCalculationResponseMessageType"
+	key "niem-profile:niem:Property" value "feescalculationresponse:FeesCalculationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 136578 "FeesCalculationResponseMessage"
@@ -6697,12 +7985,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "feescalculationresponse:FeesCalculationResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "feescalculationresponse:FeesCalculationResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "feescalculationresponse:FeesCalculationResponseMessage"
-      key "niem-profile:niem:BaseType" value "feescalculationresponse:FeesCalculationResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -6813,6 +8101,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 1547138 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filinglistquery:FilingListQueryMessage/filinglistquery:FilingListQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "filinglistquery:FilingListQueryMessageType"
+	key "niem-profile:niem:Property" value "filinglistquery:FilingListQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 136706 "FilingListQueryMessage"
@@ -6829,12 +8140,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "filinglistquery:FilingListQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "filinglistquery:FilingListQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "filinglistquery:FilingListQueryMessage"
-      key "niem-profile:niem:BaseType" value "filinglistquery:FilingListQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -6901,6 +8212,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 1547266 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filinglistresponse:FilingListResponseMessage/filinglistresponse:FilingListResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "filinglistresponse:FilingListResponseMessageType"
+	key "niem-profile:niem:Property" value "filinglistresponse:FilingListResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     class 133634 "MatchingFiling"
@@ -6921,7 +8255,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:DocumentAugmentationPoint/nc:Case and nc:DcoumentSubmitter"
+      key "niem-profile:niem:Notes" value ""
       comment "A filing matching the parameters submitted with a FilingListQueryMessage."
       attribute 138882 "caseShortTitle"
 	public explicit_type "string"
@@ -7076,9 +8410,50 @@ ${members}};
 	key "niem-profile:niem:Notes" value "Add a specific element for filer ID?"
 	comment "A unique identifier for a person or organization which submits a Review Filing Message. This may refer to any combination of the assembler, authorizer, or the represented party in the filing."
       end
+
+      classrelation 3360514 // case (<directional aggregation>)
+	relation 3358338 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    comment "A case associated with a document."
+	    classrelation_ref 3360514 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:CaseFiling/ecf:DocumentAugmentation/nc:Case"
+	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 6363138 "submitter"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentSubmitter"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentSubmitter"
+	key "niem-profile:niem:BaseType" value "nc:EntityType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The submitter of a document"
+      end
     end
 
-    classdiagram 171522 "FilinigListResponseMessage"
+    classdiagram 171522 "FilingListResponseMessage"
       classdiagramsettings member_max_width 0 end
       comment "A court response to a FilingListQueryMessage."
       size Letter-Landscape
@@ -7092,12 +8467,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "filinglistresponse:FilingListResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "filinglistresponse:FilingListResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "filinglistresponse:FilingListResponseMessage"
-      key "niem-profile:niem:BaseType" value "filinglistresponse:FilingListResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -7138,7 +8513,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:QueryMessageType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:Case, nc:CaseFiling"
+      key "niem-profile:niem:Notes" value ""
       comment "This is query to get a filing status by Filing Number."
       classrelation 128130 // <generalisation>
 	relation 128130 ---|>
@@ -7212,6 +8587,64 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
+
+      attribute 1547394 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filingstatusquery:FilingStatusQueryMessage/filingstatusquery:FilingStatusQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "filingstatusquery:FilingStatusQueryMessageType"
+	key "niem-profile:niem:Property" value "filingstatusquery:FilingStatusQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 3360642 // case (<directional aggregation>)
+	relation 3358466 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    comment "The case associated with a filing."
+	    classrelation_ref 3360642 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filingstatusquery:FilingStatusQuery/nc:Case"
+	key "niem-profile:niem:Type" value "filingstatusquery:FilingStatusQueryMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      classrelation 3360770 // document (<directional aggregation>)
+	relation 3358594 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "document" multiplicity "1" public
+	    classrelation_ref 3360770 // document (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131074 // Document
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filingstatusquery:FilingStatusQueryMessage/nc:CaseFiling"
+	key "niem-profile:niem:Type" value "filingstatusquery:FilingStatusQueryMessageType"
+	key "niem-profile:niem:Property" value "nc:CaseFiling"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
     end
 
     classdiagram 136962 "FilingStatusQueryMessage"
@@ -7228,12 +8661,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "filingstatusquery:FilingStatusQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "filingstatusquery:FilingStatusQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "filingstatusquery:FilingStatusQueryMessage"
-      key "niem-profile:niem:BaseType" value "filingstatusquery:FilingStatusQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -7274,7 +8707,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:CaseFiling"
+      key "niem-profile:niem:Notes" value ""
       comment "A court response to a FilingStatusQueryMessage."
       classrelation 128258 // <generalisation>
 	relation 128258 ---|>
@@ -7343,7 +8776,7 @@ ${members}};
 	key "niem-profile:niem:XPath" value "filingstatusresponse:FilingStatusResponseMessage/nc:CaseFiling/nc:DocumentStatus/nc:StatusDescriptionText"
 	key "niem-profile:niem:Type" value "nc:StatusType"
 	key "niem-profile:niem:Property" value "nc:StatusDescriptionText"
-	key "niem-profile:niem:BaseType" value "nc:DocumentType"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Genericode code list gc/ECF-4.0-FilingStatusCode.gc"
 	comment "Details about the status of a court processing of a ReviewFilingMessage submitted to it, and of its processing of the documents contained within that message."
@@ -7392,6 +8825,46 @@ ${members}};
 	key "niem-profile:niem:Notes" value "Add a specific element for filer ID?"
 	comment "A unique identifier for a person or organization which submits a Review Filing Message. This may refer to any combination of the assembler, authorizer, or the represented party in the filing."
       end
+
+      attribute 1547522 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filingstatusresponse:FilingStatusResponseMessage/filingstatusresponse:FilingStatusResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "filingstatusresponse:FilingStatusResponseMessageType"
+	key "niem-profile:niem:Property" value "filingstatusresponse:FilingStatusResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 3360898 // document (<directional aggregation>)
+	relation 3358722 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "document" multiplicity "1" public
+	    classrelation_ref 3360898 // document (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131074 // Document
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "filingstatusresponse:FilingStatusResponseMessage/nc:CaseFiling"
+	key "niem-profile:niem:Type" value "filingstatusresponse:FilingStatusResponseMessageType"
+	key "niem-profile:niem:Property" value "nc:CaseFiling"
+	key "niem-profile:niem:BaseType" value "nc:DocumentType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
     end
 
     classdiagram 137090 "FilingStatusResponseMessage"
@@ -7408,12 +8881,119 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "filingstatusresponse:FilingStatusResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "filingstatusresponse:FilingStatusResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "filingstatusresponse:FilingStatusResponseMessage"
-      key "niem-profile:niem:BaseType" value "filingstatusresponse:FilingStatusResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
+  end
+
+  classview 210434 "GetDocumentStampInformationMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 2107138 "GetDocumentStampInformationMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationMessage"
+      key "niem-profile:niem:Type" value "stamprequest:GetDocumentStampInformationMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      classrelation 1268098 // <generalisation>
+	relation 1265922 ---|>
+	  a public
+	    classrelation_ref 1268098 // <generalisation>
+	  b parent class_ref 138114 // ElectronicFilingMessage
+      end
+
+      classrelation 1268482 // case (<directional aggregation>)
+	relation 1266306 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    classrelation_ref 1268482 // case (<directional aggregation>)
+	  b parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationMessage/nc:Case"
+	key "niem-profile:niem:Type" value "stamprequest:GetDocumentStampInformationMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 1547650 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationMessage/stamprequest:GetDocumentStampInformationMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "stamprequest:GetDocumentStampInformationMessageType"
+	key "niem-profile:niem:Property" value "stamprequest:GetDocumentStampInformationMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+    end
+
+    classdiagram 218498 "GetDocumentStampInformationMessage"
+      classdiagramsettings member_max_width 0 end
+      size Letter-Landscape
+    end
+
+    classinstance 4665218 "GetDocumentStampInformationMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 2107138 // GetDocumentStampInformationMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -7454,7 +9034,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "cbrn:SystemEventType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include cbrn:MessageContentError/cbdn:ErrorDescription"
+      key "niem-profile:niem:Notes" value ""
       comment "A message returned synchronously to indicate receipt by an MDE of another message.  The name \"MessageReceipt\" suggested by S. Durham June 30 2005, and adopted by consensus on a TC call that day. The intent is that this will serve as the synchronous reply to all MDE operations that have an additional, asynchronous callback."
       classrelation 130818 // <generalisation>
 	relation 130818 ---|>
@@ -7518,12 +9098,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "messagereceipt:MessageReceiptMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "cbrn:MessageStatus"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "cbrn:MessageStatus"
-      key "niem-profile:niem:BaseType" value "cbrn:MessageStatusType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -7572,6 +9152,29 @@ ${members}};
 	    classrelation_ref 179330 // <generalisation>
 	  b parent class_ref 145922 // ElectronicFilingCallbackMessage
       end
+
+      attribute 1547778 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "docketcallback:NotifyDocketingCompleteMessage/docketcallback:NotifyDocketingCompleteMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "docketcallback:NotifyDocketingCompleteMessageType"
+	key "niem-profile:niem:Property" value "docketcallback:NotifyDocketingCompleteMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 138114 "NotifyDocketingCompletekMessage"
@@ -7588,12 +9191,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "docketcallback:NotifyDocketingCompleteMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "docketcallback:NotifyDocketingCompleteMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "docketcallback:NotifyDocketingCompleteMessage"
-      key "niem-profile:niem:BaseType" value "docketcallback:NotifyDocketingCompleteMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -7685,6 +9288,51 @@ ${members}};
 	    classrelation_ref 179074 // <generalisation>
 	  b parent class_ref 145922 // ElectronicFilingCallbackMessage
       end
+
+      attribute 1537922 "augmentationPoint"
+	public explicit_type ""
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage/reviewfilingcallback:NotifyFilingReviewCompleteMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageType"
+	key "niem-profile:niem:Property" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for court-specific extensions to the NotifyFilingReviewCompleteMessage"
+      end
+
+      attribute 1547906 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage/reviewfilingcallback:NotifyFilingReviewCompleteMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageType"
+	key "niem-profile:niem:Property" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 138370 "NotifyFilingReviewCompleteMessage"
@@ -7701,12 +9349,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "reviewfilingcallback:NotifyFilingReviewCompleteMessage"
-      key "niem-profile:niem:BaseType" value "reviewfilingcallback:NotifyFilingReviewCompleteMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -8634,12 +10282,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "cac:Payment"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "cac:Payment"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "cac:Payment"
-      key "niem-profile:niem:BaseType" value "cac:PaymentType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -8702,7 +10350,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:Case"
+      key "niem-profile:niem:Notes" value ""
       comment "Message resulting from clerk review and edit of a ReviewFilingMessage."
       classrelation 130946 // <generalisation>
 	relation 130946 ---|>
@@ -8812,6 +10460,46 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Instruction from the clerk to the court record to represent this case as \"sealed.\""
       end
+
+      attribute 1548034 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage/docket:RecordDocketingMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "docket:RecordDocketingMessageType"
+	key "niem-profile:niem:Property" value "docket:RecordDocketingMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 3361026 // case (<directional aggregation>)
+	relation 3358850 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    classrelation_ref 3361026 // case (<directional aggregation>)
+	  b multiplicity "1" parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "docket:RecordDocketingMessage/nc:Case"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage/nc:Case"
+	key "niem-profile:niem:Type" value "docket:RecordDocketingMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+      end
     end
 
     class 132482 "ReviewedDocument"
@@ -8832,7 +10520,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Include nc:DocumentStatus"
+      key "niem-profile:niem:Notes" value ""
       comment "A document that has been reviewed through the clerk review process, and that potentially has been or will be reocrded in the court record system."
       attribute 136322 "documentDocketID"
 	public type class_ref 156162 // id
@@ -8965,12 +10653,35 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Clerk instruction to court record system to seal this document."
       end
+
+      attribute 6363394 "documentStatus"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value "docket:ReviewedDocument/nc:DocumentStatus"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "docket:ReviewedDocument/nc:DocumentStatus"
+	key "niem-profile:niem:Type" value "docket:ReviewedDocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentStatus"
+	key "niem-profile:niem:BaseType" value "nc:StatusType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A status of a document."
+      end
     end
 
     classdiagram 138242 "RecordDocketingMessage"
       classdiagramsettings member_max_width 0 end
       comment "Message resulting from clerk review and edit of a ReviewFilingMessage."
-      size Letter-Landscape
+      size Legal-Landscape
     end
 
     classinstance 3149698 "RecordDocketingMessage"
@@ -8981,12 +10692,119 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "docket:RecordDocketingMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "docket:RecordDocketingMessage"
-      key "niem-profile:niem:BaseType" value "docket:RecordDocketingMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+    end
+  end
+
+  classview 210562 "ReturnDocumentStampInformationMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 2113666 "ReturnDocumentStampInformationMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "stampresponse:ReturnDocumentStampInformationMessage"
+      key "niem-profile:niem:Type" value "stampresponse:ReturnDocumentStampInformationMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      classrelation 1275010 // <generalisation>
+	relation 1272834 ---|>
+	  a public
+	    classrelation_ref 1275010 // <generalisation>
+	  b parent class_ref 132226 // BaseMessage
+      end
+
+      classrelation 1275138 // case (<directional aggregation>)
+	relation 1272962 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1" public
+	    classrelation_ref 1275138 // case (<directional aggregation>)
+	  b parent class_ref 131586 // Case
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "stampresponse:ReturnDocumentStampInformationMessage/nc:Case"
+	key "niem-profile:niem:Type" value "stampresponse:ReturnDocumentStampInformationMessageType"
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 1548162 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "stampresponse:ReturnDocumentStampInformationMessage/stampresponse:ReturnDocumentStampInformationMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "stampresponse:ReturnDocumentStampInformationMessageType"
+	key "niem-profile:niem:Property" value "stampresponse:ReturnDocumentStampInformationMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+    end
+
+    classdiagram 225026 "ReturnDocumentStampInformationMessage"
+      classdiagramsettings member_max_width 0 end
+      size Letter-Landscape
+    end
+
+    classinstance 4665346 "ReturnDocumentStampInformationMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 2113666 // ReturnDocumentStampInformationMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -9021,17 +10839,40 @@ ${members}};
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
+      key "niem-profile:niem:XPath" value "serveprocess:ServeProcessMessage"
+      key "niem-profile:niem:Type" value "serveprocess:ServeProcessMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "nc:DocumentType"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       classrelation 222210 // <generalisation>
 	relation 220034 ---|>
 	  a public
 	    classrelation_ref 222210 // <generalisation>
 	  b parent class_ref 132226 // BaseMessage
+      end
+
+      attribute 1548290 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "serveprocess:ServeProcessMessage/serveprocess:ServeProcessMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "serveprocess:ServeProcessMessageType"
+	key "niem-profile:niem:Property" value "serveprocess:ServeProcessMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
       end
     end
 
@@ -9124,6 +10965,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "Court case number."
       end
+
+      attribute 1548418 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "serviceinformationquery:ServiceInformationQueryMessage/serviceinformationquery:ServiceInformationQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "serviceinformationquery:ServiceInformationQueryMessageType"
+	key "niem-profile:niem:Property" value "serviceinformationquery:ServiceInformationQueryMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 138498 "ServiceInformationQueryMessage"
@@ -9140,12 +11004,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "serviceinformationquery:ServiceInformationQueryMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "serviceinformationquery:ServiceInformationQueryMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "serviceinformationquery:ServiceInformationQueryMessage"
-      key "niem-profile:niem:BaseType" value "serviceinformationquery:ServiceInformationQueryMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -9230,6 +11094,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 1548546 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "serviceinformationresponse:ServiceInformationResponseMessage/serviceinformationresponse:ServiceInformationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "serviceinformationresponse:ServiceInformationResponseMessageType"
+	key "niem-profile:niem:Property" value "serviceinformationresponse:ServiceInformationResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
     end
 
     classdiagram 138626 "ServiceInformationResponseMessage"
@@ -9246,12 +11133,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "serviceinformationresponse:ServiceInformationResponseMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "serviceinformationresponse:ServiceInformationResponseMessage"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "serviceinformationresponse:ServiceInformationResponseMessage"
-      key "niem-profile:niem:BaseType" value "serviceinformationresponse:ServiceInformationResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end
@@ -9318,6 +11205,29 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
+
+      attribute 6363522 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 8
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageStatusAugmentationPoint"
+	key "niem-profile:niem:Type" value "cbrn:MessageStatusType"
+	key "niem-profile:niem:Property" value "cbrn:MessageStatusAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for a message."
+      end
     end
 
     class 142594 "ServiceRecipientStatus"
@@ -9358,7 +11268,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "ecf:ServiceRecipeintID"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Include cbrn:MessageStatusAugmentationPoint"
+	key "niem-profile:niem:Notes" value ""
 	comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the submitterID for filings in this case, and asynchronous responses to filings."
       end
 
@@ -9422,12 +11332,12 @@ ${members}};
       relations
         end
       ncouples 8
-      key "niem-profile:niem:OldXPath" value "ServiceReceiptMessage"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "cbrn:MessageStatus"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "cbrn:MessageStatus"
-      key "niem-profile:niem:BaseType" value "cbrn:MessageStatusType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
     end

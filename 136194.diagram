@@ -1,16 +1,34 @@
-format 209
+format 212
 
 classcanvas 128002 class_ref 132226 // BaseMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end
-  xyz 453 70 2000
+  xyz 449 30 2000
 end
 classcanvas 128130 class_ref 134146 // DocumentQueryMessage
   classdiagramsettings member_max_width 0 end
-  xyz 409 147 2006
+  xyz 367 157 2006
+end
+classcanvas 128386 class_ref 131586 // Case
+  classdiagramsettings member_max_width 0 end
+  xyz 788 109 2000
+end
+classcanvas 128642 class_ref 131074 // Document
+  classdiagramsettings member_max_width 0 end
+  xyz 482 369 2000
 end
 relationcanvas 128258 relation_ref 128898 // <generalisation>
   from ref 128130 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 2416258 // <directional aggregation>
+  from ref 128130 z 2007 stereotype "<<niem>>" xyz 693 218 3000 to ref 128386
+  role_a_pos 731 183 3000 no_role_b
+  multiplicity_a_pos 741 227 3000 multiplicity_b_pos 701 233 3000
+end
+relationcanvas 128770 relation_ref 3358082 // <directional aggregation>
+  from ref 128130 z 2007 stereotype "<<niem>>" xyz 488 336 3000 to ref 128642
+  role_a_pos 547 336 3000 no_role_b
+  multiplicity_a_pos 515 336 3000 multiplicity_b_pos 510 317 3000
 end
 end
