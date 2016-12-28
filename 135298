@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::BaseTypes
-  revision 71
+  revision 74
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,6 +26,24 @@ format 212
   activitydiagramsettings
    end
   
+  classview 287362 "Codes"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
   classview 142082 "Common"
     
     classdiagramsettings member_max_width 0 end
@@ -42,6 +60,86 @@ format 212
     
     activitydiagramsettings
      end
+    class 4054914 "FilingStatusCode"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value "Genericode"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "Genericode"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "Filing Status Code"
+      attribute 6439426 "received"
+	public type class_ref 4054914 // FilingStatusCode
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "filing has been received but not yet accepted"
+      end
+
+      attribute 6439554 "accepted"
+	public type class_ref 4054914 // FilingStatusCode
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "filing was received and accepted"
+      end
+
+      attribute 6439682 "partiallyAccepted"
+	public type class_ref 4054914 // FilingStatusCode
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "filing was received, some documents were accepted, and some documents were rejected"
+      end
+
+      attribute 6439810 "rejected"
+	public type class_ref 4054914 // FilingStatusCode
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "filing was received and completely rejected<"
+      end
+    end
+
     class 132226 "BaseMessage"
       abstract visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -348,7 +446,7 @@ format 212
       end
 
       attribute 174466 "filingStatusCode"
-	public type class_ref 192130 // code
+	public type class_ref 4054914 // FilingStatusCode
 	stereotype "niem-profile:niem"
 	cpp_decl ""
 	java_decl ""
@@ -365,7 +463,7 @@ format 212
 	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list FilingStatusCode.gc"
 	comment "Status of the filing as determined by the system sending the callback. Values: accepted, partially accepted (e.g., some documents but not others), rejected."
       end
 
@@ -505,7 +603,6 @@ format 212
 	    classrelation_ref 1268226 // <directional aggregation>
 	  b parent class_ref 131586 // Case
       end
-
     end
 
     class 146562 "Error"
@@ -529,7 +626,7 @@ format 212
       key "niem-profile:niem:Notes" value ""
       comment "Representation of an error that occured when synchronously processing the message."
       attribute 176002 "errorCode"
-	public type class_ref 192130 // code
+	public type class_ref 4055042 // ErrorCode
 	stereotype "niem-profile:niem"
 	cpp_decl ""
 	java_decl ""
@@ -1047,6 +1144,411 @@ format 212
       key "niem-profile:niem:Notes" value ""
       comment "A date."
     end
+
+    class 4055042 "ErrorCode"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 8
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "Error codes"
+      attribute 6443906 "0"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "No error"
+      end
+
+      attribute 6439938 "1"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "ReviewFiling - Input XML is empty or null input was received."
+      end
+
+      attribute 6440066 "2"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'SendingMDEProfileCode' is empty. This is a required Filing element."
+      end
+
+      attribute 6440194 "3"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'SendingMDELocationID' is empty. This is a required Filing element."
+      end
+
+      attribute 6440322 "4"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'PersonOtherID' format is invalid."
+      end
+
+      attribute 6440450 "5"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'PersonOtherID' is empty. This is a required Filing element."
+      end
+
+      attribute 6440578 "6"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'DocumentPostDate' is invalid. Should be yyyy-mm-dd or yyy-mm-ddThh-mm-ss.0Z\""
+      end
+
+      attribute 6440706 "7"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'DocumentPostDate' is invalid. Should be yyyy-mm-dd or yyy-mm-ddThh-mm-ss.0Z\""
+      end
+
+      attribute 6440834 "8"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'FilingID' is empty. This is a required Filing element."
+      end
+
+      attribute 6440962 "9"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingID contains invalid characters. Filing Rejected."
+      end
+
+      attribute 6441090 "10"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingID format is invalid. Format is: VVV-unique-string-value. Filing Rejected."
+      end
+
+      attribute 6441218 "11"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'SendingMDELocationID' is empty. This is a required Filing element."
+      end
+
+      attribute 6441346 "12"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'SendingMDEProfileCode' is empty. This is a required Filing element."
+      end
+
+      attribute 6441474 "13"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'SubmissionReceivedDate' is empty. This is a required Filing element."
+      end
+
+      attribute 6441602 "14"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'DocumentIdentification' is empty. This is a required Filing element."
+      end
+
+      attribute 6441730 "15"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'DocumentLocationURI' is empty. This is a required Filing element."
+      end
+
+      attribute 6441858 "16"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'FilingLeadDocument' DocumentIdentification and DocumentLocationURI must contain a file name."
+      end
+
+      attribute 6441986 "17"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Only one 'FilingLeadDocument' node is allowed."
+      end
+
+      attribute 6442114 "18"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "No embedded documents &lt;DocumentBinary&gt; are allowed within the CoreFilingMessage."
+      end
+
+      attribute 6442242 "19"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Filing 'OrganizationID' value does not match Court Policy OrganizationID."
+      end
+
+      attribute 6442370 "20"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Filing 'CourtName' value does not match Court Policy CourtName."
+      end
+
+      attribute 6442498 "21"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Unknown document types are not allowed within the CoreFilingMessage."
+      end
+
+      attribute 6442626 "22"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Invalid File Type."
+      end
+
+      attribute 6442754 "23"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingLeadDocumentURI file not found."
+      end
+
+      attribute 6442882 "24"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingLeadDocumentURI file is zero length or empty."
+      end
+
+      attribute 6443010 "25"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingConnectedDocumentURI file not found."
+      end
+
+      attribute 6443138 "26"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingConnectedDocumentURI file is zero length or empty."
+      end
+
+      attribute 6443266 "27"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingID has already been used."
+      end
+
+      attribute 6443394 "28"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Attachment was not found in CoreFilingMessage:DocumentLocationURI xml element."
+      end
+
+      attribute 6443522 "29"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Zero length input."
+      end
+
+      attribute 6443650 "30"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "'FilingStatusQueryMessage' not found. This is a required Query element."
+      end
+
+      attribute 6443778 "31"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "FilingID not found: CaseNumber is empty."
+      end
+    end
   end
 
   classview 135298 "PrimitiveDataTypes"
@@ -1093,11 +1595,22 @@ format 212
 
     class 162818 "binary"
       visibility public stereotype "type"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
       explicit_switch_type ""
       mysql_decl ""
       
@@ -1105,13 +1618,26 @@ format 212
     end
 
     class 192130 "code"
-      visibility public stereotype "enum"
+      visibility public stereotype "enum_pattern"
       cpp_decl "${comment}enum ${name} {
 ${items}};
 "
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
-${members}}
+      java_decl "${comment}${@}${visibility}${static}final class ${name} {
+${members}
+  private final int value;
+
+  public int value() {
+    return value;
+  }
+
+  public static ${name} fromInt(int value) {
+    switch (value) {
+${cases}    default: throw new Error();
+    }
+
+  }
+  private ${name}(int v) { value = v; };
+}
 "
       php_decl "${comment}${visibility}final class ${name} {
 ${items}}

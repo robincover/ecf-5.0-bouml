@@ -1,6 +1,6 @@
 format 212
 "CaseTypeSpecificMessages" // CIM::CaseTypeSpecificMessages
-  revision 76
+  revision 79
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1028,12 +1028,12 @@ format 212
       ncouples 8
       key "niem-profile:niem:OldXPath" value "BankruptcyCase"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
-      key "niem-profile:niem:Notes" value "Replace bankruptcy case-type specific messages with recent bankruptcy filing form NIEM 2.1 IEPD from AOUSC, Relax definitions to allow case-type extensions to be used in any filings"
+      key "niem-profile:niem:XPath" value "nc:Case/bankruptcy:CaseAugmentation"
+      key "niem-profile:niem:Type" value "nc:CaseType"
+      key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (bankruptcy:CaseAugmentation)"
+      key "niem-profile:niem:BaseType" value "bankruptcy:CaseAugmentationType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
       comment "Additional information specific to bankruptcy cases."
       classrelation 181506 // <generalisation>
 	relation 179330 ---|>
@@ -1055,12 +1055,12 @@ format 212
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "BankruptcyCase/BankruptcyCaseAssetNoticeIndicator"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:XPath" value "nc:Case/bankruptcy:CaseAugmentation"
+	key "niem-profile:niem:Type" value "bankruptcy:CaseAugmentationType"
+	key "niem-profile:niem:Property" value "xs:any"
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "Whether assets are available for distribution to creditors."
       end
 
@@ -1078,8 +1078,8 @@ format 212
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
       end
 
       classrelation 181890 // debtor (<directional aggregation>)
@@ -1097,8 +1097,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,2"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
       end
 
       attribute 144642 "debtorTypeCode"
@@ -1118,8 +1118,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "\"Form of Origin\" indicator...one of seven code values from the Bankruptcy Petition Form."
       end
 
@@ -1140,8 +1140,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "A coded set of ranges of dollar values for assets.  Generally used for statistical reporting, not case management."
       end
 
@@ -1162,8 +1162,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "A coded set of ranges of dollar values for debts.  Generally used for statistical reporting, not case management."
       end
 
@@ -1184,8 +1184,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "Whether or not spouses are filing as joint debtors"
       end
 
@@ -1206,8 +1206,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "Whether the debts involved in the case are \"business\" or \"consumer\"."
       end
 
@@ -1228,8 +1228,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "A coded set of ranges of numbers of creditors involved in the case."
       end
 
@@ -1250,8 +1250,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "The debtor has elected to proceed under Section 1121 (e) of the bankruptcy code."
       end
 
@@ -1272,8 +1272,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "Whether the initiating party is a small business, as defined in bankruptcy code."
       end
 
@@ -1294,8 +1294,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Type" value ""
 	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "Whether the debtor has initiated bankruptcy (true, corresponding to Federal code \"V\") or a creditor has initiated bankruptcy (false, corresponding to Federal code \"I\")"
       end
     end
@@ -1313,12 +1313,12 @@ BankruptcyCase/Debtor.Organization"
       ncouples 8
       key "niem-profile:niem:OldXPath" value "j:Statute"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "??"
-      key "niem-profile:niem:Type" value "??"
-      key "niem-profile:niem:Property" value "??"
-      key "niem-profile:niem:BaseType" value "??"
-      key "niem-profile:niem:Multiplicity" value "??"
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
       comment "Section 11 of the United States Code pertaining to bankruptcy."
       attribute 145154 "chapterIDCode"
 	public type class_ref 156162 // id
@@ -1356,12 +1356,12 @@ BankruptcyCase/Debtor.Organization"
       ncouples 8
       key "niem-profile:niem:OldXPath" value "nc:Entity/"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "nc:Entity/"
-      key "niem-profile:niem:Type" value "nc:EntityType"
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
       comment "The person or organization on whose behalf, or against whom, a bankruptcy petition is filed.  A \"joint petition\" is indicated by naming the spouses who are both debtors in the case."
       classrelation 181762 // entity (<directional aggregation>)
 	relation 179586 o-->
@@ -1373,12 +1373,12 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:EntityRepresentation"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Entity/nc:EntityRepresentation"
-	key "niem-profile:niem:Type" value "nc:EntityType"
-	key "niem-profile:niem:Property" value "nc:EntityRepresentation"
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
       end
 
       attribute 145282 "taxID"
@@ -1394,12 +1394,12 @@ BankruptcyCase/Debtor.Organization"
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "??"
-	key "niem-profile:niem:Type" value "??"
-	key "niem-profile:niem:Property" value "??"
-	key "niem-profile:niem:BaseType" value "??"
-	key "niem-profile:niem:Multiplicity" value "??"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Notes" value "Use IEP as defined by BankruptcyFilingForms.xsd at http://www.pacer.gov/documents/CaseOpening/BankruptcyFilingForms.zip"
 	comment "The social security number or federal employer identifier number used by  the person or organization for tax filings."
       end
     end
@@ -1759,7 +1759,6 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "The place where an alleged violation occurred."
       end
-
     end
 
     class 144130 "CitationAgency"
@@ -2316,7 +2315,6 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
-
     end
 
     class 147714 "ExtendedDriversLicenseInformation"
@@ -2550,7 +2548,6 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value "Add a specific element for filer ID?"
 	comment "The unique identifier assigned by the court at the time a person is first associated with a case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this element blank.  This identifier is used to link other information in the case to a particular person."
       end
-
     end
 
     class 184834 "ParkingViolationInformation"
@@ -3023,7 +3020,7 @@ BankruptcyCase/Debtor.Organization"
       comment "The statutory or ordinance section a defendant or violator is alleged to have committed.  May include a probation violation.
 "
       attribute 171138 "offenseCodeBookName"
-	public type class_ref 192130 // code
+	public explicit_type "string"
 	stereotype "niem-profile:niem"
 	cpp_decl ""
 	java_decl ""
@@ -7200,7 +7197,6 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "Code designating the statutory or ordinance section, the violation of which would constitute a crime if committed by an adult. May include a probation violation."
       end
-
     end
 
     class 142978 "DependencyAllegation"
@@ -7538,7 +7534,6 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "A juvenile sex offender registration."
       end
-
     end
 
     class 140546 "JuvenileCase"
@@ -7791,7 +7786,6 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Notes" value ""
 	comment "Code indicating the type of placement. Allowable values set forth in Court Policy."
       end
-
     end
 
     class 141954 "PlacementOrganization"
@@ -7807,10 +7801,10 @@ BankruptcyCase/Debtor.Organization"
       ncouples 8
       key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/cyfs:JuvenilePlacementFacilityAssociation/juvenile:PlacementOrganization"
-      key "niem-profile:niem:Type" value "juvenile:PlacementOrganizationType"
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
       key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "nc:OrganizationType"
+      key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "An entity to whom the care of a juvenile is committed."

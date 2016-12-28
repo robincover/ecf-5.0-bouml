@@ -1,6 +1,6 @@
 format 212
 "Messages" // CIM::Messages
-  revision 91
+  revision 93
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -219,8 +219,8 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
       end
 
-      attribute 1544706 "filingStatus"
-	public explicit_type "string"
+      attribute 1544706 "filingStatusCode"
+	public type class_ref 4054914 // FilingStatusCode
 	multiplicity "1"
 	stereotype "niem-profile:niem"
 	cpp_decl ""
@@ -238,7 +238,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "nc:StatusDescriptionText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Genericode code list gc/ECF-4.0-FilingStatusCode.gc"
+	key "niem-profile:niem:Notes" value "Genericode code list FilingStatusCode.gc"
 	comment "Details about the status of a court processing of a ReviewFilingMessage submitted to it, and of its processing of the documents contained within that message."
       end
 
@@ -1466,7 +1466,7 @@ ${members}};
 	ncouples 8
 	key "niem-profile:niem:OldXPath" value "ecf:CourtEvent/ecf:CourtEventTypeCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/ecf:CourtEventAgumentation/ecf:CourtEventTypeCode"
+	key "niem-profile:niem:XPath" value "j:CaseCourtEvent/ecf:CourtEventAugmentation/ecf:CourtEventTypeCode"
 	key "niem-profile:niem:Type" value "ecf:CourtEventAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:CourtEventTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
@@ -4575,7 +4575,6 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	comment "A code for the type of relationship between two persons, between two organizations, or between a person and an organization in a case.  Allowable values are set forth in Court Policy.  Examples include parent/child, subsidiary corporation, and chief executive officer."
       end
-
     end
 
     class 131842 "Person"
@@ -8508,8 +8507,8 @@ ${members}};
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
 
-      attribute 137730 "filingStatus"
-	public explicit_type "string"
+      attribute 137730 "filingStatusCode"
+	public type class_ref 4054914 // FilingStatusCode
 	stereotype "niem-profile:niem"
 	cpp_decl ""
 	java_decl ""
@@ -8526,7 +8525,7 @@ ${members}};
 	key "niem-profile:niem:Property" value "nc:StatusDescriptionText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Genericode code list gc/ECF-4.0-FilingStatusCode.gc"
+	key "niem-profile:niem:Notes" value "Genericode code list FilingStatusCode.gc"
 	comment "Details about the status of a court processing of a ReviewFilingMessage submitted to it, and of its processing of the documents contained within that message."
       end
 

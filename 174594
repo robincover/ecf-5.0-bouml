@@ -1,6 +1,6 @@
 format 212
 "PIM" // PIM
-  revision 14
+  revision 1
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,9 +26,9 @@ format 212
   activitydiagramsettings
    end
   
+  package_ref 174722 // NIEMSubset
+
+  package_ref 174850 // NIEMExtension
+
   package_ref 174978 // NIEMReference
-
-  package_ref 181506 // NIEMSubset
-
-  package_ref 181634 // NIEMExtension
 end
