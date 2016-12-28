@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::BaseTypes
-  revision 67
+  revision 71
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -204,7 +204,7 @@ format 212
       ncouples 8
       key "niem-profile:niem:OldXPath" value "CaseTypeSpecificInformation"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "(abstract)"
+      key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value ""
@@ -506,28 +506,6 @@ format 212
 	  b parent class_ref 131586 // Case
       end
 
-      attribute 6361602 "documentExtension"
-	public type class_ref 2113794 // extension
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentAugmentationPoint"
-	key "niem-profile:niem:Type" value "nc:DocumentType"
-	key "niem-profile:niem:Property" value "nc:DocumentAugmentationPoint"
-	key "niem-profile:niem:BaseType" value "abstract"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	comment "An extension point for a document."
-      end
     end
 
     class 146562 "Error"
@@ -876,7 +854,7 @@ format 212
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonWeightMeasure"
 	key "niem-profile:niem:BaseType" value "nc:MeasureType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A measurement of the weight of a person."
       end
@@ -1061,10 +1039,10 @@ format 212
       ncouples 8
       key "niem-profile:niem:OldXPath" value "nc:DateType/nc:DateRepresentation"
       key "niem-profile:niem:OldMultiplicity" value "1,1"
-      key "niem-profile:niem:XPath" value "nc:DateType/nc:DateRepresentation"
+      key "niem-profile:niem:XPath" value "nc:DateType/nc:Date"
       key "niem-profile:niem:Type" value "nc:DateType"
       key "niem-profile:niem:Property" value "nc:DateRepresentation, (nc:Date)"
-      key "niem-profile:niem:BaseType" value "abstract"
+      key "niem-profile:niem:BaseType" value "niem-xs:date"
       key "niem-profile:niem:Multiplicity" value "1,1"
       key "niem-profile:niem:Notes" value ""
       comment "A date."
