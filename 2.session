@@ -1,82 +1,13 @@
-window_sizes 2736 1699 641 2089 1407 215
+window_sizes 2724 1684 641 2077 1392 215
 cleanlooks_style
 show_stereotypes
-marked
-  attribute_ref 160258 // actAggravatorCode
-  attribute_ref 160002 // actDegreeCode
-  attribute_ref 160130 // actGeneralCategoryCode
-  attribute_ref 159874 // actLevelCode
-  attribute_ref 160386 // allegationCode
-  attribute_ref 154114 // alternateNameTypeCode
-  attribute_ref 133378 // associationTypeCode
-  attribute_ref 205186 // calendarEventTypeCodeFilter
-  attribute_ref 143106 // cardTypeCode
-  attribute_ref 175874 // caseTypeCode
-  attribute_ref 139778 // caseTypeCode
-  attribute_ref 132994 // caseTypeCode
-  attribute_ref 139906 // caseTypeCode
-  attribute_ref 149122 // causeOfActionCode
-  attribute_ref 151554 // causeOfActionCode
-  attribute_ref 166274 // chargeEnhancingAllegationTypeCode
-  attribute_ref 156162 // custodyStatusCode
-  attribute_ref 162434 // custodyStatusCode
-  attribute_ref 144642 // debtorTypeCode
-  attribute_ref 159746 // delinquentActCode
-  attribute_ref 182018 // docketEntryTypeCode
-  attribute_ref 204802 // docketEntryTypeCodeFilter
-  attribute_ref 196994 // documentContentTypeCode
-  attribute_ref 132226 // documentSensitivityCode
-  attribute_ref 135810 // documentStatusCode
-  attribute_ref 131202 // documentTypeCode
-  attribute_ref 176002 // errorCode
-  attribute_ref 144130 // estimatedAssetsValueLevelCode
-  attribute_ref 144258 // estimatedDebtsValueLevelCode
-  attribute_ref 179202 // ethnicityCode
-  attribute_ref 151298 // ethnicityCode
-  attribute_ref 183554 // eventLocationCode
-  attribute_ref 180098 // eyeColorCode
-  attribute_ref 142466 // feeExemptionReasonCode
-  attribute_ref 150274 // fiduciaryTypeCode
-  attribute_ref 174466 // filingStatusCode
-  attribute_ref 179970 // hairColorCode
-  attribute_ref 149250 // initiatingPartyCitizenshipTypeCode
-  attribute_ref 134018 // interpreterLanguageCode
-  attribute_ref 148738 // jurisdictionalGroundsCode
-  attribute_ref 133122 // languageCode
-  attribute_ref 180354 // licenseRestrictionCode
-  attribute_ref 144898 // natureOfDebtCode
-  attribute_ref 153090 // noContactCode
-  attribute_ref 144002 // numberOfCreditorsValueLevelCode
-  attribute_ref 171138 // offenseCodeBookName
-  attribute_ref 152450 // parentTypeCode
-  attribute_ref 142210 // paymentMeansCode
-  attribute_ref 130818 // paymentPurposeCode
-  attribute_ref 140546 // personRelationshipToCaseTypeCode
-  attribute_ref 156418 // placementTypeCode
-  attribute_ref 178946 // raceCode
-  attribute_ref 150786 // raceCode
-  attribute_ref 158978 // receivingMDEProfileCode
-  attribute_ref 156802 // relationshipToJuvenileCode
-  attribute_ref 148482 // reliefTypeCode
-  attribute_ref 152706 // requestToVacateCode
-  attribute_ref 149378 // respondingPartyCitizenshipTypeCode
-  attribute_ref 154242 // roleCode
-  attribute_ref 150146 // roleCode
-  attribute_ref 150018 // roleCode
-  attribute_ref 135170 // sendingMDEProfileCode
-  attribute_ref 179458 // sexCode
-  attribute_ref 150914 // sexCode
-  attribute_ref 159234 // statusCode
-  attribute_ref 159618 // statusOffenseActCode
-  attribute_ref 145410 // typeCode
-  attribute_ref 141698 // typeCode
-  attribute_ref 141570 // typeCode
-  attribute_ref 172290 // vehicleColorCode
-end
 selected 
   package_ref 129 // ecf-5.0-bouml
 open
-  classview_ref 172802 // Stereotypes
+  componentview_ref 128002 // Components
+  classview_ref 148610 // Operations
+  
+  package_ref 161538 // niem-profile
   
   package_ref 174594 // PIM
 end

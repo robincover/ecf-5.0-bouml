@@ -170,6 +170,19 @@ format 212
 	comment "The multiplicity of the NIEM property that implements the source class or property"
       end
 
+      attribute 260482 "CodeList"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	oid 260482
+	comment "The values and definitions of a code list in the format \"value1\", \"definition1\", \"value2\", \"definition2\""
+      end
+
       attribute 253826 "Notes"
 	public explicit_type ""
 	cpp_decl ""

@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::BaseTypes
-  revision 74
+  revision 86
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -60,86 +60,6 @@ format 212
     
     activitydiagramsettings
      end
-    class 4054914 "FilingStatusCode"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl "${comment}${template}class ${name}${inherit} {
-${members}};
-${inlines}
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      python_2_2 python_decl "class ${name}${inherit}:
-${docstring}${members}
-"
-      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 8
-      key "niem-profile:niem:OldXPath" value "Genericode"
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "Genericode"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      comment "Filing Status Code"
-      attribute 6439426 "received"
-	public type class_ref 4054914 // FilingStatusCode
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "filing has been received but not yet accepted"
-      end
-
-      attribute 6439554 "accepted"
-	public type class_ref 4054914 // FilingStatusCode
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "filing was received and accepted"
-      end
-
-      attribute 6439682 "partiallyAccepted"
-	public type class_ref 4054914 // FilingStatusCode
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "filing was received, some documents were accepted, and some documents were rejected"
-      end
-
-      attribute 6439810 "rejected"
-	public type class_ref 4054914 // FilingStatusCode
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "filing was received and completely rejected<"
-      end
-    end
-
     class 132226 "BaseMessage"
       abstract visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -150,7 +70,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "ecf:CaseFiling"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:CaseFiling"
@@ -159,6 +79,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "The core information contained in an ECF 5.0 message."
       classrelation 137730 // court (<directional aggregation>)
 	relation 137730 o-->
@@ -167,7 +88,7 @@ ${members}};
 	    comment "The specific entity within the judicial branch of government in which a case or document is to be filed."
 	    classrelation_ref 137730 // court (<directional aggregation>)
 	  b parent class_ref 145026 // Court
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "j:DocumentCourtAssociation"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/ecf:DocumentAugmentation/j:CaseCourt"
@@ -176,6 +97,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "j:CourtType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
       end
 
       attribute 135682 "receivedTime"
@@ -188,7 +110,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentReceivedDate/nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentReceivedDate/nc:DateTime"
@@ -197,6 +119,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "The time an MDE received a Message, on the clock of the MDE, expressed in terms of a 24 hour clock. This time should be no earlier than the ReviewFilingMessage.submissionTime."
       end
 
@@ -210,7 +133,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/SendingMDELocationID"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/ecf:DocumentAugmentation/ecf:SendingMDELocationID"
@@ -219,6 +142,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "Location for the MDE to which asynchronous and service messages can be sent. This unique location is self-assigned by the MDE."
       end
 
@@ -232,7 +156,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/SendingMDEProfileCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/ecf:DocumentAuigmentation/ecf:SendingMDEProfileCode"
@@ -241,6 +165,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "Code identifying the service interaction profile being used by the sending filing assembly MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF."
       end
 
@@ -254,7 +179,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentPostDate/nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentPostDate/nc:DateTime"
@@ -263,6 +188,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "The time that the message left the control of the sending MDE. In a filing this is the Filing Assembly MDE."
       end
 
@@ -276,7 +202,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentSubmitter/nc:EntityRepresentation"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentSubmitter/nc:EntityRepresentation"
@@ -285,6 +211,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the serviceRecipientID for subsequent filings in this case, and asynchronous responses to this filing."
       end
     end
@@ -299,7 +226,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "CaseTypeSpecificInformation"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value ""
@@ -308,6 +235,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value ""
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "Information defined within one of the specific case types defined in the ECF 5.0 specification -- bankruptcy, civil, criminal, domestic relations, juvenile, and traffic."
     end
 
@@ -321,7 +249,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "ecf:ReviewedFiling"
@@ -330,6 +258,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "The date and time on which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
       classrelation 131202 // <generalisation>
 	relation 131202 ---|>
@@ -345,7 +274,7 @@ ${members}};
 	    comment "This association will always be present, except in the situation where the filing was a case initiation filing and was rejected (therefore, no case was initiated in the court record system.)"
 	    classrelation_ref 179842 // docketedCase (<directional aggregation>)
 	  b parent class_ref 146050 // DocketedCase
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:Case"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/ecf:DocumentAugmentation/nc:Case"
@@ -354,6 +283,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:CaseType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
       end
 
       attribute 174978 "filingCompletionTime"
@@ -366,7 +296,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/ecf:FilingCompletionDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/ecf:DocumentAugmentation/ecf:FilingCompletionDate"
@@ -375,6 +305,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "the date and time at which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
       end
 
@@ -388,7 +319,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentEffectiveDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentEffectiveDate"
@@ -397,6 +328,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "the date and time of day on which an entry in the docket or register of action in the court CMS was completed for a filing"
       end
 
@@ -410,7 +342,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentIdentification"
@@ -419,6 +351,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
 
@@ -432,7 +365,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentFiledDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentFiledDate"
@@ -441,12 +374,13 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "the date of filing of a document recognized by the court in its docket entry upon acceptance of the document for entry into the court official records.  Note:  This date may be, but need to be, affixed to the document with an electronic filestamp.  There is no corresponding official hour of the filing.  The court may subsequently change the officialFilingDate by judicial order.
 "
       end
 
       attribute 174466 "filingStatusCode"
-	public type class_ref 4054914 // FilingStatusCode
+	public type class_ref 192130 // code
 	stereotype "niem-profile:niem"
 	cpp_decl ""
 	java_decl ""
@@ -455,7 +389,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/ecf:FilingStatus/ecf:FilingStatusCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentStatus/ecf:StatusAugmentation/ecf:FilingStatusCode"
@@ -463,7 +397,8 @@ ${members}};
 	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Genericode code list FilingStatusCode.gc"
+	key "niem-profile:niem:Notes" value "Genericode code list ecf/FilingStatusCode.gc"
+	key "niem-profile:niem:CodeList" value "received=filing has been received but not yet accepted; accepted=filing was received and accepted; partially-accepted=filing was received, some documents were accepted, and some documents were rejected; rejected=filing was received and completely rejected"
 	comment "Status of the filing as determined by the system sending the callback. Values: accepted, partially accepted (e.g., some documents but not others), rejected."
       end
 
@@ -477,7 +412,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentStatus/ecf:FilingStatusReasonDescription"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentStatus/nc:StatusDescriptionText"
@@ -486,6 +421,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A textual description of the reason for the setting of the status in the filingStatusCode."
       end
 
@@ -496,7 +432,7 @@ ${members}};
 	    comment "This association will be present for every document that is reviewed by clerk review. For documents that were rejected by the clerk review process or the court record system, only the documentStatusCode, originalDocumentID, and (optionally) the documentStatusReasonDescription will be present. For documents that were accepted and recorded, all attributes will be present, except for documentStatusReasonDescription, which may or may not be present."
 	    classrelation_ref 215682 // reviewedDocument (<directional aggregation>)
 	  b parent class_ref 132482 // ReviewedDocument
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/ecf:ReviewedLeadDocument"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/ecf:DocumentAugmentation/nc:CaseFiling"
@@ -505,6 +441,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
       end
     end
 
@@ -518,7 +455,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:CaseFiling"
@@ -527,6 +464,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "The base message for an electronic filing using ECF 5.0."
       classrelation 129410 // <generalisation>
 	relation 129410 ---|>
@@ -542,7 +480,7 @@ ${members}};
 	    comment "Information provided by the filing assembly MDE to the court identifying the persons being served electronically with a copy of this document."
 	    classrelation_ref 137986 // electronicServiceInformation (<directional aggregation>)
 	  b parent class_ref 142466 // ElectronicServiceInformation
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingMessage/ecf:ElectronicServiceInformation"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/ecf:DocumentAugmentation/ecf:ElectronicServiceInformation"
@@ -551,6 +489,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "ecf:ElectronicServiceInformationType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
       end
 
       attribute 148354 "filingAuthorizedTime"
@@ -563,7 +502,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingMessage/nc:DocumentInformationCutOffDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentInformationCutOffDate"
@@ -572,6 +511,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "The time that the filer submitted the filing to the control of the filing assembly provider and authorized it for filing into the court.   At that point and time, the filer could no longer make any changes to the filing."
       end
 
@@ -585,7 +525,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingMessage/nc:DocumentIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentIdentification"
@@ -594,6 +534,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
 
@@ -615,7 +556,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "ecf:Error"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "cbrn:MessageStatus"
@@ -624,9 +565,10 @@ ${members}};
       key "niem-profile:niem:BaseType" value "cbrn:SystemEventType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "Representation of an error that occured when synchronously processing the message."
       attribute 176002 "errorCode"
-	public type class_ref 4055042 // ErrorCode
+	public type class_ref 192130 // code
 	stereotype "niem-profile:niem"
 	cpp_decl ""
 	java_decl ""
@@ -635,15 +577,16 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:Error/ecf:ErrorCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageStatusCode"
 	key "niem-profile:niem:Type" value "cbrn:MessageStatusType"
-	key "niem-profile:niem:Property" value "cbrn:MessageStatusCode"
+	key "niem-profile:niem:Property" value "cbrn:MessageStatusCode, cbrn:MessageHandlingError, cbrn:CredentialsAuthenticatedCode, cbrn:ResendRequestIndicator"
 	key "niem-profile:niem:BaseType" value "cbrncl:MessageStatusCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Fix inconsistencies between ECF error codes and specification "
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A code that uniquely identifies an error.  Allowable values set forth in court policy."
       end
 
@@ -657,15 +600,16 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:Error/ecf:ErrorDescriptionText"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError/cbrn:ErrorDescription/cbrn:ErrorCodeDescriptionText"
 	key "niem-profile:niem:Type" value "cbrn:MessageContentErrorType"
-	key "niem-profile:niem:Property" value "cbrn:ErrorDescription"
+	key "niem-profile:niem:Property" value "cbrn:ErrorDescription, cbrn:ErrorNodeName"
 	key "niem-profile:niem:BaseType" value "cbrn:MessageErrorType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A more \"user friendly\" description of the error."
       end
 
@@ -680,7 +624,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError"
@@ -689,6 +633,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "cbrn:MessageContentErrorType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A content error message."
       end
     end
@@ -704,7 +649,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "nc:Person"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:Person"
@@ -713,6 +658,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "Additional information about a person."
       attribute 179842 "dateOfBirth"
 	public type class_ref 128386 // date
@@ -724,15 +670,16 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate/nc:DateRepresentation (abstract) /nc:Date"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate/nc:Date"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonBirthDate/nc:DateRepresentation (abstract) /nc:Date"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonBirthDate/nc:Date"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonBirthDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "The date on which a person was born."
       end
 
@@ -746,8 +693,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEthnicityCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -755,6 +702,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "ucr:EthnicityCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A NIBRS code representing the nation or cultural group to which a referenced subject belongs."
       end
 
@@ -768,8 +716,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicity (abstract) /nc:PersonEthnicityText"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicityText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -777,6 +725,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A textual description of the nation or cultural group to which a referenced subject belongs."
       end
 
@@ -790,8 +739,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEyeColor (abstract) /nc:PersonEyeColorCode"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEyeColorCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEyeColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -799,6 +748,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "ncic:EYECodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A code identifying the person eye color at the time the information was collected."
       end
 
@@ -812,8 +762,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHairColor (abstract) /nc:PersonHairColorCode"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHairColorCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonHairColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -821,6 +771,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "ncic:HAICodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A code identifying the person hair color at the time the information was collected."
       end
 
@@ -834,8 +785,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue (abstract) /nc:MeasureText"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -843,6 +794,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:MeasureType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A measurement of the height of a person."
       end
 
@@ -856,8 +808,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceCode"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonRaceCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -865,6 +817,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "ncic:RACCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A code identifying the race of a person."
       end
 
@@ -878,8 +831,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRace (abstract) /nc:PersonRaceText"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRaceText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -887,6 +840,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A textual description categorizing individuals by physical characteristics.   (e.g., American Indian or Alaskan native, Asian or Pacific Islander, Black, White, Unknown)."
       end
 
@@ -900,8 +854,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSex (abstract) /nc:PersonSexCode"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSexCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonSexCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -909,6 +863,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "ncic:SEXCodeType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A code identifying the gender or sex of a person."
       end
 
@@ -922,7 +877,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonTaxIdentification/nc:IdentificationID"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonTaxIdentification/nc:IdentificationID"
@@ -931,6 +886,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "Number issued by the federal government to all citizens, residents of the U.S.  First three digits cannot be all zeroes.  Numbers beginning with 9 indicate a non-resident alien.  Ex. 123456789 or 356886777"
       end
 
@@ -944,8 +900,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue (abstract) /nc:MeasureText"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -953,6 +909,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:MeasureType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A measurement of the weight of a person."
       end
     end
@@ -967,7 +924,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "QueryResponseMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "ecf:QueryResponseMessage"
@@ -976,6 +933,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "A message returned in response to a message or query."
       classrelation 153346 // <generalisation>
 	relation 151170 ---|>
@@ -994,7 +952,7 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
+	ncouples 9
 	key "niem-profile:niem:OldXPath" value "QueryResponseMessage/QueryErrorText"
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "QueryResponseMessage/nc:MessageContentError"
@@ -1003,6 +961,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "A query error should be generated when:  * The query arguments are considered to be invalid by the receiver, and the query cannot be processed.  * The query represents a request for a specific data item, which cannot be retrieved. (another flavor of invalid argument) * The receiving system explicitly fails while processing the query."
       end
     end
@@ -1017,7 +976,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "nc:DateRange"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:DateRange"
@@ -1026,6 +985,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "A period of time bounded by upper and lower (to and from) dates/times."
       attribute 138370 "fromTime"
 	public type class_ref 156034 // dateTime
@@ -1037,8 +997,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:StartDate/nc:DateRepresentation (abstract) /nc:DateTime"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:StartDate/nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "nc:DateRange/nc:StartDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DateRangeType"
@@ -1046,6 +1006,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "The beginning time, in the time zone of the court on the beginning date."
       end
 
@@ -1059,8 +1020,8 @@ ${members}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	ncouples 8
-	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:EndDate/nc:DateRepresentation (abstract) /nc:DateTime"
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:EndDate/nc:DateTime"
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "nc:DateRange/nc:EndDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DateRangeType"
@@ -1068,6 +1029,7 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
 	comment "The ending time, in the time zone of the court on the ending date.
 "
       end
@@ -1083,7 +1045,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "ecf:QueryMessageType"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "ecf:QueryMessageType"
@@ -1092,6 +1054,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "A query message."
       classrelation 740994 // <generalisation>
 	relation 738818 ---|>
@@ -1111,7 +1074,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationID"
       key "niem-profile:niem:OldMultiplicity" value "0,1"
       key "niem-profile:niem:XPath" value "nc:Identification/nc:IdentificationID"
@@ -1120,6 +1083,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "niem-xs:string"
       key "niem-profile:niem:Multiplicity" value "0,1"
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "An identifier"
     end
 
@@ -1133,7 +1097,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 8
+      ncouples 9
       key "niem-profile:niem:OldXPath" value "nc:DateType/nc:DateRepresentation"
       key "niem-profile:niem:OldMultiplicity" value "1,1"
       key "niem-profile:niem:XPath" value "nc:DateType/nc:Date"
@@ -1142,412 +1106,8 @@ ${members}};
       key "niem-profile:niem:BaseType" value "niem-xs:date"
       key "niem-profile:niem:Multiplicity" value "1,1"
       key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
       comment "A date."
-    end
-
-    class 4055042 "ErrorCode"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 8
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value ""
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      comment "Error codes"
-      attribute 6443906 "0"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "No error"
-      end
-
-      attribute 6439938 "1"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "ReviewFiling - Input XML is empty or null input was received."
-      end
-
-      attribute 6440066 "2"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'SendingMDEProfileCode' is empty. This is a required Filing element."
-      end
-
-      attribute 6440194 "3"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'SendingMDELocationID' is empty. This is a required Filing element."
-      end
-
-      attribute 6440322 "4"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'PersonOtherID' format is invalid."
-      end
-
-      attribute 6440450 "5"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'PersonOtherID' is empty. This is a required Filing element."
-      end
-
-      attribute 6440578 "6"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'DocumentPostDate' is invalid. Should be yyyy-mm-dd or yyy-mm-ddThh-mm-ss.0Z\""
-      end
-
-      attribute 6440706 "7"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'DocumentPostDate' is invalid. Should be yyyy-mm-dd or yyy-mm-ddThh-mm-ss.0Z\""
-      end
-
-      attribute 6440834 "8"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'FilingID' is empty. This is a required Filing element."
-      end
-
-      attribute 6440962 "9"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingID contains invalid characters. Filing Rejected."
-      end
-
-      attribute 6441090 "10"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingID format is invalid. Format is: VVV-unique-string-value. Filing Rejected."
-      end
-
-      attribute 6441218 "11"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'SendingMDELocationID' is empty. This is a required Filing element."
-      end
-
-      attribute 6441346 "12"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'SendingMDEProfileCode' is empty. This is a required Filing element."
-      end
-
-      attribute 6441474 "13"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'SubmissionReceivedDate' is empty. This is a required Filing element."
-      end
-
-      attribute 6441602 "14"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'DocumentIdentification' is empty. This is a required Filing element."
-      end
-
-      attribute 6441730 "15"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'DocumentLocationURI' is empty. This is a required Filing element."
-      end
-
-      attribute 6441858 "16"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'FilingLeadDocument' DocumentIdentification and DocumentLocationURI must contain a file name."
-      end
-
-      attribute 6441986 "17"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Only one 'FilingLeadDocument' node is allowed."
-      end
-
-      attribute 6442114 "18"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "No embedded documents &lt;DocumentBinary&gt; are allowed within the CoreFilingMessage."
-      end
-
-      attribute 6442242 "19"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Filing 'OrganizationID' value does not match Court Policy OrganizationID."
-      end
-
-      attribute 6442370 "20"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Filing 'CourtName' value does not match Court Policy CourtName."
-      end
-
-      attribute 6442498 "21"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Unknown document types are not allowed within the CoreFilingMessage."
-      end
-
-      attribute 6442626 "22"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Invalid File Type."
-      end
-
-      attribute 6442754 "23"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingLeadDocumentURI file not found."
-      end
-
-      attribute 6442882 "24"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingLeadDocumentURI file is zero length or empty."
-      end
-
-      attribute 6443010 "25"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingConnectedDocumentURI file not found."
-      end
-
-      attribute 6443138 "26"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingConnectedDocumentURI file is zero length or empty."
-      end
-
-      attribute 6443266 "27"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingID has already been used."
-      end
-
-      attribute 6443394 "28"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Attachment was not found in CoreFilingMessage:DocumentLocationURI xml element."
-      end
-
-      attribute 6443522 "29"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "Zero length input."
-      end
-
-      attribute 6443650 "30"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "'FilingStatusQueryMessage' not found. This is a required Query element."
-      end
-
-      attribute 6443778 "31"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	comment "FilingID not found: CaseNumber is empty."
-      end
     end
   end
 
