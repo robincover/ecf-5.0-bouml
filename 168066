@@ -1,6 +1,6 @@
 format 212
 "CIM" // CIM
-  revision 22
+  revision 24
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,6 +26,7 @@ format 212
   activitydiagramsettings
    end
   
+  stereotype "model library"
   classview 148610 "Services"
     
     classdiagramsettings member_max_width 0 end
@@ -72,6 +73,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to request a court policy."
       end
     end
 
@@ -101,6 +103,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to request a court date."
       end
 
       operation 129282 "GetCase"
@@ -112,6 +115,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to query information on a case."
       end
 
       operation 129154 "GetCaseList"
@@ -123,6 +127,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to query a list of cases that match a set of criteria."
       end
 
       operation 129410 "GetDocument"
@@ -134,6 +139,7 @@ ${members}};
 	
 	
 	
+	comment "An peration to query for a document."
       end
 
       operation 169474 "GetDocumentStampInformation"
@@ -145,7 +151,7 @@ ${members}};
 	
 	
 	
-	comment "This operation is a request for the information to be included on document stamps.  This operation is implemented by the system responsible for providing the document stamp information.  The operation is invoked by the system responsible for performing the stamping."
+	comment "An operation that is a query for the information to be included on document stamps.  This operation is implemented by the system responsible for providing the document stamp information.  The operation is invoked by the system responsible for performing the stamping."
       end
 
       operation 129666 "GetServiceInformation"
@@ -157,18 +163,20 @@ ${members}};
 	
 	
 	
+	comment "An operation to query for contact information required to serve a document."
       end
 
-      operation 129026 "RecordFiling"
+      operation 129026 "RecordDocketing"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 2
 	  param in name "" type class_ref 145794 // RecordDocketingMessage
-	  param in name "" type class_ref 135938 // FilingPayment
+	  param in name "" type class_ref 135938 // PaymentMessage
 	
 	
 	
 	
 	
+	comment "An operation to record and docket a court filing in a court record system."
       end
     end
 
@@ -198,6 +206,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to query for a schedule of available cout dates."
       end
 
       operation 156162 "NotifyCourtDate"
@@ -209,6 +218,7 @@ ${members}};
 	
 	
 	
+	comment "An operaiton to notify a court date has been confirmed."
       end
 
       operation 149506 "ReserveCourtDate"
@@ -220,6 +230,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to reserve a court date."
       end
     end
 
@@ -249,18 +260,20 @@ ${members}};
 	
 	
 	
+	comment "An operaiton that is the asynchronous callback to an AllocateCourtDate or ReserveCourtDate operation to notify a court date has been confirmed."
       end
 
       operation 128898 "NotifyFilingReviewComplete"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 2
 	  param in name "" type class_ref 132738 // NotifyFilingReviewCompleteMessage
-	  param in name "" type class_ref 135938 // FilingPayment
+	  param in name "" type class_ref 135938 // PaymentMessage
 	
 	
 	
 	
 	
+	comment "An operation that is the asynchrnous callback in response to a ReviewFiling operation to notify a filing has completed clerk review."
       end
     end
 
@@ -290,6 +303,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to request a filing be cancelled."
       end
 
       operation 128386 "GetFeesCalculation"
@@ -301,6 +315,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to query for the estimated fees required for a filing."
       end
 
       operation 128514 "GetFilingList"
@@ -312,6 +327,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to query for a list of filings that match a set of criteria."
       end
 
       operation 128642 "GetFilingStatus"
@@ -323,6 +339,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to request the status of a filing."
       end
 
       operation 128258 "NotifyDocketingComplete"
@@ -334,6 +351,7 @@ ${members}};
 	
 	
 	
+	comment "An operation that is an asynchronous callback in response to a RecordDocketing operation to notify that a filing has been recorded in the court record system."
       end
 
       operation 169602 "ReturnDocumentStampInformation"
@@ -345,19 +363,20 @@ ${members}};
 	
 	
 	
-	comment "This is the asynchronous callback in response to the GetDocumentStampInformation request.  This operation is implemented by the system responsible for performing the stamping and is invoked by the system responsible for providing the information for the stamps."
+	comment "An operation that is an asynchronous callback in response to the GetDocumentStampInformation operation.  This operation is implemented by the system responsible for performing the stamping and is invoked by the system responsible for providing the information for the stamps."
       end
 
       operation 128130 "ReviewFiling"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 2
 	  param in name "" type class_ref 130690 // CoreFilingMessage
-	  param in name "" type class_ref 135938 // FilingPayment
+	  param in name "" type class_ref 135938 // PaymentMessage
 	
 	
 	
 	
 	
+	comment "An operation to submit a filing to a court for review."
       end
     end
 
@@ -387,6 +406,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to serve/deliver a filing to a service recipient."
       end
 
       operation 142850 "ServeProcess"
@@ -398,6 +418,7 @@ ${members}};
 	
 	
 	
+	comment "An operation to serve/deliver a filing to a process server or registered agent."
       end
     end
 

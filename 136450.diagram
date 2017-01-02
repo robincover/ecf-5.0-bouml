@@ -23,4 +23,5 @@ relationcanvas 128514 relation_ref 162050 // <directional aggregation>
   role_a_pos 288 187 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+preferred_whz 785 353 1
 end

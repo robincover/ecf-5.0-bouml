@@ -6,7 +6,7 @@ classcanvas 128002 class_ref 132610 // NotifyDocketingCompleteMessage
 end
 classcanvas 128130 class_ref 145922 // ElectronicFilingCallbackMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end
-  xyz 57 174 2000
+  xyz 44 169 2000
 end
 classcanvas 128258 class_ref 132226 // BaseMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end
@@ -22,4 +22,5 @@ relationcanvas 128642 relation_ref 177154 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+preferred_whz 476 481 1
 end

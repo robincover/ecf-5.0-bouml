@@ -1,6 +1,6 @@
 format 212
 "PIM" // PIM
-  revision 22
+  revision 28
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,6 +26,7 @@ format 212
   activitydiagramsettings
    end
   
+  stereotype "model library"
   package_ref 174978 // NIEMReference
 
   package_ref 188546 // NIEMSubset

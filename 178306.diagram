@@ -1,16 +1,17 @@
 format 212
 
-classcanvas 128002 class_ref 198914 // AllocateCourtDateRequestMessage
+classcanvas 128002 class_ref 198914 // AllocateCourtDateMessage
   classdiagramsettings member_max_width 0 end
-  xyz 287 144 2000
+  xyz 40.56 225.2 2000
 end
-classcanvas 128130 class_ref 132226 // BaseMessage
-  classdiagramsettings hide_attributes yes member_max_width 0 end
-  xyz 381 45 2000
+classcanvas 128386 class_ref 138114 // ElectronicFilingMessage
+  classdiagramsettings member_max_width 0 end
+  xyz 49.56 41.28 2005
 end
-relationcanvas 128258 relation_ref 220162 // <generalisation>
-  from ref 128002 z 2001 to ref 128130
+relationcanvas 128514 relation_ref 3940354 // <generalisation>
+  from ref 128002 z 2006 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+preferred_whz 420 395 0.97
 end

@@ -1,6 +1,6 @@
 format 212
 "Other" // CIM::Other
-  revision 3
+  revision 6
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,21 +26,28 @@ format 212
   activitydiagramsettings
    end
   
+  stereotype "model library"
   componentview 128002 "Components"
     //component diagram settings
     componentdiagramsettings
      end
     component 128642 "ECFSystem"
       component 135810 "CourtPolicy"
+	stereotype "service"
+	provided_classes
+	  class_ref 2087554 // CourtPolicyMDE
+	end
       end
 
       component 128258 "CourtRecord"
+	stereotype "process"
 	provided_classes
 	  class_ref 129538 // CourtRecordMDE
 	end
       end
 
       component 128514 "CourtScheduling"
+	stereotype "process"
 	provided_classes
 	  class_ref 198786 // CourtSchedulingMDE
 	end
@@ -50,10 +57,12 @@ format 212
       end
 
       component 128002 "FilingAssembly"
+	stereotype "process"
 	provided_classes
 	  class_ref 129410 // FilingAssemblyMDE
 	end
 	required_classes
+	  class_ref 2087554 // CourtPolicyMDE
 	  class_ref 198786 // CourtSchedulingMDE
 	  class_ref 129282 // FilingReviewMDE
 	  class_ref 130434 // ServiceMDE
@@ -61,10 +70,12 @@ format 212
       end
 
       component 128130 "FilingReview"
+	stereotype "process"
 	provided_classes
 	  class_ref 129282 // FilingReviewMDE
 	end
 	required_classes
+	  class_ref 2087554 // CourtPolicyMDE
 	  class_ref 129538 // CourtRecordMDE
 	  class_ref 129410 // FilingAssemblyMDE
 	  class_ref 130434 // ServiceMDE
@@ -72,6 +83,7 @@ format 212
       end
 
       component 128386 "Service"
+	stereotype "service"
 	provided_classes
 	  class_ref 130434 // ServiceMDE
 	end
@@ -146,6 +158,7 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "A clerk or judicial officer that reviews and accepts court filings."
     end
 
     class 232578 "Filer"
@@ -158,6 +171,7 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "A filer that submits filings to a court and serves filings to other parties in a case."
     end
 
     class 232834 "ServiceRecipient"
@@ -170,6 +184,7 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "A party in a case that receives filings."
     end
 
     class 232962 "CMSDMS"
@@ -193,6 +208,7 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "A court case management system and document management system."
     end
 
     usecase 128130 "Review Filing"
@@ -212,6 +228,7 @@ ${members}};
       
       activitydiagramsettings
        end
+      comment "A step in the court filing process in which a clerk reviews and accepts/rejects a court filing."
     end
 
     usecase 128386 "Receive Service"
@@ -231,6 +248,7 @@ ${members}};
       
       activitydiagramsettings
        end
+      comment "A step in the court filing process in which a service recipient receives a filing."
     end
 
     usecase 135042 "Schedule Court Date"
@@ -250,6 +268,7 @@ ${members}};
       
       activitydiagramsettings
        end
+      comment "A step in the court filing process in which a filer requests to schedule a court date."
     end
 
     usecase 128002 "Submit Court Filing"
@@ -269,6 +288,7 @@ ${members}};
       
       activitydiagramsettings
        end
+      comment "A step in the court filing process in which a filer submits a filing to the court."
       simplerelation 135554
 	---|>
 	  on usecase_ref 128514 // Submit Filing
@@ -292,6 +312,7 @@ ${members}};
       
       activitydiagramsettings
        end
+      comment "A step in the court filing process in which a filer submits a filing to the court or serves a filing to a service recipient."
     end
 
     usecase 128258 "Submit Service"
@@ -311,6 +332,7 @@ ${members}};
       
       activitydiagramsettings
        end
+      comment "A step in the court filing process in which a filer serves a filing to a service recipient."
       simplerelation 135426
 	---|>
 	  on usecase_ref 128514 // Submit Filing

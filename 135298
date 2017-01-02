@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::Content::BaseTypes
-  revision 97
+  revision 103
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,24 +26,7 @@ format 212
   activitydiagramsettings
    end
   
-  classview 287362 "Codes"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-  end
-
+  stereotype "model library"
   classview 142082 "Common"
     
     classdiagramsettings member_max_width 0 end
@@ -216,7 +199,7 @@ format 212
       end
     end
 
-    class 146178 "CaseTypeSpecificInformation"
+    class 146178 "CaseTypeExtension"
       abstract visibility public stereotype "niem-profile:niem"
       cpp_decl ""
       java_decl ""
@@ -239,6 +222,29 @@ format 212
       comment "Information defined within one of the specific case types defined in the ECF 5.0 specification -- bankruptcy, civil, criminal, domestic relations, juvenile, and traffic."
     end
 
+    class 3416322 "Date"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "nc:DateType/nc:DateRepresentation"
+      key "niem-profile:niem:OldMultiplicity" value "1,1"
+      key "niem-profile:niem:XPath" value "nc:DateType/nc:Date"
+      key "niem-profile:niem:Type" value "nc:DateType"
+      key "niem-profile:niem:Property" value "nc:DateRepresentation, (nc:Date)"
+      key "niem-profile:niem:BaseType" value "niem-xs:date"
+      key "niem-profile:niem:Multiplicity" value "1,1"
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "A date."
+    end
+
     class 145922 "ElectronicFilingCallbackMessage"
       abstract visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -259,7 +265,7 @@ format 212
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
-      comment "The date and time on which the Court Record MDE filing process was completed following the acceptance by the Filing Review MDE"
+      comment "The base message for an asynchronous response to a message."
       classrelation 131202 // <generalisation>
 	relation 131202 ---|>
 	  a public
@@ -465,7 +471,7 @@ format 212
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
-      comment "The base message for an electronic filing using ECF 5.0."
+      comment "The base message for a message with an asynchronous response."
       classrelation 129410 // <generalisation>
 	relation 129410 ---|>
 	  a public
@@ -538,11 +544,23 @@ format 212
 	comment "An identifier for a single electronic filing transaction assigned by the Filing Review MDE.  The identifier is unique within a court and case. \"Transaction\" means the sequence of messages from initial filing review through receipt of the asynchronous review callback."
       end
 
-      classrelation 1268226 // <directional aggregation>
+      classrelation 1268226 // case (<directional aggregation>)
 	relation 1266050 o-->
-	  a role_name "" multiplicity "1,1" public
-	    classrelation_ref 1268226 // <directional aggregation>
+	  stereotype "niem-profile:niem"
+	  a role_name "case" multiplicity "1,1" public
+	    comment "The court case associated with a filing."
+	    classrelation_ref 1268226 // case (<directional aggregation>)
 	  b parent class_ref 131586 // Case
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Case"
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value "nc:Case"
+	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value "nc:Case is included within each of the implementing messages"
       end
     end
 
@@ -914,6 +932,58 @@ format 212
       end
     end
 
+    class 3381890 "Identification"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationID"
+      key "niem-profile:niem:OldMultiplicity" value "0,1"
+      key "niem-profile:niem:XPath" value "nc:Identification/nc:IdentificationID"
+      key "niem-profile:niem:Type" value "nc:IdentificationType"
+      key "niem-profile:niem:Property" value "nc:IdentificationID"
+      key "niem-profile:niem:BaseType" value "niem-xs:string"
+      key "niem-profile:niem:Multiplicity" value "0,1"
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "An identifier"
+    end
+
+    class 909826 "RequestMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "ecf:RequestMessageType"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "ecf:RequestMessageType"
+      key "niem-profile:niem:Type" value "ecf:RequestMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "The base message for a synchronous request/query."
+      classrelation 740994 // <generalisation>
+	relation 738818 ---|>
+	  a public
+	    classrelation_ref 740994 // <generalisation>
+	  b parent class_ref 132226 // BaseMessage
+      end
+    end
+
     class 132866 "ResponseMessage"
       abstract visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -925,16 +995,17 @@ format 212
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value "QueryResponseMessage"
+      key "niem-profile:niem:OldXPath" value "ecf:ResponseMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "ecf:QueryResponseMessage"
-      key "niem-profile:niem:Type" value "ecf:QueryResponseMessageType"
+      key "niem-profile:niem:XPath" value "ecf:ResponseMessage"
+      key "niem-profile:niem:Type" value "ecf:ResponseMessageType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
-      comment "A message returned in response to a message or query."
+      comment "The base message for a synchronous response to a request.
+"
       classrelation 153346 // <generalisation>
 	relation 151170 ---|>
 	  a public
@@ -1033,81 +1104,6 @@ format 212
 	comment "The ending time, in the time zone of the court on the ending date.
 "
       end
-    end
-
-    class 909826 "QueryMessage"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "ecf:QueryMessageType"
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "ecf:QueryMessageType"
-      key "niem-profile:niem:Type" value "ecf:QueryMessageType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A query message."
-      classrelation 740994 // <generalisation>
-	relation 738818 ---|>
-	  a public
-	    classrelation_ref 740994 // <generalisation>
-	  b parent class_ref 132226 // BaseMessage
-      end
-    end
-
-    class 3381890 "Identification"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationID"
-      key "niem-profile:niem:OldMultiplicity" value "0,1"
-      key "niem-profile:niem:XPath" value "nc:Identification/nc:IdentificationID"
-      key "niem-profile:niem:Type" value "nc:IdentificationType"
-      key "niem-profile:niem:Property" value "nc:IdentificationID"
-      key "niem-profile:niem:BaseType" value "niem-xs:string"
-      key "niem-profile:niem:Multiplicity" value "0,1"
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "An identifier"
-    end
-
-    class 3416322 "Date"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "nc:DateType/nc:DateRepresentation"
-      key "niem-profile:niem:OldMultiplicity" value "1,1"
-      key "niem-profile:niem:XPath" value "nc:DateType/nc:Date"
-      key "niem-profile:niem:Type" value "nc:DateType"
-      key "niem-profile:niem:Property" value "nc:DateRepresentation, (nc:Date)"
-      key "niem-profile:niem:BaseType" value "niem-xs:date"
-      key "niem-profile:niem:Multiplicity" value "1,1"
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A date."
     end
   end
 

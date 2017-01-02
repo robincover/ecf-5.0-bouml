@@ -1,6 +1,5 @@
-window_sizes 2736 1699 801 1929 1407 215
+window_sizes 3840 2035 793 3041 1747 211
 cleanlooks_style
-show_stereotypes
 selected 
   package_ref 129 // ecf-5.0-bouml
 open

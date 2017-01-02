@@ -1,6 +1,6 @@
 format 212
 "CaseTypeExtensions" // CIM::Content::CaseTypeExtensions
-  revision 103
+  revision 109
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,6 +26,7 @@ format 212
   activitydiagramsettings
    end
   
+  stereotype "model library"
   classview 155138 "AppellateCase"
     
     classdiagramsettings member_max_width 0 end
@@ -121,6 +122,7 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 128002 // AppelateCase
       ncouples 9
       key "niem-profile:niem:OldXPath" value "appellate:AppellateCase"
       key "niem-profile:niem:OldMultiplicity" value ""
@@ -136,7 +138,7 @@ format 212
 	relation 177794 ---|>
 	  a public
 	    classrelation_ref 179970 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       classrelation 180610 // criminalAppellateCaseInformation (<directional aggregation>)
@@ -463,6 +465,7 @@ format 212
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
+	comment "The originating case being appealed, usually a trial court case."
       end
     end
 
@@ -771,7 +774,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Resolve overlap of new delinquency and dependency elements in ECF juvenile case type"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Party to the original case that is not party to the appeal."
       attribute 215426 "partyID"
@@ -876,7 +879,7 @@ format 212
 	key "niem-profile:niem:Property" value "criminal:SentenceConcurrentAssociation"
 	key "niem-profile:niem:BaseType" value "nc:RelatedActivityAssociationType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "Validate justice associations currently in ECF NIEM subset are still valid in NIEM 3.0"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
 
@@ -1039,7 +1042,8 @@ format 212
 
     classdiagram 128002 "AppelateCase"
       classdiagramsettings member_max_width 0 drawing_language uml end
-      size Letter-Landscape
+      comment "Additional information specific to appellate cases."
+      size C
     end
   end
 
@@ -1070,6 +1074,7 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 134530 // BankruptcyCase
       ncouples 9
       key "niem-profile:niem:OldXPath" value "BankruptcyCase"
       key "niem-profile:niem:OldMultiplicity" value ""
@@ -1085,7 +1090,7 @@ format 212
 	relation 179330 ---|>
 	  a public
 	    classrelation_ref 181506 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       attribute 143874 "assetNotice"
@@ -1469,7 +1474,7 @@ BankruptcyCase/Debtor.Organization"
 
     classdiagram 134530 "BankruptcyCase"
       classdiagramsettings member_max_width 0 end
-      comment "A refernce to a party (person or organization) in the Review Filing message on whose behalf, or against whom, a bankruptcy petition is filed."
+      comment "Additional information specific to bankruptcy cases."
       size Letter-Landscape
     end
   end
@@ -1505,7 +1510,7 @@ BankruptcyCase/Debtor.Organization"
       ncouples 9
       key "niem-profile:niem:OldXPath" value "j:Citation"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "j:Citation/criminal:CitationAugmentation"
+      key "niem-profile:niem:XPath" value "j:Citation/citation:CitationAugmentation"
       key "niem-profile:niem:Type" value "j:CitationType"
       key "niem-profile:niem:Property" value "j:CitationAugmentationPoint, (citation:CitationAugmentation)"
       key "niem-profile:niem:BaseType" value "citation:CitationAugmentationType"
@@ -1518,7 +1523,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 179842 ---|>
 	  a public
 	    classrelation_ref 182018 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       classrelation 184066 // citationAgency (<directional aggregation>)
@@ -2684,7 +2689,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Add a specific element for filer ID?"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The unique identifier assigned by the court at the time a person is first associated with a case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this element blank.  This identifier is used to link other information in the case to a particular person."
       end
@@ -3323,6 +3328,7 @@ BankruptcyCase/Debtor.Organization"
 
     classdiagram 134658 "CitationCase"
       classdiagramsettings member_max_width 0 end
+      comment "Additional information specific to citation cases."
       size D-Landscape
     end
   end
@@ -3354,6 +3360,7 @@ BankruptcyCase/Debtor.Organization"
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 134786 // CivilCase
       ncouples 9
       key "niem-profile:niem:OldXPath" value "civil:CivilCase"
       key "niem-profile:niem:OldMultiplicity" value ""
@@ -3369,7 +3376,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 182018 ---|>
 	  a public
 	    classrelation_ref 184194 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       attribute 149122 "causeOfActionCode"
@@ -3689,6 +3696,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 3262594 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "decedent" multiplicity "1" public
+	    comment "The deceased person who estate is the subject of a court case."
 	    classrelation_ref 3264770 // decedent (<directional aggregation>)
 	  b multiplicity "1" parent class_ref 131842 // Person
 	ncouples 9
@@ -3786,7 +3794,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Validate justice associations currently in ECF NIEM subset are still valid in NIEM 3.0"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information about the person for whom another person or organization is assuming a fiduciary obligation."
       attribute 150402 "dateOfBirth"
@@ -3977,7 +3985,7 @@ BankruptcyCase/Debtor.Organization"
     classdiagram 134786 "CivilCase"
       classdiagramsettings member_max_width 0 end
       comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
-      size A
+      size A3
     end
 
     classinstance 3159426 "CivilCaseInformation"
@@ -5184,6 +5192,7 @@ BankruptcyCase/Debtor.Organization"
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 134914 // CriminalCase
       ncouples 9
       key "niem-profile:niem:OldXPath" value "criminal:CriminalCase"
       key "niem-profile:niem:OldMultiplicity" value ""
@@ -5218,7 +5227,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 182530 ---|>
 	  a public
 	    classrelation_ref 184706 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       classrelation 185602 // charge (<directional aggregation>)
@@ -5434,7 +5443,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "nc:EntityPerson/nc:PersonOtherIdentification/nc:IdentificationCategoryText = \"DefendantNumber\""
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Number assigned to each Defendant."
       end
@@ -5499,7 +5508,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "nc:EntityPerson/nc:PersonOtherIdentification/nc:IdentificationCategoryText = \"LocalAgencyNumber\""
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "An identifier that does not belong to one of the standard explicitly defined types such as FBI Number or Social Security Number.
 "
@@ -5571,9 +5580,33 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "nc:EntityPerson/nc:PersonOtherIdentification/nc:IdentificationCategoryText = \"PersonIdentifier\""
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The unique identifier assigned by the court at the time a person is first associated with a case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this element blank.  This identifier is used to link other information in the case to a particular person."
+      end
+
+      attribute 9163906 "personIDType"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A type of person identifier."
       end
 
       attribute 162690 "prisonerID"
@@ -5594,7 +5627,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "nc:EntityPerson/nc:PersonOtherIdentification/nc:IdentificationCategoryText = \"PrisonerIdentifier\""
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "An identifier for the defendant assigned by a jail, prison, lock up or other detention facility."
       end
@@ -5651,7 +5684,7 @@ BankruptcyCase/Debtor.Organization"
     classdiagram 134914 "CriminalCase"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       comment "Information required to initiate a new criminal case in a court.  \"Criminal\" includes felonies and misdemeanors."
-      size C
+      size D
     end
 
     classinstance 3159554 "CriminalCaseInformation"
@@ -5758,6 +5791,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 3357826 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "case" multiplicity "1" public
+	    comment "A court case related to a child support petition."
 	    classrelation_ref 3360002 // case (<directional aggregation>)
 	  b multiplicity "1" parent class_ref 131586 // Case
 	ncouples 9
@@ -5783,6 +5817,7 @@ BankruptcyCase/Debtor.Organization"
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 135042 // DomesticCase
       ncouples 9
       key "niem-profile:niem:OldXPath" value "domestic:DomesticCase"
       key "niem-profile:niem:OldMultiplicity" value ""
@@ -5798,7 +5833,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 190082 ---|>
 	  a public
 	    classrelation_ref 192258 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       attribute 151554 "causeOfActionCode"
@@ -5839,7 +5874,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "cyfs:ChildSupportEnforcementCase, cyfs:PersonCaseAssociation"
 	key "niem-profile:niem:BaseType" value "cyfs:ChildSupportEnforcementCaseType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "Resolve overlap of new child support enforcement elements with ECF domestic case type"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
 
@@ -5881,7 +5916,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "domestic:CaseOrder"
 	key "niem-profile:niem:BaseType" value "domestic:CaseOrderType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Resolve overlap of new child support enforcement elements with ECF domestic case type"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
 
@@ -5980,7 +6015,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "j:CourtOrderType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Resolve overlap of new child support enforcement elements with ECF domestic case type"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information concerning a court order in a domestic case."
       attribute 223490 "courtFindings"
@@ -6173,7 +6208,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:PersonAssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Validate justice associations currently in ECF NIEM subset are still valid in NIEM 3.0"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information about a marriage, civil domestic union, or other domestic relationship defined by law."
       attribute 151938 "dateOfDivorce"
@@ -7059,7 +7094,7 @@ BankruptcyCase/Debtor.Organization"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Validate justice associations currently in ECF NIEM subset are still valid in NIEM 3.0"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information relating to a parent."
       classrelation 193666 // parent (<directional aggregation>)
@@ -7199,7 +7234,7 @@ BankruptcyCase/Debtor.Organization"
     classdiagram 135042 "DomesticCase"
       classdiagramsettings member_max_width 0 end
       comment "Information required to initiate a new domestic case in a court.  \"Domestic\" includes divorces, legal separations, annulment, child custody and visitation, paternity, child support, and domestic violence cases."
-      size C
+      size D-Landscape
     end
   end
 
@@ -7720,7 +7755,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "cyfs:GangOrganization, (cyfs:JuvenileGangAssociation)"
 	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Resolve overlap of new delinquency and dependency elements in ECF juvenile case type"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A gang a person is affiliated with"
       end
@@ -7766,7 +7801,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "j:SubjectIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Resolve overlap of new delinquency and dependency elements in ECF juvenile case type"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "This is the reference to the person element in the Review Filing."
       end
@@ -7786,7 +7821,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "cyfs:Parent, cyfs:Child"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "juvenile:GuardianAssociationTypeCode=\"parent\""
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
 
@@ -7938,6 +7973,7 @@ BankruptcyCase/Debtor.Organization"
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 135170 // JuvenileCase
       ncouples 9
       key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase"
       key "niem-profile:niem:OldMultiplicity" value ""
@@ -7953,7 +7989,7 @@ BankruptcyCase/Debtor.Organization"
 	relation 192258 ---|>
 	  a public
 	    classrelation_ref 194434 // <generalisation>
-	  b parent class_ref 146178 // CaseTypeSpecificInformation
+	  b parent class_ref 146178 // CaseTypeExtension
       end
 
       classrelation 195714 // act (<directional aggregation>)
@@ -8163,7 +8199,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "nc:ActivityDateRepresentation, (nc:ActivityDate)"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Validate justice associations currently in ECF NIEM subset are still valid in NIEM 3.0"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Date on which the placement commenced."
       end
@@ -8215,20 +8251,9 @@ BankruptcyCase/Debtor.Organization"
       comment "An entity to whom the care of a juvenile is committed."
       classrelation 129666 // <generalisation>
 	relation 129666 ---|>
-	  stereotype "niem-profile:niem"
 	  a public
 	    classrelation_ref 129666 // <generalisation>
 	  b parent class_ref 141058 // Placement
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
       end
 
       attribute 158466 "organizationOtherActorIDReference"
@@ -8362,7 +8387,7 @@ BankruptcyCase/Debtor.Organization"
     classdiagram 135170 "JuvenileCase"
       classdiagramsettings member_max_width 0 end
       comment "A delinquency or dependency case."
-      size Letter-Landscape
+      size C-Landscape
     end
 
     class 871042 "StatusOffenseActCodeType"

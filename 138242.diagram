@@ -2,55 +2,52 @@ format 212
 
 classcanvas 128002 class_ref 132226 // BaseMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end
-  xyz 583 42 2000
+  xyz 548 41 2000
 end
 classcanvas 128130 class_ref 145794 // RecordDocketingMessage
   classdiagramsettings member_max_width 0 end
-  xyz 498 281 2000
+  xyz 448 298 2000
 end
 classcanvas 128258 class_ref 138114 // ElectronicFilingMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end
-  xyz 527 162 2006
+  xyz 485 169 2006
 end
 classcanvas 128642 class_ref 132482 // ReviewedDocument
   classdiagramsettings member_max_width 0 end
-  xyz 42 255 2000
+  xyz 855 252 2000
 end
 classcanvas 128898 class_ref 130690 // CoreFilingMessage
   classdiagramsettings member_max_width 0 end
-  xyz 866 307 2000
+  xyz 40 329 2000
 end
 classcanvas 129154 class_ref 131586 // Case
   classdiagramsettings member_max_width 0 end
-  xyz 515 522 2000
+  xyz 508 546 2000
 end
 relationcanvas 128386 relation_ref 129410 // <generalisation>
-  decenter_begin 483
-  decenter_end 469
   from ref 128258 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 130946 // <generalisation>
-  decenter_begin 486
-  decenter_end 483
   from ref 128130 z 2007 to ref 128258
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 169858 // <directional aggregation>
-  from ref 128130 z 2001 stereotype "<<niem>>" xyz 429 372.5 3000 to ref 128642
-  role_a_pos 464 341 3000 no_role_b
-  multiplicity_a_pos 464 385 3000 no_multiplicity_b
+  from ref 128130 z 2001 stereotype "<<niem>>" xyz 398 382 3000 to ref 128642
+  role_a_pos 639 364 3000 no_role_b
+  multiplicity_a_pos 835 413 3000 no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 220930 // <directional aggregation>
-  from ref 128130 z 2001 stereotype "<<niem>>" xyz 797.5 367.5 3000 to ref 128898
-  role_a_pos 669 336 3000 no_role_b
-  multiplicity_a_pos 819 380 3000 no_multiplicity_b
+  from ref 128130 z 2001 stereotype "<<niem>>" xyz 358.5 388.5 3000 to ref 128898
+  role_a_pos 418 364 3000 no_role_b
+  multiplicity_a_pos 418 413 3000 no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 3358850 // <directional aggregation>
-  from ref 128130 z 2001 stereotype "<<niem>>" xyz 611 488 3000 to ref 129154
-  role_a_pos 667 489 3000 no_role_b
-  multiplicity_a_pos 635 489 3000 multiplicity_b_pos 636 467 3000
+  from ref 128130 z 2001 stereotype "<<niem>>" xyz 584.5 508.5 3000 to ref 129154
+  role_a_pos 642 509 3000 no_role_b
+  multiplicity_a_pos 609 509 3000 multiplicity_b_pos 609 515 3000
 end
+preferred_whz 1360 824 1
 end

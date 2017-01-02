@@ -1,6 +1,6 @@
 format 212
 "Content" // CIM::Content
-  revision 2
+  revision 4
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -26,6 +26,7 @@ format 212
   activitydiagramsettings
    end
   
+  stereotype "model library"
   package_ref 135298 // BaseTypes
 
   package_ref 141826 // CaseTypeExtensions

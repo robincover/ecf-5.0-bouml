@@ -1,6 +1,6 @@
 format 212
 "ecf-5.0-bouml"
-  revision 297
+  revision 304
   modified_by 2 "JamesECabral"
 
 
@@ -39,6 +39,7 @@ format 212
 
   mark_for_import
   
+  stereotype "toplevel"
   ncouples 21
   key "gxmi path" value ""
   key "gxmi no model" value "no"
