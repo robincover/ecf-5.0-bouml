@@ -1,6 +1,6 @@
 format 212
 
-classcanvas 128002 class_ref 1498626 // CancelFilingMessage
+classcanvas 128002 class_ref 1498626 // CancelFilingRequestMessage
   classdiagramsettings member_max_width 0 end
   xyz 78 42 2000
 end

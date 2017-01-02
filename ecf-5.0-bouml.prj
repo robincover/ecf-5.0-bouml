@@ -1,6 +1,6 @@
 format 212
 "ecf-5.0-bouml"
-  revision 265
+  revision 297
   modified_by 2 "JamesECabral"
 
 
@@ -39,7 +39,7 @@ format 212
 
   mark_for_import
   
-  ncouples 14
+  ncouples 21
   key "gxmi path" value ""
   key "gxmi no model" value "no"
   key "gxmi gen views" value "no"
@@ -52,8 +52,15 @@ format 212
   key "gxmi gen eclipse" value "no"
   key "gxmi comment exporter" value "no"
   key "gxmi linefeed" value "yes"
-  key "" value ""
   key "html dir" value "C:\\Users\\JamesECabral\\OneDrive\\xml\\ecf5\\model"
+  key "IEPDURI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/"
+  key "IEPDName" value "LegalXML Electronic Court Filing Core Specification"
+  key "IEPDVersion" value "5.0"
+  key "IEPDStatus" value "Working Draft"
+  key "IEPDOrganization" value "OASIS LegalXML Electronic Court Filing Technical Committee"
+  key "IEPDContact" value "https://www.oasis-open.org/committees/legalxml-courtfiling"
+  key "ignorePrefixes" value "cac,cbc,ds"
+  key "externalSchemas" value "cac=urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2=http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonAggregateComponents-2.1.xsd,cbc=urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2=http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonBasicComponents-2.1.xsd,ds=http://www.w3.org/2000/09/xmldsig#=https://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"
   package_ref 168066 // CIM
 
   package_ref 161538 // niem-profile

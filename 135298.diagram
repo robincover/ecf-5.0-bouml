@@ -1,10 +1,10 @@
-format 210
+format 212
 
 classcanvas 128002 class_ref 132226 // BaseMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end
   xyz 427 40 2000
 end
-classcanvas 128130 class_ref 133762 // CaseListQueryMessage
+classcanvas 128130 class_ref 133762 // GetCaseListRequestMessage
   classdiagramsettings member_max_width 0 end
   xyz 403 148 2006
 end
@@ -27,7 +27,7 @@ relationcanvas 128514 relation_ref 150786 // <directional aggregation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 150914 // <directional aggregation>
-  from ref 128130 z 2007 stereotype "<<niem>>" xyz 562.5 321 3000 to ref 128642
+  from ref 128130 z 2007 stereotype "<<niem>>" xyz 562 321 3000 to ref 128642
   role_a_pos 647 341 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end

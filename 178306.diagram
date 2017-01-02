@@ -1,6 +1,6 @@
-format 209
+format 212
 
-classcanvas 128002 class_ref 198914 // CourtDateAllocationRequestMessage
+classcanvas 128002 class_ref 198914 // AllocateCourtDateRequestMessage
   classdiagramsettings member_max_width 0 end
   xyz 287 144 2000
 end

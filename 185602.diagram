@@ -1,75 +1,51 @@
-format 210
+format 212
 
 componentcanvas 134274 component_ref 128642 // ECFSystem
   
-  xyzwh 213 69 2000 685 589
+  xyzwh 69.6627 83.4831 2000 801 767
 end
 componentcanvas 134402 component_ref 128002 // FilingAssembly
   
-  xyzwh 377 161 2005 195 65
+  xyzwh 527.081 300.803 2005 304 133
 end
 componentcanvas 134530 component_ref 128130 // FilingReview
   
-  xyzwh 381 316 2005 195 65
+  xyzwh 121.381 472.643 2005 304 133
 end
 componentcanvas 134658 component_ref 128258 // CourtRecord
   
-  xyzwh 383 494 2005 195 65
-end
-componentcanvas 134786 component_ref 128770 // Filer
-   draw_component_as_icon yes
-  xyzwh 58 158 2005 63 57
-end
-componentcanvas 134914 component_ref 128898 // Clerk
-   draw_component_as_icon yes
-  xyzwh 52 318 2005 71 57
+  xyzwh 103.715 695.882 2005 304 133
 end
 componentcanvas 135042 component_ref 128386 // Service
   
-  xyzwh 665 162 2005 195 65
+  xyzwh 105.598 191.739 2005 304 133
 end
 componentcanvas 135170 component_ref 128514 // CourtScheduling
   
-  xyzwh 667 316 2005 195 65
+  xyzwh 523.721 596.459 2005 304 133
 end
 componentcanvas 135298 component_ref 129026 // CMS/DMS
    draw_component_as_icon yes
-  xyzwh 928 495 2000 111 57
+  xyzwh 925.001 730.431 2000 163 87
 end
 componentcanvas 135426 component_ref 129154 // Legal CMS
    draw_component_as_icon yes
-  xyzwh 34 238 2005 115 57
+  xyzwh 910.822 185.323 2005 169 87
 end
-componentcanvas 135554 component_ref 129282 // Service Recipient
-   draw_component_as_icon yes
-  xyzwh 929 165 2000 165 57
-end
-arrowjunctioncanvas 135682 class_ref 129282 // FilingReviewInterface
-  xyz 315 263 3005 label_xy 249 282
-arrowjunctioncanvas 135938 class_ref 232322 // FilingReviewQueryInterface
-  xyz 583 261 3005 label_xy 496 280
-arrowjunctioncanvas 136194 class_ref 232450 // RecordDocketingCallbackInterface
-  xyz 594 401 3005 label_xy 480 420
-arrowjunctioncanvas 136450 class_ref 129538 // CourtRecordInterface
-  xyz 512 449 3005 label_xy 446 468
-arrowjunctioncanvas 136706 class_ref 232194 // CourtRecordQueryInterface
-  xyz 268 391 3005 label_xy 181 410
-arrowjunctioncanvas 136962 class_ref 129410 // FilingReviewCallbackInterface
-  xyz 462 234 3005 label_xy 365 253
-arrowjunctioncanvas 137218 class_ref 130434 // ServiceInterface
-  xyz 616 186 3005 label_xy 568 205
-arrowjunctioncanvas 137474 class_ref 198786 // CourtSchedulingInterface
-  xyz 739 277 3005 label_xy 660 296
+arrowjunctioncanvas 135682 class_ref 129282 // FilingReviewMDE
+  xyz 411.709 410.829 3005 label_xy 345 430
+arrowjunctioncanvas 136450 class_ref 129538 // CourtRecordMDE
+  xyz 261.518 631.241 3005 label_xy 195 649
+arrowjunctioncanvas 136962 class_ref 129410 // FilingAssemblyMDE
+  xyz 549.712 463.015 3005 label_xy 451 483
+arrowjunctioncanvas 137218 class_ref 130434 // ServiceMDE
+  xyz 270.817 375.154 3005 label_xy 222 394
+arrowjunctioncanvas 137474 class_ref 198786 // CourtSchedulingMDE
+  xyz 685.998 510.443 3005 label_xy 605 530
 line 135810 ---O
   from ref 134530 z 3006 to ref 135682
-line 136066 ---O
-  from ref 134530 z 3006 to ref 135938
-line 136322 ---O
-  from ref 134530 z 3006 to ref 136194
 line 136578 ---O
   from ref 134658 z 3006 to ref 136450
-line 136834 ---O
-  from ref 134658 z 3006 to ref 136706
 line 137090 ---O
   from ref 134402 z 3006 to ref 136962
 line 137346 ---O
@@ -80,35 +56,28 @@ line 137730 ---(
   from ref 134402 z 3006 to ref 135682
 line 137858 ---(
   from ref 134530 z 3006 to ref 136962
-line 137986 ---(
-  from ref 134402 z 3006 to ref 135938
 line 138114 ---(
   from ref 134402 z 3006 to ref 137218
 line 138242 ---(
   from ref 134402 z 3006 to ref 137474
-line 138370 ---(
-  from ref 134530 z 3006 to ref 136706
 line 138498 ---(
-  from ref 134530 z 3006 to ref 136450
-line 138626 ---(
-  from ref 134658 z 3006 to ref 136194
-line 138754 ---(
-  from ref 134402 z 3006 to ref 136706
+  from ref 134530 z 3006 to point 270.618 629.554
+  line 140034 z 3006 to ref 136450
 line 138882 ---(
   from ref 134530 z 3006 to ref 137218
-simplerelationcanvas 139010 simplerelation_ref 128002
-  from ref 134786 z 2006 to ref 134402
-end
-simplerelationcanvas 139138 simplerelation_ref 128130
-  from ref 135554 z 2006 to ref 135042
-end
-simplerelationcanvas 139394 simplerelation_ref 128386
-  from ref 134914 z 2006 to ref 134530
-end
-simplerelationcanvas 139522 simplerelation_ref 128514
-  from ref 135298 z 2006 to ref 134658
-end
 simplerelationcanvas 139650 simplerelation_ref 128642
   from ref 135298 z 2006 to ref 135170
 end
+simplerelationcanvas 140418 simplerelation_ref 135682
+  from ref 135298 z 2006 to ref 134658
+end
+simplerelationcanvas 140674 simplerelation_ref 135810
+  from ref 135426 z 2006 to ref 134402
+end
+line 140802 ---(
+  from ref 135170 z 3006 to ref 136962
+simplerelationcanvas 140930 simplerelation_ref 142338
+  from ref 135426 z 2006 to ref 135042
+end
+preferred_whz 2426 1394 1
 end

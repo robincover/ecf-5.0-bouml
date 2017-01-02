@@ -1,6 +1,6 @@
 format 212
-"CaseTypeSpecificMessages" // CIM::CaseTypeSpecificMessages
-  revision 91
+"CaseTypeExtensions" // CIM::Content::CaseTypeExtensions
+  revision 103
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -2905,7 +2905,7 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "ecf:VehicleOperatorInsuranceCoverage"
 	key "niem-profile:niem:BaseType" value "ecf:InsuranceType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Replace w/ genericode?"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
 
@@ -3390,8 +3390,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "ecf:CauseOfActionCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value "Genericode code list local/CauseOfActionCode.gc"
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list CauseOfActionCode.gc"
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "The legal ground on which the request for relief is based.  Allowed values set forth in court policy. Example: the basis(es) for relief in a civil case; the grounds for divorce in a state that does not recognize no-fault divorce; grounds for entry of an order of protection in a domestic violence case."
       end
 
@@ -3566,8 +3566,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "civil:ReliefTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value "Genericode code list local/ReliefTypeCode.gc"
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list ReliefTypeCode.gc"
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "Indicator of the type of relief requested in the case, e.g., damages, equitable relief (injunction).  Allowable values defined in Court Policy."
       end
 
@@ -3743,8 +3743,8 @@ BankruptcyCase/Debtor.Organization"
 	key "niem-profile:niem:Property" value "civil:FiduciaryTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Genericode code list ecf/FiduciaryTypeCode.gc"
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list FiduciaryTypeCode.gc"
+	key "niem-profile:niem:CodeList" value "Conservator of the estate; Conservator of the person; Guardian; Trustee"
 	comment "Legal description of the role of the fiduciary.  This is needed in addition to the Case Role Code (in the Review Filing message structure) because that code only defines the roles of other actors and other parties; the fiduciary per the specification is the initiating party. Examples: guardian, trustee, conservator of the person, conservator of the estate."
       end
 

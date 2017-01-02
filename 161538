@@ -79,32 +79,6 @@ format 212
       key "stereotypeCheckParameters" value ""
       key "stereotypeApplyOn" value "Attribute Class ClassInstance Relation"
       key "stereotypeIconPath" value ""
-      attribute 246018 "OldXPath"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	oid 246018
-	comment "Old XML mapping to the NIEM"
-      end
-
-      attribute 253698 "OldMultiplicity"
-	public explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	oid 253698
-	comment "The old mutiplicity of the NIEM property that implements the source class or property"
-      end
-
       attribute 246146 "XPath"
 	public explicit_type ""
 	cpp_decl ""
@@ -181,6 +155,32 @@ format 212
 	MysqlColumn
 	oid 260482
 	comment "The values and definitions of a code list in the format \"value1\", \"definition1\", \"value2\", \"definition2\""
+      end
+
+      attribute 246018 "OldXPath"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	oid 246018
+	comment "Old XML mapping to the NIEM"
+      end
+
+      attribute 253698 "OldMultiplicity"
+	public explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	oid 253698
+	comment "The old mutiplicity of the NIEM property that implements the source class or property"
       end
 
       attribute 253826 "Notes"

@@ -1,6 +1,6 @@
 format 212
-"BaseTypes" // CIM::BaseTypes
-  revision 86
+"BaseTypes" // CIM::Content::BaseTypes
+  revision 97
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -397,8 +397,8 @@ format 212
 	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "Genericode code list ecf/FilingStatusCode.gc"
-	key "niem-profile:niem:CodeList" value "received=filing has been received but not yet accepted; accepted=filing was received and accepted; partially-accepted=filing was received, some documents were accepted, and some documents were rejected; rejected=filing was received and completely rejected"
+	key "niem-profile:niem:Notes" value "Genericode code list FilingStatusCode.gc"
+	key "niem-profile:niem:CodeList" value "accepted=filing was received and accepted;  partially-accepted=filing was received, some documents were accepted, and some documents were rejected; received=filing has been received but not yet accepted; rejected=filing was received and completely rejected"
 	comment "Status of the filing as determined by the system sending the callback. Values: accepted, partially accepted (e.g., some documents but not others), rejected."
       end
 
@@ -1178,35 +1178,22 @@ ${members}};
     end
 
     class 192130 "code"
-      visibility public stereotype "enum_pattern"
-      cpp_decl "${comment}enum ${name} {
-${items}};
+      visibility public stereotype "type"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
 "
-      java_decl "${comment}${@}${visibility}${static}final class ${name} {
-${members}
-  private final int value;
-
-  public int value() {
-    return value;
-  }
-
-  public static ${name} fromInt(int value) {
-    switch (value) {
-${cases}    default: throw new Error();
-    }
-
-  }
-  private ${name}(int v) { value = v; };
-}
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
 "
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
 "
-      python_2_2 python_decl "class ${name}:
+      python_2_2 python_decl "class ${name}${inherit}:
 ${docstring}${members}
 "
-      idl_decl "${comment}enum ${name} {
-${items}};
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
 "
       explicit_switch_type ""
       mysql_decl ""

@@ -1,0 +1,320 @@
+format 212
+"Other" // CIM::Other
+  revision 3
+  modified_by 2 "JamesECabral"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  componentview 128002 "Components"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    component 128642 "ECFSystem"
+      component 135810 "CourtPolicy"
+      end
+
+      component 128258 "CourtRecord"
+	provided_classes
+	  class_ref 129538 // CourtRecordMDE
+	end
+      end
+
+      component 128514 "CourtScheduling"
+	provided_classes
+	  class_ref 198786 // CourtSchedulingMDE
+	end
+	required_classes
+	  class_ref 129410 // FilingAssemblyMDE
+	end
+      end
+
+      component 128002 "FilingAssembly"
+	provided_classes
+	  class_ref 129410 // FilingAssemblyMDE
+	end
+	required_classes
+	  class_ref 198786 // CourtSchedulingMDE
+	  class_ref 129282 // FilingReviewMDE
+	  class_ref 130434 // ServiceMDE
+	end
+      end
+
+      component 128130 "FilingReview"
+	provided_classes
+	  class_ref 129282 // FilingReviewMDE
+	end
+	required_classes
+	  class_ref 129538 // CourtRecordMDE
+	  class_ref 129410 // FilingAssemblyMDE
+	  class_ref 130434 // ServiceMDE
+	end
+      end
+
+      component 128386 "Service"
+	provided_classes
+	  class_ref 130434 // ServiceMDE
+	end
+      end
+    end
+
+    component 129026 "CMS/DMS"
+      simplerelation 128514
+	-_->
+	  on component_ref 128258 // CourtRecord
+      end
+
+      simplerelation 128642
+	-_->
+	  on component_ref 128514 // CourtScheduling
+      end
+
+      simplerelation 135682
+	-_->
+	  on component_ref 128258 // CourtRecord
+      end
+    end
+
+    component 129154 "Legal CMS"
+      simplerelation 135810
+	-_->
+	  on component_ref 128002 // FilingAssembly
+      end
+
+      simplerelation 142338
+	-_->
+	  on component_ref 128386 // Service
+      end
+    end
+
+    componentdiagram 185602 "Components"
+      componentdiagramsettings draw_all_relations no
+       end
+      size Letter-Landscape
+    end
+  end
+
+  usecaseview 141058 "Use Cases"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    objectdiagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 185730 "Use Cases"
+      usecasediagramsettings end
+      size Letter-Landscape
+    end
+
+    class 232706 "Clerk"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 232578 "Filer"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 232834 "ServiceRecipient"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 232962 "CMSDMS"
+      visibility package stereotype "entity"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    usecase 128130 "Review Filing"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 128386 "Receive Service"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 135042 "Schedule Court Date"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 128002 "Submit Court Filing"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135554
+	---|>
+	  on usecase_ref 128514 // Submit Filing
+      end
+    end
+
+    usecase 128514 "Submit Filing"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 128258 "Submit Service"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 135426
+	---|>
+	  on usecase_ref 128514 // Submit Filing
+      end
+    end
+  end
+end
