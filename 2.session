@@ -1,8 +1,8 @@
-window_sizes 3840 2035 793 3041 1747 211
+window_sizes 2724 1684 793 1925 1396 211
 cleanlooks_style
-selected 
-  package_ref 129 // ecf-5.0-bouml
 open
+  
+  package_ref 168066 // CIM
   
   package_ref 174594 // PIM
 end

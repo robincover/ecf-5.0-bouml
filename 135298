@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::Content::BaseTypes
-  revision 103
+  revision 114
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -94,7 +94,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentReceivedDate/nc:DateTime"
+	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentReceivedDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentReceivedDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
@@ -163,13 +163,13 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentPostDate/nc:DateTime"
+	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentPostDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentPostDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentPostDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The time that the message left the control of the sending MDE. In a filing this is the Filing Assembly MDE."
@@ -186,13 +186,13 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentSubmitter/nc:EntityRepresentation"
+	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentSubmitter/nc:EntityPerson, nc:EntityOrganization"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:CaseFiling/nc:DocumentSubmitter/nc:EntityRepresentation"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentSubmitter"
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the serviceRecipientID for subsequent filings in this case, and asynchronous responses to this filing."
@@ -210,7 +210,7 @@ format 212
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value "CaseTypeSpecificInformation"
+      key "niem-profile:niem:OldXPath" value ""
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value ""
       key "niem-profile:niem:Type" value ""
@@ -332,7 +332,7 @@ format 212
 	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentEffectiveDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "the date and time of day on which an entry in the docket or register of action in the court CMS was completed for a filing"
@@ -378,7 +378,7 @@ format 212
 	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentFiledDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "the date of filing of a document recognized by the court in its docket entry upon acceptance of the document for entry into the court official records.  Note:  This date may be, but need to be, affixed to the document with an electronic filestamp.  There is no corresponding official hour of the filing.  The court may subsequently change the officialFilingDate by judicial order.
@@ -401,10 +401,10 @@ format 212
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentStatus/ecf:StatusAugmentation/ecf:FilingStatusCode"
 	key "niem-profile:niem:Type" value "ecf:StatusAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
-	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Genericode code list FilingStatusCode.gc"
-	key "niem-profile:niem:CodeList" value "accepted=filing was received and accepted;  partially-accepted=filing was received, some documents were accepted, and some documents were rejected; received=filing has been received but not yet accepted; rejected=filing was received and completely rejected"
+	key "niem-profile:niem:CodeList" value "accepted=filing was received and accepted;  cancelled=filing was cancelled at filer's request; partially-accepted=filing was received, some documents were accepted, and some documents were rejected; received=filing has been received but not yet accepted; rejected=filing was received and completely rejected"
 	comment "Status of the filing as determined by the system sending the callback. Values: accepted, partially accepted (e.g., some documents but not others), rejected."
       end
 
@@ -419,7 +419,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentStatus/ecf:FilingStatusReasonDescription"
+	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentStatus/nc:StatusDescriptionText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "ecf:ReviewedFiling/nc:DocumentStatus/nc:StatusDescriptionText"
 	key "niem-profile:niem:Type" value "nc:StatusType"
@@ -560,7 +560,7 @@ format 212
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value "nc:Case is included within each of the implementing messages"
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -643,7 +643,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldXPath" value "ecf:Error"
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError"
 	key "niem-profile:niem:Type" value "cbrn:MessageStatusType"
@@ -689,8 +689,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate/nc:Date"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonBirthDate/nc:Date"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonBirthDate"
@@ -712,8 +712,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityCode/fbi:EthnicityCodeSimpleType"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEthnicityCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (j:PersonEthnicityCode)"
@@ -736,7 +736,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityText"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicityText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityText)"
@@ -759,7 +759,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEyeColorCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEyeColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonEyeColor, (j:PersonEyeColorCode)"
@@ -782,7 +782,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHairColorCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonHairColorCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonHairColor, (j:PersonHairColorCode)"
@@ -805,7 +805,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureText"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonHeightMeasure"
@@ -828,7 +828,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonRaceCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonRace, (j:PersonRaceCode)"
@@ -851,7 +851,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceText"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRaceText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceText)"
@@ -874,7 +874,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSexCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/j:PersonSexCode"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonSex, (j:PersonSexCode)"
@@ -896,8 +896,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonTaxIdentification/nc:IdentificationID"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonTaxIdentification"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonTaxIdentification/nc:IdentificationID"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonTaxIdentification"
@@ -920,7 +920,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureText"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonWeightMeasure"
@@ -943,7 +943,7 @@ format 212
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationID"
+      key "niem-profile:niem:OldXPath" value "nc:Identification"
       key "niem-profile:niem:OldMultiplicity" value "0,1"
       key "niem-profile:niem:XPath" value "nc:Identification/nc:IdentificationID"
       key "niem-profile:niem:Type" value "nc:IdentificationType"
@@ -966,7 +966,7 @@ format 212
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value "ecf:RequestMessageType"
+      key "niem-profile:niem:OldXPath" value "ecf:QueryMessageType"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "ecf:RequestMessageType"
       key "niem-profile:niem:Type" value "ecf:RequestMessageType"
@@ -995,7 +995,7 @@ format 212
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value "ecf:ResponseMessage"
+      key "niem-profile:niem:OldXPath" value "ecf:QueryResponseMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "ecf:ResponseMessage"
       key "niem-profile:niem:Type" value "ecf:ResponseMessageType"
@@ -1024,12 +1024,12 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "QueryResponseMessage/QueryErrorText"
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "QueryResponseMessage/nc:MessageContentError"
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:OldXPath" value "ecf:QueryResponseMessage/ecf:Error"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError"
+	key "niem-profile:niem:Type" value "cbrn:MessageStatusType"
+	key "niem-profile:niem:Property" value "cbrn:MessageContentError"
+	key "niem-profile:niem:BaseType" value "cbrn:MessageContentErrorType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -1069,8 +1069,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:StartDate/nc:DateTime"
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:StartDate"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:DateRange/nc:StartDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DateRangeType"
 	key "niem-profile:niem:Property" value "nc:StartDate"
@@ -1092,8 +1092,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:EndDate/nc:DateTime"
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:DateRange/nc:EndDate"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:DateRange/nc:EndDate/nc:DateTime"
 	key "niem-profile:niem:Type" value "nc:DateRangeType"
 	key "niem-profile:niem:Property" value "nc:EndDate"
@@ -1104,6 +1104,40 @@ format 212
 	comment "The ending time, in the time zone of the court on the ending date.
 "
       end
+    end
+
+    class 5308418 "Address"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:XPath" value "nc:Location/nc:Address"
+      key "niem-profile:niem:Type" value "nc:LocationType"
+      key "niem-profile:niem:Property" value "nc:LocationAddressAbstract, (nc:Address)"
+      key "niem-profile:niem:BaseType" value "nc:AddressType"
+      key "niem-profile:niem:Multiplicity" value "0,1"
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress"
+      key "niem-profile:niem:OldMultiplicity" value "0,1"
+      key "niem-profile:niem:Notes" value ""
+      comment "An address."
     end
   end
 
