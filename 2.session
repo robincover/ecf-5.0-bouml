@@ -2,8 +2,6 @@ window_sizes 2724 1684 793 1925 1396 211
 cleanlooks_style
 open
   
-  package_ref 168066 // CIM
-  
   package_ref 174594 // PIM
 end
 end

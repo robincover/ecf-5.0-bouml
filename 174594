@@ -1,6 +1,6 @@
 format 212
 "PIM" // PIM
-  revision 41
+  revision 46
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -29,7 +29,4 @@ format 212
   stereotype "model library"
   package_ref 174978 // NIEMReference
 
-  package_ref 188546 // NIEMSubset
-
-  package_ref 188674 // NIEMExtension
 end
