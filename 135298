@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::Content::BaseTypes
-  revision 119
+  revision 125
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -43,6 +43,40 @@ format 212
     
     activitydiagramsettings
      end
+    class 5308418 "Address"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:XPath" value "nc:Location/nc:Address"
+      key "niem-profile:niem:Type" value "nc:LocationType"
+      key "niem-profile:niem:Property" value "nc:LocationAddressAbstract, (nc:Address)"
+      key "niem-profile:niem:BaseType" value "nc:AddressType"
+      key "niem-profile:niem:Multiplicity" value "0,1"
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress"
+      key "niem-profile:niem:OldMultiplicity" value "0,1"
+      key "niem-profile:niem:Notes" value ""
+      comment "An address."
+    end
+
     class 132226 "BaseMessage"
       abstract visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -953,6 +987,248 @@ format 212
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "An identifier"
+      attribute 9576450 "idenficationSource"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Identification/nc:IdentificationSourceText"
+	key "niem-profile:niem:Type" value "nc:IdentificationType"
+	key "niem-profile:niem:Property" value "nc:IdentificationSourceText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationSourceText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The source of an identifier."
+      end
+    end
+
+    class 5365890 "Location"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "A location."
+      classrelation 3997314 // address (<directional aggregation>)
+	relation 3995138 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "address" public
+	    classrelation_ref 3997314 // address (<directional aggregation>)
+	  b parent class_ref 5308418 // Address
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+      end
+    end
+
+    class 5366146 "PostalAddress"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "A postal address."
+      attribute 9585026 "recipientName"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The name of a recipient at an address."
+      end
+
+      attribute 9585154 "deliveryPoint"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A mail delivery point (e.g. mailbox number)."
+      end
+
+      attribute 9585282 "city"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A city."
+      end
+
+      attribute 9585410 "county"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A county."
+      end
+
+      attribute 9585538 "state"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A state."
+      end
+
+      attribute 9585666 "country"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 9585794 "postalCode"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A postal code for mail delivery within a country."
+      end
     end
 
     class 909826 "RequestMessage"
@@ -1037,6 +1313,376 @@ format 212
       end
     end
 
+    class 5366018 "StreetAddress"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "A street address."
+      attribute 9584642 "fullAddress"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A complete street address."
+      end
+
+      attribute 9584770 "streetNumber"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A number of a location on a street."
+      end
+
+      attribute 9584898 "streetName"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The name of a street."
+      end
+    end
+
+    class 5359362 "TelephoneNumber"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "A telephone number."
+      attribute 9575042 "fullTelephoneNumber"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneNumberFullID"
+	key "niem-profile:niem:Type" value "nc:FullTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneNumberFullID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneNumberFullID"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A complete telephone number"
+      end
+
+      attribute 9575170 "telephoneSuffix"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneSuffixID"
+	key "niem-profile:niem:Type" value "nc:FullTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneSuffixID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneSuffixID"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A telephone extension."
+      end
+
+      attribute 9575426 "NATelephoneNumber"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber"
+	key "niem-profile:niem:Type" value "nc:TelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneNumberRepresentation, (nc:NANPTelephoneNumber), (nc:FullTelephoneNumber)"
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A North American Numbering Plan (NANP) telephone number."
+      end
+
+      attribute 9575298 "internationalTelephoneNumber"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber"
+	key "niem-profile:niem:Type" value "nc:TelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneNumberRepresentation, (nc:InternationalTelephoneNumber)"
+	key "niem-profile:niem:BaseType" value "nc:InternationalTelephoneNumberType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "An international telephone number."
+      end
+
+      attribute 9575682 "internationalTelephoneID"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber/nc:TelephoneNumberID"
+	key "niem-profile:niem:Type" value "nc:InternationalTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneNumberID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber/nc:TelephoneNumberID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "An international telephone number without country prefix."
+      end
+
+      attribute 9575554 "telephoneCountryCode"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber/nc:TelephoneCountryCodeID"
+	key "niem-profile:niem:Type" value "nc:InternationalTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneCountryCodeID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber/nc:TelephoneCountryCodeID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A telephone prefix for a country."
+      end
+
+      attribute 9575810 "internationalTelephoneSuffix"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber/nc:TelephoneSuffixID"
+	key "niem-profile:niem:Type" value "nc:InternationalTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneSuffixID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:InternationalTelephoneNumber/nc:TelephoneSuffixID"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension to an interational telephone number."
+      end
+
+      attribute 9575938 "NATelephoneAreaCode"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneAreaCodeID"
+	key "niem-profile:niem:Type" value "nc:NANPTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneAreaCodeID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneAreaCodeID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A North American Numbering Plan (NANP) telephone area code."
+      end
+
+      attribute 9576066 "NATelephoneExchangeNumber"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneExchangeID"
+	key "niem-profile:niem:Type" value "nc:NANPTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneExchangeID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneExchangeID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A North American Numbering Plan (NANP) telephone exchange number."
+      end
+
+      attribute 9576194 "NATelephoneLineNumber"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneLineID"
+	key "niem-profile:niem:Type" value "nc:NANPTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneLineID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneLineID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A North American Numbering Plan (NANP) telephone line number."
+      end
+
+      attribute 9576322 "NATelephoneSuffix"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneSuffixID"
+	key "niem-profile:niem:Type" value "nc:NANPTelephoneNumberType"
+	key "niem-profile:niem:Property" value "nc:TelephoneSuffixID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber/nc:NANPTelephoneNumber/nc:TelephoneSuffixID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension to a North American Numbering Plan (NANP) telephone number."
+      end
+    end
+
     class 133378 "TimeRange"
       visibility protected stereotype "niem-profile:niem"
       cpp_decl ""
@@ -1104,40 +1750,6 @@ format 212
 	comment "The ending time, in the time zone of the court on the ending date.
 "
       end
-    end
-
-    class 5308418 "Address"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl "${comment}${template}class ${name}${inherit} {
-${members}};
-${inlines}
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      python_2_2 python_decl "class ${name}${inherit}:
-${docstring}${members}
-"
-      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:XPath" value "nc:Location/nc:Address"
-      key "niem-profile:niem:Type" value "nc:LocationType"
-      key "niem-profile:niem:Property" value "nc:LocationAddressAbstract, (nc:Address)"
-      key "niem-profile:niem:BaseType" value "nc:AddressType"
-      key "niem-profile:niem:Multiplicity" value "0,1"
-      key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress"
-      key "niem-profile:niem:OldMultiplicity" value "0,1"
-      key "niem-profile:niem:Notes" value ""
-      comment "An address."
     end
   end
 

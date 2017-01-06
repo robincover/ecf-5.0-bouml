@@ -1,6 +1,6 @@
 format 212
 "Messages" // CIM::Content::Messages
-  revision 146
+  revision 152
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -547,6 +547,43 @@ ${members}};
 	key "niem-profile:niem:CodeList" value ""
 	comment "A membership in an attorney association."
       end
+    end
+
+    class 4652418 "BinaryDescriptionCode"
+      visibility package stereotype "enum_pattern"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl "${comment}${@}${visibility}${static}final class ${name} {
+${members}
+  private final int value;
+
+  public int value() {
+    return value;
+  }
+
+  public static ${name} fromInt(int value) {
+    switch (value) {
+${cases}    default: throw new Error();
+    }
+
+  }
+  private ${name}(int v) { value = v; };
+}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "IANA MIME type specifiying the format of the attachment. Example: application/msword; application/pdf."
     end
 
     class 131586 "Case"
@@ -1460,6 +1497,54 @@ ${members}};
 	comment "A description of a contact."
       end
 
+      attribute 9577474 "organizationContactUse"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "How the contact information should be used (e.g. primary, only for emergency, only during day/evening/night)"
+      end
+
+      attribute 9576578 "personContactUse"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "How the contact information should be used (e.g. home, work, only for emergency, only during day/evening/night)"
+      end
+
       attribute 4260354 "responder"
 	public explicit_type "string"
 	multiplicity "0..1"
@@ -1482,6 +1567,42 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A person who responds to calls on behalf of the contact."
+      end
+
+      classrelation 3997058 // organization (<directional aggregation>)
+	relation 3994882 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "organization" public
+	    classrelation_ref 3997058 // organization (<directional aggregation>)
+	  b parent class_ref 131970 // Organization
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      classrelation 3997186 // person (<directional aggregation>)
+	relation 3995010 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "person" public
+	    classrelation_ref 3997186 // person (<directional aggregation>)
+	  b parent class_ref 131842 // Person
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -1617,6 +1738,26 @@ ${members}};
 	key "niem-profile:niem:CodeList" value ""
 	comment "An extension point for the enclosing message."
       end
+    end
+
+    classinstance 1650306 "CoreFilingMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 130690 // CoreFilingMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "core:CoreFilingMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "core:CoreFilingMessage"
+      key "niem-profile:niem:BaseType" value "core:CoreFilingMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
     end
 
     class 145026 "Court"
@@ -1852,7 +1993,7 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:Document/ncDocumentIdentification"
+	key "niem-profile:niem:OldXPath" value "nc:Document/nc:DocumentIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Document/ncDocumentIdentification"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
@@ -2139,6 +2280,78 @@ ${members}};
 	comment "Any additional instructions for printing of a document (such as printing on front and back of the same page or printing on a particular color paper).
 "
       end
+
+      attribute 9574146 "documentFileControlNumber"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/nc:DocumentFileControlID"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentFileControlID"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Document/nc:DocumentFileControlID"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A file control number associated with a document."
+      end
+
+      attribute 9574274 "documentCategory"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/nc:DocumentCategoryText"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentCategory, (nc:DocumentCategoryText)"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Document/nc:DocumentCategoryText"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A categorization of a document."
+      end
+
+      attribute 9574402 "documentTitle"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/nc:DocumentTitleText"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Property" value "nc:DocumentTitleText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Document/nc:DocumentTitleText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The title of a document."
+      end
     end
 
     class 162690 "DocumentRenditionMetadata"
@@ -2238,7 +2451,7 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryDescriptionText"
+	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryCategoryText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/ecf:DocumentAugmentation/cbrn:MIMEContentCode"
 	key "niem-profile:niem:Type" value "ecf:DocumentRenditionType"
@@ -2360,6 +2573,102 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The location of a document, either a URL or attachment identifier."
+      end
+
+      attribute 9572994 "documentBinaryContents"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary/nc:Base64BinaryObject"
+	key "niem-profile:niem:Type" value "nc:BinaryType"
+	key "niem-profile:niem:Property" value "nc:BinaryObject, (nc:Base64BinaryObject)"
+	key "niem-profile:niem:BaseType" value "niem-xs:base64Binary"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:Base64BinaryObject"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "The binary contents of a document."
+      end
+
+      attribute 9573122 "documentBinaryCapturer"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary/nc:BinaryCapturer"
+	key "niem-profile:niem:Type" value "nc:BinaryType"
+	key "niem-profile:niem:Property" value "nc:BinaryCapturer"
+	key "niem-profile:niem:BaseType" value "nc:EntityType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryCapturer"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The person who capturer/scanned a document into binary format."
+      end
+
+      attribute 9573250 "documentBinaryFormat"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary/"
+	key "niem-profile:niem:Type" value "nc:BinaryType"
+	key "niem-profile:niem:Property" value "nc:BinaryFormatStandardName"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryFormatStandardName"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The binary format of a document."
+      end
+
+      attribute 9573378 "renditionDescription"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary/"
+	key "niem-profile:niem:Type" value "nc:BinaryType"
+	key "niem-profile:niem:Property" value "nc:BinaryDescriptionText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryDescriptionText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A description of a rendition of a document."
       end
     end
 
@@ -2712,7 +3021,7 @@ ${members}};
 	    classrelation_ref 145026 // contactInformation (<directional aggregation>)
 	  b parent class_ref 134914 // ContactInformation
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:Organization/ecf:OrganizationAugmentation/nc:ContactInformation. nc:OrganizationContactInformationAssociation"
+	key "niem-profile:niem:OldXPath" value "ecf:Organization/nc:OrganizationPrimaryContactInformation"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Organization/nc:OrganizationPrimaryContactInformation"
 	key "niem-profile:niem:Type" value "nc:OrganizationType"
@@ -2786,6 +3095,48 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The unique identifier assigned by the court at the time the organization is first associated with the case.  If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this blank."
+      end
+
+      classrelation 3997442 // organizationLocation (<directional aggregation>)
+	relation 3995266 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "organizationLocation" public
+	    classrelation_ref 3997442 // organizationLocation (<directional aggregation>)
+	  b parent class_ref 5365890 // Location
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 9584002 "taxIdentification"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A federal identifier for an organization."
       end
     end
 
@@ -2995,13 +3346,13 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonName"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonName/nc:PersonGivenName, nc:PersonMiddleName, nc:PersonSurName, nc:PersonNameSuffixText, nc:PersonMaidenName, nc:PersonFullName"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonName/nc:PersonFullName, nc:PersonGivenName, nc:PersonMiddleName, nc:PersonSurName, nc:PersonNameSuffixText"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonName/nc:PersonGivenName, nc:PersonMiddleName, nc:PersonSurName, nc:PersonNameSuffixText, nc:PersonMaidenName, nc:PersonFullName"
 	key "niem-profile:niem:Type" value "nc:PersonNameType"
-	key "niem-profile:niem:Property" value "nc:PersonGivenName, nc:PersonMiddleName, nc:PersonSurName, nc:PersonNameSuffixText"
+	key "niem-profile:niem:Property" value "nc:PersonGivenName, nc:PersonMiddleName, nc:PersonSurName, nc:PersonNameSuffixText, nc:PersonMaidenName, nc:PersonFullName"
 	key "niem-profile:niem:BaseType" value "nc:PersonNameTextType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The name of a person or organization. "
@@ -3345,6 +3696,78 @@ ${members}};
 	key "niem-profile:niem:CodeList" value ""
 	comment "The unique identifier assigned by the court at the time the property is first associated with the case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this blank."
       end
+
+      attribute 9585922 "modelYear"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A model year associated with an item."
+      end
+
+      attribute 9586050 "style"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The style/type of an item."
+      end
+
+      attribute 9586178 "color"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value ""
+	key "niem-profile:niem:Type" value ""
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The color of an item."
+      end
     end
 
     class 131714 "RelatedCase"
@@ -3449,63 +3872,6 @@ ${members}};
       comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
       size C
     end
-
-    classinstance 1650306 "CoreFilingMessage"
-      stereotype "niem-profile:niem"
-      type class_ref 130690 // CoreFilingMessage
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "core:CoreFilingMessage"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "core:CoreFilingMessage"
-      key "niem-profile:niem:BaseType" value "core:CoreFilingMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
-    end
-
-    class 4652418 "BinaryDescriptionCode"
-      visibility package stereotype "enum_pattern"
-      cpp_decl "${comment}enum ${name} {
-${items}};
-"
-      java_decl "${comment}${@}${visibility}${static}final class ${name} {
-${members}
-  private final int value;
-
-  public int value() {
-    return value;
-  }
-
-  public static ${name} fromInt(int value) {
-    switch (value) {
-${cases}    default: throw new Error();
-    }
-
-  }
-  private ${name}(int v) { value = v; };
-}
-"
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
-"
-      python_2_2 python_decl "class ${name}:
-${docstring}${members}
-"
-      idl_decl "${comment}enum ${name} {
-${items}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      comment "IANA MIME type specifiying the format of the attachment. Example: application/msword; application/pdf."
-    end
   end
 
   classview 156034 "GetCaseListRequestMessage"
@@ -3590,7 +3956,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "nc:StatusType"
 	key "niem-profile:niem:Property" value "nc:StatusDesignator, (nc:StatusText)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The status of the case as of the date of inquiry.
@@ -5345,7 +5711,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "j:CaseAugmentationType"
 	key "niem-profile:niem:Property" value "j:CaseJudge"
 	key "niem-profile:niem:BaseType" value "j:JudicialOfficialType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A reference to a judicial officer assigned to a calendar event.
@@ -8159,7 +8525,7 @@ ${items}};
 	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedCaseCategories"
 	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
 	key "niem-profile:niem:Property" value "policyresponse:SupportedCaseCategories"
-	key "niem-profile:niem:BaseType" value "1,un"
+	key "niem-profile:niem:BaseType" value "policyresponse:SupportedCaseCategoriesType"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -10273,7 +10639,7 @@ ${members}};
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A court-issued identifer for the filer that paid the FilingPayment"
