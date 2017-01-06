@@ -1,10 +1,8 @@
-window_sizes 2154 1796 793 1355 1508 211
+window_sizes 2154 1684 793 1355 1396 211
 cleanlooks_style
-selected attribute_ref 153858 // nameOfDeceased
+selected 
+  package_ref 129 // ecf-5.0-bouml
 open
-  class_ref 139906 // DecedentEstateCaseInformation
-  
-  package_ref 141954 // Messages
   
   package_ref 174594 // PIM
 end

@@ -1,6 +1,6 @@
 format 212
 "CaseTypeExtensions" // CIM::Content::CaseTypeExtensions
-  revision 133
+  revision 136
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -2912,9 +2912,9 @@ format 212
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value "nc:Measure"
+      key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:DrivingIncident/j:DrivingIncidentLegalSpeedRate"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "nc:Measure"
+      key "niem-profile:niem:XPath" value "j:Citation/citation:CitationAugmentation/j:DrivingIncident/j:DrivingIncidentLegalSpeedRateMeasure"
       key "niem-profile:niem:Type" value "nc:MeasureType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
@@ -2933,9 +2933,9 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Measure/nc:MeasureValue"
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:DrivingIncident/j:DrivingIncidentLegalSpeedRate/nc:MeasureValue"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "nc:Measure/nc:MeasureDecimalValue"
+	key "niem-profile:niem:XPath" value "j:Citation/citation:CitationAugmentation/j:DrivingIncident/j:DrivingIncidentLegalSpeedRateMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:MeasureType"
 	key "niem-profile:niem:Property" value "nc:MeasureValue, (nc:MeasureDecimalValue)"
 	key "niem-profile:niem:BaseType" value "niem-xs:decimal"
@@ -2956,9 +2956,9 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Measure/nc:MeasureUnitText"
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:DrivingIncident/j:DrivingIncidentLegalSpeedRate/nc:MeasureUnitText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Measure/nc:SpeedUnitCode"
+	key "niem-profile:niem:XPath" value "j:Citation/citation:CitationAugmentation/j:DrivingIncident/j:DrivingIncidentLegalSpeedRateMeasure/nc:SpeedUnitCode"
 	key "niem-profile:niem:Type" value "nc:MeasureType"
 	key "niem-profile:niem:Property" value "nc:MeasureUnit, (nc:SpeedUnitCode)"
 	key "niem-profile:niem:BaseType" value "unece:VelocityCodeType"
@@ -3086,8 +3086,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Vehcile/nc:VehicleColorPrimaryCode"
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Vehicle/nc:VehicleColorPrimaryCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Vehicle/j:ConveyanceColorPrimaryCode"
 	key "niem-profile:niem:Type" value "nc:ItemType"
 	key "niem-profile:niem:Property" value "nc:ItemColor, (j:ConveyanceColorPrimaryCode)"
@@ -3973,7 +3973,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -4088,7 +4088,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -5605,7 +5605,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -5625,7 +5625,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson"
 	key "niem-profile:niem:Type" value "nc:EntityType"
 	key "niem-profile:niem:Property" value "nc:EntityRepresentation, (nc:EntityPerson)"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
@@ -5670,7 +5670,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -5694,7 +5694,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification/nc:IdentificationSourceText"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification/nc:IdentificationSourceText"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -5742,7 +5742,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -5764,7 +5764,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification/ecf:PersonIdentificationCategoryType"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification/ecf:PersonIdentificationCategoryType"
 	key "niem-profile:niem:Type" value "nc:IdentificationType"
 	key "niem-profile:niem:Property" value "nc:IdentificationCategory, (ecf:PersonIdentificationCategoryCode)"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5789,7 +5789,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -6770,7 +6770,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/domestic:MarriageAssociation/scr:MarriageAssociationAugmentation/scr:DivorceDecreeIndicator"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/nc:PersonUnionAssociation/jnc:PersonDisunion/nc:PersonDisunionDecreeIndicator"
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/nc:PersonUnionAssociation/nc:PersonDisunion/nc:PersonDisunionDecreeIndicator"
 	key "niem-profile:niem:Type" value "nc:PersonDisunionType"
 	key "niem-profile:niem:Property" value "nc:PersonDisunionDecreeIndicator"
 	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
@@ -6834,14 +6834,14 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/nc:PersonUnionAssociation/nc:PersonUnionCategory"
+	key "niem-profile:niem:Type" value "nc:PersonUnionAssociationType"
+	key "niem-profile:niem:Property" value "nc:PersonUnionCategory, (nc:PersonUnionCategoryCode)"
+	key "niem-profile:niem:BaseType" value "nc:PersonUnionCategoryCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/domestic:MarriageAssociation/nc:PersonUnionCategory"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A type of legal union between persons (e.g. marriage)"
       end
@@ -7602,7 +7602,7 @@ format 212
 	relation 191490 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "parent" multiplicity "1..*" public
-	    comment "Information about the person(s) involved as a child in a current or previous domestic legal relationship."
+	    comment "Information about the person(s) involved as a parent in a current or previous domestic legal relationship."
 	    classrelation_ref 193666 // parent (<directional aggregation>)
 	  b parent class_ref 139394 // DomesticCasePersonInformation
 	ncouples 9
@@ -7621,17 +7621,18 @@ format 212
 	relation 3988354 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "child" public
+	    comment "Information about the person(s) involved as a child in a current or previous domestic legal relationship."
 	    classrelation_ref 3990530 // child (<directional aggregation>)
 	  b parent class_ref 139394 // DomesticCasePersonInformation
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:ParentChildAssociation/cyfs:Child"
+	key "niem-profile:niem:Type" value "cyfs:ParentChildAssociationType"
+	key "niem-profile:niem:Property" value "cyfs:Child"
+	key "niem-profile:niem:BaseType" value "cyfs:ChildType"
+	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/nc:ImmediateFamilyAssociation/cyfs:Child"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
       end
 
@@ -7679,6 +7680,30 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Type of parent.  Allowed values set forth in Court Policy.  Examples: natural, adoptive, surrogate, undetermined."
+      end
+
+      attribute 9754242 "childReference"
+	public explicit_type ""
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:ParentChildAssociation/cyfs:Child/nc:RoleOfPerson"
+	key "niem-profile:niem:Type" value "cyfs:ChildType"
+	key "niem-profile:niem:Property" value "nc:RoleOfPerson"
+	key "niem-profile:niem:BaseType" value "ncPersonType"
+	key "niem-profile:niem:Multiplicity" value "1,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/nc:ImmediateFamilyAssociation/cyfs:Child"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A reference to a child in a parent relationship."
       end
     end
 

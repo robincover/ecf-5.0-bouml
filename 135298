@@ -1,6 +1,6 @@
 format 212
 "BaseTypes" // CIM::Content::BaseTypes
-  revision 125
+  revision 128
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -65,13 +65,13 @@ ${members}};
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:XPath" value "nc:Location/nc:Address"
+      key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress"
       key "niem-profile:niem:Type" value "nc:LocationType"
       key "niem-profile:niem:Property" value "nc:LocationAddressAbstract, (nc:Address)"
       key "niem-profile:niem:BaseType" value "nc:AddressType"
       key "niem-profile:niem:Multiplicity" value "0,1"
       key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress"
+      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:AddressFullText"
       key "niem-profile:niem:OldMultiplicity" value "0,1"
       key "niem-profile:niem:Notes" value ""
       comment "An address."
@@ -838,7 +838,7 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureText"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -953,7 +953,7 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureText"
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
 	key "niem-profile:niem:Type" value "nc:PersonType"
@@ -1023,13 +1023,13 @@ ${members}};
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:XPath" value "nc:Location"
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Property" value "nc:Location"
+      key "niem-profile:niem:BaseType" value "nc:LocationType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldXPath" value "nc:Location"
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       comment "A location."
@@ -1040,20 +1040,44 @@ ${members}};
 	    classrelation_ref 3997314 // address (<directional aggregation>)
 	  b parent class_ref 5308418 // Address
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:Address"
+	key "niem-profile:niem:Type" value "nc:LocationType"
+	key "niem-profile:niem:Property" value "nc:LocationAddressAbstract, (nc:Address)"
+	key "niem-profile:niem:BaseType" value "nc:AddressType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:Address"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 9754498 "name"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationName"
+	key "niem-profile:niem:Type" value "nc:LocationType"
+	key "niem-profile:niem:Property" value "nc:LocationName"
+	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationName"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The name of a location."
       end
     end
 
     class 5366146 "PostalAddress"
-      visibility package 
+      visibility package stereotype "niem-profile:niem"
       cpp_decl ""
       java_decl ""
       php_decl ""
@@ -1062,6 +1086,16 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
+      ncouples 9
+      key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "nc:Address"
+      key "niem-profile:niem:BaseType" value "nc:AddressType"
+      key "niem-profile:niem:Multiplicity" value "0,1"
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress"
+      key "niem-profile:niem:OldMultiplicity" value "0,1"
+      key "niem-profile:niem:Notes" value ""
       comment "A postal address."
       attribute 9585026 "recipientName"
 	public explicit_type "string"
@@ -1075,14 +1109,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:AddressRecipientName"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:AddressRecipientName"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:AddressRecipientName"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The name of a recipient at an address."
       end
@@ -1099,14 +1133,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:AddressDeliveryPointID"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:AddressDeliveryPoint, (nc:AddressDeliveryPointID)"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:AddressDeliveryPointID"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A mail delivery point (e.g. mailbox number)."
       end
@@ -1123,14 +1157,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationCityName"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:LocationCityName"
+	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationCityName"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A city."
       end
@@ -1147,14 +1181,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationCounty"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:LocationCounty, (nc:LocationCountyName)"
+	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationCountyName"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A county."
       end
@@ -1171,14 +1205,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationState"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:LocationState, (nc:LocationStateName)"
+	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationStateName"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A state."
       end
@@ -1195,15 +1229,16 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationCountry"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:LocationCountry, (nc:LocationCountryName), (nc:LocationCountryFIPS10-4Code)"
+	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationCountryName, nc:LocationCountryFIPS10-4Code"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	comment "A country."
       end
 
       attribute 9585794 "postalCode"
@@ -1218,16 +1253,40 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationPostalCode"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:LocationPostalCode, (nc:LocationStateUSPostalServiceCode)"
+	key "niem-profile:niem:BaseType" value "usps:USStateCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationStateUSPostalServiceCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A postal code for mail delivery within a country."
+      end
+
+      attribute 9839362 "postalCodeExtension"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationPostalExtensionCode"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:LocationPostalExtensionCode"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationPostalExtensionCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A extension to a postal code."
       end
     end
 
@@ -1314,7 +1373,7 @@ ${members}};
     end
 
     class 5366018 "StreetAddress"
-      visibility package 
+      visibility package stereotype "niem-profile:niem"
       cpp_decl ""
       java_decl ""
       php_decl ""
@@ -1323,6 +1382,16 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
+      ncouples 9
+      key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationStreet"
+      key "niem-profile:niem:Type" value "nc:AddressType"
+      key "niem-profile:niem:Property" value "nc:AddressDeliveryPoint, (nc:LocationStreet)"
+      key "niem-profile:niem:BaseType" value "nc:StreetType"
+      key "niem-profile:niem:Multiplicity" value "0,1"
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet"
+      key "niem-profile:niem:OldMultiplicity" value "0,1"
+      key "niem-profile:niem:Notes" value ""
       comment "A street address."
       attribute 9584642 "fullAddress"
 	public explicit_type ""
@@ -1336,14 +1405,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationStreet/nc:StreetFullText"
+	key "niem-profile:niem:Type" value "nc:AddressType"
+	key "niem-profile:niem:Property" value "nc:AddressFullText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetFullText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A complete street address."
       end
@@ -1360,14 +1429,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationStreet/nc:StreetNumberText"
+	key "niem-profile:niem:Type" value "nc:StreetType"
+	key "niem-profile:niem:Property" value "nc:StreetNumberText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetNumberText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A number of a location on a street."
       end
@@ -1384,14 +1453,14 @@ ${members}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationStreet/nc:StreetPredirectionalText, nc:StreetName, nc:StreetCategoryText, nc:StreetPostdirectionalText, nc:StreetExtensionText"
+	key "niem-profile:niem:Type" value "nc:StreetType"
+	key "niem-profile:niem:Property" value "nc:StreetFullText, nc:StreetPredirectionalText, nc:StreetName, nc:StreetCategoryText, nc:StreetPostdirectionalText, nc:StreetExtensionText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Location/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetPredirectionalText, nc:StreetName, nc:StreetCategoryText, nc:StreetPostdirectionalText, nc:StreetExtensionText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The name of a street."
       end

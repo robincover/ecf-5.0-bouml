@@ -1,6 +1,6 @@
 format 212
 "Messages" // CIM::Content::Messages
-  revision 152
+  revision 155
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1393,10 +1393,10 @@ ${items}};
       ncouples 9
       key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactMeans"
       key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-      key "niem-profile:niem:XPath" value "nc:ContactInformation"
-      key "niem-profile:niem:Type" value "nc:ContactInformationType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
+      key "niem-profile:niem:Type" value "nc:ContactInformationAssociationType"
+      key "niem-profile:niem:Property" value "nc:ContactInformation"
+      key "niem-profile:niem:BaseType" value "nc:ContactInformationType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
@@ -1415,7 +1415,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactEmailID"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactEmailID"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
 	key "niem-profile:niem:Type" value "nc:ContactInformationType"
 	key "niem-profile:niem:Property" value "nc:ContactMeans, (nc:ContactEmailID)"
 	key "niem-profile:niem:BaseType" value "niem-xs:string"
@@ -1439,7 +1439,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactMailingAddress"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactMailingAddress"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
 	key "niem-profile:niem:Type" value "nc:ContactInformationType"
 	key "niem-profile:niem:Property" value "nc:ContactMeans, (nc:ContactMailingAddress)"
 	key "niem-profile:niem:BaseType" value "nc:AddressType"
@@ -1463,7 +1463,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactTelephoneNumber"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactTelephoneNumber"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
 	key "niem-profile:niem:Type" value "nc:ContactInformationType"
 	key "niem-profile:niem:Property" value "nc:ContactMeans, (nc:ContactTelephoneNumber)"
 	key "niem-profile:niem:BaseType" value "nc:TelephoneNumberType"
@@ -1487,7 +1487,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactEntityDescriptionText, nc:ContactInformationDescriptionText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactEntityDescriptionText"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
 	key "niem-profile:niem:Type" value "nc:ContactInformationType"
 	key "niem-profile:niem:Property" value "nc:ContactEntityDescriptionText, nc:ContactEntity"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
@@ -1509,14 +1509,14 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
+	key "niem-profile:niem:Type" value "nc:ContactInformationAssociationType"
+	key "niem-profile:niem:Property" value "nc:ContactInformationAvailability, (nc:ContactInformationAvailabilityCode)"
+	key "niem-profile:niem:BaseType" value "core_misc:ContactInformationAvailabilityCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Organization/ecf:OrganizationAugmentation/nc:OrganizationContactInformationAssociation/nc:ContactInformationIsPrimaryIndicator, nc:ContactInformationIsEmergencyIndicator, nc:ContactInformationIsDayIndicator, nc:ContactInformationIsEveningIndicator, nc:ContactInformationIsNightInidcator"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "How the contact information should be used (e.g. primary, only for emergency, only during day/evening/night)"
       end
@@ -1533,14 +1533,14 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
+	key "niem-profile:niem:Type" value "nc:ContactInformationAssociationType"
+	key "niem-profile:niem:Property" value "nc:Contact, (nc:ContactEntity)"
+	key "niem-profile:niem:BaseType" value "nc:EntityType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/ecf:PersonAugmentation/nc:PersonContactInformationAssociation/nc:ContactInformationIsPrimaryIndicator, nc:ContactInformationIsHomeIndicator, nc:ContactInformationIsWorkIndicator, nc:ContactInformationIsEmergencyIndicator, nc:ContactInformationIsDayIndicator, nc:ContactInformationIsEveningIndicator, nc:ContactInformationIsNightInidcator"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "How the contact information should be used (e.g. home, work, only for emergency, only during day/evening/night)"
       end
@@ -1559,7 +1559,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:ContactInformation/nc:ContactResponder"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:ContactInformation/nc:ContactResponder"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
 	key "niem-profile:niem:Type" value "nc:ContactInformationType"
 	key "niem-profile:niem:Property" value "nc:ContactResponder"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
@@ -1573,17 +1573,18 @@ ${items}};
 	relation 3994882 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "organization" public
+	    comment "An organization associated with the contact information."
 	    classrelation_ref 3997058 // organization (<directional aggregation>)
 	  b parent class_ref 131970 // Organization
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Organization/ecf:OrganizationAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
+	key "niem-profile:niem:Type" value "ecf:OrganizationAugmentationType"
+	key "niem-profile:niem:Property" value "nc:ContactInformationAssociation"
+	key "niem-profile:niem:BaseType" value "nc:ContactInformationAssociation"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Organization/ecf:OrganizationAugmentation/nc:OrganizationContactInformationAssociation/nc:ContactInformation"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
 
@@ -1591,17 +1592,18 @@ ${items}};
 	relation 3995010 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "person" public
+	    comment "An organization associated with the contact information."
 	    classrelation_ref 3997186 // person (<directional aggregation>)
 	  b parent class_ref 131842 // Person
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:ContactInformationAssociation/nc:ContactInformation"
+	key "niem-profile:niem:Type" value "ecf:PersonAugmentationType"
+	key "niem-profile:niem:Property" value "nc:ContactInformationAssociation"
+	key "niem-profile:niem:BaseType" value "nc:ContactInformationAssociation"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/ecf:PersonAugmentation/nc:PersonContactInformationAssociation/nc:ContactInformation"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
       end
     end
@@ -2843,9 +2845,9 @@ ${items}};
       mysql_decl ""
       
       ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldXPath" value "nc:PersonEmploymentAssociation"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "nc:PersonEmploymentAssociation"
+      key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:PersonEmploymentAssociation"
       key "niem-profile:niem:Type" value "nc:PersonEmploymentAssociationType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
@@ -2864,9 +2866,9 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:PersonEmploymentAssociation/nc:Employer/nc:EntityOrganization/nc:OrganizationLocation"
+	key "niem-profile:niem:OldXPath" value "nc:Organization/nc:OrganizationLocation"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentationnc:PersonEmploymentAssociation/nc:Employer/nc:EntityOrganization/nc:OrganizationLocation"
 	key "niem-profile:niem:Type" value "nc:OrganizationType"
 	key "niem-profile:niem:Property" value "nc:OrganizationLocation"
 	key "niem-profile:niem:BaseType" value "nc:LocationType"
@@ -2884,9 +2886,9 @@ ${items}};
 	    classrelation_ref 2418178 // person (<directional aggregation>)
 	  b multiplicity "1" parent class_ref 131842 // Person
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:PersonEmploymentAssociation/nc:Person"
+	key "niem-profile:niem:OldXPath" value "nc:PersonEmploymentAssociation/nc:EmpoyeeReference"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:PersonEmploymentAssociation/nc:Person"
 	key "niem-profile:niem:Type" value "nc:PersonEmploymentAssociationType"
 	key "niem-profile:niem:Property" value "nc:Employee"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
@@ -2905,7 +2907,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "nc:PersonEmploymentAssociation/nc:Organization"
+	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:PersonEmploymentAssociation/nc:Organization"
 	key "niem-profile:niem:Type" value "nc:PersonEmploymentAssociationType"
 	key "niem-profile:niem:Property" value "nc:Employer"
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
@@ -3127,14 +3129,14 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "nc:Organization/nc:OrganizationTaxIdentification"
+	key "niem-profile:niem:Type" value "nc:OrganizationType"
+	key "niem-profile:niem:Property" value "nc:OrganizationTaxIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Organization/nc:OrganizationTaxIdentification"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A federal identifier for an organization."
       end
@@ -3278,8 +3280,8 @@ ${items}};
 	    classrelation_ref 152834 // employment (<directional aggregation>)
 	  b multiplicity "*" parent class_ref 163202 // Employment
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:PersonEmploymentAssociation/nc:EmpoyeeReference"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "nc:Person/ecf:PersonAugmentation/nc:PersonEmploymentAssociation"
 	key "niem-profile:niem:Type" value "ecf:PersonAugmentationType"
 	key "niem-profile:niem:Property" value "nc:PersonEmploymentAssociation"
@@ -3709,14 +3711,14 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:XPath" value "nc:Item/nc:ItemModelYearDate"
+	key "niem-profile:niem:Type" value "nc:ItemType"
+	key "niem-profile:niem:Property" value "nc:ItemModelYearDate"
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Item/nc:ItemModelYearDate"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A model year associated with an item."
       end
@@ -3733,14 +3735,14 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:XPath" value "nc:Item/nc:ItemStyle"
+	key "niem-profile:niem:Type" value "nc:ItemType"
+	key "niem-profile:niem:Property" value "nc:ItemStyle"
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Item/nc:ItemStyle"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The style/type of an item."
       end
@@ -3757,16 +3759,40 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:XPath" value "nc:Item/nc:ItemColor"
+	key "niem-profile:niem:Type" value "nc:ItemType"
+	key "niem-profile:niem:Property" value "nc:ItemColor, (nc:ItemColorDescriptionText)"
 	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Item/nc:ItemColor"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The color of an item."
+      end
+
+      attribute 9754882 "value"
+	public explicit_type "short"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Item/nc:ItemValue"
+	key "niem-profile:niem:Type" value "nc:ItemType"
+	key "niem-profile:niem:Property" value "nc:ItemValue"
+	key "niem-profile:niem:BaseType" value "nc:ItemValue"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Item/nc:ItemValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The value of an item."
       end
     end
 
