@@ -1,9 +1,13 @@
-window_sizes 2154 1684 793 1355 1396 211
+window_sizes 3840 2035 793 3041 1747 211
 cleanlooks_style
+diagrams
+  active  classdiagram_ref 238082 // Base Messages
+    1574 1132 93 C-Landscape 0 0
+end
 selected 
   package_ref 129 // ecf-5.0-bouml
 open
   
-  package_ref 174594 // PIM
+  package_ref 174594 // NIEM
 end
 end

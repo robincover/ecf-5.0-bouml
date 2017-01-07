@@ -1,6 +1,6 @@
 format 212
-"CaseTypeExtensions" // CIM::Content::CaseTypeExtensions
-  revision 136
+"Case Type Extensions" // UML::Case Type Extensions
+  revision 152
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1856,7 +1856,7 @@ format 212
 	MysqlColumn
 	ncouples 9
 	key "niem-profile:niem:XPath" value "citation:CitationAugmentation/j:Charge"
-	key "niem-profile:niem:Type" value "citaiton:CitationAugmentationType"
+	key "niem-profile:niem:Type" value "citation:CitationAugmentationType"
 	key "niem-profile:niem:Property" value "j:Charge"
 	key "niem-profile:niem:BaseType" value "j:ChargeType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
@@ -2604,7 +2604,7 @@ format 212
 	key "niem-profile:niem:XPath" value "j:Citation/j:CitationSubject/citation:SubjectAugmentation/j:DriverLicense/j:DriverLicenseCommericalClassCode"
 	key "niem-profile:niem:Type" value "j:DriverLicenseType"
 	key "niem-profile:niem:Property" value "j:DriverLicenseCommercialClass, (j:DriverLicenseCommercialClassCode)"
-	key "niem-profile:niem:BaseType" value "aamva_d20 : DriverLicenseClassCodeType"
+	key "niem-profile:niem:BaseType" value "ansi_d20:DriverLicenseClassCodeType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -2753,7 +2753,7 @@ format 212
 	  a role_name "extendedPersonInformation" public
 	    comment "Additional information about a person alleged to have violated a statute or ordinance."
 	    classrelation_ref 182274 // extendedPersonInformation (<directional aggregation>)
-	  b parent class_ref 147586 // ExtendedPersonInformation
+	  b parent class_ref 147586 // CriminalPerson
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:CitationSubject/nc:RoleOfPersonReference"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
@@ -3434,10 +3434,10 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteOffenseIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "j:Citation/citation:CitationAugmentation/j:Statute"
-	key "niem-profile:niem:Type" value "j:ViolatedStatuteAssociationType"
-	key "niem-profile:niem:Property" value "j:Statute"
-	key "niem-profile:niem:BaseType" value "j:StatuteType"
+	key "niem-profile:niem:XPath" value "j:Citation/citation:CitationAugmentation/j:Statute/j:StatuteOffenseIdentification"
+	key "niem-profile:niem:Type" value "j:StatuteType"
+	key "niem-profile:niem:Property" value "j:StatuteOffenseIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -3469,6 +3469,12 @@ format 212
     activitydiagramsettings
      end
     comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
+    classdiagram 134786 "CivilCase"
+      classdiagramsettings member_max_width 0 end
+      comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
+      size A3
+    end
+
     class 138370 "CivilCaseInformation"
       visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -3721,6 +3727,238 @@ format 212
       end
     end
 
+    classinstance 3159426 "CivilCaseInformation"
+      stereotype "niem-profile:niem"
+      type class_ref 138370 // CivilCaseInformation
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+    end
+
+    class 139138 "CivilPerson"
+      visibility public stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "nc:Person"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "nc:Person"
+      key "niem-profile:niem:Type" value "nc:PersonType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "Information about the person for whom another person or organization is assuming a fiduciary obligation."
+      attribute 150402 "dateOfBirth"
+	public type class_ref 128386 // date
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonBirthDate"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonBirthDate"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "The date on which a person was born."
+      end
+
+      attribute 151298 "ethnicityCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEthnicityCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (j:PersonEthnicityCode)"
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A NIBRS code representing the nation or cultural group to which a referenced subject belongs."
+      end
+
+      attribute 150530 "height"
+	public explicit_type "float"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonHeightMeasure"
+	key "niem-profile:niem:BaseType" value "nc:MeasureType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A measurement of the height of a person."
+      end
+
+      attribute 151170 "personID"
+	public type class_ref 156162 // id
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonOtherIdentification"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonOtherIdentification"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
+	key "niem-profile:niem:BaseType" value "nc:PersonType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "The unique identifier assigned by the court at the time a person is first associated with a case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this element blank.  This identifier is used to link other information in the case to a particular person."
+      end
+
+      attribute 150786 "raceCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonRaceCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonRace, (j:PersonRaceCode)"
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A designation by the FBI categorizing individuals by physical characteristics.   (e.g., American Indian or Alaskan native, Asian or Pacific Islander, Black, White, Unknown)."
+      end
+
+      attribute 151042 "relationshipToFiduciary"
+	public explicit_type "string"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "civil:CivilCase/civil:FiduciaryCase/civil:PersonFiduciaryAssociation/civil:PersonFiduciaryAssociationTypeText"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:PersonCaseAssociation/nc:AssociationDescriptionText"
+	key "niem-profile:niem:Type" value "nc:AssociationType"
+	key "niem-profile:niem:Property" value "nc:AssociationDescriptionText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "Description of the relationship of this person to the fiduciary (i.e., the initiating party)."
+      end
+
+      attribute 150914 "sexCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSexCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonSexCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonSex, (j:PersonSexCode)"
+	key "niem-profile:niem:BaseType" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A code identifying the gender or sex of a person."
+      end
+
+      attribute 150658 "weight"
+	public explicit_type "float"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonWeightMeasure"
+	key "niem-profile:niem:BaseType" value "nc:MeasureType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A measurement of the weight of a person."
+      end
+
+      classrelation 4533122 // <generalisation>
+	relation 4530946 ---|>
+	  a public
+	    classrelation_ref 4533122 // <generalisation>
+	  b parent class_ref 131842 // Person
+      end
+    end
+
     class 139906 "DecedentEstateCaseInformation"
       visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -3881,7 +4119,7 @@ format 212
 	  a role_name "personInformation" public
 	    comment "Information about the person for whom another person or organization is assuming a fiduciary obligation."
 	    classrelation_ref 184450 // personInformation (<directional aggregation>)
-	  b parent class_ref 139138 // PersonInformation
+	  b parent class_ref 139138 // CivilPerson
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
@@ -3893,237 +4131,6 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
-    end
-
-    class 139138 "PersonInformation"
-      visibility public stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "nc:Person"
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "nc:Person"
-      key "niem-profile:niem:Type" value "nc:PersonType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "Information about the person for whom another person or organization is assuming a fiduciary obligation."
-      attribute 150402 "dateOfBirth"
-	public type class_ref 128386 // date
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonBirthDate"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonBirthDate"
-	key "niem-profile:niem:BaseType" value "nc:DateType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "The date on which a person was born."
-      end
-
-      attribute 151298 "ethnicityCode"
-	public type class_ref 192130 // code
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEthnicityCode"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (j:PersonEthnicityCode)"
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "A NIBRS code representing the nation or cultural group to which a referenced subject belongs."
-      end
-
-      attribute 150530 "height"
-	public explicit_type "float"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonHeightMeasure"
-	key "niem-profile:niem:BaseType" value "nc:MeasureType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "A measurement of the height of a person."
-      end
-
-      attribute 151170 "personID"
-	public type class_ref 156162 // id
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonOtherIdentification"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonOtherIdentification"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonOtherIdentification"
-	key "niem-profile:niem:BaseType" value "nc:PersonType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "The unique identifier assigned by the court at the time a person is first associated with a case. If the court has not yet assigned an identifier in this case, then the filing assembly MDE will leave this element blank.  This identifier is used to link other information in the case to a particular person."
-      end
-
-      attribute 150786 "raceCode"
-	public type class_ref 192130 // code
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/j:PersonRaceCode"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonRace, (j:PersonRaceCode)"
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "A designation by the FBI categorizing individuals by physical characteristics.   (e.g., American Indian or Alaskan native, Asian or Pacific Islander, Black, White, Unknown)."
-      end
-
-      attribute 151042 "relationshipToFiduciary"
-	public explicit_type "string"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "civil:CivilCase/civil:FiduciaryCase/civil:PersonFiduciaryAssociation/civil:PersonFiduciaryAssociationTypeText"
-	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:PersonCaseAssociation/nc:AssociationDescriptionText"
-	key "niem-profile:niem:Type" value "nc:AssociationType"
-	key "niem-profile:niem:Property" value "nc:AssociationDescriptionText"
-	key "niem-profile:niem:BaseType" value "nc:TextType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "Description of the relationship of this person to the fiduciary (i.e., the initiating party)."
-      end
-
-      attribute 150914 "sexCode"
-	public type class_ref 192130 // code
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSexCode"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/j:PersonSexCode"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonSex, (j:PersonSexCode)"
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "A code identifying the gender or sex of a person."
-      end
-
-      attribute 150658 "weight"
-	public explicit_type "float"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value "nc:PersonWeightMeasure"
-	key "niem-profile:niem:BaseType" value "nc:MeasureType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "A measurement of the weight of a person."
-      end
-    end
-
-    classdiagram 134786 "CivilCase"
-      classdiagramsettings member_max_width 0 end
-      comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
-      size A3
-    end
-
-    classinstance 3159426 "CivilCaseInformation"
-      stereotype "niem-profile:niem"
-      type class_ref 138370 // CivilCaseInformation
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value ""
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
     end
   end
 
@@ -4656,6 +4663,267 @@ format 212
       end
     end
 
+    class 5969794 "Biometric"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "Biometric information associated with a defendant."
+      attribute 9665282 "dnaLocusValue"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample/biom:DNASTRProfile/biom:DNAAlleleCall1Text"
+	key "niem-profile:niem:Type" value "biom:DNASTRProfileType"
+	key "niem-profile:niem:Property" value "biom:DNAAlleleCall1Text"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA/nc:DNALocus/nc:DNALocusValue"
+	key "niem-profile:niem:OldMultiplicity" value "1,2"
+	key "niem-profile:niem:Notes" value ""
+	comment "A value for a DNA locus."
+      end
+
+      attribute 9665154 "dnaLocusCategory"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample/biom:DNASTRProfile/biom:DNALocusIdentification"
+	key "niem-profile:niem:Type" value "biom:DNASTRProfileType"
+	key "niem-profile:niem:Property" value "biom:DNALocusIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA/nc:DNALocus/nc:DNALocusCategoryText"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A location within DNA."
+      end
+
+      attribute 9665026 "dnaLocus"
+	public explicit_type "string"
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample/biom:DNASTRProfile"
+	key "niem-profile:niem:Type" value "biom:DNASampleType"
+	key "niem-profile:niem:Property" value "biom:DNASTRProfile"
+	key "niem-profile:niem:BaseType" value "biom:DNASTRProfileType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA/nc:DNALocus"
+	key "niem-profile:niem:OldMultiplicity" value "0,14"
+	key "niem-profile:niem:Notes" value ""
+	comment "An image of DNA."
+      end
+
+      attribute 9574914 "fingerprint"
+	public explicit_type ""
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:FingerprintImage"
+	key "niem-profile:niem:Type" value "biom:BiometricDataType"
+	key "niem-profile:niem:Property" value "biom:BiometricClassification"
+	key "niem-profile:niem:BaseType" value "biom:BiometricClassificationType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonFingerprintSet/ecf:FingerprintSet/criminal:Fingerprint/criminal:Fingerprint"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value "DISCUSS: ECF4 included fingerprints, palm prints, and DNA for criminal defendants.  Should we replace all of those with just a transaction control number (e.g. j:RapSheetTransactionControlIdentification)?"
+	comment "A print from a single finger."
+      end
+
+      attribute 9574018 "dna"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample"
+	key "niem-profile:niem:Type" value "biom:BiometricDataType"
+	key "niem-profile:niem:Property" value "biom:BiometricDetail, (biom:DNASample)"
+	key "niem-profile:niem:BaseType" value "biom:DNASampleType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA, nc:PersonDNAImage"
+	key "niem-profile:niem:OldMultiplicity" value "0,14"
+	key "niem-profile:niem:Notes" value ""
+	comment "A set of DNA associated with a subject."
+      end
+
+      attribute 9573762 "fingerprintSet"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:BiometricClassification/biom:BiometricClassificationCode"
+	key "niem-profile:niem:Type" value "biom:BiometricDataType"
+	key "niem-profile:niem:Property" value "biom:BiometricClassification"
+	key "niem-profile:niem:BaseType" value "biom:BiometricClassificationType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonFingerprintSet"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value "Include biom:BiometricClassificationCategoryCode with value\"fingerprints\", \"10-print\" or \"2-print\""
+	comment "A set of fingerprints."
+      end
+
+      attribute 9573890 "biometricCapturer"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometri/biom:BiometricImage/biom:BiometricCapturer"
+	key "niem-profile:niem:Type" value "biom:BiometricDataType"
+	key "niem-profile:niem:Property" value "biom:BiometricCapturer"
+	key "niem-profile:niem:BaseType" value "nc:EntityType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint/nc:BiometricCapturer"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A person who captured a set of biometric images of a subject."
+      end
+
+      attribute 9573634 "biometricImage"
+	public explicit_type ""
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:BiometricImage/biom:BiometricClassificationCategoryCode"
+	key "niem-profile:niem:Type" value "biom:BiometricDataType"
+	key "niem-profile:niem:Property" value "biom:BiometricImage, (biom:FingerprintImage), (biom:PhysicalFeatureImage), (biom:DNAElectropherogramScreenshotImage)"
+	key "niem-profile:niem:BaseType" value "biom:FingerprintImageType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint/nc:BiometricImage"
+	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	comment "A biometric image of a subject."
+      end
+
+      attribute 9573506 "palmPrint"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:BiometricClassification/biom:BiometricClassificationCode"
+	key "niem-profile:niem:Type" value "biom:BiometricClassificationType"
+	key "niem-profile:niem:Property" value "biom:BiometricClassificationCategoryCode"
+	key "niem-profile:niem:BaseType" value "biom:BiometricCategoryCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value "Include biom:BiometricClassificationCategoryCode with value \"palm\""
+	comment "A palm print associated with a criminal subject."
+      end
+
+      attribute 11216770 "biometricID"
+	public type class_ref 156162 // id
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/j:RapSheetTransactionControlIdentification"
+	key "niem-profile:niem:Type" value "ecf:SubjectAugmentationType"
+	key "niem-profile:niem:Property" value "j:RapSheetTransactionControlIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationID"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "An identifier for a biometric (e.g. fingerprint transaction control number)"
+      end
+    end
+
     class 143106 "Booking"
       visibility package stereotype "niem-profile:niem"
       cpp_decl ""
@@ -4817,7 +5085,7 @@ format 212
       key "niem-profile:niem:BaseType" value "criminal:ChargeAugmentationType"
       key "niem-profile:niem:Multiplicity" value "0,unbounded"
       key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:CodeList" value "TODO: replace ArrestCharge with CaseCharge"
       comment "The crime or violation a defendant is alleged or found to have committed.  
 "
       attribute 166530 "amendedCharge"
@@ -5349,6 +5617,12 @@ format 212
       end
     end
 
+    classdiagram 134914 "CriminalCase"
+      classdiagramsettings draw_all_relations no member_max_width 0 end
+      comment "Information required to initiate a new criminal case in a court.  \"Criminal\" includes felonies and misdemeanors."
+      size D
+    end
+
     class 143618 "CriminalCaseInformation"
       visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -5525,6 +5799,357 @@ format 212
       end
     end
 
+    classinstance 3159554 "CriminalCaseInformation"
+      stereotype "niem-profile:niem"
+      type class_ref 143618 // CriminalCaseInformation
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value ""
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+    end
+
+    class 147586 "CriminalPerson"
+      visibility public stereotype "niem-profile:niem"
+      
+      constraint "See CriminalCase"cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      associated_diagram classdiagram_ref 134914 // CriminalCase
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "nc:Person"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "nc:Person"
+      key "niem-profile:niem:Type" value "nc:PersonType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "Additional information about a person."
+      attribute 179842 "dateOfBirth"
+	public type class_ref 128386 // date
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonBirthDate"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonBirthDate"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonBirthDate"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "The date on which a person was born."
+      end
+
+      attribute 179202 "ethnicityCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEthnicityCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (j:PersonEthnicityCode)"
+	key "niem-profile:niem:BaseType" value "ucr:EthnicityCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A NIBRS code representing the nation or cultural group to which a referenced subject belongs."
+      end
+
+      attribute 179330 "ethnicityText"
+	public explicit_type "string"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEthnicityText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonEthnicityText"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonEthnicity, (nc:PersonEthnicityText)"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A textual description of the nation or cultural group to which a referenced subject belongs."
+      end
+
+      attribute 180098 "eyeColorCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonEyeColorCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonEyeColorCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonEyeColor, (j:PersonEyeColorCode)"
+	key "niem-profile:niem:BaseType" value "ncic:EYECodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A code identifying the person eye color at the time the information was collected."
+      end
+
+      attribute 179970 "hairColorCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHairColorCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonHairColorCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonHairColor, (j:PersonHairColorCode)"
+	key "niem-profile:niem:BaseType" value "ncic:HAICodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A code identifying the person hair color at the time the information was collected."
+      end
+
+      attribute 179586 "height"
+	public explicit_type "float"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureDecimalValue"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonHeightMeasure"
+	key "niem-profile:niem:BaseType" value "nc:MeasureType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A measurement of the height of a person."
+      end
+
+      attribute 178946 "raceCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonRaceCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonRace, (j:PersonRaceCode)"
+	key "niem-profile:niem:BaseType" value "ncic:RACCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A code identifying the race of a person."
+      end
+
+      attribute 179074 "raceText"
+	public explicit_type "string"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonRaceText"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonRaceText"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonRace, (nc:PersonRaceText)"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A textual description categorizing individuals by physical characteristics.   (e.g., American Indian or Alaskan native, Asian or Pacific Islander, Black, White, Unknown)."
+      end
+
+      attribute 179458 "sexCode"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonSexCode"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/j:PersonSexCode"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonSex, (j:PersonSexCode)"
+	key "niem-profile:niem:BaseType" value "ncic:SEXCodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A code identifying the gender or sex of a person."
+      end
+
+      attribute 180226 "socialSecurityNumber"
+	public type class_ref 156162 // id
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonTaxIdentification"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonTaxIdentification"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonTaxIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "Number issued by the federal government to all citizens, residents of the U.S.  First three digits cannot be all zeroes.  Numbers beginning with 9 indicate a non-resident alien.  Ex. 123456789 or 356886777"
+      end
+
+      attribute 179714 "weight"
+	public explicit_type "float"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureDecimalValue"
+	key "niem-profile:niem:Type" value "nc:PersonType"
+	key "niem-profile:niem:Property" value "nc:PersonWeightMeasure"
+	key "niem-profile:niem:BaseType" value "nc:MeasureType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "A measurement of the weight of a person."
+      end
+
+      classrelation 4526082 // <generalisation>
+	relation 4523906 ---|>
+	  a public
+	    classrelation_ref 4526082 // <generalisation>
+	  b parent class_ref 131842 // Person
+      end
+
+      attribute 11130370 "heightUnit"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonHeightMeasure/nc:LengthMeasureUnit"
+	key "niem-profile:niem:Type" value "nc:MeasureType"
+	key "niem-profile:niem:Property" value "nc:MeasureUnit, (nc:LengthUnitCode)"
+	key "niem-profile:niem:BaseType" value "unece:LengthCodeType "
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonHeightMeasure/nc:MeasureValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A unit of measuring height."
+      end
+
+      attribute 11130498 "weightUnit"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonWeightMeasure/nc:WeightUnitCode"
+	key "niem-profile:niem:Type" value "nc:MeasureType"
+	key "niem-profile:niem:Property" value "nc:MeasureUnit, (nc:WeightUnitCode)"
+	key "niem-profile:niem:BaseType" value "unece:MassCodeType "
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonWeightMeasure/nc:MeasureValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A unit of measuring weight."
+      end
+    end
+
     class 143490 "Defendant"
       visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -5621,7 +6246,7 @@ format 212
 	  a role_name "extendedPersonInformation" public
 	    comment "A person alleged to have committed the charge."
 	    classrelation_ref 185090 // extendedPersonInformation (<directional aggregation>)
-	  b parent class_ref 147586 // ExtendedPersonInformation
+	  b parent class_ref 147586 // CriminalPerson
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseDefendantParty/nc:EntityPerson"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
@@ -5870,149 +6495,6 @@ format 212
 	key "niem-profile:niem:Notes" value ""
       end
 
-      attribute 9573506 "palmPrint"
-	public explicit_type ""
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:BiometricClassification/biom:BiometricClassificationCode"
-	key "niem-profile:niem:Type" value "biom:BiometricClassificationType"
-	key "niem-profile:niem:Property" value "biom:BiometricClassificationCategoryCode"
-	key "niem-profile:niem:BaseType" value "biom:BiometricClassificationCategoryCode"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Include biom:BiometricClassificationCategoryCode with value \"palm\""
-	comment "A palm print associated with a criminal subject."
-      end
-
-      attribute 9573634 "biometricImage"
-	public explicit_type ""
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:BiometricImage/biom:BiometricClassificationCategoryCode"
-	key "niem-profile:niem:Type" value "biom:BiometricDataType"
-	key "niem-profile:niem:Property" value "biom:BiometricImage, (biom:FingerprintImage), (biom:PhysicalFeatureImage), (biom:DNAElectropherogramScreenshotImage)"
-	key "niem-profile:niem:BaseType" value "biom:FingerprintImageType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint/nc:BiometricImage"
-	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	comment "A biometric image of a subject."
-      end
-
-      attribute 9573762 "fingerprintSet"
-	public explicit_type ""
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:BiometricClassification/biom:BiometricClassificationCode"
-	key "niem-profile:niem:Type" value "biom:BiometricDataType"
-	key "niem-profile:niem:Property" value "biom:BiometricClassification"
-	key "niem-profile:niem:BaseType" value "biom:BiometricClassificationType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonFingerprintSet"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "Include biom:BiometricClassificationCategoryCode with value\"fingerprints\", \"10-print\" or \"2-print\""
-	comment "A set of fingerprints."
-      end
-
-      attribute 9573890 "biometricCapturer"
-	public explicit_type "string"
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometri/biom:BiometricImage/biom:BiometricCapturer"
-	key "niem-profile:niem:Type" value "biom:BiometricDataType"
-	key "niem-profile:niem:Property" value "biom:BiometricCapturer"
-	key "niem-profile:niem:BaseType" value "nc:EntityType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint/nc:BiometricCapturer"
-	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	comment "A person who captured a set of biometric images of a subject."
-      end
-
-      attribute 9574018 "dna"
-	public explicit_type ""
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample"
-	key "niem-profile:niem:Type" value "biom:BiometricDataType"
-	key "niem-profile:niem:Property" value "biom:BiometricDetail, (biom:DNASample)"
-	key "niem-profile:niem:BaseType" value "biom:DNASampleType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA, nc:PersonDNAImage"
-	key "niem-profile:niem:OldMultiplicity" value "0,14"
-	key "niem-profile:niem:Notes" value ""
-	comment "A set of DNA associated with a subject."
-      end
-
-      attribute 9574914 "fingerprint"
-	public explicit_type ""
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:FingerprintImage"
-	key "niem-profile:niem:Type" value "biom:BiometricDataType"
-	key "niem-profile:niem:Property" value "biom:BiometricClassification"
-	key "niem-profile:niem:BaseType" value "biom:BiometricClassificationType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonFingerprintSet/ecf:FingerprintSet/criminal:Fingerprint/criminal:Fingerprint"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "DISCUSS: ECF4 included fingerprints, palm prints, and DNA for criminal defendants.  Should we replace all of those with just a transaction control number (e.g. j:RapSheetTransactionControlIdentification)?"
-	comment "A print from a single finger."
-      end
-
       attribute 9584130 "physicalFeature"
 	public explicit_type "string"
 	multiplicity "*"
@@ -6028,7 +6510,7 @@ format 212
 	key "niem-profile:niem:XPath" value "nc:Person/nc:PersonPhysicalFeature"
 	key "niem-profile:niem:Type" value "nc:PersonType"
 	key "niem-profile:niem:Property" value "nc:PersonPhysicalFeature"
-	key "niem-profile:niem:BaseType" value "nc:PhyscailFeatureType"
+	key "niem-profile:niem:BaseType" value "nc:PhysicalFeatureType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonPhysicalFeature"
@@ -6085,102 +6567,31 @@ format 212
 	comment "Unique number assigned to persons by a local (county or municipal) Automated Fingerprint Identification System based on fingerprint identification. "
       end
 
-      attribute 9665026 "dnaLocus"
-	public explicit_type "string"
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
+      classrelation 4526594 // biometric (<directional aggregation>)
+	relation 4524418 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "biometric" multiplicity "*" public
+	    comment "A biometric associated with a defendant."
+	    classrelation_ref 4526594 // biometric (<directional aggregation>)
+	  b parent class_ref 5969794 // Biometric
 	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample/biom:DNASTRProfile"
-	key "niem-profile:niem:Type" value "biom:DNASampleType"
-	key "niem-profile:niem:Property" value "biom:DNASTRProfile"
-	key "niem-profile:niem:BaseType" value "biom:DNASTRProfileType"
+	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric"
+	key "niem-profile:niem:Type" value "ecf:SubjectAugmentationType"
+	key "niem-profile:niem:Property" value "biom:Biometric"
+	key "niem-profile:niem:BaseType" value "biom:BiometricDataType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA/nc:DNALocus"
-	key "niem-profile:niem:OldMultiplicity" value "0,14"
+	key "niem-profile:niem:OldXPath" value "nc:Person/j:PersonAugmentation/j:PersonPalmPrint"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	comment "An image of DNA."
       end
 
-      attribute 9665154 "dnaLocusCategory"
-	public explicit_type "string"
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample/biom:DNASTRProfile/biom:DNALocusIdentification"
-	key "niem-profile:niem:Type" value "biom:DNASTRProfileType"
-	key "niem-profile:niem:Property" value "biom:DNALocusIdentification"
-	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA/nc:DNALocus/nc:DNALocusCategoryText"
-	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	comment "A location within DNA."
+      classrelation 4533250 // <generalisation>
+	relation 4531074 ---|>
+	  a public
+	    classrelation_ref 4533250 // <generalisation>
+	  b parent class_ref 147586 // CriminalPerson
       end
-
-      attribute 9665282 "dnaLocusValue"
-	public explicit_type "string"
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value "criminal:CaseAugmentation/j:Arrest/j:ArrestSubject/ecf:SubjectAugmentation/biom:Biometric/biom:DNASample/biom:DNASTRProfile/biom:DNAAlleleCall1Text"
-	key "niem-profile:niem:Type" value "biom:DNASTRProfileType"
-	key "niem-profile:niem:Property" value "biom:DNAAlleleCall1Text"
-	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Person/nc:PersonDNA/nc:DNALocus/nc:DNALocusValue"
-	key "niem-profile:niem:OldMultiplicity" value "1,2"
-	key "niem-profile:niem:Notes" value ""
-	comment "A value for a DNA locus."
-      end
-    end
-
-    classdiagram 134914 "CriminalCase"
-      classdiagramsettings draw_all_relations no member_max_width 0 end
-      comment "Information required to initiate a new criminal case in a court.  \"Criminal\" includes felonies and misdemeanors."
-      size D
-    end
-
-    classinstance 3159554 "CriminalCaseInformation"
-      stereotype "niem-profile:niem"
-      type class_ref 143618 // CriminalCaseInformation
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value ""
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
     end
   end
 
@@ -6611,7 +7022,7 @@ format 212
 	  a role_name "extendedPersonInformation" multiplicity "0..1" public
 	    comment "Additional information about a person in a domestic case.  Note that only dateOfBirth, socialSecurityNumber, and sexCode are expected to be present for this association, with the exception of a DV Order respondent, when all ExtendedPersonInformation attributes and associations may be present."
 	    classrelation_ref 192898 // extendedPersonInformation (<directional aggregation>)
-	  b parent class_ref 147586 // ExtendedPersonInformation
+	  b parent class_ref 147586 // CriminalPerson
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/domestic:DomesticCasePerson"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
@@ -8268,7 +8679,7 @@ format 212
 	  a role_name "extendedPersonInformation" public
 	    comment "Additional information about a person."
 	    classrelation_ref 194690 // extendedPersonInformation (<directional aggregation>)
-	  b parent class_ref 147586 // ExtendedPersonInformation
+	  b parent class_ref 147586 // CriminalPerson
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase/juvenile:JuvenileCaseJuvenile/nc:RoleOfPersonReference"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
