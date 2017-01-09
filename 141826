@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 152
+  revision 157
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -130,7 +130,7 @@ format 212
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (appellate:CaseAugmentation)"
       key "niem-profile:niem:BaseType" value "appellate:AppellateCaseAugmentationType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Additional information specific to appellate cases."
@@ -1082,7 +1082,7 @@ format 212
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (bankruptcy:CaseAugmentation)"
       key "niem-profile:niem:BaseType" value "bankruptcy:CaseAugmentationType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Additional information specific to bankruptcy cases."
@@ -3493,7 +3493,7 @@ format 212
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (civil:CaseAugmentation)"
       key "niem-profile:niem:BaseType" value "civil:CaseAugmentationType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information required to initiate a new civil case in a court.  \"Civil\" includes conservatorships, guardianships, mental health and probate."
@@ -5641,7 +5641,7 @@ format 212
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (criminal:CaseAugmentation), (j:CaseAugmentation)"
       key "niem-profile:niem:BaseType" value "criminal:CaseAugmentationType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value "DISCUSS: Update criminal case-type specific messages to conform with the Charging Service SSP developed by BJA?, Relax definitions to allow case-type extensions to be used in any filings"
       key "niem-profile:niem:CodeList" value ""
       comment "Information required to initiate a new criminal case in a court.  \"Criminal\" includes felonies and misdemeanors."
@@ -6713,7 +6713,7 @@ format 212
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (domestic:CaseAugmentation)"
       key "niem-profile:niem:BaseType" value "domestic:CaseAugmentationType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information required to initiate a new domestic case in a court.  \"Domestic\" includes divorces, legal separations, annulment, child custody and visitation, paternity, child support, and domestic violence cases."
@@ -8935,7 +8935,7 @@ format 212
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint, (juvenile:CaseAugmentation)"
       key "niem-profile:niem:BaseType" value "juvenile:CaseAugmentationType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "A delinquency or dependency case."

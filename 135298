@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 140
+  revision 145
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -166,10 +166,10 @@ format 212
 	key "niem-profile:niem:OldXPath" value "nc:Document/nc:DocumentPostDate"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "ecf:CaseFiling/nc:DocumentPostDate"
-	key "niem-profile:niem:Type" value "nc:DocumentType"
+	key "niem-profile:niem:Type" value "ecf:CaseFilingType"
 	key "niem-profile:niem:Property" value "nc:DocumentPostDate"
 	key "niem-profile:niem:BaseType" value "nc:DateType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The time that the message left the control of the sending MDE. In a filing this is the Filing Assembly MDE."
@@ -186,7 +186,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentSubmitter/nc:EntityPerson, nc:EntityOrganization"
+	key "niem-profile:niem:OldXPath" value "ecf:CaseFiling/nc:DocumentSubmitter/nc:EntityPerson/nc:PersonOtherIdentification, nc:EntityOrganization/nc:OrganizationOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "ecf:CaseFiling/nc:DocumentSubmitter/nc:EntityRepresentation"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
@@ -352,8 +352,8 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/ecf:FilingStatus/ecf:FilingStatusCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "ecf:CallbackMessage/ecf:FilingStatusCode"
-	key "niem-profile:niem:Type" value "ecf:CallbackMessageType"
+	key "niem-profile:niem:XPath" value "ecf:CallbackMessage/ecf:FilingStatus/ecf:FilingStatusCode"
+	key "niem-profile:niem:Type" value "ecf:FilingStatusType"
 	key "niem-profile:niem:Property" value "ecf:FilingStatusCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,1"
@@ -375,11 +375,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingCallbackMessage/nc:DocumentStatus/nc:StatusDescriptionText"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "ecf:FilingStatus/nc:StatusDescriptionText"
-	key "niem-profile:niem:Type" value "nc:StatusType"
-	key "niem-profile:niem:Property" value "nc:StatusDescriptionText"
-	key "niem-profile:niem:BaseType" value "nc:TextType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:XPath" value "ecf:CallbackMessage/ecf:FilingStatus/nc:StatusDescriptionText"
+	key "niem-profile:niem:Type" value "ecf:FilingStatusType"
+	key "niem-profile:niem:Property" value ""
+	key "niem-profile:niem:BaseType" value "nc:StatusType"
+	key "niem-profile:niem:Multiplicity" value ""
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A textual description of the reason for the setting of the status in the filingStatusCode."
@@ -416,11 +416,11 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "ecf:CallbackMessage/ecf:FilingStatus"
+	key "niem-profile:niem:Type" value "ecf:CallbackMessageType"
+	key "niem-profile:niem:Property" value "ecf:FilingStatus"
+	key "niem-profile:niem:BaseType" value "ecf:FilingStatusType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
@@ -512,7 +512,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:ElectronicFilingMessage/nc:DocumentIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "ecf:CaseFiling/ecf:DocumentIdentification"
+	key "niem-profile:niem:XPath" value "ecf:CaseFiling/nc:DocumentIdentification"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -697,7 +697,7 @@ ${members}};
       key "niem-profile:niem:Type" value "nc:CaseType"
       key "niem-profile:niem:Property" value "nc:CaseAugmentationPoint"
       key "niem-profile:niem:BaseType" value "abstract"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information defined within one of the specific case types defined in the ECF 5.0 specification -- bankruptcy, civil, criminal, domestic relations, juvenile, and traffic."

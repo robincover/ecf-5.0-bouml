@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 28
+  revision 29
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -756,7 +756,9 @@ ${members}};
     end
   end
 
-  package_ref 141954 // Messages
+  package_ref 141954 // Messages - Call/Callback
+
+  package_ref 181890 // Messages - Request/Response
 
   package_ref 141826 // Case Type Extensions
 
