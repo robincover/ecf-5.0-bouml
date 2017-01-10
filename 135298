@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 145
+  revision 161
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -857,10 +857,58 @@ ${members}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationSourceText"
+	key "niem-profile:niem:OldXPath" value "nc:Identification/nc:IdentificationSourceText, nc:IdentificationCategoryText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The source of an identifier."
+      end
+
+      attribute 11563906 "jurisdiction"
+	public explicit_type ""
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"
+	key "niem-profile:niem:Type" value "nc:IdentificationType"
+	key "niem-profile:niem:Property" value "nc:IdentificationJurisdiction"
+	key "niem-profile:niem:BaseType" value "nc:JurisdictionType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The jurisdiction that issued an identifier."
+      end
+
+      attribute 11564034 "jurisdictionCode"
+	public type class_ref 156162 // id
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction/j:JurisdictionNCICLSTACode"
+	key "niem-profile:niem:Type" value "nc:JurisdictionType"
+	key "niem-profile:niem:Property" value "nc:JurisdictionAbstract,  (j:JurisdictionNCICLSTACode), (nc:JurisdictionText)"
+	key "niem-profile:niem:BaseType" value "ncic:LSTACodeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A code for the jurisdiction that issued an identifier."
       end
     end
 
@@ -1060,7 +1108,7 @@ ${members}};
 	ncouples 9
 	key "niem-profile:niem:XPath" value "nc:Location/nc:LocationAddress/nc:LocationState"
 	key "niem-profile:niem:Type" value "nc:AddressType"
-	key "niem-profile:niem:Property" value "nc:LocationState, (nc:LocationStateName)"
+	key "niem-profile:niem:Property" value "nc:LocationState, (nc:LocationStateName), (j:LocationStateNCICLISCode)"
 	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""

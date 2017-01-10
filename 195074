@@ -1,0 +1,321 @@
+format 212
+"Messages - Scheduling" // UML::Messages - Scheduling
+  revision 17
+  modified_by 2 "JamesECabral"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 166018 "AllocateCourtDateMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    comment "The request message from the Court Scheduling MDE to the Court Record MDE to allocate a court date on the schedule."
+    class 198914 "AllocateCourtDateMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      associated_diagram classdiagram_ref 178306 // AllocateCourtDateMessage
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "allocatedate:AllocateCourtDateMessage"
+      key "niem-profile:niem:Type" value "allocatedate:AllocateCourtDateMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "ecf:RequestMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value "DISCUSS: Define exchange content in UML"
+      key "niem-profile:niem:CodeList" value ""
+      comment "The request message from the Court Scheduling MDE to the Court Record MDE to allocate a court date on the schedule."
+      attribute 1545602 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "allocatedate:AllocateCourtDateMessage/allocatedate:AllocateCourtDateMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "allocatedate:AllocateCourtDateMessageType"
+	key "niem-profile:niem:Property" value "allocatedate:AllocateCourtDateMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 3942530 // <generalisation>
+	relation 3940354 ---|>
+	  a public
+	    classrelation_ref 3942530 // <generalisation>
+	  b parent class_ref 138114 // ElectronicFilingMessage
+      end
+    end
+
+    classdiagram 178306 "AllocateCourtDateMessage"
+      classdiagramsettings member_max_width 0 end
+      comment "The request message from the Court Scheduling MDE to the Court Record MDE to allocate a court date on the schedule."
+      size Letter-Landscape
+    end
+
+    classinstance 3147138 "AllocateCourtDateMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 198914 // AllocateCourtDateMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "allocatedate:AllocateCourtDateMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "allocatedate:AllocateCourtDateMessage"
+      key "niem-profile:niem:BaseType" value "allocatedate:AllocateCourtDateMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "The request message from the Court Scheduling MDE to the Court Record MDE to allocate a court date on the schedule."
+    end
+  end
+
+  classview 326274 "NotifyCourtDateMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    comment "The message returned from the Court Record MDE to the Court Scheduling MDE and the Court Scheduling MDE to the Filing Review MDE when the a court date is scheduled, generally in response to a ReserveCourtDateRequest."
+    class 5257730 "NotifyCourtDateMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      associated_diagram classdiagram_ref 231554 // NotifyCourtDateMessage
+      ncouples 9
+      key "niem-profile:niem:XPath" value "datecallback:NotifyCourtDateMessage"
+      key "niem-profile:niem:Type" value "datecallback:NotifyCourtDateMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "ecf:CallbackMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:Notes" value "DISCUSS: Define exchange content in UML"
+      comment "The message returned from the Court Record MDE to the Court Scheduling MDE and the Court Scheduling MDE to the Filing Review MDE when the a court date is scheduled, generally in response to a ReserveCourtDateRequest."
+      classrelation 3894658 // <generalisation>
+	relation 3892482 ---|>
+	  a public
+	    classrelation_ref 3894658 // <generalisation>
+	  b parent class_ref 145922 // ElectronicFilingCallbackMessage
+      end
+
+      attribute 9008002 "messageExtension"
+	public explicit_type ""
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "datecallback:NotifyCourtDateMessage/datecallback:NotifyCourtDateMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "datecallback:NotifyCourtDateMessageType"
+	key "niem-profile:niem:Property" value "datecallback:NotifyCourtDateMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "An extension point for the enclosing message."
+      end
+    end
+
+    classdiagram 231554 "NotifyCourtDateMessage"
+      classdiagramsettings member_max_width 0 end
+      comment "The message returned from the Court Record MDE to the Court Scheduling MDE and the Court Scheduling MDE to the Filing Review MDE when the a court date is scheduled, generally in response to a ReserveCourtDateRequest."
+      size Letter-Landscape
+    end
+
+    classinstance 6195458 "NotifyCourtDateMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 5257730 // NotifyCourtDateMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:XPath" value "datecallback:NotifyCourtDateMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "datecallback:NotifyCourtDateMessage"
+      key "niem-profile:niem:BaseType" value "datecallback:NotifyCourtDateMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "The message returned from the Court Record MDE to the Court Scheduling MDE and the Court Scheduling MDE to the Filing Review MDE when the a court date is scheduled, generally in response to a ReserveCourtDateRequest."
+    end
+  end
+
+  classview 165890 "ReserveCourtDateMessage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    comment "The request message from the Filing Assembly MDE to the Court Scheduling MDE to allocate a court date on the schedule."
+    class 199170 "ReserveCourtDateMessage"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      associated_diagram classdiagram_ref 178562 // ReserveCourtDateMessage
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "reservedate:ReserveCourtDateMessage"
+      key "niem-profile:niem:Type" value "reservedate:ReserveCourtDateMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "ecf:CaseFilingType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value "DISCUSS: Define exchange content in UML"
+      key "niem-profile:niem:CodeList" value ""
+      comment "The request message from the Filing Assembly MDE to the Court Scheduling MDE to allocate a court date on the schedule."
+      attribute 1545858 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "reservedate:ReserveCourtDateMessage/reservedate:ReserveCourtDateMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "reservedate:ReserveCourtDateMessageType"
+	key "niem-profile:niem:Property" value "reservedate:ReserveCourtDateMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 3942402 // <generalisation>
+	relation 3940226 ---|>
+	  a public
+	    classrelation_ref 3942402 // <generalisation>
+	  b parent class_ref 138114 // ElectronicFilingMessage
+      end
+    end
+
+    classdiagram 178562 "ReserveCourtDateMessage"
+      classdiagramsettings member_max_width 0 end
+      comment "The request message from the Filing Assembly MDE to the Court Scheduling MDE to allocate a court date on the schedule."
+      size Letter-Landscape
+    end
+
+    classinstance 3147394 "ReserveCourtDateMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 199170 // ReserveCourtDateMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "reservedate:ReserveCourtDateMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "reservedate:ReserveCourtDateMessage"
+      key "niem-profile:niem:BaseType" value "reservedate:ReserveCourtDateMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "The request message from the Filing Assembly MDE to the Court Scheduling MDE to allocate a court date on the schedule."
+    end
+  end
+end
