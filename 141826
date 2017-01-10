@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 173
+  revision 177
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1811,9 +1811,9 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation"
 	key "niem-profile:niem:Type" value "citation:CaseAugmentationType"
-	key "niem-profile:niem:Property" value "j:ViolatedStatuteAssociation"
+	key "niem-profile:niem:Property" value "j:IncidentViolatedStatuteAssociation"
 	key "niem-profile:niem:BaseType" value "j:ViolatedStatuteAssociationType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
@@ -3374,7 +3374,7 @@ format 212
       ncouples 9
       key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation"
+      key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation"
       key "niem-profile:niem:Type" value "j:ViolatedStatuteAssociationType"
       key "niem-profile:niem:Property" value "j:Statute"
       key "niem-profile:niem:BaseType" value "nc:AssociationType"
@@ -3396,7 +3396,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j;StatuteCodeIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:StatuteCodeIdentification"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:StatuteCodeIdentification"
 	key "niem-profile:niem:Type" value "j:StatuteType"
 	key "niem-profile:niem:Property" value "j:StatuteCodeIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -3419,7 +3419,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:DescriptionText"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteDescriptionText"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:Statute/j:StatuteDescriptionText"
 	key "niem-profile:niem:Type" value "j:StatuteType"
 	key "niem-profile:niem:Property" value "j:StatuteDescriptionText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
@@ -3442,7 +3442,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteLevelText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteLevelText"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:Statute/j:StatuteLevelText"
 	key "niem-profile:niem:Type" value "j:StatuteType"
 	key "niem-profile:niem:Property" value "j:StatuteLevelText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
@@ -3465,7 +3465,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j;StatuteCodeSectionIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:StatuteCodeSectionIdentification"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:StatuteCodeSectionIdentification"
 	key "niem-profile:niem:Type" value "j:StatuteType"
 	key "niem-profile:niem:Property" value "j:StatuteCodeSectionIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -3488,7 +3488,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"
 	key "niem-profile:niem:Type" value "j:StatuteType"
 	key "niem-profile:niem:Property" value "j:StatuteJurisdiction"
 	key "niem-profile:niem:BaseType" value "nc:JurisdictionType"
@@ -3512,7 +3512,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteOffenseIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteOffenseIdentification"
+	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:Statute/j:StatuteOffenseIdentification"
 	key "niem-profile:niem:Type" value "j:StatuteType"
 	key "niem-profile:niem:Property" value "j:StatuteOffenseIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
@@ -9268,9 +9268,9 @@ format 212
       key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase/juvenile:PlacementAssociation/juvenile:PlacementEntity"
       key "niem-profile:niem:OldMultiplicity" value "0,1"
       key "niem-profile:niem:XPath" value "juvenile:JuvenileAugmentation/cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/cyfs:JuvenilePlacementFacilityAssociation/juvenile:PlacementOrganization"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value ""
+      key "niem-profile:niem:Type" value "juvenile:PlacementAugmentationType"
+      key "niem-profile:niem:Property" value "cyfs:JuvenilePlacementFacilityAssociation"
+      key "niem-profile:niem:BaseType" value "cyfs:JuvenilePlacementFacilityAssociationType"
       key "niem-profile:niem:Multiplicity" value "0,1"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
@@ -9303,6 +9303,30 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "The value of the Organization.ID property in the ReviewFiling message linking this organization to the appropriate other actor element."
+      end
+
+      attribute 11651202 "organizationName"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "uvenile:JuvenileAugmentation/cyfs:JuvenilePlacement/juvenile:PlacementAugmentation/cyfs:JuvenilePlacementFacilityAssociation/juvenile:PlacementOrganization/nc:FacilityName"
+	key "niem-profile:niem:Type" value "nc:FacilityType"
+	key "niem-profile:niem:Property" value "nc:FacilityName"
+	key "niem-profile:niem:BaseType" value "nc:ProperNameTextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase/juvenile:PlacementAssociation/juvenile:PlacementEntity/nc:EntityOrganizationReference"
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The name of a placement facility."
       end
     end
 
@@ -9400,10 +9424,10 @@ format 212
 	key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase/juvenile:StatusOffenseAct/juvenile:StatusOffenseActStatute"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "juvenile:CaseAugmentation/cyfs:StatusOffense/juvenile:IncidentAugmentation/j:IncidentViolatedStatuteAssociation/j:Statute"
-	key "niem-profile:niem:Type" value "j:ViolatedStatuteAssociationType"
-	key "niem-profile:niem:Property" value "j:Statute"
-	key "niem-profile:niem:BaseType" value "j:StatuteType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Type" value "juvenile:IncidentAugmentationType"
+	key "niem-profile:niem:Property" value "j:IncidentViolatedStatuteAssociation"
+	key "niem-profile:niem:BaseType" value "j:ViolatedStatuteAssociationType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Code designating the statutory or ordinance section, the violation of which would not constitute a crime if committed by an adult (only if a juvenile)."

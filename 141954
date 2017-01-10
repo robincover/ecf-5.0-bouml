@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 191
+  revision 194
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1574,7 +1574,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "filing:FilingMessageType"
 	key "niem-profile:niem:Property" value "nc:Case"
 	key "niem-profile:niem:BaseType" value "nc:CaseType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
