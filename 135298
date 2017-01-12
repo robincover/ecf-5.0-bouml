@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 165
+  revision 167
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -399,7 +399,7 @@ format 212
 	key "niem-profile:niem:Type" value "ecf:CallbackMessageType"
 	key "niem-profile:niem:Property" value "ecf:ReviewedDocument"
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
-	key "niem-profile:niem:Multiplicity" value "1,unbounded"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -743,7 +743,7 @@ ${members}};
       key "niem-profile:niem:Type" value ""
       key "niem-profile:niem:Property" value "cbrn:MessageStatus"
       key "niem-profile:niem:BaseType" value "cbrn:MessageStatusType"
-      key "niem-profile:niem:Multiplicity" value "0,unbounded"
+      key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Representation of an error that occured when synchronously processing the message."
@@ -764,7 +764,7 @@ ${members}};
 	key "niem-profile:niem:Type" value "cbrn:MessageStatusType"
 	key "niem-profile:niem:Property" value "cbrn:MessageStatusCode, cbrn:MessageHandlingError, cbrn:CredentialsAuthenticatedCode, cbrn:ResendRequestIndicator"
 	key "niem-profile:niem:BaseType" value "cbrncl:MessageStatusCodeType"
-	key "niem-profile:niem:Multiplicity" value "1,unbounded"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A code that uniquely identifies an error.  Allowable values set forth in court policy."
@@ -902,7 +902,7 @@ ${members}};
 	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:IncidentViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction/j:JurisdictionNCICLSTACode"
 	key "niem-profile:niem:Type" value "nc:JurisdictionType"
 	key "niem-profile:niem:Property" value "nc:JurisdictionAbstract,  (j:JurisdictionNCICLSTACode), (nc:JurisdictionText)"
-	key "niem-profile:niem:BaseType" value "ncic:LSTACodeType"
+	key "niem-profile:niem:BaseType" value "ncic:CTZCodeType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/j:ViolatedStatuteAssociation/j:Statute/j:StatuteJurisdiction"

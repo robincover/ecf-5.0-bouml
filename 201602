@@ -128,7 +128,7 @@ format 212
       end
     end
 
-    class 6064514 "DriverLicenseClassCodeType"
+    class 6064770 "DriverLicenseClassCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -141,15 +141,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/aamva_d20/3.2/,DriverLicenseClassCodeType"
       comment "A data type for kinds of vehicles that a licensed driver may be approved to operate."
-      classrelation 4564738 // <generalisation>
-	relation 4562562 ---|>
+      classrelation 4564994 // <generalisation>
+	relation 4562818 ---|>
 	  a public
-	    classrelation_ref 4564738 // <generalisation>
-	  b parent class_ref 6064642 // DriverLicenseClassCodeSimpleType
+	    classrelation_ref 4564994 // <generalisation>
+	  b parent class_ref 6064898 // DriverLicenseClassCodeSimpleType
       end
     end
 
-    class 6064642 "DriverLicenseClassCodeSimpleType"
+    class 6064898 "DriverLicenseClassCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -162,10 +162,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/aamva_d20/3.2/,DriverLicenseClassCodeSimpleType"
       comment "A data type for kinds of vehicles that a licensed driver may be approved to operate."
-      classrelation 4564610 // <generalisation>
-	relation 4562434 ---|>
+      classrelation 4564866 // <generalisation>
+	relation 4562690 ---|>
 	  a public
-	    classrelation_ref 4564610 // <generalisation>
+	    classrelation_ref 4564866 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -256,7 +256,7 @@ format 212
 
       attribute 11679234 "BiometricClassification"
 	public type class_ref 6039298 // BiometricClassificationType
-	multiplicity "0,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -334,7 +334,7 @@ format 212
 
       attribute 11673218 "DNASTRProfile"
 	public type class_ref 6035458 // DNASTRProfileType
-	multiplicity "0,unbounded"
+	multiplicity "0,14"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -385,7 +385,7 @@ format 212
 
       attribute 11673474 "DNAAlleleCall1Text"
 	public type class_ref 6025730 // TextType
-	multiplicity "0,unbounded"
+	multiplicity "1,2"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -420,8 +420,8 @@ format 212
       end
 
       attribute 11689602 "BiometricClassificationCategoryCode"
-	public type class_ref 6043010 // BiometricCategoryCodeType
-	multiplicity "0,unbounded"
+	public type class_ref 6043266 // BiometricCategoryCodeType
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -435,7 +435,7 @@ format 212
       end
     end
 
-    class 6043010 "BiometricCategoryCodeType"
+    class 6043266 "BiometricCategoryCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -448,15 +448,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/biometrics/3.2/,BiometricCategoryCodeType"
       comment "A data type for a kind of biometric technology"
-      classrelation 4556418 // <generalisation>
-	relation 4554242 ---|>
+      classrelation 4556674 // <generalisation>
+	relation 4554498 ---|>
 	  a public
-	    classrelation_ref 4556418 // <generalisation>
-	  b parent class_ref 6043138 // BiometricCategoryCodeSimpleType
+	    classrelation_ref 4556674 // <generalisation>
+	  b parent class_ref 6043394 // BiometricCategoryCodeSimpleType
       end
     end
 
-    class 6043138 "BiometricCategoryCodeSimpleType"
+    class 6043394 "BiometricCategoryCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -469,10 +469,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/biometrics/3.2/,BiometricCategoryCodeSimpleType"
       comment "A data type describing the kinds of biometrics used"
-      classrelation 4556290 // <generalisation>
-	relation 4554114 ---|>
+      classrelation 4556546 // <generalisation>
+	relation 4554370 ---|>
 	  a public
-	    classrelation_ref 4556290 // <generalisation>
+	    classrelation_ref 4556546 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -522,7 +522,7 @@ format 212
       comment "An image of a fingerprint"
     end
 
-    class 6064386 "PhysicalFeatureImageType"
+    class 6064642 "PhysicalFeatureImageType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -535,16 +535,16 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/biometrics/3.2/,PhysicalFeatureImageType"
       comment "A data type for an image of a physical feature"
-      classrelation 4564482 // <generalisation>
-	relation 4562306 ---|>
+      classrelation 4564738 // <generalisation>
+	relation 4562562 ---|>
 	  a public
-	    classrelation_ref 4564482 // <generalisation>
+	    classrelation_ref 4564738 // <generalisation>
 	  b parent class_ref 6029698 // ImageType
       end
     end
 
     classinstance 7655170 "PhysicalFeatureImage"
-      type class_ref 6064386 // PhysicalFeatureImageType
+      type class_ref 6064642 // PhysicalFeatureImageType
       attributes
         end
       relations
@@ -635,7 +635,7 @@ format 212
     end
 
     classinstance 7710978 "BiometricClassificationCategoryCode"
-      type class_ref 6043010 // BiometricCategoryCodeType
+      type class_ref 6043266 // BiometricCategoryCodeType
       attributes
         end
       relations
@@ -752,7 +752,7 @@ format 212
 
       attribute 11676546 "MessageStatusCode"
 	public type class_ref 6037122 // MessageStatusCodeType
-	multiplicity "1,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -767,7 +767,7 @@ format 212
 
       attribute 11676674 "MessageHandlingError"
 	public type class_ref 6037378 // MessageErrorType
-	multiplicity "1,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -781,8 +781,8 @@ format 212
       end
 
       attribute 11676802 "CredentialsAuthenticatedCode"
-	public type class_ref 6064770 // CredentialsAuthenticatedCodeType
-	multiplicity "1,unbounded"
+	public type class_ref 6065026 // CredentialsAuthenticatedCodeType
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -797,7 +797,7 @@ format 212
 
       attribute 11676930 "ResendRequestIndicator"
 	public type class_ref 6025090 // boolean
-	multiplicity "1,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -847,7 +847,7 @@ format 212
       end
 
       attribute 11696770 "SystemEventDateTime"
-	public type class_ref 6065282 // dateTime
+	public type class_ref 6065538 // dateTime
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -905,7 +905,7 @@ format 212
 
       attribute 11676290 "ErrorCodeDescriptionText"
 	public type class_ref 6025730 // TextType
-	multiplicity "0,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -920,7 +920,7 @@ format 212
 
       attribute 11676418 "ErrorCodeText"
 	public type class_ref 6025730 // TextType
-	multiplicity "0,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -1012,7 +1012,7 @@ format 212
     end
 
     classinstance 7682306 "CredentialsAuthenticatedCode"
-      type class_ref 6064770 // CredentialsAuthenticatedCodeType
+      type class_ref 6065026 // CredentialsAuthenticatedCodeType
       attributes
         end
       relations
@@ -1067,7 +1067,7 @@ format 212
     end
 
     classinstance 7728898 "SystemEventDateTime"
-      type class_ref 6065282 // dateTime
+      type class_ref 6065538 // dateTime
       attributes
         end
       relations
@@ -1180,7 +1180,7 @@ format 212
       end
     end
 
-    class 6064770 "CredentialsAuthenticatedCodeType"
+    class 6065026 "CredentialsAuthenticatedCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1193,15 +1193,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/cbrncl/3.0/,CredentialsAuthenticatedCodeType"
       comment "A data type for the states of authentication of  credentials."
-      classrelation 4564994 // <generalisation>
-	relation 4562818 ---|>
+      classrelation 4565250 // <generalisation>
+	relation 4563074 ---|>
 	  a public
-	    classrelation_ref 4564994 // <generalisation>
-	  b parent class_ref 6064898 // CredentialsAuthenticatedCodeSimpleType
+	    classrelation_ref 4565250 // <generalisation>
+	  b parent class_ref 6065154 // CredentialsAuthenticatedCodeSimpleType
       end
     end
 
-    class 6064898 "CredentialsAuthenticatedCodeSimpleType"
+    class 6065154 "CredentialsAuthenticatedCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1214,10 +1214,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/cbrncl/3.0/,CredentialsAuthenticatedCodeSimpleType"
       comment "A data type for the states of authentication of  credentials."
-      classrelation 4564866 // <generalisation>
-	relation 4562690 ---|>
+      classrelation 4565122 // <generalisation>
+	relation 4562946 ---|>
 	  a public
-	    classrelation_ref 4564866 // <generalisation>
+	    classrelation_ref 4565122 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -1283,7 +1283,7 @@ format 212
       end
     end
 
-    class 6042626 "ContactInformationAvailabilityCodeType"
+    class 6042882 "ContactInformationAvailabilityCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1296,15 +1296,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/core_misc/3.0/,ContactInformationAvailabilityCodeType"
       comment "A data type for a period of time or a situation in which an entity is available to be contacted with the given contact information."
-      classrelation 4556034 // <generalisation>
-	relation 4553858 ---|>
+      classrelation 4556290 // <generalisation>
+	relation 4554114 ---|>
 	  a public
-	    classrelation_ref 4556034 // <generalisation>
-	  b parent class_ref 6042754 // ContactInformationAvailabilityCodeSimpleType
+	    classrelation_ref 4556290 // <generalisation>
+	  b parent class_ref 6043010 // ContactInformationAvailabilityCodeSimpleType
       end
     end
 
-    class 6042754 "ContactInformationAvailabilityCodeSimpleType"
+    class 6043010 "ContactInformationAvailabilityCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1317,15 +1317,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/core_misc/3.0/,ContactInformationAvailabilityCodeSimpleType"
       comment "A data type for a period of time or a situation in which an entity is available to be contacted with the given contact information."
-      classrelation 4555906 // <generalisation>
-	relation 4553730 ---|>
+      classrelation 4556162 // <generalisation>
+	relation 4553986 ---|>
 	  a public
-	    classrelation_ref 4555906 // <generalisation>
+	    classrelation_ref 4556162 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
 
-    class 6063874 "OffenseLevelCodeType"
+    class 6064130 "OffenseLevelCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1338,15 +1338,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/core_misc/3.0/,OffenseLevelCodeType"
       comment "A data type for levels of an incident."
-      classrelation 4564098 // <generalisation>
-	relation 4561922 ---|>
+      classrelation 4564354 // <generalisation>
+	relation 4562178 ---|>
 	  a public
-	    classrelation_ref 4564098 // <generalisation>
-	  b parent class_ref 6064002 // OffenseLevelCodeSimpleType
+	    classrelation_ref 4564354 // <generalisation>
+	  b parent class_ref 6064258 // OffenseLevelCodeSimpleType
       end
     end
 
-    class 6064002 "OffenseLevelCodeSimpleType"
+    class 6064258 "OffenseLevelCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1359,10 +1359,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/core_misc/3.0/,OffenseLevelCodeSimpleType"
       comment "A data type for levels of an incident."
-      classrelation 4563970 // <generalisation>
-	relation 4561794 ---|>
+      classrelation 4564226 // <generalisation>
+	relation 4562050 ---|>
 	  a public
-	    classrelation_ref 4563970 // <generalisation>
+	    classrelation_ref 4564226 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -1408,7 +1408,7 @@ format 212
 
       attribute 11668226 "RoleOfPerson"
 	public type class_ref 6028802 // PersonType
-	multiplicity "1,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -1545,7 +1545,7 @@ format 212
       end
     end
 
-    class 6040962 "JuvenileCaseType"
+    class 6041218 "JuvenileCaseType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1558,15 +1558,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenileCaseType"
       comment "A data type for a juvenile case."
-      classrelation 4554242 // <generalisation>
-	relation 4552066 ---|>
+      classrelation 4554498 // <generalisation>
+	relation 4552322 ---|>
 	  a public
-	    classrelation_ref 4554242 // <generalisation>
+	    classrelation_ref 4554498 // <generalisation>
 	  b parent class_ref 6030594 // CaseType
       end
 
       attribute 11682946 "Juvenile"
-	public type class_ref 6041090 // JuvenileType
+	public type class_ref 6041346 // JuvenileType
 	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
@@ -1581,7 +1581,7 @@ format 212
       end
     end
 
-    class 6041090 "JuvenileType"
+    class 6041346 "JuvenileType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1594,10 +1594,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenileType"
       comment "A data type for a juvenile."
-      classrelation 4554370 // <generalisation>
-	relation 4552194 ---|>
+      classrelation 4554626 // <generalisation>
+	relation 4552450 ---|>
 	  a public
-	    classrelation_ref 4554370 // <generalisation>
+	    classrelation_ref 4554626 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -1632,7 +1632,7 @@ format 212
       end
     end
 
-    class 6043266 "ParentChildAssociationType"
+    class 6043522 "ParentChildAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1645,16 +1645,16 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,ParentChildAssociationType"
       comment "A data type for an association between a child and a person who is in a parent role toward that child."
-      classrelation 4556546 // <generalisation>
-	relation 4554370 ---|>
+      classrelation 4556802 // <generalisation>
+	relation 4554626 ---|>
 	  a public
-	    classrelation_ref 4556546 // <generalisation>
+	    classrelation_ref 4556802 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
       attribute 11667970 "Child"
 	public type class_ref 6032130 // ChildType
-	multiplicity "1,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -1669,7 +1669,7 @@ format 212
 
       attribute 11689730 "Parent"
 	public type class_ref 6028802 // PersonType
-	multiplicity "1,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -1713,7 +1713,7 @@ format 212
       end
     end
 
-    class 6043394 "ParentChildKinshipCategoryCodeType"
+    class 6043650 "ParentChildKinshipCategoryCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1726,15 +1726,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,ParentChildKinshipCategoryCodeType"
       comment "A data type for describing the nature of the relationship from a parent to a child"
-      classrelation 4556802 // <generalisation>
-	relation 4554626 ---|>
+      classrelation 4557058 // <generalisation>
+	relation 4554882 ---|>
 	  a public
-	    classrelation_ref 4556802 // <generalisation>
-	  b parent class_ref 6043522 // ParentChildKinshipCategoryCodeSimpleType
+	    classrelation_ref 4557058 // <generalisation>
+	  b parent class_ref 6043778 // ParentChildKinshipCategoryCodeSimpleType
       end
     end
 
-    class 6043522 "ParentChildKinshipCategoryCodeSimpleType"
+    class 6043778 "ParentChildKinshipCategoryCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1747,15 +1747,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,ParentChildKinshipCategoryCodeSimpleType"
       comment "A data type for describing the nature of the relationship from a parent to a child"
-      classrelation 4556674 // <generalisation>
-	relation 4554498 ---|>
+      classrelation 4556930 // <generalisation>
+	relation 4554754 ---|>
 	  a public
-	    classrelation_ref 4556674 // <generalisation>
+	    classrelation_ref 4556930 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
 
-    class 6044162 "JuvenilePlacementType"
+    class 6044418 "JuvenilePlacementType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1768,15 +1768,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenilePlacementType"
       comment "A data type for information about where a juvenile is directed to reside during the pendency of a delinquency proceeding."
-      classrelation 4557570 // <generalisation>
-	relation 4555394 ---|>
+      classrelation 4557826 // <generalisation>
+	relation 4555650 ---|>
 	  a public
-	    classrelation_ref 4557570 // <generalisation>
-	  b parent class_ref 6044290 // PlacementType
+	    classrelation_ref 4557826 // <generalisation>
+	  b parent class_ref 6044546 // PlacementType
       end
     end
 
-    class 6044290 "PlacementType"
+    class 6044546 "PlacementType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1789,10 +1789,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,PlacementType"
       comment "A data type for the placement history of a child or youth."
-      classrelation 4557442 // <generalisation>
-	relation 4555266 ---|>
+      classrelation 4557698 // <generalisation>
+	relation 4555522 ---|>
 	  a public
-	    classrelation_ref 4557442 // <generalisation>
+	    classrelation_ref 4557698 // <generalisation>
 	  b parent class_ref 6025602 // ActivityType
       end
 
@@ -1827,7 +1827,7 @@ format 212
       end
     end
 
-    class 6044418 "JuvenilePlacementFacilityAssociationType"
+    class 6044674 "JuvenilePlacementFacilityAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1840,10 +1840,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenilePlacementFacilityAssociationType"
       comment "A data type for an association between a juvenile and a facility where the juvenile is directed to reside (e.g., orphanage, detention center, etc.)."
-      classrelation 4557698 // <generalisation>
-	relation 4555522 ---|>
+      classrelation 4557954 // <generalisation>
+	relation 4555778 ---|>
 	  a public
-	    classrelation_ref 4557698 // <generalisation>
+	    classrelation_ref 4557954 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -1863,7 +1863,7 @@ format 212
       end
     end
 
-    class 6044546 "JuvenilePlacementPersonAssociationType"
+    class 6044802 "JuvenilePlacementPersonAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1876,10 +1876,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenilePlacementPersonAssociationType"
       comment "A data type for an association between a juvenile and a person with whom the juvenile is directed to reside (e.g., foster parent, grandparent, etc.)."
-      classrelation 4557826 // <generalisation>
-	relation 4555650 ---|>
+      classrelation 4558082 // <generalisation>
+	relation 4555906 ---|>
 	  a public
-	    classrelation_ref 4557826 // <generalisation>
+	    classrelation_ref 4558082 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -1899,7 +1899,7 @@ format 212
       end
     end
 
-    class 6044674 "PlacementLocationCodeType"
+    class 6044930 "PlacementLocationCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1912,15 +1912,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,PlacementLocationCodeType"
       comment "A data type for a list that describes the location of a child or youth's placement."
-      classrelation 4558082 // <generalisation>
-	relation 4555906 ---|>
+      classrelation 4558338 // <generalisation>
+	relation 4556162 ---|>
 	  a public
-	    classrelation_ref 4558082 // <generalisation>
-	  b parent class_ref 6044802 // PlacementLocationCodeSimpleType
+	    classrelation_ref 4558338 // <generalisation>
+	  b parent class_ref 6045058 // PlacementLocationCodeSimpleType
       end
     end
 
-    class 6044802 "PlacementLocationCodeSimpleType"
+    class 6045058 "PlacementLocationCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1933,15 +1933,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,PlacementLocationCodeSimpleType"
       comment "A data type for a list that describes the location of a child or youth's placement."
-      classrelation 4557954 // <generalisation>
-	relation 4555778 ---|>
+      classrelation 4558210 // <generalisation>
+	relation 4556034 ---|>
 	  a public
-	    classrelation_ref 4557954 // <generalisation>
+	    classrelation_ref 4558210 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
 
-    class 6051458 "JuvenileAbuseNeglectAllegationType"
+    class 6051714 "JuvenileAbuseNeglectAllegationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1954,10 +1954,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenileAbuseNeglectAllegationType"
       comment "A data type for allegations of juvenile abuse or neglect."
-      classrelation 4562818 // <generalisation>
-	relation 4560642 ---|>
+      classrelation 4563074 // <generalisation>
+	relation 4560898 ---|>
 	  a public
-	    classrelation_ref 4562818 // <generalisation>
+	    classrelation_ref 4563074 // <generalisation>
 	  b parent class_ref 6031618 // ChargeType
       end
 
@@ -1977,7 +1977,7 @@ format 212
       end
     end
 
-    class 6059522 "JuvenileGangAssociationType"
+    class 6059778 "JuvenileGangAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1990,10 +1990,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,JuvenileGangAssociationType"
       comment "A data type for an association between a juvenile and a criminal gang organization."
-      classrelation 4563714 // <generalisation>
-	relation 4561538 ---|>
+      classrelation 4563970 // <generalisation>
+	relation 4561794 ---|>
 	  a public
-	    classrelation_ref 4563714 // <generalisation>
+	    classrelation_ref 4563970 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -2091,7 +2091,7 @@ format 212
     end
 
     classinstance 7674114 "JuvenileAbuseNeglectAllegation"
-      type class_ref 6051458 // JuvenileAbuseNeglectAllegationType
+      type class_ref 6051714 // JuvenileAbuseNeglectAllegationType
       attributes
         end
       relations
@@ -2113,7 +2113,7 @@ format 212
     end
 
     classinstance 7688962 "JuvenileGangAssociation"
-      type class_ref 6059522 // JuvenileGangAssociationType
+      type class_ref 6059778 // JuvenileGangAssociationType
       attributes
         end
       relations
@@ -2136,7 +2136,7 @@ format 212
     end
 
     classinstance 7696770 "JuvenileCase"
-      type class_ref 6040962 // JuvenileCaseType
+      type class_ref 6041218 // JuvenileCaseType
       attributes
         end
       relations
@@ -2147,7 +2147,7 @@ format 212
     end
 
     classinstance 7696898 "Juvenile"
-      type class_ref 6041090 // JuvenileType
+      type class_ref 6041346 // JuvenileType
       attributes
         end
       relations
@@ -2191,7 +2191,7 @@ format 212
     end
 
     classinstance 7711234 "ParentChildAssociation"
-      type class_ref 6043266 // ParentChildAssociationType
+      type class_ref 6043522 // ParentChildAssociationType
       attributes
         end
       relations
@@ -2224,7 +2224,7 @@ format 212
     end
 
     classinstance 7711618 "ParentChildKinshipCategoryCode"
-      type class_ref 6043394 // ParentChildKinshipCategoryCodeType
+      type class_ref 6043650 // ParentChildKinshipCategoryCodeType
       attributes
         end
       relations
@@ -2247,7 +2247,7 @@ format 212
     end
 
     classinstance 7716354 "JuvenilePlacement"
-      type class_ref 6044162 // JuvenilePlacementType
+      type class_ref 6044418 // JuvenilePlacementType
       attributes
         end
       relations
@@ -2269,7 +2269,7 @@ format 212
     end
 
     classinstance 7716738 "JuvenilePlacementFacilityAssociation"
-      type class_ref 6044418 // JuvenilePlacementFacilityAssociationType
+      type class_ref 6044674 // JuvenilePlacementFacilityAssociationType
       attributes
         end
       relations
@@ -2280,7 +2280,7 @@ format 212
     end
 
     classinstance 7716866 "JuvenilePlacementPersonAssociation"
-      type class_ref 6044546 // JuvenilePlacementPersonAssociationType
+      type class_ref 6044802 // JuvenilePlacementPersonAssociationType
       attributes
         end
       relations
@@ -2302,7 +2302,7 @@ format 212
     end
 
     classinstance 7717122 "PlacementCategoryCode"
-      type class_ref 6044674 // PlacementLocationCodeType
+      type class_ref 6044930 // PlacementLocationCodeType
       attributes
         end
       relations
@@ -2578,7 +2578,7 @@ format 212
 
       attribute 11660674 "ArrestOfficial"
 	public type class_ref 6028162 // EnforcementOfficialType
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -2608,7 +2608,7 @@ format 212
 
       attribute 11661186 "ArrestWarrant"
 	public type class_ref 6028418 // WarrantType
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -2949,7 +2949,7 @@ format 212
       end
 
       attribute 11687042 "AppellateCaseNotice"
-	public type class_ref 6042114 // AppellateCaseNoticeType
+	public type class_ref 6042370 // AppellateCaseNoticeType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -3244,7 +3244,7 @@ format 212
 
       attribute 11666434 "ChargeEnhancingAllegationCharge"
 	public type class_ref 6031618 // ChargeType
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -3258,8 +3258,8 @@ format 212
       end
 
       attribute 11666562 "ChargeEnhancingFactor"
-	public type class_ref 6056322 // ChargeEnhancingFactorType
-	multiplicity "0,unbounded"
+	public type class_ref 6056578 // ChargeEnhancingFactorType
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -3333,7 +3333,7 @@ format 212
       end
 
       attribute 11696898 "ChargeStatute"
-	public type class_ref 6047106 // StatuteType
+	public type class_ref 6047362 // StatuteType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -4090,7 +4090,7 @@ format 212
 
       attribute 11668994 "DriverLicenseCommercialClass"
 	public type class_ref 6024706 // abstract
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -4119,7 +4119,7 @@ format 212
       end
 
       attribute 11684866 "DriverLicenseWithdrawal"
-	public type class_ref 6041730 // DriverLicenseWithdrawalType
+	public type class_ref 6041986 // DriverLicenseWithdrawalType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -4200,7 +4200,7 @@ format 212
       end
     end
 
-    class 6041346 "DrivingRestrictionType"
+    class 6041602 "DrivingRestrictionType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4213,10 +4213,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,DrivingRestrictionType"
       comment "A data type for a restriction applicable to a driver permit or license."
-      classrelation 4554626 // <generalisation>
-	relation 4552450 ---|>
+      classrelation 4554882 // <generalisation>
+	relation 4552706 ---|>
 	  a public
-	    classrelation_ref 4554626 // <generalisation>
+	    classrelation_ref 4554882 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -4251,7 +4251,7 @@ format 212
       end
     end
 
-    class 6041730 "DriverLicenseWithdrawalType"
+    class 6041986 "DriverLicenseWithdrawalType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4264,10 +4264,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,DriverLicenseWithdrawalType"
       comment "A data type for a driver license withdrawal."
-      classrelation 4555010 // <generalisation>
-	relation 4552834 ---|>
+      classrelation 4555266 // <generalisation>
+	relation 4553090 ---|>
 	  a public
-	    classrelation_ref 4555010 // <generalisation>
+	    classrelation_ref 4555266 // <generalisation>
 	  b parent class_ref 6025602 // ActivityType
       end
 
@@ -4287,7 +4287,7 @@ format 212
       end
     end
 
-    class 6042114 "AppellateCaseNoticeType"
+    class 6042370 "AppellateCaseNoticeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4300,10 +4300,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,AppellateCaseNoticeType"
       comment "A data type for a request filed with an appellate court to start an appellate case."
-      classrelation 4555394 // <generalisation>
-	relation 4553218 ---|>
+      classrelation 4555650 // <generalisation>
+	relation 4553474 ---|>
 	  a public
-	    classrelation_ref 4555394 // <generalisation>
+	    classrelation_ref 4555650 // <generalisation>
 	  b parent class_ref 6029186 // DocumentType
       end
 
@@ -4323,7 +4323,7 @@ format 212
       end
     end
 
-    class 6042242 "OffenseChargeAssociationType"
+    class 6042498 "OffenseChargeAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4336,10 +4336,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,OffenseChargeAssociationType"
       comment "A data type for a relationship between an offense that occurred and the formal charge that was assigned to it as a result of classifying the offense."
-      classrelation 4555522 // <generalisation>
-	relation 4553346 ---|>
+      classrelation 4555778 // <generalisation>
+	relation 4553602 ---|>
 	  a public
-	    classrelation_ref 4555522 // <generalisation>
+	    classrelation_ref 4555778 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -4359,7 +4359,7 @@ format 212
       end
     end
 
-    class 6042370 "OrganizationAlternateNameType"
+    class 6042626 "OrganizationAlternateNameType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4372,10 +4372,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,OrganizationAlternateNameType"
       comment "A data type for another name used by an organization."
-      classrelation 4555650 // <generalisation>
-	relation 4553474 ---|>
+      classrelation 4555906 // <generalisation>
+	relation 4553730 ---|>
 	  a public
-	    classrelation_ref 4555650 // <generalisation>
+	    classrelation_ref 4555906 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -4395,7 +4395,7 @@ format 212
       end
     end
 
-    class 6045698 "ProtectionOrderType"
+    class 6045954 "ProtectionOrderType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4408,10 +4408,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,ProtectionOrderType"
       comment "A data type for a civil order protecting one individual from another."
-      classrelation 4558850 // <generalisation>
-	relation 4556674 ---|>
+      classrelation 4559106 // <generalisation>
+	relation 4556930 ---|>
 	  a public
-	    classrelation_ref 4558850 // <generalisation>
+	    classrelation_ref 4559106 // <generalisation>
 	  b parent class_ref 6028546 // CourtOrderType
       end
 
@@ -4461,7 +4461,7 @@ format 212
       end
     end
 
-    class 6046466 "SentenceType"
+    class 6046722 "SentenceType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4474,10 +4474,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,SentenceType"
       comment "A data type for a punishment resulting from conviction of charges in a court case."
-      classrelation 4559618 // <generalisation>
-	relation 4557442 ---|>
+      classrelation 4559874 // <generalisation>
+	relation 4557698 ---|>
 	  a public
-	    classrelation_ref 4559618 // <generalisation>
+	    classrelation_ref 4559874 // <generalisation>
 	  b parent class_ref 6025602 // ActivityType
       end
 
@@ -4557,7 +4557,7 @@ format 212
       end
     end
 
-    class 6046850 "RegisteredOffenderType"
+    class 6047106 "RegisteredOffenderType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4570,10 +4570,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,RegisteredOffenderType"
       comment "A data type for information about a person who is required to register information with a law enforcement agency due to having been convicted of a certain type of crime."
-      classrelation 4560002 // <generalisation>
-	relation 4557826 ---|>
+      classrelation 4560258 // <generalisation>
+	relation 4558082 ---|>
 	  a public
-	    classrelation_ref 4560002 // <generalisation>
+	    classrelation_ref 4560258 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -4593,7 +4593,7 @@ format 212
       end
     end
 
-    class 6046978 "ViolatedStatuteAssociationType"
+    class 6047234 "ViolatedStatuteAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4606,15 +4606,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,ViolatedStatuteAssociationType"
       comment "A data type for an association of a statute that has been violated and other information."
-      classrelation 4560130 // <generalisation>
-	relation 4557954 ---|>
+      classrelation 4560386 // <generalisation>
+	relation 4558210 ---|>
 	  a public
-	    classrelation_ref 4560130 // <generalisation>
+	    classrelation_ref 4560386 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
       attribute 11696514 "Statute"
-	public type class_ref 6047106 // StatuteType
+	public type class_ref 6047362 // StatuteType
 	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
@@ -4629,7 +4629,7 @@ format 212
       end
     end
 
-    class 6047106 "StatuteType"
+    class 6047362 "StatuteType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4642,10 +4642,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,StatuteType"
       comment "A data type for a law, rule, or ordinance within a jurisdiction."
-      classrelation 4560258 // <generalisation>
-	relation 4558082 ---|>
+      classrelation 4560514 // <generalisation>
+	relation 4558338 ---|>
 	  a public
-	    classrelation_ref 4560258 // <generalisation>
+	    classrelation_ref 4560514 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -4711,7 +4711,7 @@ format 212
 
       attribute 11697026 "StatuteOffenseIdentification"
 	public type class_ref 6026242 // IdentificationType
-	multiplicity "0,unbounded"
+	multiplicity "1,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -4740,7 +4740,7 @@ format 212
       end
     end
 
-    class 6049026 "ConveyanceRegistrationType"
+    class 6049282 "ConveyanceRegistrationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4753,11 +4753,11 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,ConveyanceRegistrationType"
       comment "A data type for a registration of a conveyance with an authority."
-      classrelation 4562306 // <generalisation>
-	relation 4560130 ---|>
+      classrelation 4562562 // <generalisation>
+	relation 4560386 ---|>
 	  a public
-	    classrelation_ref 4562306 // <generalisation>
-	  b parent class_ref 6049154 // ItemRegistrationType
+	    classrelation_ref 4562562 // <generalisation>
+	  b parent class_ref 6049410 // ItemRegistrationType
       end
 
       attribute 11700226 "ConveyanceRegistrationPlateIdentification"
@@ -4791,7 +4791,7 @@ format 212
       end
     end
 
-    class 6049154 "ItemRegistrationType"
+    class 6049410 "ItemRegistrationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4804,15 +4804,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,ItemRegistrationType"
       comment "A data type for a registration of a property item with an authority."
-      classrelation 4562178 // <generalisation>
-	relation 4560002 ---|>
+      classrelation 4562434 // <generalisation>
+	relation 4560258 ---|>
 	  a public
-	    classrelation_ref 4562178 // <generalisation>
+	    classrelation_ref 4562434 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
     end
 
-    class 6049666 "IncidentAugmentationType"
+    class 6049922 "IncidentAugmentationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4825,10 +4825,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,IncidentAugmentationType"
       comment "A data type for additional information about an incident."
-      classrelation 4562562 // <generalisation>
-	relation 4560386 ---|>
+      classrelation 4562818 // <generalisation>
+	relation 4560642 ---|>
 	  a public
-	    classrelation_ref 4562562 // <generalisation>
+	    classrelation_ref 4562818 // <generalisation>
 	  b parent class_ref 6024962 // AugmentationType
       end
 
@@ -4893,7 +4893,7 @@ format 212
       end
 
       attribute 11692290 "IncidentDamagedItem"
-	public type class_ref 6045570 // ItemType
+	public type class_ref 6045826 // ItemType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -4908,7 +4908,7 @@ format 212
       end
     end
 
-    class 6050818 "OffenseLocationAssociationType"
+    class 6051074 "OffenseLocationAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4921,10 +4921,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,OffenseLocationAssociationType"
       comment "A data type for a relationship between an offense and a location at which the offense occurred."
-      classrelation 4562690 // <generalisation>
-	relation 4560514 ---|>
+      classrelation 4562946 // <generalisation>
+	relation 4560770 ---|>
 	  a public
-	    classrelation_ref 4562690 // <generalisation>
+	    classrelation_ref 4562946 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -4959,7 +4959,7 @@ format 212
       end
     end
 
-    class 6052482 "PersonBloodAlcoholContentAssociationType"
+    class 6052738 "PersonBloodAlcoholContentAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -4972,10 +4972,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,PersonBloodAlcoholContentAssociationType"
       comment "A data type for an association that links a person to a Blood Alcohol Content (BAC) Test reading, measured due to a related activity such as an arrest or a driving incident."
-      classrelation 4562946 // <generalisation>
-	relation 4560770 ---|>
+      classrelation 4563202 // <generalisation>
+	relation 4561026 ---|>
 	  a public
-	    classrelation_ref 4562946 // <generalisation>
+	    classrelation_ref 4563202 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -4995,7 +4995,7 @@ format 212
       end
     end
 
-    class 6052610 "OrganizationAugmentationType"
+    class 6052866 "OrganizationAugmentationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -5008,10 +5008,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,OrganizationAugmentationType"
       comment "A data type for additional information about an organization."
-      classrelation 4563074 // <generalisation>
-	relation 4560898 ---|>
+      classrelation 4563330 // <generalisation>
+	relation 4561154 ---|>
 	  a public
-	    classrelation_ref 4563074 // <generalisation>
+	    classrelation_ref 4563330 // <generalisation>
 	  b parent class_ref 6024962 // AugmentationType
       end
 
@@ -5031,8 +5031,8 @@ format 212
       end
 
       attribute 11688066 "OrganizationAlternateName"
-	public type class_ref 6042370 // OrganizationAlternateNameType
-	multiplicity "0,unbounded"
+	public type class_ref 6042626 // OrganizationAlternateNameType
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -5046,7 +5046,7 @@ format 212
       end
     end
 
-    class 6056322 "ChargeEnhancingFactorType"
+    class 6056578 "ChargeEnhancingFactorType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -5059,10 +5059,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,ChargeEnhancingFactorType"
       comment "A data type for a factor or reason that makes a charge more serious."
-      classrelation 4563330 // <generalisation>
-	relation 4561154 ---|>
+      classrelation 4563586 // <generalisation>
+	relation 4561410 ---|>
 	  a public
-	    classrelation_ref 4563330 // <generalisation>
+	    classrelation_ref 4563586 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -5082,7 +5082,7 @@ format 212
       end
     end
 
-    class 6058498 "PersonAugmentationType"
+    class 6058754 "PersonAugmentationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -5095,10 +5095,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,PersonAugmentationType"
       comment "A data type for additional information about a person."
-      classrelation 4563458 // <generalisation>
-	relation 4561282 ---|>
+      classrelation 4563714 // <generalisation>
+	relation 4561538 ---|>
 	  a public
-	    classrelation_ref 4563458 // <generalisation>
+	    classrelation_ref 4563714 // <generalisation>
 	  b parent class_ref 6024962 // AugmentationType
       end
 
@@ -5204,7 +5204,7 @@ format 212
     end
 
     classinstance 7647618 "IncidentLevelCode"
-      type class_ref 6063874 // OffenseLevelCodeType
+      type class_ref 6064130 // OffenseLevelCodeType
       attributes
         end
       relations
@@ -5226,7 +5226,7 @@ format 212
       comment "An act or a course of action which may constitute a violation of a criminal statute, ordinance or rule that occurred during an incident."
     end
 
-    class 6064130 "PersonNameCategoryCodeType"
+    class 6064386 "PersonNameCategoryCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -5239,15 +5239,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,PersonNameCategoryCodeType"
       comment "A data type for possible kinds of names."
-      classrelation 4564354 // <generalisation>
-	relation 4562178 ---|>
+      classrelation 4564610 // <generalisation>
+	relation 4562434 ---|>
 	  a public
-	    classrelation_ref 4564354 // <generalisation>
-	  b parent class_ref 6064258 // PersonNameCategoryCodeSimpleType
+	    classrelation_ref 4564610 // <generalisation>
+	  b parent class_ref 6064514 // PersonNameCategoryCodeSimpleType
       end
     end
 
-    class 6064258 "PersonNameCategoryCodeSimpleType"
+    class 6064514 "PersonNameCategoryCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -5260,16 +5260,16 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/domains/jxdm/5.2/,PersonNameCategoryCodeSimpleType"
       comment "A data type for possible kinds of names."
-      classrelation 4564226 // <generalisation>
-	relation 4562050 ---|>
+      classrelation 4564482 // <generalisation>
+	relation 4562306 ---|>
 	  a public
-	    classrelation_ref 4564226 // <generalisation>
+	    classrelation_ref 4564482 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
 
     classinstance 7650050 "PersonNameCategoryCode"
-      type class_ref 6064130 // PersonNameCategoryCodeType
+      type class_ref 6064386 // PersonNameCategoryCodeType
       attributes
         end
       relations
@@ -5667,7 +5667,7 @@ format 212
     end
 
     classinstance 7662338 "ChargeEnhancingFactor"
-      type class_ref 6056322 // ChargeEnhancingFactorType
+      type class_ref 6056578 // ChargeEnhancingFactorType
       attributes
         end
       relations
@@ -5799,7 +5799,7 @@ format 212
     end
 
     classinstance 7666306 "DriverLicenseCommercialClassCode"
-      type class_ref 6064514 // DriverLicenseClassCodeType
+      type class_ref 6064770 // DriverLicenseClassCodeType
       attributes
         end
       relations
@@ -5945,7 +5945,7 @@ format 212
     end
 
     classinstance 7673346 "IncidentAugmentation"
-      type class_ref 6049666 // IncidentAugmentationType
+      type class_ref 6049922 // IncidentAugmentationType
       attributes
         end
       relations
@@ -6171,7 +6171,7 @@ format 212
     end
 
     classinstance 7696258 "JurisdictionNCICLSTACode"
-      type class_ref 6065794 // CTZCodeType
+      type class_ref 6040962 // CTZCodeType
       attributes
         end
       relations
@@ -6243,7 +6243,7 @@ format 212
 	relation 4563714 ---|>
 	  a public
 	    classrelation_ref 4565890 // <generalisation>
-	  b parent class_ref 6041346 // DrivingRestrictionType
+	  b parent class_ref 6041602 // DrivingRestrictionType
       end
     end
 
@@ -6270,7 +6270,7 @@ format 212
     end
 
     classinstance 7699074 "CrashDrivingRestrictionCode"
-      type class_ref 6041474 // DrivingRestrictionCodeType
+      type class_ref 6041730 // DrivingRestrictionCodeType
       attributes
         end
       relations
@@ -6305,7 +6305,7 @@ format 212
     end
 
     classinstance 7699458 "DriverLicenseWithdrawal"
-      type class_ref 6041730 // DriverLicenseWithdrawalType
+      type class_ref 6041986 // DriverLicenseWithdrawalType
       attributes
         end
       relations
@@ -6361,7 +6361,7 @@ format 212
     end
 
     classinstance 7706242 "ProtectionOrderConditionCode"
-      type class_ref 6041858 // PCOCodeType
+      type class_ref 6042114 // PCOCodeType
       attributes
         end
       relations
@@ -6373,7 +6373,7 @@ format 212
     end
 
     classinstance 7706370 "AppellateCaseNotice"
-      type class_ref 6042114 // AppellateCaseNoticeType
+      type class_ref 6042370 // AppellateCaseNoticeType
       attributes
         end
       relations
@@ -6417,7 +6417,7 @@ format 212
     end
 
     classinstance 7707650 "OffenseChargeAssociation"
-      type class_ref 6042242 // OffenseChargeAssociationType
+      type class_ref 6042498 // OffenseChargeAssociationType
       attributes
         end
       relations
@@ -6428,7 +6428,7 @@ format 212
     end
 
     classinstance 7707778 "OffenseLocationAssociation"
-      type class_ref 6050818 // OffenseLocationAssociationType
+      type class_ref 6051074 // OffenseLocationAssociationType
       attributes
         end
       relations
@@ -6461,7 +6461,7 @@ format 212
     end
 
     classinstance 7708418 "OrganizationAlternateName"
-      type class_ref 6042370 // OrganizationAlternateNameType
+      type class_ref 6042626 // OrganizationAlternateNameType
       attributes
         end
       relations
@@ -6483,7 +6483,7 @@ format 212
     end
 
     classinstance 7714050 "PersonAugmentation"
-      type class_ref 6058498 // PersonAugmentationType
+      type class_ref 6058754 // PersonAugmentationType
       attributes
         end
       relations
@@ -6507,7 +6507,7 @@ format 212
     end
 
     classinstance 7717890 "ItemTotalDamageValue"
-      type class_ref 6045442 // ItemValueType
+      type class_ref 6045698 // ItemValueType
       attributes
         end
       relations
@@ -6518,7 +6518,7 @@ format 212
     end
 
     classinstance 7718018 "IncidentDamagedItem"
-      type class_ref 6045570 // ItemType
+      type class_ref 6045826 // ItemType
       attributes
         end
       relations
@@ -6551,7 +6551,7 @@ format 212
     end
 
     classinstance 7718658 "ProtectionOrder"
-      type class_ref 6045698 // ProtectionOrderType
+      type class_ref 6045954 // ProtectionOrderType
       attributes
         end
       relations
@@ -6562,7 +6562,7 @@ format 212
     end
 
     classinstance 7719042 "PersonRaceCode"
-      type class_ref 6045826 // RACCodeType
+      type class_ref 6046082 // RACCodeType
       attributes
         end
       relations
@@ -6629,7 +6629,7 @@ format 212
     end
 
     classinstance 7725058 "Sentence"
-      type class_ref 6046466 // SentenceType
+      type class_ref 6046722 // SentenceType
       attributes
         end
       relations
@@ -6694,7 +6694,7 @@ format 212
     end
 
     classinstance 7726210 "PersonSexCode"
-      type class_ref 6046594 // SEXCodeType
+      type class_ref 6046850 // SEXCodeType
       attributes
         end
       relations
@@ -6706,7 +6706,7 @@ format 212
     end
 
     classinstance 7726338 "RegisteredSexOffender"
-      type class_ref 6046850 // RegisteredOffenderType
+      type class_ref 6047106 // RegisteredOffenderType
       attributes
         end
       relations
@@ -6740,7 +6740,7 @@ format 212
     end
 
     classinstance 7727746 "LocationStateNCICLISCode"
-      type class_ref 6065794 // CTZCodeType
+      type class_ref 6040962 // CTZCodeType
       attributes
         end
       relations
@@ -6774,7 +6774,7 @@ format 212
     end
 
     classinstance 7728386 "IncidentViolatedStatuteAssociation"
-      type class_ref 6046978 // ViolatedStatuteAssociationType
+      type class_ref 6047234 // ViolatedStatuteAssociationType
       attributes
         end
       relations
@@ -6785,7 +6785,7 @@ format 212
     end
 
     classinstance 7728514 "Statute"
-      type class_ref 6047106 // StatuteType
+      type class_ref 6047362 // StatuteType
       attributes
         end
       relations
@@ -6796,7 +6796,7 @@ format 212
     end
 
     classinstance 7729026 "ChargeStatute"
-      type class_ref 6047106 // StatuteType
+      type class_ref 6047362 // StatuteType
       attributes
         end
       relations
@@ -6862,7 +6862,7 @@ format 212
     end
 
     classinstance 7734018 "VehicleStyleCode"
-      type class_ref 6048002 // VSTCodeType
+      type class_ref 6048258 // VSTCodeType
       attributes
         end
       relations
@@ -6874,7 +6874,7 @@ format 212
     end
 
     classinstance 7734146 "ConveyanceColorPrimaryCode"
-      type class_ref 6048258 // VCOCodeType
+      type class_ref 6048514 // VCOCodeType
       attributes
         end
       relations
@@ -6897,7 +6897,7 @@ format 212
     end
 
     classinstance 7734658 "JurisdictionNCICLISCode"
-      type class_ref 6065794 // CTZCodeType
+      type class_ref 6040962 // CTZCodeType
       attributes
         end
       relations
@@ -6932,7 +6932,7 @@ format 212
     end
 
     classinstance 7735170 "VehicleMakeCode"
-      type class_ref 6048514 // VMACodeType
+      type class_ref 6048770 // VMACodeType
       attributes
         end
       relations
@@ -6944,7 +6944,7 @@ format 212
     end
 
     classinstance 7735426 "VehicleModelCode"
-      type class_ref 6048770 // VMOCodeType
+      type class_ref 6049026 // VMOCodeType
       attributes
         end
       relations
@@ -6956,7 +6956,7 @@ format 212
     end
 
     classinstance 7735554 "ConveyanceRegistration"
-      type class_ref 6049026 // ConveyanceRegistrationType
+      type class_ref 6049282 // ConveyanceRegistrationType
       attributes
         end
       relations
@@ -7019,7 +7019,7 @@ format 212
      end
     ncouples 1
     key "URI" value "http://release.niem.gov/niem/codes/mmucc/3.2/"
-    class 6041474 "DrivingRestrictionCodeType"
+    class 6041730 "DrivingRestrictionCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -7032,15 +7032,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/mmucc/3.2/,DrivingRestrictionCodeType"
       comment "A data type for restrictions assigned to an individuals driver license by the license examiner."
-      classrelation 4554882 // <generalisation>
-	relation 4552706 ---|>
+      classrelation 4555138 // <generalisation>
+	relation 4552962 ---|>
 	  a public
-	    classrelation_ref 4554882 // <generalisation>
-	  b parent class_ref 6041602 // DrivingRestrictionCodeSimpleType
+	    classrelation_ref 4555138 // <generalisation>
+	  b parent class_ref 6041858 // DrivingRestrictionCodeSimpleType
       end
     end
 
-    class 6041602 "DrivingRestrictionCodeSimpleType"
+    class 6041858 "DrivingRestrictionCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -7053,10 +7053,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/mmucc/3.2/,DrivingRestrictionCodeSimpleType"
       comment "A data type for restrictions assigned to an individuals driver license by the license examiner."
-      classrelation 4554754 // <generalisation>
-	relation 4552578 ---|>
+      classrelation 4555010 // <generalisation>
+	relation 4552834 ---|>
 	  a public
-	    classrelation_ref 4554754 // <generalisation>
+	    classrelation_ref 4555010 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -7798,7 +7798,7 @@ format 212
 
       attribute 11669762 "OrganizationPrimaryContactInformation"
 	public type class_ref 6033154 // ContactInformationType
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -8169,7 +8169,7 @@ format 212
       end
 
       attribute 11683330 "PersonPrimaryLanguage"
-	public type class_ref 6041218 // PersonLanguageType
+	public type class_ref 6041474 // PersonLanguageType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -8199,8 +8199,8 @@ format 212
       end
 
       attribute 11690242 "PersonName"
-	public type class_ref 6043778 // PersonNameType
-	multiplicity "0,unbounded"
+	public type class_ref 6044034 // PersonNameType
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -8229,7 +8229,7 @@ format 212
       end
 
       attribute 11691522 "PersonPhysicalFeature"
-	public type class_ref 6044034 // PhysicalFeatureType
+	public type class_ref 6044290 // PhysicalFeatureType
 	multiplicity "0,unbounded"
 	cpp_decl ""
 	java_decl ""
@@ -9118,7 +9118,7 @@ format 212
 
       attribute 11673602 "PrimaryDocument"
 	public type class_ref 6029186 // DocumentType
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -9133,7 +9133,7 @@ format 212
 
       attribute 11673730 "SecondaryDocument"
 	public type class_ref 6029186 // DocumentType
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -9825,7 +9825,7 @@ format 212
       end
 
       attribute 11693442 "ObligationRecurrence"
-	public type class_ref 6046082 // ObligationRecurrenceType
+	public type class_ref 6046338 // ObligationRecurrenceType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -10059,7 +10059,7 @@ format 212
       end
     end
 
-    class 6041218 "PersonLanguageType"
+    class 6041474 "PersonLanguageType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10072,10 +10072,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,PersonLanguageType"
       comment "A data type for a language capability of a person."
-      classrelation 4554498 // <generalisation>
-	relation 4552322 ---|>
+      classrelation 4554754 // <generalisation>
+	relation 4552578 ---|>
 	  a public
-	    classrelation_ref 4554498 // <generalisation>
+	    classrelation_ref 4554754 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10095,7 +10095,7 @@ format 212
       end
     end
 
-    class 6042498 "ContactInformationAssociationType"
+    class 6042754 "ContactInformationAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10108,10 +10108,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,ContactInformationAssociationType"
       comment "A data type for an association between contact information and a an entity."
-      classrelation 4555778 // <generalisation>
-	relation 4553602 ---|>
+      classrelation 4556034 // <generalisation>
+	relation 4553858 ---|>
 	  a public
-	    classrelation_ref 4555778 // <generalisation>
+	    classrelation_ref 4556034 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -10160,7 +10160,7 @@ format 212
       end
     end
 
-    class 6042882 "OrganizationAssociationType"
+    class 6043138 "OrganizationAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10173,10 +10173,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,OrganizationAssociationType"
       comment "A data type for an association between organizations."
-      classrelation 4556162 // <generalisation>
-	relation 4553986 ---|>
+      classrelation 4556418 // <generalisation>
+	relation 4554242 ---|>
 	  a public
-	    classrelation_ref 4556162 // <generalisation>
+	    classrelation_ref 4556418 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -10211,7 +10211,7 @@ format 212
       end
     end
 
-    class 6043650 "NumericType"
+    class 6043906 "NumericType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10224,15 +10224,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,NumericType"
       comment "A data type for a number value."
-      classrelation 4556930 // <generalisation>
-	relation 4554754 ---|>
+      classrelation 4557186 // <generalisation>
+	relation 4555010 ---|>
 	  a public
-	    classrelation_ref 4556930 // <generalisation>
+	    classrelation_ref 4557186 // <generalisation>
 	  b parent class_ref 6027394 // decimal
       end
     end
 
-    class 6043778 "PersonNameType"
+    class 6044034 "PersonNameType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10245,10 +10245,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,PersonNameType"
       comment "A data type for a combination of names and/or titles by which a person is known."
-      classrelation 4557058 // <generalisation>
-	relation 4554882 ---|>
+      classrelation 4557314 // <generalisation>
+	relation 4555138 ---|>
 	  a public
-	    classrelation_ref 4557058 // <generalisation>
+	    classrelation_ref 4557314 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10269,7 +10269,7 @@ format 212
 
       attribute 11659522 "PersonNameCategory"
 	public type class_ref 6024706 // abstract
-	multiplicity "0,unbounded"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -10373,7 +10373,7 @@ format 212
       end
     end
 
-    class 6043906 "PersonOrganizationAssociationType"
+    class 6044162 "PersonOrganizationAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10386,10 +10386,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,PersonOrganizationAssociationType"
       comment "A data type for an association between a person and an organization."
-      classrelation 4557186 // <generalisation>
-	relation 4555010 ---|>
+      classrelation 4557442 // <generalisation>
+	relation 4555266 ---|>
 	  a public
-	    classrelation_ref 4557186 // <generalisation>
+	    classrelation_ref 4557442 // <generalisation>
 	  b parent class_ref 6032770 // AssociationType
       end
 
@@ -10439,7 +10439,7 @@ format 212
       end
     end
 
-    class 6044034 "PhysicalFeatureType"
+    class 6044290 "PhysicalFeatureType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10452,10 +10452,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,PhysicalFeatureType"
       comment "A data type for a prominent or easily identifiable aspect of something or someone."
-      classrelation 4557314 // <generalisation>
-	relation 4555138 ---|>
+      classrelation 4557570 // <generalisation>
+	relation 4555394 ---|>
 	  a public
-	    classrelation_ref 4557314 // <generalisation>
+	    classrelation_ref 4557570 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10475,7 +10475,7 @@ format 212
       end
     end
 
-    class 6045442 "ItemValueType"
+    class 6045698 "ItemValueType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10488,15 +10488,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,ItemValueType"
       comment "A data type for an evaluation of the monetary worth of an item."
-      classrelation 4558594 // <generalisation>
-	relation 4556418 ---|>
+      classrelation 4558850 // <generalisation>
+	relation 4556674 ---|>
 	  a public
-	    classrelation_ref 4558594 // <generalisation>
+	    classrelation_ref 4558850 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
     end
 
-    class 6045570 "ItemType"
+    class 6045826 "ItemType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10509,10 +10509,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,ItemType"
       comment "A data type for an article or thing."
-      classrelation 4558722 // <generalisation>
-	relation 4556546 ---|>
+      classrelation 4558978 // <generalisation>
+	relation 4556802 ---|>
 	  a public
-	    classrelation_ref 4558722 // <generalisation>
+	    classrelation_ref 4558978 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10547,7 +10547,7 @@ format 212
       end
 
       attribute 11685378 "ItemModelYearDate"
-	public type class_ref 6049282 // gYear
+	public type class_ref 6049538 // gYear
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -10592,7 +10592,7 @@ format 212
       end
 
       attribute 11699842 "ItemValue"
-	public type class_ref 6045442 // ItemValueType
+	public type class_ref 6045698 // ItemValueType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -10607,7 +10607,7 @@ format 212
       end
     end
 
-    class 6046082 "ObligationRecurrenceType"
+    class 6046338 "ObligationRecurrenceType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10620,10 +10620,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,ObligationRecurrenceType"
       comment "A data type for a periodic basis on which an obligation must be met."
-      classrelation 4559234 // <generalisation>
-	relation 4557058 ---|>
+      classrelation 4559490 // <generalisation>
+	relation 4557314 ---|>
 	  a public
-	    classrelation_ref 4559234 // <generalisation>
+	    classrelation_ref 4559490 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10658,7 +10658,7 @@ format 212
       end
     end
 
-    class 6046210 "VehicleType"
+    class 6046466 "VehicleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10671,11 +10671,11 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,VehicleType"
       comment "A data type for a conveyance designed to carry an operator, passengers and/or cargo, over land."
-      classrelation 4559490 // <generalisation>
-	relation 4557314 ---|>
+      classrelation 4559746 // <generalisation>
+	relation 4557570 ---|>
 	  a public
-	    classrelation_ref 4559490 // <generalisation>
-	  b parent class_ref 6046338 // ConveyanceType
+	    classrelation_ref 4559746 // <generalisation>
+	  b parent class_ref 6046594 // ConveyanceType
       end
 
       attribute 11699970 "VehicleAugmentationPoint"
@@ -10739,7 +10739,7 @@ format 212
       end
     end
 
-    class 6046338 "ConveyanceType"
+    class 6046594 "ConveyanceType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10752,15 +10752,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,ConveyanceType"
       comment "A data type for a means of transport from place to place."
-      classrelation 4559362 // <generalisation>
-	relation 4557186 ---|>
+      classrelation 4559618 // <generalisation>
+	relation 4557442 ---|>
 	  a public
-	    classrelation_ref 4559362 // <generalisation>
-	  b parent class_ref 6045570 // ItemType
+	    classrelation_ref 4559618 // <generalisation>
+	  b parent class_ref 6045826 // ItemType
       end
     end
 
-    class 6047234 "StreetType"
+    class 6047490 "StreetType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10773,10 +10773,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,StreetType"
       comment "A data type for a road, thoroughfare, or highway."
-      classrelation 4560386 // <generalisation>
-	relation 4558210 ---|>
+      classrelation 4560642 // <generalisation>
+	relation 4558466 ---|>
 	  a public
-	    classrelation_ref 4560386 // <generalisation>
+	    classrelation_ref 4560642 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10886,7 +10886,7 @@ format 212
       end
     end
 
-    class 6047362 "TelephoneNumberType"
+    class 6047618 "TelephoneNumberType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10899,10 +10899,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,TelephoneNumberType"
       comment "A data type for a telephone number for a telecommunication device."
-      classrelation 4560514 // <generalisation>
-	relation 4558338 ---|>
+      classrelation 4560770 // <generalisation>
+	relation 4558594 ---|>
 	  a public
-	    classrelation_ref 4560514 // <generalisation>
+	    classrelation_ref 4560770 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -10922,7 +10922,7 @@ format 212
       end
     end
 
-    class 6047490 "PersonUnionCategoryCodeType"
+    class 6047746 "PersonUnionCategoryCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10935,15 +10935,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,PersonUnionCategoryCodeType"
       comment "A data type describing the legally recognized union between two persons."
-      classrelation 4560770 // <generalisation>
-	relation 4558594 ---|>
+      classrelation 4561026 // <generalisation>
+	relation 4558850 ---|>
 	  a public
-	    classrelation_ref 4560770 // <generalisation>
-	  b parent class_ref 6047618 // PersonUnionCategoryCodeSimpleType
+	    classrelation_ref 4561026 // <generalisation>
+	  b parent class_ref 6047874 // PersonUnionCategoryCodeSimpleType
       end
     end
 
-    class 6047618 "PersonUnionCategoryCodeSimpleType"
+    class 6047874 "PersonUnionCategoryCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10956,15 +10956,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,PersonUnionCategoryCodeSimpleType"
       comment "A data type describing the legally recognized union between two persons."
-      classrelation 4560642 // <generalisation>
-	relation 4558466 ---|>
+      classrelation 4560898 // <generalisation>
+	relation 4558722 ---|>
 	  a public
-	    classrelation_ref 4560642 // <generalisation>
+	    classrelation_ref 4560898 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
 
-    class 6055298 "CaseDispositionType"
+    class 6055554 "CaseDispositionType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -10977,10 +10977,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,CaseDispositionType"
       comment "A data type for an outcome or processing of a case."
-      classrelation 4563202 // <generalisation>
-	relation 4561026 ---|>
+      classrelation 4563458 // <generalisation>
+	relation 4561282 ---|>
 	  a public
-	    classrelation_ref 4563202 // <generalisation>
+	    classrelation_ref 4563458 // <generalisation>
 	  b parent class_ref 6027906 // DispositionType
       end
 
@@ -11015,7 +11015,7 @@ format 212
       end
     end
 
-    class 6059394 "FullTelephoneNumberType"
+    class 6059650 "FullTelephoneNumberType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -11028,10 +11028,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,FullTelephoneNumberType"
       comment "A data type for a full telephone number."
-      classrelation 4563586 // <generalisation>
-	relation 4561410 ---|>
+      classrelation 4563842 // <generalisation>
+	relation 4561666 ---|>
 	  a public
-	    classrelation_ref 4563586 // <generalisation>
+	    classrelation_ref 4563842 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -11066,7 +11066,7 @@ format 212
       end
     end
 
-    class 6061570 "NANPTelephoneNumberType"
+    class 6061826 "NANPTelephoneNumberType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -11079,10 +11079,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,NANPTelephoneNumberType"
       comment "A data type for a North American Numbering Plan telephone number."
-      classrelation 4563842 // <generalisation>
-	relation 4561666 ---|>
+      classrelation 4564098 // <generalisation>
+	relation 4561922 ---|>
 	  a public
-	    classrelation_ref 4563842 // <generalisation>
+	    classrelation_ref 4564098 // <generalisation>
 	  b parent class_ref 6024834 // ObjectType
       end
 
@@ -12289,7 +12289,7 @@ format 212
     end
 
     classinstance 7683458 "ScheduleDayStartTime"
-      type class_ref 6065026 // time
+      type class_ref 6065282 // time
       attributes
         end
       relations
@@ -12312,7 +12312,7 @@ format 212
     end
 
     classinstance 7683970 "ScheduleDayEndTime"
-      type class_ref 6065026 // time
+      type class_ref 6065282 // time
       attributes
         end
       relations
@@ -12413,7 +12413,7 @@ format 212
     end
 
     classinstance 7687042 "DateTime"
-      type class_ref 6065282 // dateTime
+      type class_ref 6065538 // dateTime
       attributes
         end
       relations
@@ -12535,7 +12535,7 @@ format 212
     end
 
     classinstance 7692546 "LengthUnitCode"
-      type class_ref 6065538 // LengthCodeType
+      type class_ref 6065794 // LengthCodeType
       attributes
         end
       relations
@@ -12784,7 +12784,7 @@ format 212
     end
 
     classinstance 7697666 "PersonPrimaryLanguage"
-      type class_ref 6041218 // PersonLanguageType
+      type class_ref 6041474 // PersonLanguageType
       attributes
         end
       relations
@@ -12862,7 +12862,7 @@ format 212
     end
 
     classinstance 7704322 "ItemModelYearDate"
-      type class_ref 6049282 // gYear
+      type class_ref 6049538 // gYear
       attributes
         end
       relations
@@ -12972,7 +12972,7 @@ format 212
     end
 
     classinstance 7705858 "NANPTelephoneNumber"
-      type class_ref 6061570 // NANPTelephoneNumberType
+      type class_ref 6061826 // NANPTelephoneNumberType
       attributes
         end
       relations
@@ -12984,7 +12984,7 @@ format 212
     end
 
     classinstance 7705986 "FullTelephoneNumber"
-      type class_ref 6059394 // FullTelephoneNumberType
+      type class_ref 6059650 // FullTelephoneNumberType
       attributes
         end
       relations
@@ -13019,7 +13019,7 @@ format 212
     end
 
     classinstance 7708674 "ContactInformationAssociation"
-      type class_ref 6042498 // ContactInformationAssociationType
+      type class_ref 6042754 // ContactInformationAssociationType
       attributes
         end
       relations
@@ -13074,7 +13074,7 @@ format 212
     end
 
     classinstance 7709570 "ContactInformationAvailabilityCode"
-      type class_ref 6042626 // ContactInformationAvailabilityCodeType
+      type class_ref 6042882 // ContactInformationAvailabilityCodeType
       attributes
         end
       relations
@@ -13097,7 +13097,7 @@ format 212
     end
 
     classinstance 7709954 "OrganizationAssociation"
-      type class_ref 6042882 // OrganizationAssociationType
+      type class_ref 6043138 // OrganizationAssociationType
       attributes
         end
       relations
@@ -13153,7 +13153,7 @@ format 212
     end
 
     classinstance 7713666 "PersonName"
-      type class_ref 6043778 // PersonNameType
+      type class_ref 6044034 // PersonNameType
       attributes
         end
       relations
@@ -13220,7 +13220,7 @@ format 212
     end
 
     classinstance 7714946 "PersonOrganizationAssociation"
-      type class_ref 6043906 // PersonOrganizationAssociationType
+      type class_ref 6044162 // PersonOrganizationAssociationType
       attributes
         end
       relations
@@ -13264,7 +13264,7 @@ format 212
     end
 
     classinstance 7715970 "PersonPhysicalFeature"
-      type class_ref 6044034 // PhysicalFeatureType
+      type class_ref 6044290 // PhysicalFeatureType
       attributes
         end
       relations
@@ -13297,7 +13297,7 @@ format 212
     end
 
     classinstance 7717506 "LocationStateUSPostalServiceCode"
-      type class_ref 6044930 // USStateCodeType
+      type class_ref 6045186 // USStateCodeType
       attributes
         end
       relations
@@ -13387,7 +13387,7 @@ format 212
     end
 
     classinstance 7720194 "ObligationRecurrence"
-      type class_ref 6046082 // ObligationRecurrenceType
+      type class_ref 6046338 // ObligationRecurrenceType
       attributes
         end
       relations
@@ -13443,7 +13443,7 @@ format 212
     end
 
     classinstance 7721602 "Vehicle"
-      type class_ref 6046210 // VehicleType
+      type class_ref 6046466 // VehicleType
       attributes
         end
       relations
@@ -13578,7 +13578,7 @@ format 212
     end
 
     classinstance 7729538 "LocationStreet"
-      type class_ref 6047234 // StreetType
+      type class_ref 6047490 // StreetType
       attributes
         end
       relations
@@ -13711,7 +13711,7 @@ format 212
     end
 
     classinstance 7731586 "ContactTelephoneNumber"
-      type class_ref 6047362 // TelephoneNumberType
+      type class_ref 6047618 // TelephoneNumberType
       attributes
         end
       relations
@@ -13767,7 +13767,7 @@ format 212
     end
 
     classinstance 7732994 "PersonUnionCategoryCode"
-      type class_ref 6047490 // PersonUnionCategoryCodeType
+      type class_ref 6047746 // PersonUnionCategoryCodeType
       attributes
         end
       relations
@@ -13779,7 +13779,7 @@ format 212
     end
 
     classinstance 7733122 "SpeedUnitCode"
-      type class_ref 6047746 // VelocityCodeType
+      type class_ref 6048002 // VelocityCodeType
       attributes
         end
       relations
@@ -13813,7 +13813,7 @@ format 212
     end
 
     classinstance 7733634 "ItemValue"
-      type class_ref 6045442 // ItemValueType
+      type class_ref 6045698 // ItemValueType
       attributes
         end
       relations
@@ -14058,301 +14058,7 @@ format 212
       end
     end
 
-    class 6041858 "PCOCodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,PCOCodeType"
-      comment "A data type for Protection Order Condition."
-      classrelation 4555266 // <generalisation>
-	relation 4553090 ---|>
-	  a public
-	    classrelation_ref 4555266 // <generalisation>
-	  b parent class_ref 6041986 // PCOCodeSimpleType
-      end
-    end
-
-    class 6041986 "PCOCodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,PCOCodeSimpleType"
-      comment "A data type for Protection Order Condition."
-      classrelation 4555138 // <generalisation>
-	relation 4552962 ---|>
-	  a public
-	    classrelation_ref 4555138 // <generalisation>
-	  b parent class_ref 6027138 // token
-      end
-    end
-
-    class 6045826 "RACCodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,RACCodeType"
-      comment "A data type for Race."
-      classrelation 4559106 // <generalisation>
-	relation 4556930 ---|>
-	  a public
-	    classrelation_ref 4559106 // <generalisation>
-	  b parent class_ref 6045954 // RACCodeSimpleType
-      end
-    end
-
-    class 6045954 "RACCodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,RACCodeSimpleType"
-      comment "A data type for Race."
-      classrelation 4558978 // <generalisation>
-	relation 4556802 ---|>
-	  a public
-	    classrelation_ref 4558978 // <generalisation>
-	  b parent class_ref 6027138 // token
-      end
-    end
-
-    class 6046594 "SEXCodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,SEXCodeType"
-      comment "A data type for Sex."
-      classrelation 4559874 // <generalisation>
-	relation 4557698 ---|>
-	  a public
-	    classrelation_ref 4559874 // <generalisation>
-	  b parent class_ref 6046722 // SEXCodeSimpleType
-      end
-    end
-
-    class 6046722 "SEXCodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,SEXCodeSimpleType"
-      comment "A data type for Sex."
-      classrelation 4559746 // <generalisation>
-	relation 4557570 ---|>
-	  a public
-	    classrelation_ref 4559746 // <generalisation>
-	  b parent class_ref 6027138 // token
-      end
-    end
-
-    class 6048002 "VSTCodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VSTCodeType"
-      comment "A data type for Vehicle Style."
-      classrelation 4561282 // <generalisation>
-	relation 4559106 ---|>
-	  a public
-	    classrelation_ref 4561282 // <generalisation>
-	  b parent class_ref 6048130 // VSTCodeSimpleType
-      end
-    end
-
-    class 6048130 "VSTCodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VSTCodeSimpleType"
-      comment "A data type for Vehicle Style."
-      classrelation 4561154 // <generalisation>
-	relation 4558978 ---|>
-	  a public
-	    classrelation_ref 4561154 // <generalisation>
-	  b parent class_ref 6027138 // token
-      end
-    end
-
-    class 6048258 "VCOCodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VCOCodeType"
-      comment "A data type for Vehicle Color."
-      classrelation 4561538 // <generalisation>
-	relation 4559362 ---|>
-	  a public
-	    classrelation_ref 4561538 // <generalisation>
-	  b parent class_ref 6048386 // VCOCodeSimpleType
-      end
-    end
-
-    class 6048386 "VCOCodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VCOCodeSimpleType"
-      comment "A data type for Vehicle Color."
-      classrelation 4561410 // <generalisation>
-	relation 4559234 ---|>
-	  a public
-	    classrelation_ref 4561410 // <generalisation>
-	  b parent class_ref 6027138 // token
-      end
-    end
-
-    class 6048514 "VMACodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMACodeType"
-      comment "A data type for Vehicle Make."
-      classrelation 4561794 // <generalisation>
-	relation 4559618 ---|>
-	  a public
-	    classrelation_ref 4561794 // <generalisation>
-	  b parent class_ref 6048642 // VMACodeSimpleType
-      end
-    end
-
-    class 6048642 "VMACodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMACodeSimpleType"
-      comment "A data type for Vehicle Make."
-      classrelation 4561666 // <generalisation>
-	relation 4559490 ---|>
-	  a public
-	    classrelation_ref 4561666 // <generalisation>
-	  b parent class_ref 6027138 // token
-      end
-    end
-
-    class 6048770 "VMOCodeType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMOCodeType"
-      comment "A data type for Vehicle Model."
-      classrelation 4562050 // <generalisation>
-	relation 4559874 ---|>
-	  a public
-	    classrelation_ref 4562050 // <generalisation>
-	  b parent class_ref 6048898 // VMOCodeSimpleType
-      end
-    end
-
-    class 6048898 "VMOCodeSimpleType"
-      visibility package 
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMOCodeSimpleType"
-      comment "A data type for Vehicle Model."
-      classrelation 4561922 // <generalisation>
-	relation 4559746 ---|>
-	  a public
-	    classrelation_ref 4561922 // <generalisation>
-	  b parent class_ref 6025986 // string
-      end
-    end
-
-    class 6065794 "CTZCodeType"
+    class 6040962 "CTZCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14365,15 +14071,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,CTZCodeType"
       comment "A data type for Citizenship."
-      classrelation 4565762 // <generalisation>
-	relation 4563586 ---|>
+      classrelation 4554370 // <generalisation>
+	relation 4552194 ---|>
 	  a public
-	    classrelation_ref 4565762 // <generalisation>
-	  b parent class_ref 6065922 // CTZCodeSimpleType
+	    classrelation_ref 4554370 // <generalisation>
+	  b parent class_ref 6041090 // CTZCodeSimpleType
       end
     end
 
-    class 6065922 "CTZCodeSimpleType"
+    class 6041090 "CTZCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14386,11 +14092,305 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,CTZCodeSimpleType"
       comment "A data type for Citizenship."
-      classrelation 4565634 // <generalisation>
-	relation 4563458 ---|>
+      classrelation 4554242 // <generalisation>
+	relation 4552066 ---|>
 	  a public
-	    classrelation_ref 4565634 // <generalisation>
+	    classrelation_ref 4554242 // <generalisation>
 	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6042114 "PCOCodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,PCOCodeType"
+      comment "A data type for Protection Order Condition."
+      classrelation 4555522 // <generalisation>
+	relation 4553346 ---|>
+	  a public
+	    classrelation_ref 4555522 // <generalisation>
+	  b parent class_ref 6042242 // PCOCodeSimpleType
+      end
+    end
+
+    class 6042242 "PCOCodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,PCOCodeSimpleType"
+      comment "A data type for Protection Order Condition."
+      classrelation 4555394 // <generalisation>
+	relation 4553218 ---|>
+	  a public
+	    classrelation_ref 4555394 // <generalisation>
+	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6046082 "RACCodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,RACCodeType"
+      comment "A data type for Race."
+      classrelation 4559362 // <generalisation>
+	relation 4557186 ---|>
+	  a public
+	    classrelation_ref 4559362 // <generalisation>
+	  b parent class_ref 6046210 // RACCodeSimpleType
+      end
+    end
+
+    class 6046210 "RACCodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,RACCodeSimpleType"
+      comment "A data type for Race."
+      classrelation 4559234 // <generalisation>
+	relation 4557058 ---|>
+	  a public
+	    classrelation_ref 4559234 // <generalisation>
+	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6046850 "SEXCodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,SEXCodeType"
+      comment "A data type for Sex."
+      classrelation 4560130 // <generalisation>
+	relation 4557954 ---|>
+	  a public
+	    classrelation_ref 4560130 // <generalisation>
+	  b parent class_ref 6046978 // SEXCodeSimpleType
+      end
+    end
+
+    class 6046978 "SEXCodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,SEXCodeSimpleType"
+      comment "A data type for Sex."
+      classrelation 4560002 // <generalisation>
+	relation 4557826 ---|>
+	  a public
+	    classrelation_ref 4560002 // <generalisation>
+	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6048258 "VSTCodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VSTCodeType"
+      comment "A data type for Vehicle Style."
+      classrelation 4561538 // <generalisation>
+	relation 4559362 ---|>
+	  a public
+	    classrelation_ref 4561538 // <generalisation>
+	  b parent class_ref 6048386 // VSTCodeSimpleType
+      end
+    end
+
+    class 6048386 "VSTCodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VSTCodeSimpleType"
+      comment "A data type for Vehicle Style."
+      classrelation 4561410 // <generalisation>
+	relation 4559234 ---|>
+	  a public
+	    classrelation_ref 4561410 // <generalisation>
+	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6048514 "VCOCodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VCOCodeType"
+      comment "A data type for Vehicle Color."
+      classrelation 4561794 // <generalisation>
+	relation 4559618 ---|>
+	  a public
+	    classrelation_ref 4561794 // <generalisation>
+	  b parent class_ref 6048642 // VCOCodeSimpleType
+      end
+    end
+
+    class 6048642 "VCOCodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VCOCodeSimpleType"
+      comment "A data type for Vehicle Color."
+      classrelation 4561666 // <generalisation>
+	relation 4559490 ---|>
+	  a public
+	    classrelation_ref 4561666 // <generalisation>
+	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6048770 "VMACodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMACodeType"
+      comment "A data type for Vehicle Make."
+      classrelation 4562050 // <generalisation>
+	relation 4559874 ---|>
+	  a public
+	    classrelation_ref 4562050 // <generalisation>
+	  b parent class_ref 6048898 // VMACodeSimpleType
+      end
+    end
+
+    class 6048898 "VMACodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMACodeSimpleType"
+      comment "A data type for Vehicle Make."
+      classrelation 4561922 // <generalisation>
+	relation 4559746 ---|>
+	  a public
+	    classrelation_ref 4561922 // <generalisation>
+	  b parent class_ref 6027138 // token
+      end
+    end
+
+    class 6049026 "VMOCodeType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMOCodeType"
+      comment "A data type for Vehicle Model."
+      classrelation 4562306 // <generalisation>
+	relation 4560130 ---|>
+	  a public
+	    classrelation_ref 4562306 // <generalisation>
+	  b parent class_ref 6049154 // VMOCodeSimpleType
+      end
+    end
+
+    class 6049154 "VMOCodeSimpleType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/codes/fbi_ncic/3.2/,VMOCodeSimpleType"
+      comment "A data type for Vehicle Model."
+      classrelation 4562178 // <generalisation>
+	relation 4560002 ---|>
+	  a public
+	    classrelation_ref 4562178 // <generalisation>
+	  b parent class_ref 6025986 // string
       end
     end
 
@@ -14596,7 +14596,7 @@ format 212
       end
     end
 
-    class 6045186 "duration"
+    class 6045442 "duration"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14609,15 +14609,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/proxy/xsd/3.0/,duration"
       comment "A data type for a duration of time with the format PnYnMnDTnHnMnS, where nY is the number of years, nM is the number of months, nD is the number of days, nH is the number of hours, nM is the number of minutes, and nS is the number of seconds. "
-      classrelation 4558466 // <generalisation>
-	relation 4556290 ---|>
+      classrelation 4558722 // <generalisation>
+	relation 4556546 ---|>
 	  a public
-	    classrelation_ref 4558466 // <generalisation>
-	  b parent class_ref 6045314 // duration
+	    classrelation_ref 4558722 // <generalisation>
+	  b parent class_ref 6045570 // duration
       end
     end
 
-    class 6049282 "gYear"
+    class 6049538 "gYear"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14630,15 +14630,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/proxy/xsd/3.0/,gYear"
       comment "A data type for a Gregorian calendar year with the format CCYY."
-      classrelation 4562434 // <generalisation>
-	relation 4560258 ---|>
+      classrelation 4562690 // <generalisation>
+	relation 4560514 ---|>
 	  a public
-	    classrelation_ref 4562434 // <generalisation>
-	  b parent class_ref 6049410 // gYear
+	    classrelation_ref 4562690 // <generalisation>
+	  b parent class_ref 6049666 // gYear
       end
     end
 
-    class 6065026 "time"
+    class 6065282 "time"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14651,15 +14651,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/proxy/xsd/3.0/,time"
       comment "A data type for an instant of time with the format hh:mm:ss.sss."
-      classrelation 4565122 // <generalisation>
-	relation 4562946 ---|>
+      classrelation 4565378 // <generalisation>
+	relation 4563202 ---|>
 	  a public
-	    classrelation_ref 4565122 // <generalisation>
-	  b parent class_ref 6065154 // time
+	    classrelation_ref 4565378 // <generalisation>
+	  b parent class_ref 6065410 // time
       end
     end
 
-    class 6065282 "dateTime"
+    class 6065538 "dateTime"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14672,11 +14672,11 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/proxy/xsd/3.0/,dateTime"
       comment "A data type for objects with integer-valued year, month, day, hour and minute properties, a decimal-valued second property, and a boolean timezoned property."
-      classrelation 4565250 // <generalisation>
-	relation 4563074 ---|>
+      classrelation 4565506 // <generalisation>
+	relation 4563330 ---|>
 	  a public
-	    classrelation_ref 4565250 // <generalisation>
-	  b parent class_ref 6065410 // dateTime
+	    classrelation_ref 4565506 // <generalisation>
+	  b parent class_ref 6065666 // dateTime
       end
     end
   end
@@ -14835,7 +14835,7 @@ format 212
      end
     ncouples 1
     key "URI" value "http://release.niem.gov/niem/codes/unece_rec20/3.0/"
-    class 6047746 "VelocityCodeType"
+    class 6048002 "VelocityCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14848,15 +14848,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/unece_rec20/3.0/,VelocityCodeType"
       comment "A data type for units of measurement for a speed or velocity."
-      classrelation 4561026 // <generalisation>
-	relation 4558850 ---|>
+      classrelation 4561282 // <generalisation>
+	relation 4559106 ---|>
 	  a public
-	    classrelation_ref 4561026 // <generalisation>
-	  b parent class_ref 6047874 // VelocityCodeSimpleType
+	    classrelation_ref 4561282 // <generalisation>
+	  b parent class_ref 6048130 // VelocityCodeSimpleType
       end
     end
 
-    class 6047874 "VelocityCodeSimpleType"
+    class 6048130 "VelocityCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14869,15 +14869,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/unece_rec20/3.0/,VelocityCodeSimpleType"
       comment "A data type for units of measurement for a speed or velocity."
-      classrelation 4560898 // <generalisation>
-	relation 4558722 ---|>
+      classrelation 4561154 // <generalisation>
+	relation 4558978 ---|>
 	  a public
-	    classrelation_ref 4560898 // <generalisation>
+	    classrelation_ref 4561154 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
 
-    class 6065538 "LengthCodeType"
+    class 6065794 "LengthCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14890,15 +14890,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/unece_rec20/3.0/,LengthCodeType"
       comment "A data type for units of measurements for a length value."
-      classrelation 4565506 // <generalisation>
-	relation 4563330 ---|>
+      classrelation 4565762 // <generalisation>
+	relation 4563586 ---|>
 	  a public
-	    classrelation_ref 4565506 // <generalisation>
-	  b parent class_ref 6065666 // LengthCodeSimpleType
+	    classrelation_ref 4565762 // <generalisation>
+	  b parent class_ref 6065922 // LengthCodeSimpleType
       end
     end
 
-    class 6065666 "LengthCodeSimpleType"
+    class 6065922 "LengthCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14911,10 +14911,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/unece_rec20/3.0/,LengthCodeSimpleType"
       comment "A data type for units of measurements for a length value."
-      classrelation 4565378 // <generalisation>
-	relation 4563202 ---|>
+      classrelation 4565634 // <generalisation>
+	relation 4563458 ---|>
 	  a public
-	    classrelation_ref 4565378 // <generalisation>
+	    classrelation_ref 4565634 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -14980,7 +14980,7 @@ format 212
      end
     ncouples 1
     key "URI" value "http://release.niem.gov/niem/codes/usps_states/3.0/"
-    class 6044930 "USStateCodeType"
+    class 6045186 "USStateCodeType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -14993,15 +14993,15 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/usps_states/3.0/,USStateCodeType"
       comment "A data type for states."
-      classrelation 4558338 // <generalisation>
-	relation 4556162 ---|>
+      classrelation 4558594 // <generalisation>
+	relation 4556418 ---|>
 	  a public
-	    classrelation_ref 4558338 // <generalisation>
-	  b parent class_ref 6045058 // USStateCodeSimpleType
+	    classrelation_ref 4558594 // <generalisation>
+	  b parent class_ref 6045314 // USStateCodeSimpleType
       end
     end
 
-    class 6045058 "USStateCodeSimpleType"
+    class 6045314 "USStateCodeSimpleType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -15014,10 +15014,10 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/codes/usps_states/3.0/,USStateCodeSimpleType"
       comment "A data type for states."
-      classrelation 4558210 // <generalisation>
-	relation 4556034 ---|>
+      classrelation 4558466 // <generalisation>
+	relation 4556290 ---|>
 	  a public
-	    classrelation_ref 4558210 // <generalisation>
+	    classrelation_ref 4558466 // <generalisation>
 	  b parent class_ref 6027138 // token
       end
     end
@@ -15139,7 +15139,7 @@ format 212
       key "URI" value "http://www.w3.org/2001/XMLSchema,base64Binary"
     end
 
-    class 6045314 "duration"
+    class 6045570 "duration"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -15153,7 +15153,7 @@ format 212
       key "URI" value "http://www.w3.org/2001/XMLSchema,duration"
     end
 
-    class 6049410 "gYear"
+    class 6049666 "gYear"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -15177,7 +15177,7 @@ format 212
       key "URI" value "http://www.w3.org/2001/XMLSchema,any"
     end
 
-    class 6065154 "time"
+    class 6065410 "time"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -15191,7 +15191,7 @@ format 212
       key "URI" value "http://www.w3.org/2001/XMLSchema,time"
     end
 
-    class 6065410 "dateTime"
+    class 6065666 "dateTime"
       visibility package 
       cpp_decl ""
       java_decl ""
