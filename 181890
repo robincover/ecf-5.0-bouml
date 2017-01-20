@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 25
+  revision 38
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -57,7 +57,7 @@ format 212
       ncouples 9
       key "niem-profile:niem:OldXPath" value "caselistrequest:CaseListQueryMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "payment:PaymentMessage"
+      key "niem-profile:niem:XPath" value "caselistrequest:GetCaseListRequestMessage"
       key "niem-profile:niem:Type" value "caselistrequest:GetCaseListRequestMessageType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:RequestMessageType"
@@ -82,7 +82,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "caselistrequest:CaseListQueryMessage/caselistrequest:CaseListQueryCaseParticipant"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "payment:PaymentMessage/cac:AllowanceCharge/cac:PaymentMeans"
+	key "niem-profile:niem:XPath" value "caselistrequest:GetCaseListRequestMessage/caselistrequest:CaseParticipant"
 	key "niem-profile:niem:Type" value "caselistrequest:GetCaseListRequestMessageType"
 	key "niem-profile:niem:Property" value "caselistrequest:CaseParticipant"
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
@@ -104,10 +104,10 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "caselistrequest:CaseListQueryMessage/caselistrequest:CaseListQueryCase/nc:ActivityStatus/nc:StatusText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "payment:PaymentMessage/cac:AllowanceCharge"
-	key "niem-profile:niem:Type" value "nc:StatusType"
-	key "niem-profile:niem:Property" value "nc:StatusDesignator, (nc:StatusText)"
-	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:XPath" value "caselistrequest:GetCaseListRequestMessage/nc:ActivityStatus/nc:StatusText"
+	key "niem-profile:niem:Type" value "caselistrequest:GetCaseListRequestMessageType"
+	key "niem-profile:niem:Property" value "nc:ActivityStatus"
+	key "niem-profile:niem:BaseType" value "nc:StatusType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -128,8 +128,8 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "caselistrequest:CaseListQueryMessage/caselistrequest:CaseListQueryCase/nc:CaseCategoryText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "payment:PaymentMessage/cac:AllowanceCharge"
-	key "niem-profile:niem:Type" value "ecf:CaseAugmentationType"
+	key "niem-profile:niem:XPath" value "caselistrequest:GetCaseListRequestMessage/ecf:CaseCategoryText"
+	key "niem-profile:niem:Type" value "caselistrequest:GetCaseListRequestMessageType"
 	key "niem-profile:niem:Property" value "ecf:CaseCategoryCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
@@ -149,9 +149,9 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "caselistrequest:CaseListQueryMessage/caselistrequest:CaseListQueryTimeRange"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "caselistrequest:CaseListQueryMessage/caselistrequest:CaseListQueryTimeRange"
+	key "niem-profile:niem:XPath" value "caselistrequest:GetCaseListRequestMessage/nc:DateRange"
 	key "niem-profile:niem:Type" value "caselistrequest:GetCaseListRequestMessageType"
-	key "niem-profile:niem:Property" value "caselistrequest:CaseListQueryTimeRange"
+	key "niem-profile:niem:Property" value "nc:DateRange"
 	key "niem-profile:niem:BaseType" value "nc:DateRangeType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
@@ -241,7 +241,7 @@ format 212
       ncouples 9
       key "niem-profile:niem:OldXPath" value "caselistresponse:GetCaseListResponseMessage"
       key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "payment:PaymentMessage"
+      key "niem-profile:niem:XPath" value "caselistresponse:GetCaseListResponseMessage"
       key "niem-profile:niem:Type" value "caselistresponse:GetCaseListResponseMessageType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:ResponseMessageType"
@@ -267,7 +267,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "caselistresponse:GetCaseListResponseMessage/nc:Case"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "payment:PaymentMessage/PayerName"
+	key "niem-profile:niem:XPath" value "caselistresponse:GetCaseListResponseMessage/nc:Case"
 	key "niem-profile:niem:Type" value "caselistresponse:GetCaseListResponseMessageType"
 	key "niem-profile:niem:Property" value "nc:Case"
 	key "niem-profile:niem:BaseType" value "nc:CaseType"
@@ -808,10 +808,10 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "caselistrequest:CaseListQueryMessage/caselistrequest:CaseListQueryCase"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "payment:PaymentMessage/cac:Address"
+	key "niem-profile:niem:XPath" value "caserequest:GetCaseRequestMessage/nc:Case"
 	key "niem-profile:niem:Type" value "caserequest:GetCaseRequestMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -2327,10 +2327,10 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "documentrequest:DocumentQueryMessage/nc:CaseTrackingID"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "documentrequest:GetDocumentRequestMessage/nc:Case"
+	key "niem-profile:niem:XPath" value "documentrequest:GetDocumentRequestMessage/nc:CaseTrackingID"
 	key "niem-profile:niem:Type" value "documentrequest:GetDocumentRequestMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -2443,11 +2443,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "documentresponse:GetDocumentResponseMessage/nc:Case/nc:CaseTrackingID"
-	key "niem-profile:niem:Type" value "nc:CaseType"
+	key "niem-profile:niem:XPath" value "documentresponse:GetDocumentResponseMessage/nc:CaseTrackingID"
+	key "niem-profile:niem:Type" value "documentrequest:GetDocumentRequestMessageType"
 	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
 	key "niem-profile:niem:BaseType" value "niem-xs:string"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Court case number."
@@ -2529,11 +2529,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "documentresponse:DocumentResponseMessage/j:CaseCourt"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "documentresponse:GetDocumentResponseMessage/nc:Case"
+	key "niem-profile:niem:XPath" value "documentresponse:GetDocumentResponseMessage/nc:CaseTrackingID"
 	key "niem-profile:niem:Type" value "documentresponse:GetDocumentResponseMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -2563,237 +2563,6 @@ format 212
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "The court response to a request for an electronic document in the court official record."
-    end
-  end
-
-  classview 210434 "GetDocumentStampInformationRequestMessage"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    class 2107138 "GetDocumentStampInformationRequestMessage"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      associated_diagram classdiagram_ref 218498 // GetDocumentStampInformationRequestMessage
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationRequestMessage"
-      key "niem-profile:niem:Type" value "stamprequest:GetDocumentStampInformationRequestMessageType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:RequestMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A request to get document stamping information."
-      classrelation 1268098 // <generalisation>
-	relation 1265922 ---|>
-	  a public
-	    classrelation_ref 1268098 // <generalisation>
-	  b parent class_ref 138114 // ElectronicFilingMessage
-      end
-
-      classrelation 1268482 // case (<directional aggregation>)
-	relation 1266306 o-->
-	  stereotype "niem-profile:niem"
-	  a role_name "case" multiplicity "1" public
-	    comment "The court case that is the subject of this query."
-	    classrelation_ref 1268482 // case (<directional aggregation>)
-	  b parent class_ref 131586 // Case
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationRequestMessage/nc:Case"
-	key "niem-profile:niem:Type" value "stamprequest:GetDocumentStampInformationRequestMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-      end
-
-      attribute 1547650 "messageExtension"
-	public type class_ref 2113794 // extension
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationRequestMessage/stamprequest:GetDocumentStampInformationRequestMessageAugmentationPoint"
-	key "niem-profile:niem:Type" value "stamprequest:GetDocumentStampInformationRequestMessageType"
-	key "niem-profile:niem:Property" value "stamprequest:GetDocumentStampInformationRequestMessageAugmentationPoint"
-	key "niem-profile:niem:BaseType" value "abstract"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "An extension point for the enclosing message."
-      end
-    end
-
-    classdiagram 218498 "GetDocumentStampInformationRequestMessage"
-      classdiagramsettings member_max_width 0 end
-      size Letter-Landscape
-    end
-
-    classinstance 4665218 "GetDocumentStampInformationRequestMessage"
-      stereotype "niem-profile:niem"
-      type class_ref 2107138 // GetDocumentStampInformationRequestMessage
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "stamprequest:GetDocumentStampInformationRequestMessage"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "stamprequest:GetDocumentStampInformationRequestMessage"
-      key "niem-profile:niem:BaseType" value "stamprequest:GetDocumentStampInformationRequestMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A request to get document stamping information."
-    end
-  end
-
-  classview 210562 "GetDocumentStampInformationResponseMessage"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    class 2113666 "GetDocumentStampInformationResponseMessage"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      associated_diagram classdiagram_ref 225026 // GetDocumentStampInformationResponseMessage
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "stampresponse:GetDocumentStampInformationResponseMessage"
-      key "niem-profile:niem:Type" value "stampresponse:GetDocumentStampInformationResponseMessageType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:ResponseMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A response to a request for document stamping information."
-      classrelation 1275010 // <generalisation>
-	relation 1272834 ---|>
-	  a public
-	    classrelation_ref 1275010 // <generalisation>
-	  b parent class_ref 132226 // BaseMessage
-      end
-
-      classrelation 1275138 // case (<directional aggregation>)
-	relation 1272962 o-->
-	  stereotype "niem-profile:niem"
-	  a role_name "case" multiplicity "1" public
-	    comment "The court case that is the subject of this query."
-	    classrelation_ref 1275138 // case (<directional aggregation>)
-	  b parent class_ref 131586 // Case
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "stampresponse:GetDocumentStampInformationResponseMessage/nc:Case"
-	key "niem-profile:niem:Type" value "stampresponse:GetDocumentStampInformationResponseMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-      end
-
-      attribute 1548162 "messageExtension"
-	public type class_ref 2113794 // extension
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "stampresponse:GetDocumentStampInformationResponseMessage/stampresponse:GetDocumentStampInformationResponseMessageAugmentationPoint"
-	key "niem-profile:niem:Type" value "stampresponse:GetDocumentStampInformationResponseMessageType"
-	key "niem-profile:niem:Property" value "stampresponse:GetDocumentStampInformationResponseMessageAugmentationPoint"
-	key "niem-profile:niem:BaseType" value "abstract"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "An extension point for the enclosing message."
-      end
-    end
-
-    classdiagram 225026 "GetDocumentStampInformationResponseMessage"
-      classdiagramsettings member_max_width 0 end
-      comment "A response to a request for document stamping information."
-      size Letter-Landscape
-    end
-
-    classinstance 4665346 "GetDocumentStampInformationResponseMessage"
-      stereotype "niem-profile:niem"
-      type class_ref 2113666 // GetDocumentStampInformationResponseMessage
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "stampresponse:GetDocumentStampInformationResponseMessage"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "stampresponse:GetDocumentStampInformationResponseMessage"
-      key "niem-profile:niem:BaseType" value "stampresponse:GetDocumentStampInformationResponseMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A response to a request for document stamping information."
     end
   end
 
@@ -3633,7 +3402,7 @@ format 212
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/nc:CaseTrackingID"
-	key "niem-profile:niem:Type" value "filinglistrequest:GetFilingListRequestMessageType"
+	key "niem-profile:niem:Type" value "filingstatusrequest:GetFilingStatusRequestMessageType"
 	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
 	key "niem-profile:niem:BaseType" value "niem-xs:string"
 	key "niem-profile:niem:Multiplicity" value "0,1"
@@ -3679,7 +3448,7 @@ format 212
 	key "niem-profile:niem:OldXPath" value "filingstatusrequest:FilingStatusQueryMessage/nc:DocumentIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/nc:DocumentIdentification"
-	key "niem-profile:niem:Type" value "filingstatusrequest:GetFilingStatusRequestMessageType"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
@@ -3722,11 +3491,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/nc:Case"
-	key "niem-profile:niem:Type" value "filingstatusrequest:GetFilingStatusRequestMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/nc:CaseTrackingID"
+	key "niem-profile:niem:Type" value "filinglistrequest:GetFilingListRequestMessageType"
+	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -3742,7 +3511,7 @@ format 212
 	key "niem-profile:niem:OldXPath" value "filingstatusrequest:FilingStatusQueryMessage/nc:DocumentIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/nc:DocumentIdentification"
-	key "niem-profile:niem:Type" value "filingstatusrequest:GetFilingStatusRequestMessageType"
+	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentIdentification"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
@@ -5524,7 +5293,7 @@ ${members}};
       key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:Notes" value "Genericode code list OperationNameCode.gc"
-      key "niem-profile:niem:CodeList" value "AllocateCourtDate; GetCase; GetCaseList; GetCourtSchedule; GetDocument; GetDocumentStampInformation; GetFilingList; GetFilingStatus; GetPolicy; GetServiceInformation; NotifyCourtDate; NotifyFilingReviewComplete; NotifyDocketingComplete; RecordFiling; ReserveCourtDate; ReviewFiling; ServeFiling"
+      key "niem-profile:niem:CodeList" value "AllocateCourtDate; DocumentStampInformation; GetCase; GetCaseList; GetCourtSchedule; GetDocument; GetFilingList; GetFilingStatus; GetPolicy; GetServiceInformation; NotifyCourtDate; NotifyFilingReviewComplete; NotifyDocketingComplete; NotifyDocumentStampInformation; RecordFiling; ReserveCourtDate; ReviewFiling; ServeFiling"
       comment "A list of ECF operations."
     end
 
@@ -5610,8 +5379,8 @@ ${members}};
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "serviceinformationrequest:GetServiceInformationRequestMessage/nc:CaseTrackingID"
 	key "niem-profile:niem:Type" value "serviceinformationrequest:GetServiceInformationRequestMessageType"
-	key "niem-profile:niem:Property" value "nc:Case"
-	key "niem-profile:niem:BaseType" value "nc:CaseType"
+	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
+	key "niem-profile:niem:BaseType" value "niem-xs:string"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""

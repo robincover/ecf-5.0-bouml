@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 179
+  revision 192
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -2947,9 +2947,9 @@ format 212
 	key "niem-profile:niem:Property" value "nc:Vehicle"
 	key "niem-profile:niem:BaseType" value "nc:VehicleType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:CodeList" value "citation:CitationCaseAugmentation/citation:ParkingViolation/nc:IncidentVehicleAssociation/nc:ConveyanceReference"
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:ParkingViolation/nc:IncidentVehicleAssociation/nc:ConveyanceReference"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "A vehicle related to an incident."
       end
@@ -6890,11 +6890,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/domestic:DomesticCasePerson"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/nc:Person"
-	key "niem-profile:niem:Type" value "domestic:CaseAugmentationType"
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:PersonCaseAssociation/nc:Person"
+	key "niem-profile:niem:Type" value "cyfs:PersonCaseAssociationType"
 	key "niem-profile:niem:Property" value "nc:Person"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
-	key "niem-profile:niem:Multiplicity" value "1,unbounded"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -7080,11 +7080,11 @@ format 212
       ncouples 9
       key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/domestic:DomesticCasePerson"
       key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-      key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/nc:Person"
-      key "niem-profile:niem:Type" value "nc:PersonType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
-      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:PersonCaseAssociation/nc:Person"
+      key "niem-profile:niem:Type" value "cyfs:PersonCaseAssociationType"
+      key "niem-profile:niem:Property" value "nc:Person"
+      key "niem-profile:niem:BaseType" value "nc:PersonType"
+      key "niem-profile:niem:Multiplicity" value "0,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "Information about persons in a domestic case."
@@ -7098,11 +7098,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "domestic:DomesticCase/domestic:DomesticCasePerson"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/nc:Person"
-	key "niem-profile:niem:Type" value "nc:PersonType"
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value "structures:ObjectType"
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:PersonCaseAssociation/nc:Person"
+	key "niem-profile:niem:Type" value "cyfs:PersonCaseAssociationType"
+	key "niem-profile:niem:Property" value "nc:Person"
+	key "niem-profile:niem:BaseType" value "nc:PersonType"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end

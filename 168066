@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 30
+  revision 31
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -464,10 +464,10 @@ ${members}};
 	comment "An peration to query for a document."
       end
 
-      operation 169474 "GetDocumentStampInformation"
+      operation 169474 "DocumentStampInformation"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
-	  param in name "" type class_ref 2107138 // GetDocumentStampInformationRequestMessage
+	  param in name "" type class_ref 2107138 // DocumentStampInformationMessage
 	
 	
 	
@@ -676,10 +676,10 @@ ${members}};
 	comment "An operation that is an asynchronous callback in response to a RecordDocketing operation to notify that a filing has been recorded in the court record system."
       end
 
-      operation 169602 "ReturnDocumentStampInformation"
+      operation 169602 "NotifyDocumentStampInformation"
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
-	  param in name "" type class_ref 2113666 // GetDocumentStampInformationResponseMessage
+	  param in name "" type class_ref 2113666 // NotifyDocumentStampInformationMessage
 	
 	
 	

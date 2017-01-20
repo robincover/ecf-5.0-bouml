@@ -254,7 +254,7 @@ format 212
 	comment "A data concept for capturing details."
       end
 
-      attribute 11679234 "BiometricClassification"
+      attribute 11679362 "BiometricClassification"
 	public type class_ref 6039298 // BiometricClassificationType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -419,7 +419,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11689602 "BiometricClassificationCategoryCode"
+      attribute 11689730 "BiometricClassificationCategoryCode"
 	public type class_ref 6043266 // BiometricCategoryCodeType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -623,7 +623,7 @@ format 212
       comment "A kind of a DNA allele call (first of three possible) for the referenced locus in an STR profile"
     end
 
-    classinstance 7688194 "BiometricClassification"
+    classinstance 7688322 "BiometricClassification"
       type class_ref 6039298 // BiometricClassificationType
       attributes
         end
@@ -684,7 +684,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11677058 "ErrorDescription"
+      attribute 11677186 "ErrorDescription"
 	public type class_ref 6037378 // MessageErrorType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -699,7 +699,7 @@ format 212
 	comment "A text description of an error that occurred at a specific XML tag while processing an XML message."
       end
 
-      attribute 11677186 "ErrorNodeName"
+      attribute 11677314 "ErrorNodeName"
 	public type class_ref 6025730 // TextType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -750,7 +750,7 @@ format 212
 	comment "A set of information about the point in the xml payload content of a message where an error occurred in processing the message."
       end
 
-      attribute 11676546 "MessageStatusCode"
+      attribute 11676674 "MessageStatusCode"
 	public type class_ref 6037122 // MessageStatusCodeType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -765,7 +765,7 @@ format 212
 	comment "A code for the receiving status of a message."
       end
 
-      attribute 11676674 "MessageHandlingError"
+      attribute 11676802 "MessageHandlingError"
 	public type class_ref 6037378 // MessageErrorType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -780,7 +780,7 @@ format 212
 	comment "A description of a  message error encountered by an infrastructure component in the process of message handling and transmission."
       end
 
-      attribute 11676802 "CredentialsAuthenticatedCode"
+      attribute 11676930 "CredentialsAuthenticatedCode"
 	public type class_ref 6065026 // CredentialsAuthenticatedCodeType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -795,7 +795,7 @@ format 212
 	comment "A verfication of the authenticating credentials."
       end
 
-      attribute 11676930 "ResendRequestIndicator"
+      attribute 11677058 "ResendRequestIndicator"
 	public type class_ref 6025090 // boolean
 	multiplicity "1,1"
 	cpp_decl ""
@@ -903,7 +903,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11676290 "ErrorCodeDescriptionText"
+      attribute 11676418 "ErrorCodeDescriptionText"
 	public type class_ref 6025730 // TextType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -918,7 +918,7 @@ format 212
 	comment "A description of an error code in free form text."
       end
 
-      attribute 11676418 "ErrorCodeText"
+      attribute 11676546 "ErrorCodeText"
 	public type class_ref 6025730 // TextType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -956,7 +956,7 @@ format 212
       comment "A MIME content type of a digital data file."
     end
 
-    classinstance 7681666 "MessageStatus"
+    classinstance 7681794 "MessageStatus"
       type class_ref 6036738 // MessageStatusType
       attributes
         end
@@ -967,7 +967,7 @@ format 212
       comment "A status of the message."
     end
 
-    classinstance 7681794 "ErrorCodeDescriptionText"
+    classinstance 7681922 "ErrorCodeDescriptionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -978,7 +978,7 @@ format 212
       comment "A description of an error code in free form text."
     end
 
-    classinstance 7681922 "ErrorCodeText"
+    classinstance 7682050 "ErrorCodeText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -989,7 +989,7 @@ format 212
       comment "An error code."
     end
 
-    classinstance 7682050 "MessageStatusCode"
+    classinstance 7682178 "MessageStatusCode"
       type class_ref 6037122 // MessageStatusCodeType
       attributes
         end
@@ -1000,7 +1000,7 @@ format 212
       comment "A code for the receiving status of a message."
     end
 
-    classinstance 7682178 "MessageHandlingError"
+    classinstance 7682306 "MessageHandlingError"
       type class_ref 6037378 // MessageErrorType
       attributes
         end
@@ -1011,7 +1011,7 @@ format 212
       comment "A description of a  message error encountered by an infrastructure component in the process of message handling and transmission."
     end
 
-    classinstance 7682306 "CredentialsAuthenticatedCode"
+    classinstance 7682434 "CredentialsAuthenticatedCode"
       type class_ref 6065026 // CredentialsAuthenticatedCodeType
       attributes
         end
@@ -1022,7 +1022,7 @@ format 212
       comment "A verfication of the authenticating credentials."
     end
 
-    classinstance 7682434 "ResendRequestIndicator"
+    classinstance 7682562 "ResendRequestIndicator"
       type class_ref 6025090 // boolean
       attributes
         end
@@ -1033,7 +1033,7 @@ format 212
       comment "True if the message should be resent; false otherwise."
     end
 
-    classinstance 7682562 "ErrorDescription"
+    classinstance 7682690 "ErrorDescription"
       type class_ref 6037378 // MessageErrorType
       attributes
         end
@@ -1044,7 +1044,7 @@ format 212
       comment "A text description of an error that occurred at a specific XML tag while processing an XML message."
     end
 
-    classinstance 7682690 "ErrorNodeName"
+    classinstance 7682818 "ErrorNodeName"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -1055,7 +1055,7 @@ format 212
       comment "A name of the XML tag at which an error occurred."
     end
 
-    classinstance 7725826 "MessageStatusAugmentationPoint"
+    classinstance 7725698 "MessageStatusAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -1066,7 +1066,7 @@ format 212
       comment "An augmentation point for cbrn:MessageStatusType."
     end
 
-    classinstance 7728898 "SystemEventDateTime"
+    classinstance 7728770 "SystemEventDateTime"
       type class_ref 6065538 // dateTime
       attributes
         end
@@ -1442,7 +1442,7 @@ format 212
 	  b parent class_ref 6030594 // CaseType
       end
 
-      attribute 11682818 "SupportingGroundsDescriptionText"
+      attribute 11682946 "SupportingGroundsDescriptionText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -1529,7 +1529,7 @@ format 212
 	comment "An aggregation of information about a set of related activities and events."
       end
 
-      attribute 11689858 "Person"
+      attribute 11675650 "Person"
 	public type class_ref 6028802 // PersonType
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -1565,7 +1565,7 @@ format 212
 	  b parent class_ref 6030594 // CaseType
       end
 
-      attribute 11682946 "Juvenile"
+      attribute 11683074 "Juvenile"
 	public type class_ref 6041346 // JuvenileType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -1601,7 +1601,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11678082 "RoleOfPerson"
+      attribute 11678210 "RoleOfPerson"
 	public type class_ref 6028802 // PersonType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -1616,7 +1616,7 @@ format 212
 	comment "A person of whom the role object is a function."
       end
 
-      attribute 11683074 "JuvenileAugmentationPoint"
+      attribute 11683202 "JuvenileAugmentationPoint"
 	public type class_ref 6024706 // abstract
 	multiplicity "1,1"
 	cpp_decl ""
@@ -1667,7 +1667,7 @@ format 212
 	comment "A person who was an unmarried minor at the time of his or her involvement in a judicial proceeding or non-judicial program."
       end
 
-      attribute 11689730 "Parent"
+      attribute 11689858 "Parent"
 	public type class_ref 6028802 // PersonType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -1847,7 +1847,7 @@ format 212
 	  b parent class_ref 6032770 // AssociationType
       end
 
-      attribute 11688962 "PlacementFacility"
+      attribute 11689090 "PlacementFacility"
 	public type class_ref 6035202 // FacilityType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -1977,7 +1977,7 @@ format 212
       end
     end
 
-    class 6059778 "JuvenileGangAssociationType"
+    class 6059650 "JuvenileGangAssociationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -1997,7 +1997,7 @@ format 212
 	  b parent class_ref 6032770 // AssociationType
       end
 
-      attribute 11679874 "GangOrganization"
+      attribute 11680002 "GangOrganization"
 	public type class_ref 6028034 // OrganizationType
 	multiplicity "1,unbounded"
 	cpp_decl ""
@@ -2079,18 +2079,7 @@ format 212
       comment "A relationship between a person and a case."
     end
 
-    classinstance 7673986 "DependencyPetition"
-      type class_ref 6035074 // DependencyPetitionType
-      attributes
-        end
-      relations
-        end
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,DependencyPetition"
-      comment "A document that is filed with the Court, typically by an attorney representing the Child Welfare Agency, that formally files allegations of abuse and/or neglect against one or more alleged perpetrators."
-    end
-
-    classinstance 7674114 "JuvenileAbuseNeglectAllegation"
+    classinstance 7673986 "JuvenileAbuseNeglectAllegation"
       type class_ref 6051714 // JuvenileAbuseNeglectAllegationType
       attributes
         end
@@ -2101,7 +2090,18 @@ format 212
       comment "A set of specifics of the referred incident of abuse or neglect as it relates to the victim. Information recorded includes the Abuse/Neglect Category and Type as well as narrative descriptions of the abuse and/or injuries"
     end
 
-    classinstance 7688834 "GangOrganization"
+    classinstance 7674114 "DependencyPetition"
+      type class_ref 6035074 // DependencyPetitionType
+      attributes
+        end
+      relations
+        end
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/domains/cyfs/3.2/,DependencyPetition"
+      comment "A document that is filed with the Court, typically by an attorney representing the Child Welfare Agency, that formally files allegations of abuse and/or neglect against one or more alleged perpetrators."
+    end
+
+    classinstance 7688962 "GangOrganization"
       type class_ref 6028034 // OrganizationType
       attributes
         end
@@ -2112,8 +2112,8 @@ format 212
       comment "A criminal gang organization that is alleged to have a juvenile as a member."
     end
 
-    classinstance 7688962 "JuvenileGangAssociation"
-      type class_ref 6059778 // JuvenileGangAssociationType
+    classinstance 7689090 "JuvenileGangAssociation"
+      type class_ref 6059650 // JuvenileGangAssociationType
       attributes
         end
       relations
@@ -2124,7 +2124,7 @@ format 212
       comment "An association between a juvenile and a criminal gang organization."
     end
 
-    classinstance 7696514 "SupportingGroundsDescriptionText"
+    classinstance 7696386 "SupportingGroundsDescriptionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -2135,7 +2135,7 @@ format 212
       comment "A description of the legal basis for the child-support remedies sought in the petition (e.g., respondent is non-custodial parent and is failing to provide support, a change in the parties' circumstances justifies a modification, etc.)."
     end
 
-    classinstance 7696770 "JuvenileCase"
+    classinstance 7696642 "JuvenileCase"
       type class_ref 6041218 // JuvenileCaseType
       attributes
         end
@@ -2146,7 +2146,7 @@ format 212
       comment "An aggregation of information about a set of related activities and events pertaining to a juvenile. This can be, but is not necessarily, a court case."
     end
 
-    classinstance 7696898 "Juvenile"
+    classinstance 7696770 "Juvenile"
       type class_ref 6041346 // JuvenileType
       attributes
         end
@@ -2157,7 +2157,7 @@ format 212
       comment "A role of a juvenile, played by a person defined as a juvenile rather than an adult under the law."
     end
 
-    classinstance 7697026 "JuvenileAugmentationPoint"
+    classinstance 7696898 "JuvenileAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -2313,7 +2313,7 @@ format 212
       comment "A list that describes the type of placement (e.g., adoption, relative, etc.)"
     end
 
-    classinstance 7728002 "StateDisbursementIndicator"
+    classinstance 7727874 "StateDisbursementIndicator"
       type class_ref 6025090 // boolean
       attributes
         end
@@ -2717,7 +2717,7 @@ format 212
 	comment "An identification used to refer to an enforcement official."
       end
 
-      attribute 11687810 "RoleOfPerson"
+      attribute 11687938 "RoleOfPerson"
 	public type class_ref 6028802 // PersonType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -2948,7 +2948,7 @@ format 212
 	  b parent class_ref 6030594 // CaseType
       end
 
-      attribute 11687042 "AppellateCaseNotice"
+      attribute 11687170 "AppellateCaseNotice"
 	public type class_ref 6042370 // AppellateCaseNoticeType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -2963,7 +2963,7 @@ format 212
 	comment "A request filed with an appellate court to start an appellate case."
       end
 
-      attribute 11689218 "AppellateCaseOriginalCase"
+      attribute 11689346 "AppellateCaseOriginalCase"
 	public type class_ref 6030594 // CaseType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3146,7 +3146,7 @@ format 212
 	comment "A unique identifier for a court case event record."
       end
 
-      attribute 11682306 "CourtEventJudge"
+      attribute 11682434 "CourtEventJudge"
 	public type class_ref 6030850 // JudicialOfficialType
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -3506,7 +3506,7 @@ format 212
 	comment "A condition to be met that can make a citation eligible for dismissal."
       end
 
-      attribute 11687426 "CitationSubject"
+      attribute 11687554 "CitationSubject"
 	public type class_ref 6034562 // SubjectType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3719,7 +3719,7 @@ format 212
 	comment "An entity being charged or sued in a court of law."
       end
 
-      attribute 11680898 "CaseInitiatingParty"
+      attribute 11681026 "CaseInitiatingParty"
 	public type class_ref 6029442 // EntityType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3734,7 +3734,7 @@ format 212
 	comment "An entity that brings charges or a suit against another in a court of law. Can be either a victim in a criminal case or a plaintiff in a civil case."
       end
 
-      attribute 11681026 "CaseInitiatingAttorney"
+      attribute 11681154 "CaseInitiatingAttorney"
 	public type class_ref 6030722 // CaseOfficialType
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -3749,7 +3749,7 @@ format 212
 	comment "An attorney in a court case representing the party that filed a petition for a court order or writ requiring the respondent to take some action, halt an activity or obey a courts direction. Representative of the party seeking action from the court.  In s"
       end
 
-      attribute 11682434 "CaseJudge"
+      attribute 11682562 "CaseJudge"
 	public type class_ref 6030722 // CaseOfficialType
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -3860,7 +3860,7 @@ format 212
 	comment "An augmentation point for SubjectType."
       end
 
-      attribute 11678210 "RoleOfPerson"
+      attribute 11678338 "RoleOfPerson"
 	public type class_ref 6028802 // PersonType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3875,7 +3875,7 @@ format 212
 	comment "A person of whom the role object is a function."
       end
 
-      attribute 11680514 "SubjectIdentification"
+      attribute 11680642 "SubjectIdentification"
 	public type class_ref 6026242 // IdentificationType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3947,7 +3947,7 @@ format 212
 	  b parent class_ref 6025474 // IncidentType
       end
 
-      attribute 11675650 "DrivingIncidentAugmentationPoint"
+      attribute 11675778 "DrivingIncidentAugmentationPoint"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -3962,7 +3962,7 @@ format 212
 	comment "An augmentation point for DrivingIncidentType."
       end
 
-      attribute 11678466 "DrivingAccidentSeverity"
+      attribute 11678594 "DrivingAccidentSeverity"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3977,7 +3977,7 @@ format 212
 	comment "A data concept for a severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating."
       end
 
-      attribute 11680130 "DrivingIncidentHazMat"
+      attribute 11680258 "DrivingIncidentHazMat"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -3992,7 +3992,7 @@ format 212
 	comment "A data concept for a determination of whether the incident occurred while the driver was operating a commercial vehicle that was carrying hazardous materials (that required a placard)."
       end
 
-      attribute 11683586 "DrivingIncidentLaserDetectionIndicator"
+      attribute 11683714 "DrivingIncidentLaserDetectionIndicator"
 	public type class_ref 6025090 // boolean
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4007,7 +4007,7 @@ format 212
 	comment "True if a laser was involved in the detection of an incident; false otherwise."
       end
 
-      attribute 11687170 "DrivingIncidentPassengerQuantityText"
+      attribute 11687298 "DrivingIncidentPassengerQuantityText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4022,7 +4022,7 @@ format 212
 	comment "A number of people in a vehicle excluding the driver when an incident occurred."
       end
 
-      attribute 11687554 "DrivingIncidentRecordedSpeedRateMeasure"
+      attribute 11687682 "DrivingIncidentRecordedSpeedRateMeasure"
 	public type class_ref 6039938 // MeasureType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4103,7 +4103,7 @@ format 212
 	comment "A data concept for a kind of commercial vehicle that a licensed driver has been examined on and approved to operate."
       end
 
-      attribute 11684482 "DriverLicenseRestriction"
+      attribute 11684610 "DriverLicenseRestriction"
 	public type class_ref 6066050 // DriverLicenseRestrictionType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4118,7 +4118,7 @@ format 212
 	comment "A restriction on a driver license."
       end
 
-      attribute 11684866 "DriverLicenseWithdrawal"
+      attribute 11684994 "DriverLicenseWithdrawal"
 	public type class_ref 6041986 // DriverLicenseWithdrawalType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4154,7 +4154,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11684098 "DriverLicenseExpirationDate"
+      attribute 11684226 "DriverLicenseExpirationDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4169,7 +4169,7 @@ format 212
 	comment "A date after which a driver license or driver license permit is no longer valid."
       end
 
-      attribute 11684226 "DriverLicenseIdentification"
+      attribute 11684354 "DriverLicenseIdentification"
 	public type class_ref 6026242 // IdentificationType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -4184,7 +4184,7 @@ format 212
 	comment "A driver license identification or driver license permit identification, including the number and state."
       end
 
-      attribute 11684354 "DriverLicenseIssueDate"
+      attribute 11684482 "DriverLicenseIssueDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4220,7 +4220,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11684610 "DrivingRestrictionValue"
+      attribute 11684738 "DrivingRestrictionValue"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4235,7 +4235,7 @@ format 212
 	comment "A data concept for a driving restriction."
       end
 
-      attribute 11684738 "DrivingRestrictionEndDate"
+      attribute 11684866 "DrivingRestrictionEndDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4271,7 +4271,7 @@ format 212
 	  b parent class_ref 6025602 // ActivityType
       end
 
-      attribute 11684994 "DriverLicenseWithdrawalEffectiveDate"
+      attribute 11685122 "DriverLicenseWithdrawalEffectiveDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4379,7 +4379,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11686274 "OrganizationAlternateNameCategory"
+      attribute 11686402 "OrganizationAlternateNameCategory"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4415,7 +4415,7 @@ format 212
 	  b parent class_ref 6028546 // CourtOrderType
       end
 
-      attribute 11686914 "ProtectionOrderCondition"
+      attribute 11687042 "ProtectionOrderCondition"
 	public type class_ref 6024706 // abstract
 	multiplicity "1,1"
 	cpp_decl ""
@@ -4694,7 +4694,7 @@ format 212
 	comment "An identification number of a set of laws for a particular jurisdiction."
       end
 
-      attribute 11687682 "StatuteLevelText"
+      attribute 11687810 "StatuteLevelText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4877,7 +4877,7 @@ format 212
 	comment "A data concept for a level of an incident."
       end
 
-      attribute 11687938 "IncidentOfficialPresentIndicator"
+      attribute 11688066 "IncidentOfficialPresentIndicator"
 	public type class_ref 6025090 // boolean
 	multiplicity "0,1"
 	cpp_decl ""
@@ -5030,7 +5030,7 @@ format 212
 	comment "A data concept for an identification for an organization."
       end
 
-      attribute 11688066 "OrganizationAlternateName"
+      attribute 11688194 "OrganizationAlternateName"
 	public type class_ref 6042626 // OrganizationAlternateNameType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -5082,7 +5082,7 @@ format 212
       end
     end
 
-    class 6058754 "PersonAugmentationType"
+    class 6058626 "PersonAugmentationType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -5102,7 +5102,7 @@ format 212
 	  b parent class_ref 6024962 // AugmentationType
       end
 
-      attribute 11678594 "PersonFBIIdentification"
+      attribute 11678722 "PersonFBIIdentification"
 	public type class_ref 6026242 // IdentificationType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -5501,7 +5501,7 @@ format 212
       comment "A single case heard by the Court of Appeals (Intermediate Court of Appeal) or Supreme Court (The Court of Last Resort). This case does not retry the original case but determines whether the original case was tried properly and the defendant"
     end
 
-    classinstance 7657602 "AppellateCaseNoticeReasonText"
+    classinstance 7657730 "AppellateCaseNoticeReasonText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -5512,7 +5512,7 @@ format 212
       comment "A statement explaining the reason for an appeal. "
     end
 
-    classinstance 7657730 "CaseOfficial"
+    classinstance 7657858 "CaseOfficial"
       type class_ref 6030722 // CaseOfficialType
       attributes
         end
@@ -5523,7 +5523,7 @@ format 212
       comment "A justice official's involvement in a court case."
     end
 
-    classinstance 7657858 "CaseOfficialAugmentationPoint"
+    classinstance 7657986 "CaseOfficialAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -5534,7 +5534,7 @@ format 212
       comment "An augmentation point for CaseOfficialType."
     end
 
-    classinstance 7658242 "CaseCourtEvent"
+    classinstance 7658370 "CaseCourtEvent"
       type class_ref 6030978 // CourtEventType
       attributes
         end
@@ -5545,7 +5545,7 @@ format 212
       comment "A court occurrence related to a case."
     end
 
-    classinstance 7658370 "CourtEventAugmentationPoint"
+    classinstance 7658498 "CourtEventAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -5556,7 +5556,7 @@ format 212
       comment "An augmentation point for CourtEventType."
     end
 
-    classinstance 7659010 "CaseOtherEntity"
+    classinstance 7659138 "CaseOtherEntity"
       type class_ref 6029442 // EntityType
       attributes
         end
@@ -5567,7 +5567,7 @@ format 212
       comment "A miscellaneous entity involved in a court case."
     end
 
-    classinstance 7659138 "CaseLineageCase"
+    classinstance 7659266 "CaseLineageCase"
       type class_ref 6030594 // CaseType
       attributes
         end
@@ -5978,7 +5978,7 @@ format 212
       comment "A unique identifier for a court case event record."
     end
 
-    classinstance 7679362 "RegisterActionDescriptionText"
+    classinstance 7679490 "RegisterActionDescriptionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -5989,7 +5989,7 @@ format 212
       comment "A description of something that happened in a case in a register of actions entry."
     end
 
-    classinstance 7680002 "DrivingIncident"
+    classinstance 7680130 "DrivingIncident"
       type class_ref 6036482 // DrivingIncidentType
       attributes
         end
@@ -6000,7 +6000,7 @@ format 212
       comment "An incident involving a vehicle."
     end
 
-    classinstance 7680130 "DrivingIncidentAugmentationPoint"
+    classinstance 7680258 "DrivingIncidentAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6011,7 +6011,7 @@ format 212
       comment "An augmentation point for DrivingIncidentType."
     end
 
-    classinstance 7682946 "PersonEthnicityCode"
+    classinstance 7683074 "PersonEthnicityCode"
       type class_ref 6037506 // EthnicityCodeType
       attributes
         end
@@ -6023,7 +6023,7 @@ format 212
       comment "A cultural lineage of a person."
     end
 
-    classinstance 7684354 "DriverLicense"
+    classinstance 7684482 "DriverLicense"
       type class_ref 6038018 // DriverLicenseType
       attributes
         end
@@ -6034,7 +6034,7 @@ format 212
       comment "A license issued to a person granting driving privileges."
     end
 
-    classinstance 7685122 "PersonEyeColorCode"
+    classinstance 7685250 "PersonEyeColorCode"
       type class_ref 6038274 // EYECodeType
       attributes
         end
@@ -6046,7 +6046,7 @@ format 212
       comment "A color of the eyes of a person."
     end
 
-    classinstance 7685250 "DrivingAccidentSeverity"
+    classinstance 7685378 "DrivingAccidentSeverity"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6057,7 +6057,7 @@ format 212
       comment "A data concept for a severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating."
     end
 
-    classinstance 7685378 "DrivingAccidentSeverityCode"
+    classinstance 7685506 "DrivingAccidentSeverityCode"
       type class_ref 6038530 // AccidentSeverityCodeType
       attributes
         end
@@ -6069,7 +6069,7 @@ format 212
       comment "A severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating."
     end
 
-    classinstance 7685506 "PersonFBIIdentification"
+    classinstance 7685634 "PersonFBIIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6080,7 +6080,7 @@ format 212
       comment "A number issued by the FBI's Automated Fingerprint Identification System (AFIS) based on submitted fingerprints."
     end
 
-    classinstance 7691906 "PersonHairColorCode"
+    classinstance 7691778 "PersonHairColorCode"
       type class_ref 6039426 // HAICodeType
       attributes
         end
@@ -6092,7 +6092,7 @@ format 212
       comment "A color of the hair of a person."
     end
 
-    classinstance 7692034 "DrivingIncidentHazMat"
+    classinstance 7691906 "DrivingIncidentHazMat"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6103,7 +6103,7 @@ format 212
       comment "A data concept for a determination of whether the incident occurred while the driver was operating a commercial vehicle that was carrying hazardous materials (that required a placard)."
     end
 
-    classinstance 7692162 "DrivingIncidentHazMatCode"
+    classinstance 7692034 "DrivingIncidentHazMatCode"
       type class_ref 6039682 // HazMatCodeType
       attributes
         end
@@ -6115,7 +6115,7 @@ format 212
       comment "A determination of whether the incident occurred while the driver was operating a commercial vehicle that was carrying hazardous materials (that required a placard)."
     end
 
-    classinstance 7692674 "SubjectIdentification"
+    classinstance 7692546 "SubjectIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6126,7 +6126,7 @@ format 212
       comment "An assigned identification that identifies a subject."
     end
 
-    classinstance 7693570 "CaseInitiatingParty"
+    classinstance 7693442 "CaseInitiatingParty"
       type class_ref 6029442 // EntityType
       attributes
         end
@@ -6137,7 +6137,7 @@ format 212
       comment "An entity that brings charges or a suit against another in a court of law. Can be either a victim in a criminal case or a plaintiff in a civil case."
     end
 
-    classinstance 7693698 "CaseInitiatingAttorney"
+    classinstance 7693570 "CaseInitiatingAttorney"
       type class_ref 6030722 // CaseOfficialType
       attributes
         end
@@ -6148,7 +6148,7 @@ format 212
       comment "An attorney in a court case representing the party that filed a petition for a court order or writ requiring the respondent to take some action, halt an activity or obey a courts direction. Representative of the party seeking action from the court.  In s"
     end
 
-    classinstance 7695618 "CourtEventJudge"
+    classinstance 7695490 "CourtEventJudge"
       type class_ref 6030850 // JudicialOfficialType
       attributes
         end
@@ -6159,7 +6159,7 @@ format 212
       comment "A judge associated with a court event."
     end
 
-    classinstance 7695746 "CaseJudge"
+    classinstance 7695618 "CaseJudge"
       type class_ref 6030722 // CaseOfficialType
       attributes
         end
@@ -6170,7 +6170,7 @@ format 212
       comment "A judicial official assigned to a case."
     end
 
-    classinstance 7696258 "JurisdictionNCICLSTACode"
+    classinstance 7696130 "JurisdictionNCICLSTACode"
       type class_ref 6040962 // CTZCodeType
       attributes
         end
@@ -6182,7 +6182,7 @@ format 212
       comment "An area, state, region, or other geographic unit over which some kind of authority exists."
     end
 
-    classinstance 7697794 "DrivingIncidentLaserDetectionIndicator"
+    classinstance 7697666 "DrivingIncidentLaserDetectionIndicator"
       type class_ref 6025090 // boolean
       attributes
         end
@@ -6193,7 +6193,7 @@ format 212
       comment "True if a laser was involved in the detection of an incident; false otherwise."
     end
 
-    classinstance 7698434 "DriverLicenseExpirationDate"
+    classinstance 7698306 "DriverLicenseExpirationDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -6204,7 +6204,7 @@ format 212
       comment "A date after which a driver license or driver license permit is no longer valid."
     end
 
-    classinstance 7698562 "DriverLicenseIdentification"
+    classinstance 7698434 "DriverLicenseIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6215,7 +6215,7 @@ format 212
       comment "A driver license identification or driver license permit identification, including the number and state."
     end
 
-    classinstance 7698690 "DriverLicenseIssueDate"
+    classinstance 7698562 "DriverLicenseIssueDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -6247,7 +6247,7 @@ format 212
       end
     end
 
-    classinstance 7698818 "DriverLicenseRestriction"
+    classinstance 7698690 "DriverLicenseRestriction"
       type class_ref 6066050 // DriverLicenseRestrictionType
       attributes
         end
@@ -6258,7 +6258,7 @@ format 212
       comment "A restriction on a driver license."
     end
 
-    classinstance 7698946 "DrivingRestrictionValue"
+    classinstance 7698818 "DrivingRestrictionValue"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6269,7 +6269,7 @@ format 212
       comment "A data concept for a driving restriction."
     end
 
-    classinstance 7699074 "CrashDrivingRestrictionCode"
+    classinstance 7698946 "CrashDrivingRestrictionCode"
       type class_ref 6041730 // DrivingRestrictionCodeType
       attributes
         end
@@ -6281,7 +6281,7 @@ format 212
       comment "A Restriction assigned to an individuals driver license by the license examiner."
     end
 
-    classinstance 7699202 "DrivingRestrictionEndDate"
+    classinstance 7699074 "DrivingRestrictionEndDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -6292,7 +6292,7 @@ format 212
       comment "A date on which a special restriction ends."
     end
 
-    classinstance 7699330 "DrivingRestrictionText"
+    classinstance 7699202 "DrivingRestrictionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -6304,7 +6304,7 @@ format 212
       comment "A category of a driving restriction."
     end
 
-    classinstance 7699458 "DriverLicenseWithdrawal"
+    classinstance 7699330 "DriverLicenseWithdrawal"
       type class_ref 6041986 // DriverLicenseWithdrawalType
       attributes
         end
@@ -6315,7 +6315,7 @@ format 212
       comment "A driver license withdrawal."
     end
 
-    classinstance 7699586 "DriverLicenseWithdrawalEffectiveDate"
+    classinstance 7699458 "DriverLicenseWithdrawalEffectiveDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -6326,7 +6326,7 @@ format 212
       comment "A date on which a driver license withdrawal becomes effective."
     end
 
-    classinstance 7705218 "OrganizationAlternateNameCategory"
+    classinstance 7705090 "OrganizationAlternateNameCategory"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6337,7 +6337,7 @@ format 212
       comment "A data concept for a kind of alternate name used by an organization."
     end
 
-    classinstance 7705346 "OrganizationAlternateNameCategoryCode"
+    classinstance 7705218 "OrganizationAlternateNameCategoryCode"
       type class_ref 6026882 // PersonNameCategoryCodeType
       attributes
         end
@@ -6349,7 +6349,7 @@ format 212
       comment "A kind of alternate name used by an organization."
     end
 
-    classinstance 7706114 "ProtectionOrderCondition"
+    classinstance 7705986 "ProtectionOrderCondition"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6360,7 +6360,7 @@ format 212
       comment "A data concept for a specific kind of protection order."
     end
 
-    classinstance 7706242 "ProtectionOrderConditionCode"
+    classinstance 7706114 "ProtectionOrderConditionCode"
       type class_ref 6042114 // PCOCodeType
       attributes
         end
@@ -6372,7 +6372,7 @@ format 212
       comment "A specific kind of protection order."
     end
 
-    classinstance 7706370 "AppellateCaseNotice"
+    classinstance 7706242 "AppellateCaseNotice"
       type class_ref 6042370 // AppellateCaseNoticeType
       attributes
         end
@@ -6483,7 +6483,7 @@ format 212
     end
 
     classinstance 7714050 "PersonAugmentation"
-      type class_ref 6058754 // PersonAugmentationType
+      type class_ref 6058626 // PersonAugmentationType
       attributes
         end
       relations
@@ -6617,7 +6617,7 @@ format 212
       comment "An attorney in a court case representing the party that is required to answer a petition for a court order or writ requiring the respondent to take some action, halt an activity or obey a courts direction. In such matters the moving party (the one filing"
     end
 
-    classinstance 7724802 "SentenceAugmentationPoint"
+    classinstance 7724674 "SentenceAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6628,7 +6628,7 @@ format 212
       comment "An augmentation point for SentenceType."
     end
 
-    classinstance 7725058 "Sentence"
+    classinstance 7724930 "Sentence"
       type class_ref 6046722 // SentenceType
       attributes
         end
@@ -6639,7 +6639,7 @@ format 212
       comment "A punishment resulting from conviction of charges in a court case."
     end
 
-    classinstance 7725186 "SupervisionFineAmount"
+    classinstance 7725058 "SupervisionFineAmount"
       type class_ref 6027266 // AmountType
       attributes
         end
@@ -6650,7 +6650,7 @@ format 212
       comment "A pecuniary criminal punishment or penalty payable to the public treasury"
     end
 
-    classinstance 7725314 "SentenceDescriptionText"
+    classinstance 7725186 "SentenceDescriptionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -6682,7 +6682,7 @@ format 212
       end
     end
 
-    classinstance 7725442 "SentenceTerm"
+    classinstance 7725314 "SentenceTerm"
       type class_ref 6066434 // TermType
       attributes
         end
@@ -6693,7 +6693,7 @@ format 212
       comment "A duration of a sentence. Specified as either a specific term in days-months-years or as a minimum - maximum range."
     end
 
-    classinstance 7726210 "PersonSexCode"
+    classinstance 7726082 "PersonSexCode"
       type class_ref 6046850 // SEXCodeType
       attributes
         end
@@ -6705,7 +6705,7 @@ format 212
       comment "A gender or sex of a person."
     end
 
-    classinstance 7726338 "RegisteredSexOffender"
+    classinstance 7726210 "RegisteredSexOffender"
       type class_ref 6047106 // RegisteredOffenderType
       attributes
         end
@@ -6717,7 +6717,7 @@ format 212
       comment "A person who is required to register as a sexual offender."
     end
 
-    classinstance 7726466 "RegisteredOffenderIdentification"
+    classinstance 7726338 "RegisteredOffenderIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6728,7 +6728,7 @@ format 212
       comment "An identification identifying a person as a certain kind of registered offender."
     end
 
-    classinstance 7727362 "DrivingIncidentLegalSpeedRateMeasure"
+    classinstance 7727234 "DrivingIncidentLegalSpeedRateMeasure"
       type class_ref 6039938 // MeasureType
       attributes
         end
@@ -6739,7 +6739,7 @@ format 212
       comment "A legally designated speed limit in the area where an incident occurred."
     end
 
-    classinstance 7727746 "LocationStateNCICLISCode"
+    classinstance 7727618 "LocationStateNCICLISCode"
       type class_ref 6040962 // CTZCodeType
       attributes
         end
@@ -6751,7 +6751,7 @@ format 212
       comment "A state, commonwealth, province, or other such geopolitical subdivision of a country."
     end
 
-    classinstance 7727874 "PersonStateFingerprintIdentification"
+    classinstance 7727746 "PersonStateFingerprintIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6762,7 +6762,7 @@ format 212
       comment "An identifier assigned to a person by a state identification bureau, generally based on submission of the person's fingerprints to the state's Automated Fingerprint Identification System (AFIS)."
     end
 
-    classinstance 7728130 "PersonAFISIdentification"
+    classinstance 7728002 "PersonAFISIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6773,7 +6773,7 @@ format 212
       comment "An identification number issued by an agency's automatic fingerprint system based on submitted fingerprints other than PersonFBIID and PersonSSID."
     end
 
-    classinstance 7728386 "IncidentViolatedStatuteAssociation"
+    classinstance 7728258 "IncidentViolatedStatuteAssociation"
       type class_ref 6047234 // ViolatedStatuteAssociationType
       attributes
         end
@@ -6784,7 +6784,7 @@ format 212
       comment "An association providing details about a statute, rule, or ordinance that was violated in an incident."
     end
 
-    classinstance 7728514 "Statute"
+    classinstance 7728386 "Statute"
       type class_ref 6047362 // StatuteType
       attributes
         end
@@ -6795,7 +6795,7 @@ format 212
       comment "A unique identifier of a law, rule, or ordinance within a jurisdiction."
     end
 
-    classinstance 7729026 "ChargeStatute"
+    classinstance 7728898 "ChargeStatute"
       type class_ref 6047362 // StatuteType
       attributes
         end
@@ -6806,7 +6806,7 @@ format 212
       comment "A unique identifier of a law, rule, or ordinance within a jurisdiction that a person is accused of violating."
     end
 
-    classinstance 7729154 "StatuteOffenseIdentification"
+    classinstance 7729026 "StatuteOffenseIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6817,7 +6817,7 @@ format 212
       comment "An identification of a criminal offense within a code book."
     end
 
-    classinstance 7729282 "StatuteJurisdiction"
+    classinstance 7729154 "StatuteJurisdiction"
       type class_ref 6040834 // JurisdictionType
       attributes
         end
@@ -6828,7 +6828,7 @@ format 212
       comment "An area in which a statute applies."
     end
 
-    classinstance 7729410 "ProtectionOrderRestrictedPerson"
+    classinstance 7729282 "ProtectionOrderRestrictedPerson"
       type class_ref 6028802 // PersonType
       attributes
         end
@@ -6839,7 +6839,7 @@ format 212
       comment "A person that a subject is restricted from having any contact with as defined in a protection order."
     end
 
-    classinstance 7731714 "CourtAppearanceDate"
+    classinstance 7731586 "CourtAppearanceDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -6850,7 +6850,7 @@ format 212
       comment "A date on which a party must appear in court."
     end
 
-    classinstance 7732738 "EnforcementOfficialUnavailableSchedule"
+    classinstance 7732482 "EnforcementOfficialUnavailableSchedule"
       type class_ref 6030082 // ScheduleDayType
       attributes
         end
@@ -6861,7 +6861,7 @@ format 212
       comment "A set of dates and times an enforcement official is unavailable for scheduling."
     end
 
-    classinstance 7734018 "VehicleStyleCode"
+    classinstance 7733762 "VehicleStyleCode"
       type class_ref 6048258 // VSTCodeType
       attributes
         end
@@ -6873,7 +6873,7 @@ format 212
       comment "A style of a vehicle."
     end
 
-    classinstance 7734146 "ConveyanceColorPrimaryCode"
+    classinstance 7733890 "ConveyanceColorPrimaryCode"
       type class_ref 6048514 // VCOCodeType
       attributes
         end
@@ -6885,7 +6885,7 @@ format 212
       comment "A single, upper-most, front-most, or majority color of a vehicle."
     end
 
-    classinstance 7734530 "ConveyanceRegistrationPlateIdentification"
+    classinstance 7734274 "ConveyanceRegistrationPlateIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -6896,7 +6896,7 @@ format 212
       comment "An identification on a metal plate fixed to a conveyance."
     end
 
-    classinstance 7734658 "JurisdictionNCICLISCode"
+    classinstance 7734402 "JurisdictionNCICLISCode"
       type class_ref 6040962 // CTZCodeType
       attributes
         end
@@ -6908,7 +6908,7 @@ format 212
       comment "An area, state, region, or other geographic unit over which some kind of authority exists."
     end
 
-    classinstance 7734786 "ConveyanceRegistrationPlateCategory"
+    classinstance 7734530 "ConveyanceRegistrationPlateCategory"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -6919,7 +6919,7 @@ format 212
       comment "A data concept for a kind of registration plate or license plate of a conveyance."
     end
 
-    classinstance 7734914 "ConveyanceRegistrationPlateCategoryText"
+    classinstance 7734658 "ConveyanceRegistrationPlateCategoryText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -6931,7 +6931,7 @@ format 212
       comment "A kind of registration plate or license plate of a conveyance."
     end
 
-    classinstance 7735170 "VehicleMakeCode"
+    classinstance 7734914 "VehicleMakeCode"
       type class_ref 6048770 // VMACodeType
       attributes
         end
@@ -6943,7 +6943,7 @@ format 212
       comment "A manufacturer of a vehicle."
     end
 
-    classinstance 7735426 "VehicleModelCode"
+    classinstance 7735170 "VehicleModelCode"
       type class_ref 6049026 // VMOCodeType
       attributes
         end
@@ -6955,7 +6955,7 @@ format 212
       comment "A specific design or class of vehicle made by a manufacturer."
     end
 
-    classinstance 7735554 "ConveyanceRegistration"
+    classinstance 7735298 "ConveyanceRegistration"
       type class_ref 6049282 // ConveyanceRegistrationType
       attributes
         end
@@ -7298,7 +7298,7 @@ format 212
 	comment "A description of a location."
       end
 
-      attribute 11685506 "LocationName"
+      attribute 11685634 "LocationName"
 	public type class_ref 6026754 // ProperNameTextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7334,7 +7334,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11680642 "IdentificationSourceText"
+      attribute 11680770 "IdentificationSourceText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7349,7 +7349,7 @@ format 212
 	comment "A person, organization, or locale which issues an identification."
       end
 
-      attribute 11680770 "IdentificationID"
+      attribute 11680898 "IdentificationID"
 	public type class_ref 6025858 // string
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7364,7 +7364,7 @@ format 212
 	comment "An identifier."
       end
 
-      attribute 11682562 "IdentificationJurisdiction"
+      attribute 11682690 "IdentificationJurisdiction"
 	public type class_ref 6040834 // JurisdictionType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7511,7 +7511,7 @@ format 212
 	comment "A data concept for a single place or unit at which mail is delivered."
       end
 
-      attribute 11679618 "AddressFullText"
+      attribute 11679746 "AddressFullText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7811,7 +7811,7 @@ format 212
 	comment "A preferred means of contacting an organization."
       end
 
-      attribute 11676034 "OrganizationLocation"
+      attribute 11676162 "OrganizationLocation"
 	public type class_ref 6026114 // LocationType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7826,7 +7826,7 @@ format 212
 	comment "A location of an organization."
       end
 
-      attribute 11683842 "OrganizationSubUnitName"
+      attribute 11683970 "OrganizationSubUnitName"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7841,7 +7841,7 @@ format 212
 	comment "A name of a subdivision of an organization."
       end
 
-      attribute 11683970 "OrganizationUnitName"
+      attribute 11684098 "OrganizationUnitName"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -7856,7 +7856,7 @@ format 212
 	comment "A name of a high-level division of an organization."
       end
 
-      attribute 11688194 "OrganizationAugmentationPoint"
+      attribute 11688322 "OrganizationAugmentationPoint"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -7982,7 +7982,7 @@ format 212
 	comment "A name of a standard or protocol used to classify binary content."
       end
 
-      attribute 11678722 "BinarySizeValue"
+      attribute 11678850 "BinarySizeValue"
 	public type class_ref 6038914 // NonNegativeDecimalType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8078,7 +8078,7 @@ format 212
 	comment "An identification with a kind that is not explicitly defined in the standard that refers to a person within a certain domain."
       end
 
-      attribute 11677314 "PersonEthnicity"
+      attribute 11677442 "PersonEthnicity"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8093,7 +8093,7 @@ format 212
 	comment "A data concept for a cultural lineage of a person."
       end
 
-      attribute 11678338 "PersonEyeColor"
+      attribute 11678466 "PersonEyeColor"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8108,7 +8108,7 @@ format 212
 	comment "A data concept for a color of the eyes of a person."
       end
 
-      attribute 11680002 "PersonHairColor"
+      attribute 11680130 "PersonHairColor"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8123,7 +8123,7 @@ format 212
 	comment "A data concept for a color of the hair of a person."
       end
 
-      attribute 11680258 "PersonHeightMeasure"
+      attribute 11680386 "PersonHeightMeasure"
 	public type class_ref 6039938 // MeasureType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8138,7 +8138,7 @@ format 212
 	comment "A measurement of the height of a person."
       end
 
-      attribute 11681154 "PersonCitizenship"
+      attribute 11681282 "PersonCitizenship"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -8153,7 +8153,7 @@ format 212
 	comment "A data concept for a country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country."
       end
 
-      attribute 11682178 "PersonLanguageEnglishIndicator"
+      attribute 11682306 "PersonLanguageEnglishIndicator"
 	public type class_ref 6025090 // boolean
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8168,7 +8168,7 @@ format 212
 	comment "True if a person understands and speaks English; false otherwise."
       end
 
-      attribute 11683330 "PersonPrimaryLanguage"
+      attribute 11683458 "PersonPrimaryLanguage"
 	public type class_ref 6041474 // PersonLanguageType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8183,7 +8183,7 @@ format 212
 	comment "A capacity of a person for a language with which that person has the strongest familiarity."
       end
 
-      attribute 11685122 "PersonStateIdentification"
+      attribute 11685250 "PersonStateIdentification"
 	public type class_ref 6026242 // IdentificationType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8474,7 +8474,7 @@ format 212
 	comment "A name given to a document."
       end
 
-      attribute 11678850 "DocumentEffectiveDate"
+      attribute 11678978 "DocumentEffectiveDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8489,7 +8489,7 @@ format 212
 	comment "A date in which the content or action becomes enforceable, active, or effective."
       end
 
-      attribute 11678978 "DocumentFiledDate"
+      attribute 11679106 "DocumentFiledDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8504,7 +8504,7 @@ format 212
 	comment "A date a document was officially filed with an organization or agency."
       end
 
-      attribute 11683202 "DocumentLanguage"
+      attribute 11683330 "DocumentLanguage"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8570,7 +8570,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11677954 "EntityRepresentation"
+      attribute 11678082 "EntityRepresentation"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8627,7 +8627,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11677442 "ScheduleDayRepresentation"
+      attribute 11677570 "ScheduleDayRepresentation"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8642,7 +8642,7 @@ format 212
 	comment "A data concept for a day or days with the given schedule information."
       end
 
-      attribute 11677570 "ScheduleActivityText"
+      attribute 11677698 "ScheduleActivityText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8678,7 +8678,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11679490 "StartDate"
+      attribute 11679618 "StartDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8729,7 +8729,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11689346 "CapabilityDescriptionText"
+      attribute 11689474 "CapabilityDescriptionText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8882,7 +8882,7 @@ format 212
 	comment "A sensitivity level of the information."
       end
 
-      attribute 11675778 "EffectiveDate"
+      attribute 11675906 "EffectiveDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8897,7 +8897,7 @@ format 212
 	comment "A date that information take effect."
       end
 
-      attribute 11677826 "ExpirationDate"
+      attribute 11677954 "ExpirationDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8912,7 +8912,7 @@ format 212
 	comment "A date after which information is no longer valid."
       end
 
-      attribute 11683458 "Language"
+      attribute 11683586 "Language"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -8927,7 +8927,7 @@ format 212
 	comment "A data concept for a system of words or symbols used for communication."
       end
 
-      attribute 11683714 "LastUpdatedDate"
+      attribute 11683842 "LastUpdatedDate"
 	public type class_ref 6026370 // DateType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9212,7 +9212,7 @@ format 212
 	comment "A description of the contact information."
       end
 
-      attribute 11675906 "ContactMeans"
+      attribute 11676034 "ContactMeans"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -9386,7 +9386,7 @@ format 212
 	comment "An identification assigned to a facility."
       end
 
-      attribute 11688834 "FacilityName"
+      attribute 11688962 "FacilityName"
 	public type class_ref 6026754 // ProperNameTextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9524,7 +9524,7 @@ format 212
 	comment "A separation of the parties in a Person Union."
       end
 
-      attribute 11685250 "PersonUnionLocation"
+      attribute 11685378 "PersonUnionLocation"
 	public type class_ref 6026114 // LocationType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9575,7 +9575,7 @@ format 212
 	  b parent class_ref 6032770 // AssociationType
       end
 
-      attribute 11688322 "Employer"
+      attribute 11688450 "Employer"
 	public type class_ref 6029442 // EntityType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -9749,7 +9749,7 @@ format 212
 	comment "A description of what is necessary in order to fulfill an obligation."
       end
 
-      attribute 11677698 "ObligationExemption"
+      attribute 11677826 "ObligationExemption"
 	public type class_ref 6037890 // ObligationExemptionType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9764,7 +9764,7 @@ format 212
 	comment "A waival or dismissal of an obligation."
       end
 
-      attribute 11679106 "ObligationCategoryText"
+      attribute 11679234 "ObligationCategoryText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9779,7 +9779,7 @@ format 212
 	comment "A kind of obligation."
       end
 
-      attribute 11687298 "ObligationEntity"
+      attribute 11687426 "ObligationEntity"
 	public type class_ref 6029442 // EntityType
 	multiplicity "1,1"
 	cpp_decl ""
@@ -9794,7 +9794,7 @@ format 212
 	comment "An entity that must fulfill an obligation."
       end
 
-      attribute 11689474 "ObligationDue"
+      attribute 11689602 "ObligationDue"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9860,7 +9860,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11680386 "MeasureUnit"
+      attribute 11680514 "MeasureUnit"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9911,7 +9911,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11681282 "InsuranceCarrierName"
+      attribute 11681410 "InsuranceCarrierName"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9926,7 +9926,7 @@ format 212
 	comment "A name of a company which underwrites an insurance policy."
       end
 
-      attribute 11681410 "InsuranceActiveIndicator"
+      attribute 11681538 "InsuranceActiveIndicator"
 	public type class_ref 6025090 // boolean
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9941,7 +9941,7 @@ format 212
 	comment "True if an insurance policy is active; false otherwise."
       end
 
-      attribute 11681538 "InsuranceCoverageCategory"
+      attribute 11681666 "InsuranceCoverageCategory"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -9977,7 +9977,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11681666 "TelephoneNumberID"
+      attribute 11681794 "TelephoneNumberID"
 	public type class_ref 6025858 // string
 	multiplicity "1,1"
 	cpp_decl ""
@@ -9992,7 +9992,7 @@ format 212
 	comment "A telephone number."
       end
 
-      attribute 11681922 "TelephoneSuffixID"
+      attribute 11682050 "TelephoneSuffixID"
 	public type class_ref 6025858 // string
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10043,7 +10043,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11682690 "JurisdictionAbstract"
+      attribute 11682818 "JurisdictionAbstract"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10079,7 +10079,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11682050 "Language"
+      attribute 11682178 "Language"
 	public type class_ref 6024706 // abstract
 	multiplicity "1,1"
 	cpp_decl ""
@@ -10129,7 +10129,7 @@ format 212
 	comment "A set of details about how to contact a person or an organization."
       end
 
-      attribute 11688706 "ContactInformationAvailability"
+      attribute 11688834 "ContactInformationAvailability"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10180,7 +10180,7 @@ format 212
 	  b parent class_ref 6032770 // AssociationType
       end
 
-      attribute 11688450 "Organization"
+      attribute 11688578 "Organization"
 	public type class_ref 6028034 // OrganizationType
 	multiplicity "2,unbounded"
 	cpp_decl ""
@@ -10195,7 +10195,7 @@ format 212
 	comment "A unit which conducts some sort of business or operations."
       end
 
-      attribute 11689090 "OrganizationAssociationAugmentationPoint"
+      attribute 11689218 "OrganizationAssociationAugmentationPoint"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,unbounded"
 	cpp_decl ""
@@ -10282,7 +10282,7 @@ format 212
 	comment "A data concept for a kind of person name."
       end
 
-      attribute 11685634 "PersonGivenName"
+      attribute 11685762 "PersonGivenName"
 	public type class_ref 6026626 // PersonNameTextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10297,7 +10297,7 @@ format 212
 	comment "A first name of a person."
       end
 
-      attribute 11685762 "PersonMiddleName"
+      attribute 11685890 "PersonMiddleName"
 	public type class_ref 6026626 // PersonNameTextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10312,7 +10312,7 @@ format 212
 	comment "A middle name of a person."
       end
 
-      attribute 11685890 "PersonSurName"
+      attribute 11686018 "PersonSurName"
 	public type class_ref 6026626 // PersonNameTextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10327,7 +10327,7 @@ format 212
 	comment "A last name or family name of a person."
       end
 
-      attribute 11686018 "PersonNameSuffixText"
+      attribute 11686146 "PersonNameSuffixText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10342,7 +10342,7 @@ format 212
 	comment "A term appended after the family name that qualifies the name."
       end
 
-      attribute 11686146 "PersonMaidenName"
+      attribute 11686274 "PersonMaidenName"
 	public type class_ref 6026626 // PersonNameTextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10393,7 +10393,7 @@ format 212
 	  b parent class_ref 6032770 // AssociationType
       end
 
-      attribute 11688578 "Organization"
+      attribute 11688706 "Organization"
 	public type class_ref 6028034 // OrganizationType
 	multiplicity "1,unbounded"
 	cpp_decl ""
@@ -10546,7 +10546,7 @@ format 212
 	comment "A description of an item."
       end
 
-      attribute 11685378 "ItemModelYearDate"
+      attribute 11685506 "ItemModelYearDate"
 	public type class_ref 6049538 // gYear
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10627,7 +10627,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11676162 "ObligationDateRange"
+      attribute 11676290 "ObligationDateRange"
 	public type class_ref 6030210 // DateRangeType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10642,7 +10642,7 @@ format 212
 	comment "A date range of an obligation."
       end
 
-      attribute 11679362 "ObligationPeriodText"
+      attribute 11679490 "ObligationPeriodText"
 	public type class_ref 6025730 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -10906,7 +10906,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11681794 "TelephoneNumberRepresentation"
+      attribute 11681922 "TelephoneNumberRepresentation"
 	public type class_ref 6024706 // abstract
 	multiplicity "0,1"
 	cpp_decl ""
@@ -11015,7 +11015,7 @@ format 212
       end
     end
 
-    class 6059650 "FullTelephoneNumberType"
+    class 6059522 "FullTelephoneNumberType"
       visibility package 
       cpp_decl ""
       java_decl ""
@@ -11035,7 +11035,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11679746 "TelephoneNumberFullID"
+      attribute 11679874 "TelephoneNumberFullID"
 	public type class_ref 6025858 // string
 	multiplicity "0,1"
 	cpp_decl ""
@@ -11086,7 +11086,7 @@ format 212
 	  b parent class_ref 6024834 // ObjectType
       end
 
-      attribute 11686402 "TelephoneAreaCodeID"
+      attribute 11686530 "TelephoneAreaCodeID"
 	public type class_ref 6025858 // string
 	multiplicity "1,1"
 	cpp_decl ""
@@ -11101,7 +11101,7 @@ format 212
 	comment "A dialing code for a state or province for phone numbers in the USA, Canada, Mexico, and the Caribbean."
       end
 
-      attribute 11686530 "TelephoneExchangeID"
+      attribute 11686658 "TelephoneExchangeID"
 	public type class_ref 6025858 // string
 	multiplicity "1,1"
 	cpp_decl ""
@@ -11116,7 +11116,7 @@ format 212
 	comment "A portion of a telephone number that usually represents a central telephone switch."
       end
 
-      attribute 11686658 "TelephoneLineID"
+      attribute 11686786 "TelephoneLineID"
 	public type class_ref 6025858 // string
 	multiplicity "1,1"
 	cpp_decl ""
@@ -11131,7 +11131,7 @@ format 212
 	comment "A portion of a telephone number that identifies the individual circuit within an exchange."
       end
 
-      attribute 11686786 "TelephoneSuffixID"
+      attribute 11686914 "TelephoneSuffixID"
 	public type class_ref 6025858 // string
 	multiplicity "1,1"
 	cpp_decl ""
@@ -11380,7 +11380,18 @@ format 212
       comment "An aggregation of information about a set of related activities and events."
     end
 
-    classinstance 7658114 "CaseDispositionFinalDate"
+    classinstance 7657602 "CaseTrackingID"
+      type class_ref 6025858 // string
+      attributes
+        end
+      relations
+        end
+      ncouples 1
+      key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,CaseTrackingID"
+      comment "An identifier used to track a case."
+    end
+
+    classinstance 7658242 "CaseDispositionFinalDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -11391,7 +11402,7 @@ format 212
       comment "A date that all charges in a case were disposed."
     end
 
-    classinstance 7658754 "CaseDispositionDecision"
+    classinstance 7658882 "CaseDispositionDecision"
       type class_ref 6031106 // CaseDispositionDecisionType
       attributes
         end
@@ -11402,7 +11413,7 @@ format 212
       comment "A case disposition occurring as a result of some decision."
     end
 
-    classinstance 7658882 "Metadata"
+    classinstance 7659010 "Metadata"
       type class_ref 6031234 // MetadataType
       attributes
         end
@@ -11413,7 +11424,7 @@ format 212
       comment "Information that further qualifies primary data; data about data."
     end
 
-    classinstance 7659778 "ActivityStatus"
+    classinstance 7659906 "ActivityStatus"
       type class_ref 6031490 // StatusType
       attributes
         end
@@ -11424,7 +11435,7 @@ format 212
       comment "A status of an activity."
     end
 
-    classinstance 7659906 "StatusDesignator"
+    classinstance 7660034 "StatusDesignator"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -11435,7 +11446,7 @@ format 212
       comment "A data concept for a status or condition of something or someone."
     end
 
-    classinstance 7660034 "StatusText"
+    classinstance 7660162 "StatusText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -11447,7 +11458,7 @@ format 212
       comment "A status or condition of something or someone."
     end
 
-    classinstance 7660162 "CaseTitleText"
+    classinstance 7660290 "CaseTitleText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -11456,17 +11467,6 @@ format 212
       ncouples 1
       key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,CaseTitleText"
       comment "An official name of a case."
-    end
-
-    classinstance 7660290 "CaseTrackingID"
-      type class_ref 6025858 // string
-      attributes
-        end
-      relations
-        end
-      ncouples 1
-      key "URI" value "http://release.niem.gov/niem/niem-core/3.0/,CaseTrackingID"
-      comment "An identifier used to track a case."
     end
 
     classinstance 7661314 "Person"
@@ -12131,7 +12131,7 @@ format 212
       comment "A sensitivity level of the information."
     end
 
-    classinstance 7678978 "DocumentStatus"
+    classinstance 7679106 "DocumentStatus"
       type class_ref 6031490 // StatusType
       attributes
         end
@@ -12142,7 +12142,7 @@ format 212
       comment "A status of a document."
     end
 
-    classinstance 7679106 "StatusDescriptionText"
+    classinstance 7679234 "StatusDescriptionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12153,7 +12153,7 @@ format 212
       comment "A description of a status or condition of something or someone."
     end
 
-    classinstance 7679234 "DocumentTitleText"
+    classinstance 7679362 "DocumentTitleText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12164,7 +12164,7 @@ format 212
       comment "A name given to a document."
     end
 
-    classinstance 7679746 "PersonUnionAssociation"
+    classinstance 7679874 "PersonUnionAssociation"
       type class_ref 6036354 // PersonUnionAssociationType
       attributes
         end
@@ -12175,7 +12175,7 @@ format 212
       comment "An association between two persons who are in a state of union with each other."
     end
 
-    classinstance 7680386 "EffectiveDate"
+    classinstance 7680514 "EffectiveDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12186,7 +12186,7 @@ format 212
       comment "A date that information take effect."
     end
 
-    classinstance 7680898 "ContactMeans"
+    classinstance 7681026 "ContactMeans"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12197,7 +12197,7 @@ format 212
       comment "A data concept for a means of contacting someone."
     end
 
-    classinstance 7681026 "ContactEmailID"
+    classinstance 7681154 "ContactEmailID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12209,7 +12209,7 @@ format 212
       comment "An electronic mailing address by which a person or organization may be contacted."
     end
 
-    classinstance 7681154 "OrganizationLocation"
+    classinstance 7681282 "OrganizationLocation"
       type class_ref 6026114 // LocationType
       attributes
         end
@@ -12220,7 +12220,7 @@ format 212
       comment "A location of an organization."
     end
 
-    classinstance 7681282 "PersonEmploymentAssociation"
+    classinstance 7681410 "PersonEmploymentAssociation"
       type class_ref 6036610 // PersonEmploymentAssociationType
       attributes
         end
@@ -12231,7 +12231,7 @@ format 212
       comment "An association between a person and employment information."
     end
 
-    classinstance 7681410 "ObligationDateRange"
+    classinstance 7681538 "ObligationDateRange"
       type class_ref 6030210 // DateRangeType
       attributes
         end
@@ -12242,7 +12242,7 @@ format 212
       comment "A date range of an obligation."
     end
 
-    classinstance 7682818 "PersonEthnicity"
+    classinstance 7682946 "PersonEthnicity"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12253,7 +12253,7 @@ format 212
       comment "A data concept for a cultural lineage of a person."
     end
 
-    classinstance 7683074 "PersonEthnicityText"
+    classinstance 7683202 "PersonEthnicityText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12265,7 +12265,7 @@ format 212
       comment "A cultural lineage of a person."
     end
 
-    classinstance 7683202 "ScheduleDayRepresentation"
+    classinstance 7683330 "ScheduleDayRepresentation"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12276,7 +12276,7 @@ format 212
       comment "A data concept for a day or days with the given schedule information."
     end
 
-    classinstance 7683330 "ScheduleDate"
+    classinstance 7683458 "ScheduleDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12288,7 +12288,7 @@ format 212
       comment "A date for which an activity is scheduled."
     end
 
-    classinstance 7683458 "ScheduleDayStartTime"
+    classinstance 7683586 "ScheduleDayStartTime"
       type class_ref 6065282 // time
       attributes
         end
@@ -12300,7 +12300,7 @@ format 212
       comment "A time at which an activity is scheduled to begin."
     end
 
-    classinstance 7683842 "ScheduleActivityText"
+    classinstance 7683970 "ScheduleActivityText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12311,7 +12311,7 @@ format 212
       comment "An activity planned to occur on a certain date and time."
     end
 
-    classinstance 7683970 "ScheduleDayEndTime"
+    classinstance 7684098 "ScheduleDayEndTime"
       type class_ref 6065282 // time
       attributes
         end
@@ -12323,7 +12323,7 @@ format 212
       comment "A time at which an activity is scheduled to end."
     end
 
-    classinstance 7684098 "ObligationExemption"
+    classinstance 7684226 "ObligationExemption"
       type class_ref 6037890 // ObligationExemptionType
       attributes
         end
@@ -12334,7 +12334,7 @@ format 212
       comment "A waival or dismissal of an obligation."
     end
 
-    classinstance 7684226 "ExpirationDate"
+    classinstance 7684354 "ExpirationDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12345,7 +12345,7 @@ format 212
       comment "A date after which information is no longer valid."
     end
 
-    classinstance 7684482 "EntityRepresentation"
+    classinstance 7684610 "EntityRepresentation"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12356,7 +12356,7 @@ format 212
       comment "A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities."
     end
 
-    classinstance 7684610 "EntityPerson"
+    classinstance 7684738 "EntityPerson"
       type class_ref 6028802 // PersonType
       attributes
         end
@@ -12368,7 +12368,7 @@ format 212
       comment "A person capable of bearing legal rights and responsibilities."
     end
 
-    classinstance 7684994 "PersonEyeColor"
+    classinstance 7685122 "PersonEyeColor"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12379,7 +12379,7 @@ format 212
       comment "A data concept for a color of the eyes of a person."
     end
 
-    classinstance 7686274 "DocumentSubmitter"
+    classinstance 7686402 "DocumentSubmitter"
       type class_ref 6029442 // EntityType
       attributes
         end
@@ -12390,7 +12390,7 @@ format 212
       comment "An entity responsible for making the resource available."
     end
 
-    classinstance 7686530 "BinarySizeValue"
+    classinstance 7686658 "BinarySizeValue"
       type class_ref 6038914 // NonNegativeDecimalType
       attributes
         end
@@ -12401,7 +12401,7 @@ format 212
       comment "A size of a binary object in kilobytes."
     end
 
-    classinstance 7686786 "DocumentInformationCutOffDate"
+    classinstance 7686914 "DocumentInformationCutOffDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12412,7 +12412,7 @@ format 212
       comment "A date after which contributions to the content of a document will no longer be accepted."
     end
 
-    classinstance 7687042 "DateTime"
+    classinstance 7687170 "DateTime"
       type class_ref 6065538 // dateTime
       attributes
         end
@@ -12424,7 +12424,7 @@ format 212
       comment "A full date and time."
     end
 
-    classinstance 7687170 "DocumentEffectiveDate"
+    classinstance 7687298 "DocumentEffectiveDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12435,7 +12435,7 @@ format 212
       comment "A date in which the content or action becomes enforceable, active, or effective."
     end
 
-    classinstance 7687426 "DocumentFiledDate"
+    classinstance 7687554 "DocumentFiledDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12446,7 +12446,7 @@ format 212
       comment "A date a document was officially filed with an organization or agency."
     end
 
-    classinstance 7688066 "ObligationCategoryText"
+    classinstance 7688194 "ObligationCategoryText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12457,7 +12457,7 @@ format 212
       comment "A kind of obligation."
     end
 
-    classinstance 7688322 "ObligationPeriodText"
+    classinstance 7688450 "ObligationPeriodText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12468,7 +12468,7 @@ format 212
       comment "An interval or period at which an obligation is required to be fulfilled."
     end
 
-    classinstance 7688450 "StartDate"
+    classinstance 7688578 "StartDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12479,7 +12479,7 @@ format 212
       comment "A date on which something begins."
     end
 
-    classinstance 7688578 "AddressFullText"
+    classinstance 7688706 "AddressFullText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12490,7 +12490,7 @@ format 212
       comment "A complete address."
     end
 
-    classinstance 7688706 "TelephoneNumberFullID"
+    classinstance 7688834 "TelephoneNumberFullID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12501,7 +12501,7 @@ format 212
       comment "A complete telephone number."
     end
 
-    classinstance 7691778 "PersonHairColor"
+    classinstance 7691650 "PersonHairColor"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12512,7 +12512,7 @@ format 212
       comment "A data concept for a color of the hair of a person."
     end
 
-    classinstance 7692290 "PersonHeightMeasure"
+    classinstance 7692162 "PersonHeightMeasure"
       type class_ref 6039938 // MeasureType
       attributes
         end
@@ -12523,7 +12523,7 @@ format 212
       comment "A measurement of the height of a person."
     end
 
-    classinstance 7692418 "MeasureUnit"
+    classinstance 7692290 "MeasureUnit"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12534,7 +12534,7 @@ format 212
       comment "A data concept for a unit of measure of a measurement value."
     end
 
-    classinstance 7692546 "LengthUnitCode"
+    classinstance 7692418 "LengthUnitCode"
       type class_ref 6065794 // LengthCodeType
       attributes
         end
@@ -12546,7 +12546,7 @@ format 212
       comment "A unit of measure of a length value."
     end
 
-    classinstance 7692802 "IdentificationSourceText"
+    classinstance 7692674 "IdentificationSourceText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12557,7 +12557,7 @@ format 212
       comment "A person, organization, or locale which issues an identification."
     end
 
-    classinstance 7692930 "IdentificationID"
+    classinstance 7692802 "IdentificationID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12568,7 +12568,7 @@ format 212
       comment "An identifier."
     end
 
-    classinstance 7693826 "PersonCitizenship"
+    classinstance 7693698 "PersonCitizenship"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12579,7 +12579,7 @@ format 212
       comment "A data concept for a country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country."
     end
 
-    classinstance 7693954 "PersonCitizenshipFIPS10-4Code"
+    classinstance 7693826 "PersonCitizenshipFIPS10-4Code"
       type class_ref 6040066 // CountryCodeType
       attributes
         end
@@ -12591,7 +12591,7 @@ format 212
       comment "A country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country."
     end
 
-    classinstance 7694082 "Insurance"
+    classinstance 7693954 "Insurance"
       type class_ref 6040322 // InsuranceType
       attributes
         end
@@ -12602,7 +12602,7 @@ format 212
       comment "A coverage by a contract whereby one party agrees to indemnify or guarantee another against loss by a specified contingent event or peril."
     end
 
-    classinstance 7694210 "InsuranceCarrierName"
+    classinstance 7694082 "InsuranceCarrierName"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12613,7 +12613,7 @@ format 212
       comment "A name of a company which underwrites an insurance policy."
     end
 
-    classinstance 7694338 "InsuranceActiveIndicator"
+    classinstance 7694210 "InsuranceActiveIndicator"
       type class_ref 6025090 // boolean
       attributes
         end
@@ -12624,7 +12624,7 @@ format 212
       comment "True if an insurance policy is active; false otherwise."
     end
 
-    classinstance 7694466 "InsuranceCoverageCategory"
+    classinstance 7694338 "InsuranceCoverageCategory"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12635,7 +12635,7 @@ format 212
       comment "A data concept for a kind of insurance coverage."
     end
 
-    classinstance 7694594 "InsuranceCoverageCategoryText"
+    classinstance 7694466 "InsuranceCoverageCategoryText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12647,7 +12647,7 @@ format 212
       comment "A kind of insurance coverage."
     end
 
-    classinstance 7694722 "TelephoneNumberID"
+    classinstance 7694594 "TelephoneNumberID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12658,7 +12658,7 @@ format 212
       comment "A telephone number."
     end
 
-    classinstance 7694850 "TelephoneNumberRepresentation"
+    classinstance 7694722 "TelephoneNumberRepresentation"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12669,7 +12669,7 @@ format 212
       comment "A data concept for a telephone number."
     end
 
-    classinstance 7694978 "InternationalTelephoneNumber"
+    classinstance 7694850 "InternationalTelephoneNumber"
       type class_ref 6040450 // InternationalTelephoneNumberType
       attributes
         end
@@ -12681,7 +12681,7 @@ format 212
       comment "An international telephone number."
     end
 
-    classinstance 7695106 "TelephoneSuffixID"
+    classinstance 7694978 "TelephoneSuffixID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12692,7 +12692,7 @@ format 212
       comment "An additional sequence of numbers to be entered after a call connects to be directed to the appropriate place."
     end
 
-    classinstance 7695234 "Language"
+    classinstance 7695106 "Language"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12703,7 +12703,7 @@ format 212
       comment "A data concept for a system of words or symbols used for communication."
     end
 
-    classinstance 7695362 "LanguageCode"
+    classinstance 7695234 "LanguageCode"
       type class_ref 6040578 // LanguageCodeType
       attributes
         end
@@ -12715,7 +12715,7 @@ format 212
       comment "A system of words or symbols used for communication."
     end
 
-    classinstance 7695490 "PersonLanguageEnglishIndicator"
+    classinstance 7695362 "PersonLanguageEnglishIndicator"
       type class_ref 6025090 // boolean
       attributes
         end
@@ -12726,7 +12726,7 @@ format 212
       comment "True if a person understands and speaks English; false otherwise."
     end
 
-    classinstance 7695874 "IdentificationJurisdiction"
+    classinstance 7695746 "IdentificationJurisdiction"
       type class_ref 6040834 // JurisdictionType
       attributes
         end
@@ -12737,7 +12737,7 @@ format 212
       comment "An area, region, or unit where a unique identification is issued."
     end
 
-    classinstance 7696130 "JurisdictionAbstract"
+    classinstance 7696002 "JurisdictionAbstract"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12748,7 +12748,7 @@ format 212
       comment "A data concept for an area, state, region, or other geographic unit over which some kind of authority exists."
     end
 
-    classinstance 7696386 "JurisdictionText"
+    classinstance 7696258 "JurisdictionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12760,7 +12760,7 @@ format 212
       comment "An area in which an organization or person has some kind of authoritative capacity or responsibility over."
     end
 
-    classinstance 7697410 "DocumentLanguage"
+    classinstance 7697282 "DocumentLanguage"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -12771,7 +12771,7 @@ format 212
       comment "A data concept for the language of the content of the resource."
     end
 
-    classinstance 7697538 "DocumentLanguageCode"
+    classinstance 7697410 "DocumentLanguageCode"
       type class_ref 6040578 // LanguageCodeType
       attributes
         end
@@ -12783,7 +12783,7 @@ format 212
       comment "A language of the content of the resource."
     end
 
-    classinstance 7697666 "PersonPrimaryLanguage"
+    classinstance 7697538 "PersonPrimaryLanguage"
       type class_ref 6041474 // PersonLanguageType
       attributes
         end
@@ -12794,7 +12794,7 @@ format 212
       comment "A capacity of a person for a language with which that person has the strongest familiarity."
     end
 
-    classinstance 7697922 "LastUpdatedDate"
+    classinstance 7697794 "LastUpdatedDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -12805,7 +12805,7 @@ format 212
       comment "A date information was last modified."
     end
 
-    classinstance 7698050 "OrganizationSubUnitName"
+    classinstance 7697922 "OrganizationSubUnitName"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12816,7 +12816,7 @@ format 212
       comment "A name of a subdivision of an organization."
     end
 
-    classinstance 7698178 "OrganizationUnitName"
+    classinstance 7698050 "OrganizationUnitName"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12827,7 +12827,7 @@ format 212
       comment "A name of a high-level division of an organization."
     end
 
-    classinstance 7699714 "PersonStateIdentification"
+    classinstance 7699586 "PersonStateIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -12838,7 +12838,7 @@ format 212
       comment "An identification of a person based on a state-issued ID card."
     end
 
-    classinstance 7699842 "ContactMailingAddress"
+    classinstance 7699714 "ContactMailingAddress"
       type class_ref 6026498 // AddressType
       attributes
         end
@@ -12850,7 +12850,7 @@ format 212
       comment "A postal address by which a person or organization may be contacted."
     end
 
-    classinstance 7699970 "PersonUnionLocation"
+    classinstance 7699842 "PersonUnionLocation"
       type class_ref 6026114 // LocationType
       attributes
         end
@@ -12861,7 +12861,7 @@ format 212
       comment "A location where the Person Union occurred."
     end
 
-    classinstance 7704322 "ItemModelYearDate"
+    classinstance 7704194 "ItemModelYearDate"
       type class_ref 6049538 // gYear
       attributes
         end
@@ -12872,7 +12872,7 @@ format 212
       comment "A year in which an item was manufactured or produced."
     end
 
-    classinstance 7704450 "LocationName"
+    classinstance 7704322 "LocationName"
       type class_ref 6026754 // ProperNameTextType
       attributes
         end
@@ -12883,7 +12883,7 @@ format 212
       comment "A name of a location."
     end
 
-    classinstance 7704578 "PersonGivenName"
+    classinstance 7704450 "PersonGivenName"
       type class_ref 6026626 // PersonNameTextType
       attributes
         end
@@ -12894,7 +12894,7 @@ format 212
       comment "A first name of a person."
     end
 
-    classinstance 7704706 "PersonMiddleName"
+    classinstance 7704578 "PersonMiddleName"
       type class_ref 6026626 // PersonNameTextType
       attributes
         end
@@ -12905,7 +12905,7 @@ format 212
       comment "A middle name of a person."
     end
 
-    classinstance 7704834 "PersonSurName"
+    classinstance 7704706 "PersonSurName"
       type class_ref 6026626 // PersonNameTextType
       attributes
         end
@@ -12916,7 +12916,7 @@ format 212
       comment "A last name or family name of a person."
     end
 
-    classinstance 7704962 "PersonNameSuffixText"
+    classinstance 7704834 "PersonNameSuffixText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -12927,7 +12927,7 @@ format 212
       comment "A term appended after the family name that qualifies the name."
     end
 
-    classinstance 7705090 "PersonMaidenName"
+    classinstance 7704962 "PersonMaidenName"
       type class_ref 6026626 // PersonNameTextType
       attributes
         end
@@ -12938,7 +12938,7 @@ format 212
       comment "An original last name or surname of a person before changed by marriage."
     end
 
-    classinstance 7705474 "TelephoneAreaCodeID"
+    classinstance 7705346 "TelephoneAreaCodeID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12949,7 +12949,7 @@ format 212
       comment "A dialing code for a state or province for phone numbers in the USA, Canada, Mexico, and the Caribbean."
     end
 
-    classinstance 7705602 "TelephoneExchangeID"
+    classinstance 7705474 "TelephoneExchangeID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12960,7 +12960,7 @@ format 212
       comment "A portion of a telephone number that usually represents a central telephone switch."
     end
 
-    classinstance 7705730 "TelephoneLineID"
+    classinstance 7705602 "TelephoneLineID"
       type class_ref 6025858 // string
       attributes
         end
@@ -12971,7 +12971,7 @@ format 212
       comment "A portion of a telephone number that identifies the individual circuit within an exchange."
     end
 
-    classinstance 7705858 "NANPTelephoneNumber"
+    classinstance 7705730 "NANPTelephoneNumber"
       type class_ref 6061826 // NANPTelephoneNumberType
       attributes
         end
@@ -12983,8 +12983,8 @@ format 212
       comment "A North American Numbering Plan telephone number."
     end
 
-    classinstance 7705986 "FullTelephoneNumber"
-      type class_ref 6059650 // FullTelephoneNumberType
+    classinstance 7705858 "FullTelephoneNumber"
+      type class_ref 6059522 // FullTelephoneNumberType
       attributes
         end
       relations
@@ -13486,7 +13486,7 @@ format 212
       comment "A third party person who answers a call and connects or directs the caller to the intended person."
     end
 
-    classinstance 7726082 "PersonSex"
+    classinstance 7725954 "PersonSex"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13497,7 +13497,7 @@ format 212
       comment "A data concept for a gender or sex of a person."
     end
 
-    classinstance 7726850 "PersonTaxIdentification"
+    classinstance 7726722 "PersonTaxIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -13508,7 +13508,7 @@ format 212
       comment "An identification used to refer to a specific person within the tax system of a country."
     end
 
-    classinstance 7727106 "MeasureValue"
+    classinstance 7726978 "MeasureValue"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13519,7 +13519,7 @@ format 212
       comment "A data concept for a measurement value."
     end
 
-    classinstance 7727234 "MeasureDecimalValue"
+    classinstance 7727106 "MeasureDecimalValue"
       type class_ref 6027394 // decimal
       attributes
         end
@@ -13531,7 +13531,7 @@ format 212
       comment "A decimal measurement value."
     end
 
-    classinstance 7727490 "LocationState"
+    classinstance 7727362 "LocationState"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13542,7 +13542,7 @@ format 212
       comment "A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country."
     end
 
-    classinstance 7727618 "LocationStateName"
+    classinstance 7727490 "LocationStateName"
       type class_ref 6026754 // ProperNameTextType
       attributes
         end
@@ -13554,7 +13554,7 @@ format 212
       comment "A name of a state, commonwealth, province, or other such geopolitical subdivision of a country."
     end
 
-    classinstance 7728642 "StatusDateRepresentation"
+    classinstance 7728514 "StatusDateRepresentation"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13565,7 +13565,7 @@ format 212
       comment "A data concept for a date a status is given."
     end
 
-    classinstance 7728770 "StatusDate"
+    classinstance 7728642 "StatusDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -13577,7 +13577,7 @@ format 212
       comment "A date a status was set, effected, or reported."
     end
 
-    classinstance 7729538 "LocationStreet"
+    classinstance 7729410 "LocationStreet"
       type class_ref 6047490 // StreetType
       attributes
         end
@@ -13589,7 +13589,7 @@ format 212
       comment "A road, thoroughfare or highway."
     end
 
-    classinstance 7729666 "StreetFullText"
+    classinstance 7729538 "StreetFullText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13600,7 +13600,7 @@ format 212
       comment "A complete reference for a street."
     end
 
-    classinstance 7729794 "StreetPredirectionalText"
+    classinstance 7729666 "StreetPredirectionalText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13611,7 +13611,7 @@ format 212
       comment "A direction that appears before a street name."
     end
 
-    classinstance 7729922 "StreetName"
+    classinstance 7729794 "StreetName"
       type class_ref 6026754 // ProperNameTextType
       attributes
         end
@@ -13622,7 +13622,7 @@ format 212
       comment "A name of a street."
     end
 
-    classinstance 7730050 "StreetCategoryText"
+    classinstance 7729922 "StreetCategoryText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13633,7 +13633,7 @@ format 212
       comment "A kind of street."
     end
 
-    classinstance 7730178 "StreetPostdirectionalText"
+    classinstance 7730050 "StreetPostdirectionalText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13644,7 +13644,7 @@ format 212
       comment "A direction that appears after a street name."
     end
 
-    classinstance 7730306 "StreetExtensionText"
+    classinstance 7730178 "StreetExtensionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13655,7 +13655,7 @@ format 212
       comment "An additional part of a street reference that follows the street category and post directional."
     end
 
-    classinstance 7730434 "StreetNumberText"
+    classinstance 7730306 "StreetNumberText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13666,7 +13666,7 @@ format 212
       comment "A number that identifies a particular unit or location within a street."
     end
 
-    classinstance 7730562 "ItemStyle"
+    classinstance 7730434 "ItemStyle"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13677,7 +13677,7 @@ format 212
       comment "A data concept for a style of an item."
     end
 
-    classinstance 7730690 "DocumentPostDate"
+    classinstance 7730562 "DocumentPostDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -13688,7 +13688,7 @@ format 212
       comment "A date a document is entered or posted to an information system or network; used when the date of posting is different from the date on which a document was officially filed."
     end
 
-    classinstance 7731330 "OrganizationTaxIdentification"
+    classinstance 7731202 "OrganizationTaxIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -13699,7 +13699,7 @@ format 212
       comment "A tax identification assigned to an organization."
     end
 
-    classinstance 7731458 "TelephoneCountryCodeID"
+    classinstance 7731330 "TelephoneCountryCodeID"
       type class_ref 6025858 // string
       attributes
         end
@@ -13710,7 +13710,7 @@ format 212
       comment "An international dialing code for a country."
     end
 
-    classinstance 7731586 "ContactTelephoneNumber"
+    classinstance 7731458 "ContactTelephoneNumber"
       type class_ref 6047618 // TelephoneNumberType
       attributes
         end
@@ -13722,7 +13722,7 @@ format 212
       comment "A telephone number for a telecommunication device by which a person or organization may be contacted."
     end
 
-    classinstance 7731970 "DateRange"
+    classinstance 7731714 "DateRange"
       type class_ref 6030210 // DateRangeType
       attributes
         end
@@ -13733,7 +13733,7 @@ format 212
       comment "A time period measured by a starting and ending point."
     end
 
-    classinstance 7732098 "PersonNamePrefixText"
+    classinstance 7731842 "PersonNamePrefixText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13744,7 +13744,7 @@ format 212
       comment "A title or honorific used by a person."
     end
 
-    classinstance 7732354 "EndDate"
+    classinstance 7732098 "EndDate"
       type class_ref 6026370 // DateType
       attributes
         end
@@ -13755,7 +13755,7 @@ format 212
       comment "An end date."
     end
 
-    classinstance 7732866 "PersonUnionCategory"
+    classinstance 7732610 "PersonUnionCategory"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13766,7 +13766,7 @@ format 212
       comment "A data concept for a kind of union between two people."
     end
 
-    classinstance 7732994 "PersonUnionCategoryCode"
+    classinstance 7732738 "PersonUnionCategoryCode"
       type class_ref 6047746 // PersonUnionCategoryCodeType
       attributes
         end
@@ -13778,7 +13778,7 @@ format 212
       comment "A kind of union between two people."
     end
 
-    classinstance 7733122 "SpeedUnitCode"
+    classinstance 7732866 "SpeedUnitCode"
       type class_ref 6048002 // VelocityCodeType
       attributes
         end
@@ -13790,7 +13790,7 @@ format 212
       comment "A unit of measurement of speed."
     end
 
-    classinstance 7733250 "FinancialObligationExemptionAmount"
+    classinstance 7732994 "FinancialObligationExemptionAmount"
       type class_ref 6027266 // AmountType
       attributes
         end
@@ -13801,7 +13801,7 @@ format 212
       comment "An amount of an exemption from a payment obligation."
     end
 
-    classinstance 7733378 "ObligationExemptionDescriptionText"
+    classinstance 7733122 "ObligationExemptionDescriptionText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13812,7 +13812,7 @@ format 212
       comment "A description of an exemption from an obligation."
     end
 
-    classinstance 7733634 "ItemValue"
+    classinstance 7733378 "ItemValue"
       type class_ref 6045698 // ItemValueType
       attributes
         end
@@ -13823,7 +13823,7 @@ format 212
       comment "An evaluation of the monetary worth of an item."
     end
 
-    classinstance 7733762 "VehicleAugmentationPoint"
+    classinstance 7733506 "VehicleAugmentationPoint"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13834,7 +13834,7 @@ format 212
       comment "An augmentation point for VehicleType."
     end
 
-    classinstance 7734274 "ConveyanceColorPrimaryText"
+    classinstance 7734018 "ConveyanceColorPrimaryText"
       type class_ref 6025730 // TextType
       attributes
         end
@@ -13846,7 +13846,7 @@ format 212
       comment "A single, upper-most, front-most, or majority color of a conveyance."
     end
 
-    classinstance 7734402 "VehicleIdentification"
+    classinstance 7734146 "VehicleIdentification"
       type class_ref 6026242 // IdentificationType
       attributes
         end
@@ -13857,7 +13857,7 @@ format 212
       comment "A unique identification for a specific vehicle."
     end
 
-    classinstance 7735042 "VehicleMake"
+    classinstance 7734786 "VehicleMake"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13868,7 +13868,7 @@ format 212
       comment "A data concept for a manufacturer of a vehicle."
     end
 
-    classinstance 7735298 "VehicleModel"
+    classinstance 7735042 "VehicleModel"
       type class_ref 6024706 // abstract
       attributes
         end
@@ -13879,7 +13879,7 @@ format 212
       comment "A data concept for a specific design or class of vehicle made by a manufacturer."
     end
 
-    classinstance 7735682 "IncidentLocation"
+    classinstance 7735426 "IncidentLocation"
       type class_ref 6026114 // LocationType
       attributes
         end
@@ -13890,7 +13890,7 @@ format 212
       comment "A location where an incident occurred."
     end
 
-    classinstance 7735810 "PersonWeightMeasure"
+    classinstance 7735554 "PersonWeightMeasure"
       type class_ref 6039938 // MeasureType
       attributes
         end
@@ -13901,7 +13901,7 @@ format 212
       comment "A measurement of the weight of a person."
     end
 
-    classinstance 7735938 "WeightUnitCode"
+    classinstance 7735682 "WeightUnitCode"
       type class_ref 6066562 // MassCodeType
       attributes
         end
