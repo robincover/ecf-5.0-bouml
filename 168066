@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 31
+  revision 32
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -428,6 +428,18 @@ ${members}};
 	comment "An operation to request a court date."
       end
 
+      operation 169474 "DocumentStampInformation"
+	public return_type class_ref 145666 // MessageReceiptMessage
+	nparams 1
+	  param in name "" type class_ref 2107138 // DocumentStampInformationMessage
+	
+	
+	
+	
+	
+	comment "An operation that is a query for the information to be included on document stamps.  This operation is implemented by the system responsible for providing the document stamp information.  The operation is invoked by the system responsible for performing the stamping."
+      end
+
       operation 129282 "GetCase"
 	public return_type class_ref 145282 // GetCaseResponseMessage
 	nparams 1
@@ -462,18 +474,6 @@ ${members}};
 	
 	
 	comment "An peration to query for a document."
-      end
-
-      operation 169474 "DocumentStampInformation"
-	public return_type class_ref 145666 // MessageReceiptMessage
-	nparams 1
-	  param in name "" type class_ref 2107138 // DocumentStampInformationMessage
-	
-	
-	
-	
-	
-	comment "An operation that is a query for the information to be included on document stamps.  This operation is implemented by the system responsible for providing the document stamp information.  The operation is invoked by the system responsible for performing the stamping."
       end
 
       operation 129666 "GetServiceInformation"

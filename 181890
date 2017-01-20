@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 38
+  revision 41
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -4008,6 +4008,40 @@ format 212
       end
     end
 
+    class 823810 "CaseTypes"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedCaseType"
+      key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedCaseCategories"
+      key "niem-profile:niem:Type" value "policyresponse:CaseTypeCodeType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "A list of ECF case types."
+    end
+
     class 137218 "CoreCodelist"
       visibility public stereotype "niem-profile:niem"
       cpp_decl ""
@@ -4110,144 +4144,6 @@ format 212
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-      end
-    end
-
-    class 136834 "GetPolicyResponseMessage"
-      visibility public stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      associated_diagram classdiagram_ref 136066 // GetPolicyResponseMessage
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage"
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage"
-      key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:ResponseMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Reference nc:Metadata with policyresponse:GetPolicyResponseMessage/@structures:metadata"
-      key "niem-profile:niem:CodeList" value ""
-      comment "The response to a request for a court Court Policy."
-      classrelation 156162 // <generalisation>
-	relation 153986 ---|>
-	  a public
-	    classrelation_ref 156162 // <generalisation>
-	  b parent class_ref 132866 // ResponseMessage
-      end
-
-      classrelation 156290 // developmentPolicyParameters (<directional aggregation>)
-	relation 154114 o-->
-	  stereotype "niem-profile:niem"
-	  a role_name "developmentPolicyParameters" public
-	    comment "The response to a request for a court Court Policy."
-	    classrelation_ref 156290 // developmentPolicyParameters (<directional aggregation>)
-	  b parent class_ref 137602 // DevelopmentPolicyParameters
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters"
-	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy"
-	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
-	key "niem-profile:niem:Property" value "policyresponse:DevelopmentPolicy"
-	key "niem-profile:niem:BaseType" value "policyresponse:DevelopmentPolicyType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-      end
-
-      attribute 145666 "lastUpdateTime"
-	public type class_ref 156034 // dateTime
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:PolicyLastUpdateDate"
-	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/nc:Metadata/nc:LastUpdatedDate"
-	key "niem-profile:niem:Type" value "nc:MetadataType"
-	key "niem-profile:niem:Property" value "nc:LastUpdatedDate"
-	key "niem-profile:niem:BaseType" value "nc:DateType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "The date and time on which a court Court Policy was last revised."
-      end
-
-      attribute 145538 "policyVersionID"
-	public explicit_type ""
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:PolicyVersionID"
-	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:PolicyVersionID"
-	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
-	key "niem-profile:niem:Property" value "policyresponse:PolicyVersionID"
-	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "The version of court policy reported by this message.  Up to the court to define the format of this, and describe in human-readable court policy."
-      end
-
-      classrelation 156418 // runtimePolicyParameters (<directional aggregation>)
-	relation 154242 o-->
-	  stereotype "niem-profile:niem"
-	  a role_name "runtimePolicyParameters" public
-	    comment "Within Court Policy, the policies that are accessed dynamically by applications interacting with a court."
-	    classrelation_ref 156418 // runtimePolicyParameters (<directional aggregation>)
-	  b parent class_ref 136962 // RuntimePolicyParameters
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:RuntimePolicyParameters"
-	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:RuntimePolicy"
-	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
-	key "niem-profile:niem:Property" value "policyresponse:RuntimePolicy"
-	key "niem-profile:niem:BaseType" value "policyresponse:RuntimePolicyType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-      end
-
-      attribute 1546242 "messageExtension"
-	public type class_ref 2113794 // extension
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:GetPolicyResponseMessageAugmentationPoint"
-	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
-	key "niem-profile:niem:Property" value "policyresponse:GetPolicyResponseMessageAugmentationPoint"
-	key "niem-profile:niem:BaseType" value "abstract"
-	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-	comment "An extension point for the enclosing message."
       end
     end
 
@@ -4452,44 +4348,6 @@ format 212
 	key "niem-profile:niem:CodeList" value ""
       end
 
-      classrelation 157186 // supportedMessageProfile (<directional aggregation>)
-	relation 155010 o-->
-	  stereotype "niem-profile:niem"
-	  a role_name "supportedMessageProfile" multiplicity "1..*" public
-	    comment "A signature profile approved for use with ECF by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that is supported by this court."
-	    classrelation_ref 157186 // supportedMessageProfile (<directional aggregation>)
-	  b parent class_ref 137730 // SupportedMessageProfile
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedMessageProfileCode"
-	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedServiceInteractionProfiles"
-	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
-	key "niem-profile:niem:Property" value "policyresponse:SupportedServiceInteractionProfiles"
-	key "niem-profile:niem:BaseType" value "policyresponse:SupportedServiceInteractionProfilesType"
-	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-      end
-
-      classrelation 157442 // supportedOperation (<directional aggregation>)
-	relation 155266 o-->
-	  stereotype "niem-profile:niem"
-	  a role_name "supportedOperation" public
-	    comment "A structure containing indicators that signal support by the e-filing system for optional ECF operations. E.g. particular queries"
-	    classrelation_ref 157442 // supportedOperation (<directional aggregation>)
-	  b parent class_ref 170498 // SupportedOperations
-	ncouples 9
-	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
-	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations"
-	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
-	key "niem-profile:niem:Property" value "policyresponse:SupportedOperations"
-	key "niem-profile:niem:BaseType" value "policyresponse:SupportedOperationsType"
-	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
-      end
-
       classrelation 157314 // supportedSignatureProfile (<directional aggregation>)
 	relation 155138 o-->
 	  stereotype "niem-profile:niem"
@@ -4530,6 +4388,25 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Whether court allows attachments via remote URLs."
+      end
+
+      classrelation 4585346 // majorDesignElement (<directional aggregation>)
+	relation 4583170 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "majorDesignElement" multiplicity "1..*" public
+	    comment "An ECF major design element (MDE)"
+	    classrelation_ref 4585346 // majorDesignElement (<directional aggregation>)
+	  b parent class_ref 6073218 // MajorDesignElements
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement"
+	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
+	key "niem-profile:niem:Property" value "policyresponse:MajorDesignElement"
+	key "niem-profile:niem:BaseType" value "policyresponse:MajorDesignElementType"
+	key "niem-profile:niem:Multiplicity" value "1,unbounded"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
       end
     end
 
@@ -4636,12 +4513,12 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SchemaExtension/policyresponse:MajorDesignElementNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SchemaExtension/policyresponse:MajorDesignElementTypeCode"
 	key "niem-profile:niem:Type" value "policyresponse:SchemaExtensionType"
-	key "niem-profile:niem:Property" value "policyresponse:MajorDesignElementNameCode"
+	key "niem-profile:niem:Property" value "policyresponse:MajorDesignElementTypeCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
-	key "niem-profile:niem:Notes" value "Genericode code list MajorDesignElementNameCode.gc"
+	key "niem-profile:niem:Notes" value "Genericode code list MajorDesignElementTypeCode.gc"
 	key "niem-profile:niem:CodeList" value "CourtRecord=CourtRecord MDE; CourtPolicy=Court Policy MDE; CourtScheduling=CourtScheduling MDE; FilingAssembly=FilingAssembly MDE; FilingReview=FilingReview MDE; Service=Service MDE"
 	comment "Name of a major design element."
       end
@@ -4716,6 +4593,301 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	comment "The element(s) in the extension schema that are are the root of the extension and substitute for an extension (augmentation) point."
       end
+    end
+
+    class 136834 "GetPolicyResponseMessage"
+      visibility public stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      associated_diagram classdiagram_ref 136066 // GetPolicyResponseMessage
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage"
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage"
+      key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "ecf:ResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value "Reference nc:Metadata with policyresponse:GetPolicyResponseMessage/@structures:metadata"
+      key "niem-profile:niem:CodeList" value ""
+      comment "The response to a request for a court Court Policy."
+      classrelation 156162 // <generalisation>
+	relation 153986 ---|>
+	  a public
+	    classrelation_ref 156162 // <generalisation>
+	  b parent class_ref 132866 // ResponseMessage
+      end
+
+      classrelation 156290 // developmentPolicyParameters (<directional aggregation>)
+	relation 154114 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "developmentPolicyParameters" public
+	    comment "The response to a request for a court Court Policy."
+	    classrelation_ref 156290 // developmentPolicyParameters (<directional aggregation>)
+	  b parent class_ref 137602 // DevelopmentPolicyParameters
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy"
+	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
+	key "niem-profile:niem:Property" value "policyresponse:DevelopmentPolicy"
+	key "niem-profile:niem:BaseType" value "policyresponse:DevelopmentPolicyType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+      end
+
+      attribute 145666 "lastUpdateTime"
+	public type class_ref 156034 // dateTime
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:PolicyLastUpdateDate"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/nc:Metadata/nc:LastUpdatedDate"
+	key "niem-profile:niem:Type" value "nc:MetadataType"
+	key "niem-profile:niem:Property" value "nc:LastUpdatedDate"
+	key "niem-profile:niem:BaseType" value "nc:DateType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "The date and time on which a court Court Policy was last revised."
+      end
+
+      attribute 145538 "policyVersionID"
+	public explicit_type ""
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:PolicyVersionID"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:PolicyVersionID"
+	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
+	key "niem-profile:niem:Property" value "policyresponse:PolicyVersionID"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "The version of court policy reported by this message.  Up to the court to define the format of this, and describe in human-readable court policy."
+      end
+
+      classrelation 156418 // runtimePolicyParameters (<directional aggregation>)
+	relation 154242 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "runtimePolicyParameters" public
+	    comment "Within Court Policy, the policies that are accessed dynamically by applications interacting with a court."
+	    classrelation_ref 156418 // runtimePolicyParameters (<directional aggregation>)
+	  b parent class_ref 136962 // RuntimePolicyParameters
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:RuntimePolicyParameters"
+	key "niem-profile:niem:OldMultiplicity" value "1,1"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:RuntimePolicy"
+	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
+	key "niem-profile:niem:Property" value "policyresponse:RuntimePolicy"
+	key "niem-profile:niem:BaseType" value "policyresponse:RuntimePolicyType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+      end
+
+      attribute 1546242 "messageExtension"
+	public type class_ref 2113794 // extension
+	multiplicity "*"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:GetPolicyResponseMessageAugmentationPoint"
+	key "niem-profile:niem:Type" value "policyresponse:GetPolicyResponseMessageType"
+	key "niem-profile:niem:Property" value "policyresponse:GetPolicyResponseMessageAugmentationPoint"
+	key "niem-profile:niem:BaseType" value "abstract"
+	key "niem-profile:niem:Multiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:CodeList" value ""
+	comment "An extension point for the enclosing message."
+      end
+    end
+
+    classdiagram 136066 "GetPolicyResponseMessage"
+      classdiagramsettings member_max_width 0 end
+      comment "The response to a request for a court Court Policy."
+      size D-Landscape
+    end
+
+    classinstance 3147778 "GetPolicyResponseMessage"
+      stereotype "niem-profile:niem"
+      type class_ref 136834 // GetPolicyResponseMessage
+      attributes
+        end
+      relations
+        end
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "policyresponse:GetPolicyResponseMessage"
+      key "niem-profile:niem:BaseType" value "policyresponse:GetPolicyResponseMessageType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:CodeList" value ""
+      comment "The response to a request for a court Court Policy."
+    end
+
+    class 6073218 "MajorDesignElements"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement"
+      key "niem-profile:niem:Type" value "policyresponse:MajorDesignElementType"
+      key "niem-profile:niem:Property" value ""
+      key "niem-profile:niem:BaseType" value "structures:ObjectType"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:CodeList" value ""
+      key "niem-profile:niem:OldXPath" value ""
+      key "niem-profile:niem:OldMultiplicity" value ""
+      key "niem-profile:niem:Notes" value ""
+      comment "An ECF Major Design Element (MDE)"
+      attribute 11744770 "mdeLocationID"
+	public type class_ref 156162 // id
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/polocyresponse:MajorDesignElementLocationID"
+	key "niem-profile:niem:Type" value "policyresponse:MajorDesignElementType"
+	key "niem-profile:niem:Property" value "policyresponse:MajorDesignElementLocationID"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The unique URL location of a major design element."
+      end
+
+      attribute 11744898 "mdeType"
+	public explicit_type ""
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/ecf:MajorDesignElementTypeCode"
+	key "niem-profile:niem:Type" value "policyresponse:MajorDesignElementType"
+	key "niem-profile:niem:Property" value "policyresponse:MajorDesignElementTypeCode"
+	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "Code identifying the service interaction profile being used by the MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF."
+      end
+
+      classrelation 4585218 // supportOperation (<directional aggregation>)
+	relation 4583042 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "supportOperation" multiplicity "1..*" public
+	    comment "A structure containing indicators that signal support by the e-filing system for optional ECF operations. E.g. particular queries"
+	    classrelation_ref 4585218 // supportOperation (<directional aggregation>)
+	  b parent class_ref 170498 // SupportedOperations
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations"
+	key "niem-profile:niem:Type" value "policyresponse:MajorDesignElementType"
+	key "niem-profile:niem:Property" value "policyresponse:SupportedOperations"
+	key "niem-profile:niem:BaseType" value "policyresponse:SupportedOperationsType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+      end
+
+      classrelation 4585602 // supportedMessageProfile (<directional aggregation>)
+	relation 4583298 o-->
+	  stereotype "niem-profile:niem"
+	  a role_name "supportedMessageProfile" multiplicity "1..*" public
+	    comment "A signature profile approved for use with ECF by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that is supported by this court."
+	    classrelation_ref 4585602 // supportedMessageProfile (<directional aggregation>)
+	  b parent class_ref 137730 // SupportedMessageProfile
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedServiceInteractionProfiles"
+	key "niem-profile:niem:Type" value "policyresponse:MajorDesignElementType"
+	key "niem-profile:niem:Property" value "policyresponse:SupportedServiceInteractionProfiles"
+	key "niem-profile:niem:BaseType" value "policyresponse:SupportedServiceInteractionProfilesType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+      end
+    end
+
+    class 830338 "Operations"
+      visibility package stereotype "niem-profile:niem"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      ncouples 9
+      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
+      key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:RuntimePolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+      key "niem-profile:niem:Type" value ""
+      key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
+      key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
+      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Notes" value "Genericode code list OperationNameCode.gc"
+      key "niem-profile:niem:CodeList" value "AllocateCourtDate; DocumentStampInformation; GetCase; GetCaseList; GetCourtSchedule; GetDocument; GetFilingList; GetFilingStatus; GetPolicy; GetServiceInformation; NotifyCourtDate; NotifyFilingReviewComplete; NotifyDocketingComplete; NotifyDocumentStampInformation; RecordFiling; ReserveCourtDate; ReviewFiling; ServeFiling"
+      comment "A list of ECF operations."
     end
 
     class 137090 "PublicKeyInformation"
@@ -4974,7 +5146,7 @@ format 212
       ncouples 9
       key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedMessageProfileCode"
       key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedServiceInteractionProfiles"
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedServiceInteractionProfiles"
       key "niem-profile:niem:Type" value "policyresponse:SupportedServiceInteractionProfilesType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
@@ -4995,7 +5167,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedMessageProfileCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedServiceInteractionProfiles/policyresponse:SupportedMessageProfiles"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedServiceInteractionProfiles/policyresponse:ServiceInteractionProfileCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedServiceInteractionProfilesType"
 	key "niem-profile:niem:Property" value "policyresponse:ServiceInteractionProfileCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5019,7 +5191,7 @@ format 212
       ncouples 9
       key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
       key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations"
+      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations"
       key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
@@ -5040,7 +5212,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5063,7 +5235,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5086,7 +5258,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5109,7 +5281,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5132,7 +5304,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5155,7 +5327,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5178,7 +5350,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedOperationsType"
 	key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
@@ -5232,89 +5404,6 @@ format 212
 	key "niem-profile:niem:CodeList" value "urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:ApplicationSignature-1.0=Application-Specific Document Signature Profile; urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:NullSignature-1.0=Null Document Signature Profile; urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:ProxySignature-1.0=Proxy Document Signature Profile; urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:SymmetricSignature-1.0=Symmetric Key Document Signature Profile; urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:XMLSignature-1.0=XML Signature Document Signature Profile"
 	comment "A signature profile approved for use with ECF by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that is supported by this court."
       end
-    end
-
-    classdiagram 136066 "GetPolicyResponseMessage"
-      classdiagramsettings member_max_width 0 end
-      comment "The response to a request for a court Court Policy."
-      size D-Landscape
-    end
-
-    class 823810 "CaseTypes"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl "${comment}${template}class ${name}${inherit} {
-${members}};
-${inlines}
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      python_2_2 python_decl "class ${name}${inherit}:
-${docstring}${members}
-"
-      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedCaseType"
-      key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedCaseCategories"
-      key "niem-profile:niem:Type" value "policyresponse:CaseTypeCodeType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "A list of ECF case types."
-    end
-
-    class 830338 "Operations"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedOperation"
-      key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:RuntimePolicy/policyresponse:SupportedOperations/policyresponse:OperationNameCode"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "policyresponse:OperationNameCode"
-      key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "Genericode code list OperationNameCode.gc"
-      key "niem-profile:niem:CodeList" value "AllocateCourtDate; DocumentStampInformation; GetCase; GetCaseList; GetCourtSchedule; GetDocument; GetFilingList; GetFilingStatus; GetPolicy; GetServiceInformation; NotifyCourtDate; NotifyFilingReviewComplete; NotifyDocketingComplete; NotifyDocumentStampInformation; RecordFiling; ReserveCourtDate; ReviewFiling; ServeFiling"
-      comment "A list of ECF operations."
-    end
-
-    classinstance 3147778 "GetPolicyResponseMessage"
-      stereotype "niem-profile:niem"
-      type class_ref 136834 // GetPolicyResponseMessage
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "policyresponse:GetPolicyResponseMessage"
-      key "niem-profile:niem:BaseType" value "policyresponse:GetPolicyResponseMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      key "niem-profile:niem:CodeList" value ""
-      comment "The response to a request for a court Court Policy."
     end
   end
 
