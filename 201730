@@ -55,7 +55,7 @@ format 212
       comment "The request message from the Court Scheduling MDE to the Court Record MDE to allocate a court date on the schedule."
     end
 
-    classinstance 7700610 "AllocateCourtDateMessageAugmentationPoint"
+    classinstance 7700482 "AllocateCourtDateMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -206,7 +206,7 @@ format 212
       comment "The basis for the jurisdiction of the appellate court in the case."
     end
 
-    classinstance 7712514 "AppellateCaseParty"
+    classinstance 7712386 "AppellateCaseParty"
       type class_ref 6084482 // EntityType
       attributes
         end
@@ -217,7 +217,7 @@ format 212
       comment "An identifier assigned to a party being added to the appeal."
     end
 
-    classinstance 7712386 "AppellateCasePartyAddedReasonText"
+    classinstance 7712258 "AppellateCasePartyAddedReasonText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -228,7 +228,7 @@ format 212
       comment "The reason a party is being added to the appeal."
     end
 
-    classinstance 7712642 "AppellateCasePartyRemovedReasonText"
+    classinstance 7712514 "AppellateCasePartyRemovedReasonText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -239,7 +239,7 @@ format 212
       comment "The reason a party is being removed from the appeal."
     end
 
-    classinstance 7722242 "AppellateCaseRemovedParty"
+    classinstance 7721986 "AppellateCaseRemovedParty"
       type class_ref 6117378 // AppellateCaseRemovedPartyType
       attributes
         end
@@ -545,7 +545,7 @@ format 212
       comment "Indicator that filing fees were waived or deferred in the case in the lower court."
     end
 
-    classinstance 7724034 "RuleCollectionNumber"
+    classinstance 7723778 "RuleCollectionNumber"
       type class_ref 6098946 // NumericType
       attributes
         end
@@ -556,7 +556,7 @@ format 212
       comment "An organized set or book of rules of the court that include the rule(s) in question."
     end
 
-    classinstance 7724162 "RuleCollectionText"
+    classinstance 7723906 "RuleCollectionText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -1099,7 +1099,7 @@ format 212
       comment "The account in a financial institution used for this payment."
     end
 
-    classinstance 7713026 "Payment"
+    classinstance 7712898 "Payment"
       type class_ref 6117506 // PaymentType
       attributes
         end
@@ -1110,7 +1110,7 @@ format 212
       comment "A payment."
     end
 
-    classinstance 7713410 "PaymentMeans"
+    classinstance 7713282 "PaymentMeans"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -1284,7 +1284,7 @@ format 212
       comment "This is a request from the filer to the reviewer to cancel a previously submitted filing."
     end
 
-    classinstance 7700738 "CancelFilingMessageAugmentationPoint"
+    classinstance 7700610 "CancelFilingMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -1361,7 +1361,7 @@ format 212
       comment "Information describing a participant when a query seeks information about the cases in which the person or organization is a participant."
     end
 
-    classinstance 7689346 "GetCaseListRequestMessage"
+    classinstance 7689218 "GetCaseListRequestMessage"
       type class_ref 6110978 // GetCaseListRequestMessageType
       attributes
         end
@@ -1372,7 +1372,7 @@ format 212
       comment "This is a query for a list of cases that match a set of criteria including case participants, case classification, case status, and date of the case was initiated."
     end
 
-    classinstance 7701122 "GetCaseListRequestMessageAugmentationPoint"
+    classinstance 7700994 "GetCaseListRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -1498,7 +1498,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/caselistresponse"
-    classinstance 7689474 "GetCaseListResponseMessage"
+    classinstance 7689346 "GetCaseListResponseMessage"
       type class_ref 6114946 // GetCaseListResponseMessageType
       attributes
         end
@@ -1509,7 +1509,7 @@ format 212
       comment "A synchronous response to a GetCaseListQueryMessage."
     end
 
-    classinstance 7701250 "GetCaseListResponseMessageAugmentationPoint"
+    classinstance 7701122 "GetCaseListResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -1771,7 +1771,7 @@ format 212
       comment "Filter criterion indicating that only docket entries of a specified type are being requested."
     end
 
-    classinstance 7689602 "GetCaseRequestMessage"
+    classinstance 7689474 "GetCaseRequestMessage"
       type class_ref 6109698 // GetCaseRequestMessageType
       attributes
         end
@@ -1782,7 +1782,7 @@ format 212
       comment "A message requesting a list of cases from a court case management information system conforming to the parameter or parameters identified in the message."
     end
 
-    classinstance 7701378 "GetCaseRequestMessageAugmentationPoint"
+    classinstance 7701250 "GetCaseRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -1859,7 +1859,7 @@ format 212
       end
     end
 
-    classinstance 7692930 "IncludeCalendarEventIndicator"
+    classinstance 7692802 "IncludeCalendarEventIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -1870,7 +1870,7 @@ format 212
       comment "Indicates whether requester wishes calendar event information to be included in the response."
     end
 
-    classinstance 7693058 "IncludeDocketEntryIndicator"
+    classinstance 7692930 "IncludeDocketEntryIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -1881,7 +1881,7 @@ format 212
       comment "Indicates whether requester wishes docket entry information to be included in the response."
     end
 
-    classinstance 7693186 "IncludeParticipantsIndicator"
+    classinstance 7693058 "IncludeParticipantsIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -1911,7 +1911,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/caseresponse"
-    classinstance 7689730 "GetCaseResponseMessage"
+    classinstance 7689602 "GetCaseResponseMessage"
       type class_ref 6110722 // GetCaseResponseMessageType
       attributes
         end
@@ -1922,7 +1922,7 @@ format 212
       comment "The response to a GetCaseInformationQuery."
     end
 
-    classinstance 7701506 "GetCaseResponseMessageAugmentationPoint"
+    classinstance 7701378 "GetCaseResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -2014,7 +2014,7 @@ format 212
       comment "A number that idenitifies an account with a court or a financial institution."
     end
 
-    classinstance 7713794 "AllowanceChargeReason"
+    classinstance 7713666 "AllowanceChargeReason"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -2025,7 +2025,7 @@ format 212
       comment "Purpose or reason for the filer making the payment; this would be a code valid according to and described by Court Policy."
     end
 
-    classinstance 7713154 "Amount"
+    classinstance 7713026 "Amount"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -2102,7 +2102,7 @@ format 212
       comment "The person or organization in whose name the account is established and maintained."
     end
 
-    classinstance 7732482 "PaidTime"
+    classinstance 7732226 "PaidTime"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -2113,7 +2113,7 @@ format 212
       comment "The date and time at which a transaction will or did occur."
     end
 
-    classinstance 7712898 "PaymentID"
+    classinstance 7712770 "PaymentID"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -2124,7 +2124,7 @@ format 212
       comment "The payment for which this means is specified."
     end
 
-    classinstance 7713538 "PaymentMeansCode"
+    classinstance 7713410 "PaymentMeansCode"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -2351,7 +2351,7 @@ format 212
       end
     end
 
-    classinstance 7712002 "ParkingFacility"
+    classinstance 7711874 "ParkingFacility"
       type class_ref 6090242 // FacilityType
       attributes
         end
@@ -2362,7 +2362,7 @@ format 212
       comment "The name of a parking facility/lot."
     end
 
-    classinstance 7712130 "ParkingMeterSpaceNumber"
+    classinstance 7712002 "ParkingMeterSpaceNumber"
       type class_ref 6098946 // NumericType
       attributes
         end
@@ -2373,7 +2373,7 @@ format 212
       comment "An identifier for a parking space or meter."
     end
 
-    classinstance 7712258 "ParkingViolation"
+    classinstance 7712130 "ParkingViolation"
       type class_ref 6117250 // ParkingViolationType
       attributes
         end
@@ -2435,7 +2435,7 @@ format 212
       end
     end
 
-    classinstance 7720706 "RedLightCameraIndicator"
+    classinstance 7720578 "RedLightCameraIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -2446,7 +2446,7 @@ format 212
       comment "An indicator that a automated camera was used to detect traffic signal violations."
     end
 
-    classinstance 7707650 "SubjectAugmentation"
+    classinstance 7707522 "SubjectAugmentation"
       type class_ref 6108802 // SubjectAugmentationType
       attributes
         end
@@ -2509,7 +2509,7 @@ format 212
       end
     end
 
-    classinstance 7733890 "VehicleAugmentation"
+    classinstance 7733634 "VehicleAugmentation"
       type class_ref 6117122 // VehicleAugmentationType
       attributes
         end
@@ -2773,8 +2773,9 @@ format 212
         end
       relations
         end
-      ncouples 1
+      ncouples 2
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/civil,Decedent"
+      key "isNillable" value "true"
       comment "The deceased person who estate is the subject of a court case."
     end
 
@@ -2916,7 +2917,7 @@ format 212
       comment "Legal description of the role of the fiduciary.  This is needed in addition to the Case Role Code (in the Review Filing message structure) because that code only defines the roles of other actors and other parties; the fiduciary per the specification is the initiating party. Examples: guardian, trustee, conservator of the person, conservator of the estate."
     end
 
-    classinstance 7695874 "JurisdictionalGroundsText"
+    classinstance 7695746 "JurisdictionalGroundsText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -2927,7 +2928,7 @@ format 212
       comment "The grounds for invoking the jurisdiction of a limited jurisdiction court.  Allowed values set forth in Court policy. Not used in general jurisdiction courts."
     end
 
-    classinstance 7696514 "JuryDemandIndicator"
+    classinstance 7696386 "JuryDemandIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -2938,7 +2939,7 @@ format 212
       comment "Whether filer invokes the right to trial by jury."
     end
 
-    classinstance 7722114 "ReliefTypeCode"
+    classinstance 7721858 "ReliefTypeCode"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -3194,7 +3195,7 @@ format 212
       end
     end
 
-    classinstance 7718018 "PreliminaryHearingEstimatedDuration"
+    classinstance 7717890 "PreliminaryHearingEstimatedDuration"
       type class_ref 6100482 // duration
       attributes
         end
@@ -3205,7 +3206,7 @@ format 212
       comment "The prosecutor estimate of the time that will be required to conduct a preliminary hearing."
     end
 
-    classinstance 7718786 "ProsecutionRecommendedBailText"
+    classinstance 7718658 "ProsecutionRecommendedBailText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -3216,7 +3217,7 @@ format 212
       comment "The bail amount recommended by the prosecutor."
     end
 
-    classinstance 7725058 "SentenceAugmentation"
+    classinstance 7724802 "SentenceAugmentation"
       type class_ref 6112002 // SentenceAugmentationType
       attributes
         end
@@ -3294,7 +3295,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/datecallback"
-    classinstance 7706626 "NotifyCourtDateMessage"
+    classinstance 7706498 "NotifyCourtDateMessage"
       type class_ref 6116098 // NotifyCourtDateMessageType
       attributes
         end
@@ -3305,7 +3306,7 @@ format 212
       comment "The message returned from the Court Record MDE to the Court Scheduling MDE and the Court Scheduling MDE to the Filing Review MDE when the a court date is scheduled, generally in response to a ReserveCourtDateRequest."
     end
 
-    classinstance 7703426 "NotifyCourtDateMessageAugmentationPoint"
+    classinstance 7703298 "NotifyCourtDateMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -3383,7 +3384,7 @@ format 212
       comment "The complete CoreFilingMessage sumbitted for review with any corrections applied by the clerk prior to accepting into the court record."
     end
 
-    classinstance 7723394 "FilingReviewCommentsText"
+    classinstance 7723138 "FilingReviewCommentsText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -3394,7 +3395,7 @@ format 212
       comment "Comments provided by the clerk to the court record system during review."
     end
 
-    classinstance 7720322 "RecordDocketingMessage"
+    classinstance 7720194 "RecordDocketingMessage"
       type class_ref 6110466 // RecordDocketingMessageType
       attributes
         end
@@ -3405,7 +3406,7 @@ format 212
       comment "Message resulting from clerk review and edit of a ReviewFilingMessage."
     end
 
-    classinstance 7703938 "RecordDocketingMessageAugmentationPoint"
+    classinstance 7703810 "RecordDocketingMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -3511,7 +3512,7 @@ format 212
       end
     end
 
-    classinstance 7724418 "SealCaseIndicator"
+    classinstance 7724162 "SealCaseIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -3541,7 +3542,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/docketcallback"
-    classinstance 7706754 "NotifyDocketingCompleteMessage"
+    classinstance 7706626 "NotifyDocketingCompleteMessage"
       type class_ref 6116226 // NotifyDocketingCompleteMessageType
       attributes
         end
@@ -3552,7 +3553,7 @@ format 212
       comment "The message returned from the Court Record MDE to the Filing Review MDE when the functions of entering information onto the docket or register of actions and commiting a filed document(s) to the official court record have been completed, conveying the results of those functions."
     end
 
-    classinstance 7703554 "NotifyDocketingCompleteMessageAugmentationPoint"
+    classinstance 7703426 "NotifyDocketingCompleteMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -3618,7 +3619,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/documentrequest"
-    classinstance 7690114 "GetDocumentRequestMessage"
+    classinstance 7689986 "GetDocumentRequestMessage"
       type class_ref 6109826 // GetDocumentRequestMessageType
       attributes
         end
@@ -3629,7 +3630,7 @@ format 212
       comment "The base information contained in any query message."
     end
 
-    classinstance 7701890 "GetDocumentRequestMessageAugmentationPoint"
+    classinstance 7701762 "GetDocumentRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -3725,7 +3726,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/documentresponse"
-    classinstance 7690242 "GetDocumentResponseMessage"
+    classinstance 7690114 "GetDocumentResponseMessage"
       type class_ref 6109954 // GetDocumentResponseMessageType
       attributes
         end
@@ -3736,7 +3737,7 @@ format 212
       comment "The court response to a request for an electronic document in the court official record."
     end
 
-    classinstance 7702018 "GetDocumentResponseMessageAugmentationPoint"
+    classinstance 7701890 "GetDocumentResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -4106,7 +4107,7 @@ format 212
       end
     end
 
-    classinstance 7708546 "DomesticCaseOrderTypeText"
+    classinstance 7708418 "DomesticCaseOrderTypeText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -4209,7 +4210,7 @@ format 212
       end
     end
 
-    classinstance 7707394 "FinancialObligation"
+    classinstance 7707266 "FinancialObligation"
       type class_ref 6114434 // FinancialObligationType
       attributes
         end
@@ -4286,7 +4287,7 @@ format 212
       end
     end
 
-    classinstance 7693314 "IncomeAttachedIndicator"
+    classinstance 7693186 "IncomeAttachedIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -4297,7 +4298,7 @@ format 212
       comment "Indicates whether the responsible party income should be attached."
     end
 
-    classinstance 7713282 "ObligationPaymentAmount"
+    classinstance 7713154 "ObligationPaymentAmount"
       type class_ref 6082306 // AmountType
       attributes
         end
@@ -4308,7 +4309,7 @@ format 212
       comment "he amount owed each payment period."
     end
 
-    classinstance 7722882 "RespondentDangerAlertindicator"
+    classinstance 7722626 "RespondentDangerAlertindicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -4338,7 +4339,7 @@ format 212
      end
     ncouples 1
     key "URI" value "http://www.w3.org/2000/09/xmldsig#"
-    classinstance 7719042 "KeyInfo"
+    classinstance 7718914 "KeyInfo"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -4540,7 +4541,7 @@ format 212
       end
 
       attribute 11801730 "ecf:CaseShortTitleText"
-	public type class_ref 6085634 // CaseType
+	public type class_ref 6080770 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
@@ -4840,7 +4841,7 @@ format 212
       end
     end
 
-    classinstance 7723778 "CaseOfficialRoleCode"
+    classinstance 7723522 "CaseOfficialRoleCode"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -4853,7 +4854,7 @@ format 212
       comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust)."
     end
 
-    classinstance 7710850 "CaseOtherEntityAttorney"
+    classinstance 7710722 "CaseOtherEntityAttorney"
       type class_ref 6085762 // CaseOfficialType
       attributes
         end
@@ -4864,7 +4865,7 @@ format 212
       comment "Attorney representing an \"other party\" in this case."
     end
 
-    classinstance 7723906 "CaseParticipantRoleCode"
+    classinstance 7723650 "CaseParticipantRoleCode"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -4877,7 +4878,7 @@ format 212
       comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust)."
     end
 
-    classinstance 7722498 "CaseRepresentedParty"
+    classinstance 7722242 "CaseRepresentedParty"
       type class_ref 6084482 // EntityType
       attributes
         end
@@ -4889,7 +4890,7 @@ format 212
     end
 
     classinstance 7659778 "CaseShortTitleText"
-      type class_ref 6085634 // CaseType
+      type class_ref 6080770 // TextType
       attributes
         end
       relations
@@ -4925,7 +4926,7 @@ format 212
       comment "The legal ground on which the request for relief is based.  Allowed values set forth in court policy. Example: the basis(es) for relief in a civil case; the grounds for divorce in a state that does not recognize no-fault divorce; grounds for entry of an order of protection in a domestic violence case."
     end
 
-    classinstance 7721346 "ChildDocket"
+    classinstance 7721090 "ChildDocket"
       type class_ref 6086018 // CourtEventType
       attributes
         end
@@ -4953,8 +4954,9 @@ format 212
         end
       relations
         end
-      ncouples 1
+      ncouples 2
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,ConnectedDocument"
+      key "isNillable" value "true"
       comment "A document included in a Filing that supports the lead Document. This document is not separately entered on the docket or register of actions."
     end
 
@@ -5254,7 +5256,7 @@ format 212
       comment "A code referring to the location in a court of the calendar event."
     end
 
-    classinstance 7721602 "DocumentAssociationAugmentation"
+    classinstance 7721346 "DocumentAssociationAugmentation"
       type class_ref 6118146 // DocumentAssociationAugmentationType
       attributes
         end
@@ -5483,7 +5485,7 @@ format 212
       comment "A hash of the document as it appears in the court record.  This attribute will be populated by either the clerk review process or the court record system.  If the latter, then it will be absent in the RecordDocketingMessage.  It will also be absent in callbacks for rejected documents."
     end
 
-    classinstance 7721730 "DocumentRelatedCode"
+    classinstance 7721474 "DocumentRelatedCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -5742,7 +5744,7 @@ format 212
       end
     end
 
-    classinstance 7732610 "EntityAssociationTypeCode"
+    classinstance 7732354 "EntityAssociationTypeCode"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -5963,7 +5965,7 @@ format 212
       end
     end
 
-    classinstance 7726082 "MessageStatusAugmentation"
+    classinstance 7725826 "MessageStatusAugmentation"
       type class_ref 6114050 // MessageStatusAugmentationType
       attributes
         end
@@ -6079,7 +6081,7 @@ format 212
       end
     end
 
-    classinstance 7710466 "OrganizationAugmentation"
+    classinstance 7710338 "OrganizationAugmentation"
       type class_ref 6118914 // OrganizationAssociationAugmentationType
       attributes
         end
@@ -6091,7 +6093,7 @@ format 212
       comment "The relationship between two organizations.  Example: subsidiary corporation."
     end
 
-    classinstance 7709186 "OrganizationAugmentationPoint"
+    classinstance 7709058 "OrganizationAugmentationPoint"
       type class_ref 6113538 // OrganizationAugmentationType
       attributes
         end
@@ -6170,7 +6172,7 @@ format 212
       end
     end
 
-    classinstance 7712770 "PayerNameText"
+    classinstance 7712642 "PayerNameText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -6181,7 +6183,7 @@ format 212
       comment "Name of the payer of the FilingPayment."
     end
 
-    classinstance 7715970 "PersonAssociationAugmentation"
+    classinstance 7715842 "PersonAssociationAugmentation"
       type class_ref 6119170 // PersonAssociationAugmentationType
       attributes
         end
@@ -6229,7 +6231,7 @@ format 212
       end
     end
 
-    classinstance 7714178 "PersonAugmentation"
+    classinstance 7714050 "PersonAugmentation"
       type class_ref 6112130 // PersonAugmentationType
       attributes
         end
@@ -6416,7 +6418,7 @@ format 212
       end
     end
 
-    classinstance 7716098 "PersonCaseAssociationTypeCode"
+    classinstance 7715970 "PersonCaseAssociationTypeCode"
       type class_ref 6087810 // AssociationType
       attributes
         end
@@ -6427,7 +6429,7 @@ format 212
       comment "A code for the relationship of a person to a case.  Allowable values set forth in Court Policy."
     end
 
-    classinstance 7715074 "PersonIdentificationCategoryCode"
+    classinstance 7714946 "PersonIdentificationCategoryCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -6477,7 +6479,7 @@ format 212
       end
     end
 
-    classinstance 7715458 "PersonOrganizationAugmentation"
+    classinstance 7715330 "PersonOrganizationAugmentation"
       type class_ref 6119042 // PersonOrganizationAssociationAugmentationType
       attributes
         end
@@ -6489,7 +6491,7 @@ format 212
       comment "The relationship of a person to an organization in a case.  Allowable values set forth in Court Policy.  An example is the relationship between an attorney and the law firm."
     end
 
-    classinstance 7719810 "ReceivingMDELocationID"
+    classinstance 7719682 "ReceivingMDELocationID"
       type class_ref 6081282 // IdentificationType
       attributes
         end
@@ -6500,7 +6502,7 @@ format 212
       comment "The location of the filing assembly MDE associated with the person receiving service."
     end
 
-    classinstance 7719938 "ReceivingMDEProfileCode"
+    classinstance 7719810 "ReceivingMDEProfileCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -6511,7 +6513,7 @@ format 212
       comment "Code identifying the service interaction profile being used by the receiving filing assembly MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF."
     end
 
-    classinstance 7720578 "RedactedIndicator"
+    classinstance 7720450 "RedactedIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -6583,7 +6585,7 @@ format 212
       comment "Nature of the relationship between the current case and the related case.  Allowable values to be set forth in Court Policy. Examples: associated, consolidated, related."
     end
 
-    classinstance 7721218 "RelationActivityAssociationAugmentation"
+    classinstance 7720962 "RelationActivityAssociationAugmentation"
       type class_ref 6108162 // RelatedActivityAssociationAugmentationType
       attributes
         end
@@ -6637,7 +6639,7 @@ format 212
       end
     end
 
-    classinstance 7723522 "ReviewedConnectedDocument"
+    classinstance 7723266 "ReviewedConnectedDocument"
       type class_ref 6113154 // ReviewedDocumentType
       attributes
         end
@@ -6729,7 +6731,7 @@ format 212
       end
     end
 
-    classinstance 7723650 "ReviewedLeadDocument"
+    classinstance 7723394 "ReviewedLeadDocument"
       type class_ref 6113154 // ReviewedDocumentType
       attributes
         end
@@ -6740,7 +6742,7 @@ format 212
       comment "This association will be present for each document that the clerk review process approves for sending to the court record system (where it may be rejected or recorded.)"
     end
 
-    classinstance 7724546 "SealDocumentIndicator"
+    classinstance 7724290 "SealDocumentIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -6751,7 +6753,7 @@ format 212
       comment "Clerk instruction to court record system to seal this document."
     end
 
-    classinstance 7724674 "SendingMDELocationID"
+    classinstance 7724418 "SendingMDELocationID"
       type class_ref 6081282 // IdentificationType
       attributes
         end
@@ -6762,7 +6764,7 @@ format 212
       comment "Location for the MDE to which asynchronous and service messages can be sent. This unique location is self-assigned by the MDE."
     end
 
-    classinstance 7724802 "SendingMDEProfileCode"
+    classinstance 7724546 "SendingMDEProfileCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -6773,7 +6775,7 @@ format 212
       comment "Code identifying the service interaction profile being used by the sending filing assembly MDE.  This list should be extensible to accommodate future service interaction profiles. Each code value is specified within the service interaction profile approved for use with ECF."
     end
 
-    classinstance 7725826 "ServiceRecipientID"
+    classinstance 7725570 "ServiceRecipientID"
       type class_ref 6081282 // IdentificationType
       attributes
         end
@@ -6784,7 +6786,7 @@ format 212
       comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the submitterID for filings in this case, and asynchronous responses to filings."
     end
 
-    classinstance 7728386 "ServiceStatusCode"
+    classinstance 7728130 "ServiceStatusCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -6797,7 +6799,7 @@ format 212
       comment "Enumerated values: unrecognized - filerID is not recognized, received - filing received by MDE, sent - filing sent by MDE to service recipient  Future versions may add additional values, such as: delivered - filing delivered to service recipient. (i.e. under the control of the recipient) opened - filing opened by service recipient"
     end
 
-    classinstance 7726722 "SignatureAugmentation"
+    classinstance 7726466 "SignatureAugmentation"
       type class_ref 6118658 // SignatureAugmentationType
       attributes
         end
@@ -6843,7 +6845,7 @@ format 212
       end
     end
 
-    classinstance 7726850 "SignatureProfileCode"
+    classinstance 7726594 "SignatureProfileCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -6856,7 +6858,7 @@ format 212
       comment "An identifier from the Court Filing specification that indicates the Signature Profile governing the structure of this signature."
     end
 
-    classinstance 7727106 "SpecialHandlingInstructionsText"
+    classinstance 7726850 "SpecialHandlingInstructionsText"
       type class_ref 6080770 // TextType
       attributes
         end
@@ -6956,7 +6958,7 @@ format 212
       comment "Indicates whether an arrest warrant has been issued against the defendant."
     end
 
-    classinstance 7708418 "VehicleOperatorInsuranceCoverage"
+    classinstance 7708290 "VehicleOperatorInsuranceCoverage"
       type class_ref 6115842 // InsuranceType
       attributes
         end
@@ -6986,7 +6988,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/feesrequest"
-    classinstance 7702146 "FeesCalculationQueryMessageAugmentationPoint"
+    classinstance 7702018 "FeesCalculationQueryMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -6997,7 +6999,7 @@ format 212
       comment "An extension point for the enclosing message."
     end
 
-    classinstance 7690370 "GetFeesCalculationRequestMessage"
+    classinstance 7690242 "GetFeesCalculationRequestMessage"
       type class_ref 6115330 // GetFeesCalculationRequestMessageType
       attributes
         end
@@ -7078,7 +7080,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/feesresponse"
-    classinstance 7732226 "FeesCalculationAmount"
+    classinstance 7731970 "FeesCalculationAmount"
       type class_ref 6082306 // AmountType
       attributes
         end
@@ -7089,7 +7091,7 @@ format 212
       comment "A total of all fees required to submit a document."
     end
 
-    classinstance 7690498 "GetFeesCalculationResponseMessage"
+    classinstance 7690370 "GetFeesCalculationResponseMessage"
       type class_ref 6113922 // GetFeesCalculationResponseMessageType
       attributes
         end
@@ -7100,7 +7102,7 @@ format 212
       comment "The response to a CalculatedFeesQueryMessage, which may either be 0 indicating no fee is due, a currency amount indicating the fee due upon filing, or unknown indicating that the court case management information system is unable to calculate the fee for the proposed filing."
     end
 
-    classinstance 7702274 "GetFeesCalculationResponseMessageAugmentationPoint"
+    classinstance 7702146 "GetFeesCalculationResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -7202,19 +7204,21 @@ format 212
         end
       relations
         end
-      ncouples 1
+      ncouples 2
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filing,FilingConnectedDocument"
+      key "isNillable" value "true"
       comment "A document included in a Filing that supports the Document.  This document is not separately entered on the docket or register of actions."
     end
 
-    classinstance 7698178 "FilingLeadDocument"
+    classinstance 7698050 "FilingLeadDocument"
       type class_ref 6084226 // DocumentType
       attributes
         end
       relations
         end
-      ncouples 1
+      ncouples 2
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filing,FilingLeadDocument"
+      key "isNillable" value "true"
       comment "The pleading, motion or order that is the main document in a Filing. A Document may have Attachments."
     end
 
@@ -7229,7 +7233,7 @@ format 212
       comment "The structure of a Filing including any Payment Information will be documented in this section. This describes the filing transaction between the Filing Assembly MDE and the Filing Review MDE. This information will become part of the Record Docketing between the Filing Review MDE and the Court Record MDE but does not necessarily describe the information that is actually stored in the Court Record."
     end
 
-    classinstance 7700866 "FilingMessageAugmentationPoint"
+    classinstance 7700738 "FilingMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -7340,7 +7344,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filinglistrequest"
-    classinstance 7690626 "GetFilingListRequestMessage"
+    classinstance 7690498 "GetFilingListRequestMessage"
       type class_ref 6110082 // GetFilingListRequestMessageType
       attributes
         end
@@ -7351,7 +7355,7 @@ format 212
       comment "This is query to get a list of filings by Filer Identification, Case Identifier, or time period."
     end
 
-    classinstance 7702402 "GetFilingListRequestMessageAugmentationPoint"
+    classinstance 7702274 "GetFilingListRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -7462,7 +7466,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filinglistresponse"
-    classinstance 7690754 "GetFilingListResponseMessage"
+    classinstance 7690626 "GetFilingListResponseMessage"
       type class_ref 6115458 // GetFilingListResponseMessageType
       attributes
         end
@@ -7473,7 +7477,7 @@ format 212
       comment "This is a response to a query for a list of filings by Filer Identification, Case Identifier, or time period."
     end
 
-    classinstance 7702530 "GetFilingListResponseMessageAugmentationPoint"
+    classinstance 7702402 "GetFilingListResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -7554,7 +7558,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filingstatusrequest"
-    classinstance 7690882 "GetFilingStatusRequestMessage"
+    classinstance 7690754 "GetFilingStatusRequestMessage"
       type class_ref 6111106 // GetFilingStatusRequestMessageType
       attributes
         end
@@ -7565,7 +7569,7 @@ format 212
       comment "This is query to get a filing status by Filing Number."
     end
 
-    classinstance 7702658 "GetFilingStatusRequestMessageAugmentationPoint"
+    classinstance 7702530 "GetFilingStatusRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -7646,7 +7650,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filingstatusresponse"
-    classinstance 7691010 "GetFilingStatusResponseMessage"
+    classinstance 7690882 "GetFilingStatusResponseMessage"
       type class_ref 6113026 // GetFilingStatusResponseMessageType
       attributes
         end
@@ -7657,7 +7661,7 @@ format 212
       comment "A court response to a FilingStatusQueryMessage."
     end
 
-    classinstance 7702786 "GetFilingStatusResponseMessageAugmentationPoint"
+    classinstance 7702658 "GetFilingStatusResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -7738,7 +7742,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/juvenile"
-    classinstance 7697154 "CaseAugmentation"
+    classinstance 7697026 "CaseAugmentation"
       type class_ref 6105602 // CaseAugmentationType
       attributes
         end
@@ -7951,7 +7955,7 @@ format 212
       end
     end
 
-    classinstance 7697026 "JuvenileAugmentation"
+    classinstance 7696898 "JuvenileAugmentation"
       type class_ref 6117634 // JuvenileAugmentationType
       attributes
         end
@@ -8029,7 +8033,7 @@ format 212
       end
     end
 
-    classinstance 7714818 "PersonEmacipatedIndicator"
+    classinstance 7714690 "PersonEmacipatedIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -8040,7 +8044,7 @@ format 212
       comment "Indicator whether a minor has been adjudicated an emancipated person by a court."
     end
 
-    classinstance 7716866 "PlacementAugmentation"
+    classinstance 7716738 "PlacementAugmentation"
       type class_ref 6117890 // PlacementAugmentationType
       attributes
         end
@@ -8122,7 +8126,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/payment"
-    classinstance 7713666 "PaymentMessage"
+    classinstance 7713538 "PaymentMessage"
       type class_ref 6105346 // PaymentMessageType
       attributes
         end
@@ -8264,7 +8268,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/policyrequest"
-    classinstance 7691138 "GetPolicyRequestMessage"
+    classinstance 7691010 "GetPolicyRequestMessage"
       type class_ref 6115586 // GetPolicyRequestMessageType
       attributes
         end
@@ -8275,7 +8279,7 @@ format 212
       comment "A request for a court's Court Policy."
     end
 
-    classinstance 7702914 "GetPolicyRequestMessageAugmentationPoint"
+    classinstance 7702786 "GetPolicyRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -8774,7 +8778,7 @@ format 212
       comment "Indicates whether fees may be required for some filings."
     end
 
-    classinstance 7691266 "GetPolicyResponseMessage"
+    classinstance 7691138 "GetPolicyResponseMessage"
       type class_ref 6112898 // GetPolicyResponseMessageType
       attributes
         end
@@ -8785,7 +8789,7 @@ format 212
       comment "The response to a request for a court Court Policy."
     end
 
-    classinstance 7703042 "GetPolicyResponseMessageAugmentationPoint"
+    classinstance 7702914 "GetPolicyResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -8893,7 +8897,7 @@ format 212
       end
     end
 
-    classinstance 7699842 "MajorDesignElement"
+    classinstance 7699714 "MajorDesignElement"
       type class_ref 6115970 // MajorDesignElementType
       attributes
         end
@@ -8904,7 +8908,7 @@ format 212
       comment "An ECF major design element (MDE)"
     end
 
-    classinstance 7700354 "MajorDesignElementLocationID"
+    classinstance 7700226 "MajorDesignElementLocationID"
       type class_ref 6081282 // IdentificationType
       attributes
         end
@@ -8996,7 +9000,7 @@ format 212
       end
     end
 
-    classinstance 7700482 "MajorDesignElementTypeCode"
+    classinstance 7700354 "MajorDesignElementTypeCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -9009,7 +9013,7 @@ format 212
       comment "Name of a major design element."
     end
 
-    classinstance 7700098 "MaximumAllowedAttachmentSize"
+    classinstance 7699970 "MaximumAllowedAttachmentSize"
       type class_ref 6094978 // MeasureType
       attributes
         end
@@ -9020,7 +9024,7 @@ format 212
       comment "The maximum allowed attachment size, in bytes.  Does not appear if there is no maximum."
     end
 
-    classinstance 7700226 "MaximumAllowedMessageSize"
+    classinstance 7700098 "MaximumAllowedMessageSize"
       type class_ref 6094978 // MeasureType
       attributes
         end
@@ -9031,7 +9035,7 @@ format 212
       comment "Maximum allowed size of the Court Filing Message Stream, in bytes.  Does not appear if there is no maximum."
     end
 
-    classinstance 7689218 "OperationNameCode"
+    classinstance 7689090 "OperationNameCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -9044,7 +9048,7 @@ format 212
       comment "Indicates whether the e-filing system supports the GetFeesCalculation query."
     end
 
-    classinstance 7717506 "PolicyVersionID"
+    classinstance 7717378 "PolicyVersionID"
       type class_ref 6081282 // IdentificationType
       attributes
         end
@@ -9055,7 +9059,7 @@ format 212
       comment "The version of court policy reported by this message.  Up to the court to define the format of this, and describe in human-readable court policy."
     end
 
-    classinstance 7724290 "RuntimePolicy"
+    classinstance 7724034 "RuntimePolicy"
       type class_ref 6112258 // RuntimePolicyType
       attributes
         end
@@ -9196,7 +9200,7 @@ format 212
       end
     end
 
-    classinstance 7704322 "ServiceInteractionProfileCode"
+    classinstance 7704194 "ServiceInteractionProfileCode"
       type class_ref 6083970 // normalizedString
       attributes
         end
@@ -9209,7 +9213,7 @@ format 212
       comment "An identifier, from a list of allowed values defined in the Court Filing specification, of a message profile supported by this court."
     end
 
-    classinstance 7730946 "SupportedCaseCategories"
+    classinstance 7730690 "SupportedCaseCategories"
       type class_ref 6108418 // SupportedCaseCategoriesType
       attributes
         end
@@ -9257,7 +9261,7 @@ format 212
       end
     end
 
-    classinstance 7731330 "SupportedOperations"
+    classinstance 7731074 "SupportedOperations"
       type class_ref 6114818 // SupportedOperationsType
       attributes
         end
@@ -9304,7 +9308,7 @@ format 212
       end
     end
 
-    classinstance 7731074 "SupportedServiceInteractionProfiles"
+    classinstance 7730818 "SupportedServiceInteractionProfiles"
       type class_ref 6116866 // SupportedServiceInteractionProfilesType
       attributes
         end
@@ -9389,7 +9393,7 @@ format 212
       end
     end
 
-    classinstance 7731202 "SupportedSignaturesProfiles"
+    classinstance 7730946 "SupportedSignaturesProfiles"
       type class_ref 6118786 // SupportedSignatureProfilesType
       attributes
         end
@@ -9400,7 +9404,7 @@ format 212
       comment "A signature profile approved for use with ECF by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that is supported by this court."
     end
 
-    classinstance 7733506 "URLAttachmentSupportedIndicator"
+    classinstance 7733250 "URLAttachmentSupportedIndicator"
       type class_ref 6080130 // boolean
       attributes
         end
@@ -9430,7 +9434,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/reservedate"
-    classinstance 7722754 "ReserveCourtDateMessage"
+    classinstance 7722498 "ReserveCourtDateMessage"
       type class_ref 6116610 // ReserveCourtDateMessageType
       attributes
         end
@@ -9441,7 +9445,7 @@ format 212
       comment "The request message from the Filing Assembly MDE to the Court Scheduling MDE to allocate a court date on the schedule."
     end
 
-    classinstance 7704066 "ReserveCourtDateMessageAugmentationPoint"
+    classinstance 7703938 "ReserveCourtDateMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9508,7 +9512,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/reviewfilingcallback"
-    classinstance 7707010 "NotifyFilingReviewCompleteMessage"
+    classinstance 7706882 "NotifyFilingReviewCompleteMessage"
       type class_ref 6116482 // NotifyFilingReviewCompleteMessageType
       attributes
         end
@@ -9519,7 +9523,7 @@ format 212
       comment "The asynchronous message from the Filing Review MDE to the Filing Assembly MDE conveying information concerning the court actions on the documents submitted for filing in a ReviewFilingMessage."
     end
 
-    classinstance 7703810 "NotifyFilingReviewCompleteMessageAugmentationPoint"
+    classinstance 7703682 "NotifyFilingReviewCompleteMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9585,7 +9589,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/schedulerequest"
-    classinstance 7689858 "GetCourtScheduleRequestMessage"
+    classinstance 7689730 "GetCourtScheduleRequestMessage"
       type class_ref 6115074 // GetCourtScheduleRequestMessageType
       attributes
         end
@@ -9596,7 +9600,7 @@ format 212
       comment "A response for a court schedule."
     end
 
-    classinstance 7701634 "GetCourtScheduleRequestMessageAugmentationPoint"
+    classinstance 7701506 "GetCourtScheduleRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9663,7 +9667,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/scheduleresponse"
-    classinstance 7689986 "GetCourtScheduleResponseMessage"
+    classinstance 7689858 "GetCourtScheduleResponseMessage"
       type class_ref 6115202 // GetCourtScheduleResponseMessageType
       attributes
         end
@@ -9674,7 +9678,7 @@ format 212
       comment "The response to a court schedule request message."
     end
 
-    classinstance 7701762 "GetCourtScheduleResponseMessageAugmentationPoint"
+    classinstance 7701634 "GetCourtScheduleResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9741,7 +9745,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/serveprocess"
-    classinstance 7725698 "ServeProcessMessage"
+    classinstance 7725442 "ServeProcessMessage"
       type class_ref 6116738 // ServeProcessMessageType
       attributes
         end
@@ -9752,7 +9756,7 @@ format 212
       comment "A message to deliver a filing to a process server."
     end
 
-    classinstance 7704194 "ServeProcessMessageAugmentationPoint"
+    classinstance 7704066 "ServeProcessMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9818,7 +9822,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/serviceinformationrequest"
-    classinstance 7691394 "GetServiceInformationRequestMessage"
+    classinstance 7691266 "GetServiceInformationRequestMessage"
       type class_ref 6111234 // GetServiceInformationRequestMessageType
       attributes
         end
@@ -9829,7 +9833,7 @@ format 212
       comment "A message requesting information concerning the persons entitled to services of filings in a particular court case, together with the electronic addresses and message profiles of their Filing Assembly MDEs and their physical addresses if they are not currently using a Filing Assembly MDE."
     end
 
-    classinstance 7703170 "GetServiceInformationRequestMessageAugmentationPoint"
+    classinstance 7703042 "GetServiceInformationRequestMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9910,7 +9914,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/serviceinformationresponse"
-    classinstance 7691522 "GetServiceInformationResponseMessage"
+    classinstance 7691394 "GetServiceInformationResponseMessage"
       type class_ref 6115714 // GetServiceInformationResponseMessageType
       attributes
         end
@@ -9921,7 +9925,7 @@ format 212
       comment "The response to a serviceInformationQueryMessage, setting forth the requested information."
     end
 
-    classinstance 7703298 "GetServiceInformationResponseMessageAugmentationPoint"
+    classinstance 7703170 "GetServiceInformationResponseMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -9983,7 +9987,7 @@ format 212
       end
     end
 
-    classinstance 7709442 "ServiceRecipient"
+    classinstance 7709314 "ServiceRecipient"
       type class_ref 6084482 // EntityType
       attributes
         end
@@ -10024,7 +10028,7 @@ format 212
       comment "A request to get document stamping information."
     end
 
-    classinstance 7700994 "DocumentStampInformationMessageAugmentationPoint"
+    classinstance 7700866 "DocumentStampInformationMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end
@@ -10105,7 +10109,7 @@ format 212
      end
     ncouples 1
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/stampinformationcallback"
-    classinstance 7706882 "NotifyDocumentStampInformationMessage"
+    classinstance 7706754 "NotifyDocumentStampInformationMessage"
       type class_ref 6116354 // NotifyDocumentStampInformationMessageType
       attributes
         end
@@ -10116,7 +10120,7 @@ format 212
       comment "A response to a request for document stamping information."
     end
 
-    classinstance 7703682 "NotifyDocumentStampInformationMessageAugmentationPoint"
+    classinstance 7703554 "NotifyDocumentStampInformationMessageAugmentationPoint"
       type class_ref 6079746 // abstract
       attributes
         end

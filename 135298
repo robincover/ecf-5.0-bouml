@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 181
+  revision 187
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -925,7 +925,7 @@ ${members}};
       ncouples 9
       key "niem-profile:niem:XPath" value "nc:Location"
       key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "nc:Location"
+      key "niem-profile:niem:Property" value "@nc:Location"
       key "niem-profile:niem:BaseType" value "nc:LocationType"
       key "niem-profile:niem:Multiplicity" value ""
       key "niem-profile:niem:CodeList" value ""

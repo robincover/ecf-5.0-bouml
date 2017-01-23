@@ -1,6 +1,5 @@
-window_sizes 3840 2035 704 3130 1747 211
+window_sizes 3828 2035 704 3118 1747 211
 cleanlooks_style
-selected classview_ref 148610 // Interfaces and Operations
 open
   
   package_ref 168066 // UML
