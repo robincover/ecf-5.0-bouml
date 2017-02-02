@@ -1,6 +1,6 @@
 format 212
 "ecf-5.0-bouml"
-  revision 421
+  revision 435
   modified_by 2 "JamesECabral"
 
 
@@ -61,10 +61,10 @@ format 212
   key "IEPDOrganization" value "OASIS LegalXML Electronic Court Filing Technical Committee"
   key "IEPDContact" value "https://www.oasis-open.org/committees/legalxml-courtfiling"
   key "ignorePrefixes" value "cac,cbc,ds"
-  key "externalSchemas" value "cac=urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2=http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonAggregateComponents-2.1.xsd,cbc=urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2=http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonBasicComponents-2.1.xsd,ds=http://www.w3.org/2000/09/xmldsig#=https://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"
+  key "externalSchemas" value "cac=urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2=http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonAggregateComponents-2.1.xsd,cbc=urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2=http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonBasicComponents-2.1.xsd,ds=http://www.w3.org/2000/09/xmldsig#=http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"
   package_ref 168066 // UML
 
   package_ref 161538 // niem-profile
 
-  package_ref 174594 // NIEM
+  package_ref 201602 // NIEM
 end
