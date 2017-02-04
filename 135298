@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 187
+  revision 193
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -815,6 +815,29 @@ ${members}};
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A content error message."
+      end
+
+      attribute 13037186 "errorText"
+	public type class_ref 192130 // code
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError/cbrn:ErrorDescription/cbrn:ErrorCodeDescriptionText"
+	key "niem-profile:niem:Type" value "cbrn:MessageErrorType"
+	key "niem-profile:niem:Property" value "cbrn:ErrorCodeText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value "0=No error.;1=ReviewFiling - Input XML is empty or null input was received.;2='SendingMDEProfileCode' is empty. This is a required Filing element.;3='SendingMDELocationID' is empty. This is a required Filing element.;4='PersonOtherID' format is invalid.;5='PersonOtherID' is empty. This is a required Filing element.;6='DocumentPostDate' is invalid. Should be yyyy-mm-dd or yyy-mm-ddThh-mm-ss.0Z\";7='DocumentPostDate' is empty. This is a required Filing element.;8='FilingID' is empty. This is a required Filing element.;9=FilingID contains invalid characters. Filing Rejected.;10=FilingID format is invalid. Format is: VVV-unique-string-value. Filing Rejected.;11='SendingMDELocationID' is empty. This is a required Filing element.;12='SendingMDEProfileCode' is empty. This is a required Filing element.;13='SendingMDEProfileCode' is empty. This is a required Filing element.;14='DocumentIdentification' is empty. This is a required Filing element.;15='DocumentLocationURI' is empty. This is a required Filing element.;16='FilingLeadDocument' DocumentIdentification and DocumentLocationURI must contain a file name.;17=Only one 'FilingLeadDocument' node is allowed.;18=No embedded documents;DocumentBinary; are allowed within the CoreFilingMessage.;19=Filing 'OrganizationID' value does not match Court Policy OrganizationID.;20=Filing 'CourtName' value does not match Court Policy CourtName.;21=Unknown document types are not allowed within the CoreFilingMessage.;22=Invalid File Type.;23=FilingLeadDocumentURI file not found.;24=FilingLeadDocumentURI file is zero length or empty.;25=FilingConnectedDocumentURI file not found.;26=FilingConnectedDocumentURI file is zero length or empty.;27=FilingID has already been used.;28=Attachment was not found in CoreFilingMessage:DocumentLocationURI xml element.;29=Zero length input.;30='FilingStatusQueryMessage' not found. This is a required Query element.;31=FilingID not found: CaseNumber is empty."
+	key "niem-profile:niem:OldXPath" value "messagereceipt:MessageReceiptMessage/ecf:Error"
+	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
+	key "niem-profile:niem:Notes" value "TODO: Update error code list"
+	comment "A code that uniquely identifies an error.  Allowable values set forth in court policy."
       end
     end
 
@@ -1688,7 +1711,7 @@ ${members}};
       key "niem-profile:niem:Notes" value ""
       comment "A monetary amount"
       attribute 11651458 "amountValue"
-	public type class_ref 5918082 // decimal
+	public explicit_type ""
 	multiplicity "1"
 	stereotype "niem-profile:niem"
 	cpp_decl ""

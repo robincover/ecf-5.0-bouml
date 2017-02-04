@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 200
+  revision 206
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -2320,7 +2320,7 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:CitationSubject/ecf:PersonAugmentation/ecf:PersonDriverLicense/nc:DriverLicenseCommericalClassCode"
+	key "niem-profile:niem:OldXPath" value "citation:CitationCaseAugmentation/citation:CitationSubject/ecf:PersonAugmentation/ecf:PersonDriverLicense/nc:DriverLicenseCommercialClassCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "citation:CaseAugmentation/j:Citation/j:CitationSubject/citation:SubjectAugmentation/j:DriverLicense/j:DriverLicenseCommericalClassCode"
 	key "niem-profile:niem:Type" value "j:DriverLicenseType"
@@ -3676,8 +3676,8 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "civil:CaseAugmentation/civil:FiduciaryCase"
 	key "niem-profile:niem:Type" value "civil:CaseAugmentationType"
-	key "niem-profile:niem:Property" value "civil:FiduciaryCase"
-	key "niem-profile:niem:BaseType" value "civil:FiduciaryCaseType"
+	key "niem-profile:niem:Property" value "civil:FiduciaryCaseAssociation"
+	key "niem-profile:niem:BaseType" value "civil:FiduciaryCaseAssociationType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -3721,11 +3721,11 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "civil:CaseAugmentation/civil:JurisdictionalGroundsCode"
 	key "niem-profile:niem:Type" value "civil:CaseAugmentationType"
-	key "niem-profile:niem:Property" value "civil:JurisdictionalGroundsText"
+	key "niem-profile:niem:Property" value "civil:JurisdictionalGroundsCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "The grounds for invoking the jurisdiction of a limited jurisdiction court.  Allowed values set forth in Court policy. Not used in general jurisdiction courts."
       end
 
@@ -4155,7 +4155,7 @@ format 212
       key "niem-profile:niem:OldXPath" value "civil:CivilCase/civil:FiduciaryCase"
       key "niem-profile:niem:OldMultiplicity" value "0,1"
       key "niem-profile:niem:XPath" value "civil:CaseAugmentation/civil:FiduciaryCase"
-      key "niem-profile:niem:Type" value "civil:FiduciaryCaseType"
+      key "niem-profile:niem:Type" value "civil:FiduciaryCaseAssociationType"
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "cyfs:PersonCaseAssociationType"
       key "niem-profile:niem:Multiplicity" value ""
@@ -4176,7 +4176,7 @@ format 212
 	key "niem-profile:niem:OldXPath" value "civil:CivilCase/civil:FiduciaryCase/civil:FiduciaryTypeCode"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "civil:CaseAugmentation/civil:FiduciaryCase/civil:FiduciaryTypeCode"
-	key "niem-profile:niem:Type" value "civil:FiduciaryCaseType"
+	key "niem-profile:niem:Type" value "civil:FiduciaryCaseAssociationType"
 	key "niem-profile:niem:Property" value "civil:FiduciaryTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
@@ -5361,7 +5361,7 @@ format 212
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "Code describing the type of charge enhancement allegation.  Example:  amount of drugs, amount of money, possession of weapon.  Allowable values defined in Court Policy.
 "
       end
@@ -8539,7 +8539,7 @@ format 212
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "Code indicating the existence of a factor that, under state law, heightens the seriousness of the charge and would subject an adult to increase punishment. Allowable values set forth in Court Policy. Examples: Use of deadly weapon, use of gun."
       end
 
@@ -8562,7 +8562,7 @@ format 212
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "Code indicating the degree of an offense as defined in state law. Allowable values set forth in Court Policy. Examples: First Degree Murder, Felony Type A/B/C."
       end
 
@@ -8581,11 +8581,11 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "juvenile:CaseAugmentation/cyfs:DelinquentAct/j:IncidentAugmentation/juvenile:DelinquentActCategoryText"
 	key "niem-profile:niem:Type" value "j:IncidentAugmentationType"
-	key "niem-profile:niem:Property" value "j:IncidentGeneralCategory, (juvenile:DelinquentActCategoryText)"
+	key "niem-profile:niem:Property" value "j:IncidentGeneralCategory, (juvenile:DelinquentActCategoryCode)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "attempt; conspiracy; accessory before the fact; accessory after the fact "
 	comment "Code indicating the general category of the offense as set forth in state law. Allowable values set forth in Court Policy. Examples: Attempt, Conspiracy, Accessory before the fact, Accessory after the fact. 
 "
       end
@@ -8609,7 +8609,7 @@ format 212
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "felony; misdemeanor; infraction; violation."
 	comment "Code identifying the level of the offense as defined in state law. Allowable values set forth in Court Policy. Example: Felony, Misdemeanor, Infraction, Ordinance Violation."
       end
 
@@ -8677,7 +8677,7 @@ format 212
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "A code identifying a specific ground sufficient in law for declaring the minor child a ward of the state."
       end
 

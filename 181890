@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 47
+  revision 53
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -429,8 +429,8 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "domestic:CaseAugmentation/cyfs:PersonCaseAssociation/ecf:PersonCaseAssociationAugmentation/ecf:PersonCaseAssociationTypeCode"
 	key "niem-profile:niem:Type" value "ecf:PersonCaseAssociationAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:PersonCaseAssociationTypeCode"
-	key "niem-profile:niem:BaseType" value "nc:AssociationType"
+	key "niem-profile:niem:Property" value "ecf:CaseParticipantRoleCode"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -2649,7 +2649,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:XPath" value "feesrequest:GetFeesCalculationRequestMessage/feesrequest:GetFeesCalculationRequestMessageAugmentationPoint"
 	key "niem-profile:niem:Type" value "feesrequest:GetFeesCalculationRequestMessageType"
-	key "niem-profile:niem:Property" value "feesrequest:FeesCalculationQueryMessageAugmentationPoint"
+	key "niem-profile:niem:Property" value "feesrequest:GetFeesCalculationRequestMessageAugmentationPoint"
 	key "niem-profile:niem:BaseType" value "abstract"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
@@ -4033,10 +4033,10 @@ ${members}};
       key "niem-profile:niem:OldXPath" value "policyresponse:CourtPolicyResponseMessage/policyresponse:DevelopmentPolicyParameters/policyresponse:SupportedCaseType"
       key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
       key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:SupportedCaseCategories"
-      key "niem-profile:niem:Type" value "policyresponse:CaseTypeCodeType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "structures:ObjectType"
-      key "niem-profile:niem:Multiplicity" value ""
+      key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
+      key "niem-profile:niem:Property" value "policyresponse:SupportedCaseCategories"
+      key "niem-profile:niem:BaseType" value "policyresponse:SupportedCaseCategoriesType"
+      key "niem-profile:niem:Multiplicity" value "1,unbounded"
       key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "A list of ECF case types."

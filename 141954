@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 217
+  revision 223
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -2979,7 +2979,7 @@ ${items}};
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:Organization/ecf:OrganizationAugmentation"
       key "niem-profile:niem:Type" value "nc:OrganizationType"
-      key "niem-profile:niem:Property" value "nc:OrganizationAugmentationPoint, (ecf:OrganizationAugmentationPoint)"
+      key "niem-profile:niem:Property" value "nc:OrganizationAugmentationPoint, (ecf:OrganizationAugmentation)"
       key "niem-profile:niem:BaseType" value "ecf:OrganizationAugmentationType"
       key "niem-profile:niem:Multiplicity" value "0,unbounded"
       key "niem-profile:niem:Notes" value ""
@@ -3134,7 +3134,7 @@ ${items}};
       key "niem-profile:niem:OldMultiplicity" value ""
       key "niem-profile:niem:XPath" value "nc:Case/ecf:CaseAugmentation/nc:OrganizationAssociation/ecf:OrganizationAssociationAugmentation"
       key "niem-profile:niem:Type" value "nc:OrganizationAssociationType"
-      key "niem-profile:niem:Property" value "nc:OrganizationAssociationAugmentationPoint, (ecf:OrganizationAugmentation)"
+      key "niem-profile:niem:Property" value "nc:OrganizationAssociationAugmentationPoint, (ecf:OrganizationAssociationAugmentation)"
       key "niem-profile:niem:BaseType" value "ecf:OrganizationAssociationAugmentationType"
       key "niem-profile:niem:Multiplicity" value "0,unbounded"
       key "niem-profile:niem:Notes" value ""
@@ -4054,9 +4054,9 @@ ${items}};
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:MessageContentError/cbrn:ErrorDescription/cbrn:ErrorCodeDescriptionText"
 	key "niem-profile:niem:Type" value "cbrn:MessageErrorType"
-	key "niem-profile:niem:Property" value "cbrn:ErrorCodeDescriptionText, cbrn:ErrorCodeText"
+	key "niem-profile:niem:Property" value "cbrn:ErrorCodeDescriptionText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
