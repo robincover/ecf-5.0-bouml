@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 193
+  revision 196
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -144,7 +144,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "ecf:CaseFiling/ecf:SendingMDEProfileCode"
 	key "niem-profile:niem:Type" value "ecf:CaseFilingType"
-	key "niem-profile:niem:Property" value "ecf:SendingMDEProfileCode"
+	key "niem-profile:niem:Property" value "ecf:ServiceInteractionProfileCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""

@@ -1,6 +1,6 @@
 format 212
 "NIEM" // NIEM
-  revision 9
+  revision 15
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -28,7 +28,4 @@ format 212
   
   package_ref 201986 // NIEMReference
 
-  package_ref 208514 // NIEMSubset
-
-  package_ref 208642 // NIEMExtension
 end

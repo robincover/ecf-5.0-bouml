@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 53
+  revision 56
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -5169,7 +5169,7 @@ ${members}};
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
 	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MajorDesignElement/policyresponse:SupportedServiceInteractionProfiles/policyresponse:ServiceInteractionProfileCode"
 	key "niem-profile:niem:Type" value "policyresponse:SupportedServiceInteractionProfilesType"
-	key "niem-profile:niem:Property" value "policyresponse:ServiceInteractionProfileCode"
+	key "niem-profile:niem:Property" value "ecf:ServiceInteractionProfileCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value "Genericode code list ServiceInteractionProfileCode.gc"

@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 206
+  revision 209
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -3724,7 +3724,7 @@ format 212
 	key "niem-profile:niem:Property" value "civil:JurisdictionalGroundsCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list JurisdictionGroundsCode.gc"
 	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "The grounds for invoking the jurisdiction of a limited jurisdiction court.  Allowed values set forth in Court policy. Not used in general jurisdiction courts."
       end
@@ -5225,8 +5225,8 @@ format 212
 	key "niem-profile:niem:Property" value "j:ChargeDegreeText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list ChargeDegreeText.gc"
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "A designation indicating the degree of the charge when appropriate. (e.g. 2nd degree murder)"
       end
 
@@ -5587,8 +5587,8 @@ format 212
 	key "niem-profile:niem:Property" value "j:ChargeSpecialAllegationText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list ChargeSpecialAllegationText.gc"
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "Free form text describing the details of the charge allegation."
       end
 
@@ -8533,13 +8533,13 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase/juvenile:DelinquentAct/juvenile:DelinquentActSpecialAllegationCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "juvenile:CaseAugmentation/cyfs:DelinquentAct/juvenile:IncidentAugmentation/j:ChargeSpecialAllegationText"
-	key "niem-profile:niem:Type" value "juvenile:IncidentAugmentationType"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:Charge/j:ChargeSpecialAllegationText"
+	key "niem-profile:niem:Type" value "j:ChargeType"
 	key "niem-profile:niem:Property" value "j:ChargeSpecialAllegationText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value "Court-specific code list"
+	key "niem-profile:niem:CodeList" value ""
 	comment "Code indicating the existence of a factor that, under state law, heightens the seriousness of the charge and would subject an adult to increase punishment. Allowable values set forth in Court Policy. Examples: Use of deadly weapon, use of gun."
       end
 
@@ -8556,13 +8556,13 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "juvenile:JuvenileCase/juvenile:DelinquentAct/juvenile:DelinquentActDegreeCode"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "juvenile:CaseAugmentation/cyfs:DelinquentAct/juvenile:IncidentAugmentation/j:ChargeDegreeText"
-	key "niem-profile:niem:Type" value "juvenile:IncidentAugmentationType"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:Charge/j:ChargeDegreeText"
+	key "niem-profile:niem:Type" value "j:ChargeType"
 	key "niem-profile:niem:Property" value "j:ChargeDegreeText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value "Court-specific code list"
+	key "niem-profile:niem:CodeList" value ""
 	comment "Code indicating the degree of an offense as defined in state law. Allowable values set forth in Court Policy. Examples: First Degree Murder, Felony Type A/B/C."
       end
 
@@ -8584,7 +8584,7 @@ format 212
 	key "niem-profile:niem:Property" value "j:IncidentGeneralCategory, (juvenile:DelinquentActCategoryCode)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list DelinquentActCategoryCode.gc"
 	key "niem-profile:niem:CodeList" value "attempt; conspiracy; accessory before the fact; accessory after the fact "
 	comment "Code indicating the general category of the offense as set forth in state law. Allowable values set forth in Court Policy. Examples: Attempt, Conspiracy, Accessory before the fact, Accessory after the fact. 
 "
@@ -8608,8 +8608,8 @@ format 212
 	key "niem-profile:niem:Property" value "j:IncidentLevel, (j:IncidentLevelCode)"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value "felony; misdemeanor; infraction; violation."
+	key "niem-profile:niem:Notes" value "Genericode code list IncidentLevelCode.gc"
+	key "niem-profile:niem:CodeList" value "felony; misdemeanor; infraction; violation;"
 	comment "Code identifying the level of the offense as defined in state law. Allowable values set forth in Court Policy. Example: Felony, Misdemeanor, Infraction, Ordinance Violation."
       end
 
@@ -8676,7 +8676,7 @@ format 212
 	key "niem-profile:niem:Property" value "cyfs:AbuseNeglectAllegationCategoryText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list AbuseNeglectAllegationCategoryText.gc"
 	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "A code identifying a specific ground sufficient in law for declaring the minor child a ward of the state."
       end
