@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 34
+  revision 35
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -492,7 +492,9 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 2
 	  param in name "" type class_ref 145794 // RecordDocketingMessage
+	multiplicity "1"
 	  param in name "" type class_ref 135938 // PaymentMessage
+	multiplicity "0..1"
 	
 	
 	
@@ -692,7 +694,9 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 2
 	  param in name "" type class_ref 130690 // CoreFilingMessage
+	multiplicity "1"
 	  param in name "" type class_ref 135938 // PaymentMessage
+	multiplicity "0..1"
 	
 	
 	

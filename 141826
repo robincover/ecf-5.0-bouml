@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 209
+  revision 216
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -261,10 +261,10 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "j:AppellateCase/j:AppellateCaseOriginalCase/appellate:CaseDisposition/nc:CaseDispositionDecision"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "appellate:CaseAugmentation/j:AppellateCase/j:AppellateCaseOriginalCase/nc:CaseDisposition/nc:CaseDispositionDecision"
-	key "niem-profile:niem:Type" value "nc:CaseDispositionType"
-	key "niem-profile:niem:Property" value "nc:CaseDispositionDecision"
-	key "niem-profile:niem:BaseType" value "nc:CaseDispositionDecisionType"
+	key "niem-profile:niem:XPath" value "appellate:CaseAugmentation/j:AppellateCase/j:AppellateCaseOriginalCase/nc:CaseDisposition/nc:DispositionCategoryText"
+	key "niem-profile:niem:Type" value "nc:DispositionType"
+	key "niem-profile:niem:Property" value "nc:DispositionCategory, (nc:DispositionCategoryText)"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -467,6 +467,53 @@ format 212
 	key "niem-profile:niem:Notes" value ""
 	comment "An appellate case."
       end
+
+      attribute 14428802 "caseDispositionDecision"
+	public explicit_type "string"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "appellate:CaseAugmentation/j:AppellateCase/j:AppellateCaseOriginalCase/nc:CaseDisposition/nc:DispositionCategoryText"
+	key "niem-profile:niem:Type" value "nc:DispositionType"
+	key "niem-profile:niem:Property" value "nc:DispositionCategory, (nc:DispositionCategoryText)"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A disposition decision of a case"
+      end
+
+      attribute 14428930 "caseDispositoin"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "appellate:CaseAugmentation/j:AppellateCase/j:AppellateCaseOriginalCase/nc:CaseDisposition"
+	key "niem-profile:niem:Type" value "nc:ActivityType"
+	key "niem-profile:niem:Property" value "nc:ActivityDisposition, (nc:CaseDisposition)"
+	key "niem-profile:niem:BaseType" value "nc:CaseDispositionType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The disposition of a case	"
+      end
     end
 
     class 184706 "ChargeDisposition"
@@ -504,10 +551,10 @@ format 212
 	key "niem-profile:niem:OldXPath" value "criminal:CriminalCase/criminal:CaseCharge/j:ChargeDisposition/nc:DispositionCategoryText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:Charge/nc:DispositionCategoryText"
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Type" value "nc:DispositionType"
+	key "niem-profile:niem:Property" value "nc:DispositionCategory, (nc:DispositionCategoryText)"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A kind of decision made in a case disposition."

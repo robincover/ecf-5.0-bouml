@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 226
+  revision 233
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1592,13 +1592,13 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "core:CoreFilingMessage/core:FilingConfidentialityIndicator"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "filing:FilingMessage/nc:DocumentSensitivityText"
-	key "niem-profile:niem:Type" value "nc:DocumentType"
-	key "niem-profile:niem:Property" value "nc:DocumentSensitivity, (nc:DocumentSensitivityText)"
+	key "niem-profile:niem:XPath" value "filing:FilingMessage/ecf:DocumentAugmentation/nc:Metadata/nc:SensitivityText"
+	key "niem-profile:niem:Type" value "nc:MetadataType"
+	key "niem-profile:niem:Property" value "nc:SensitivityText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list SensitivityText.gc"
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	comment "Indicator by the filer that something in the message requires sensitive or confidential treatment.  (This replaces the former \"request to seal\" document metadata.)"
       end
 
@@ -2316,7 +2316,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/ecf:AttachmentMetadata"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:Attachment"
+	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary"
 	key "niem-profile:niem:Type" value "ecf:DocumentRenditionType"
 	key "niem-profile:niem:Property" value "nc:Attachment"
 	key "niem-profile:niem:BaseType" value "nc:BinaryType"
@@ -2362,10 +2362,10 @@ ${items}};
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary"
-	key "niem-profile:niem:Type" value "nc:DocumentType"
-	key "niem-profile:niem:Property" value "nc:DocumentBinary"
+	key "niem-profile:niem:Type" value "ecf:DocumentRenditionType"
+	key "niem-profile:niem:Property" value "nc:Attachment"
 	key "niem-profile:niem:BaseType" value "nc:BinaryType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Embedded document data, in an encoded form acceptable to be included within XML."
@@ -2568,13 +2568,13 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:DocumentRendition/nc:DocumentBinary/"
 	key "niem-profile:niem:Type" value "nc:BinaryType"
-	key "niem-profile:niem:Property" value "nc:BinaryFormatStandardName"
+	key "niem-profile:niem:Property" value "nc:BinaryFormatText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:CodeList" value "Court-specific code list"
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryFormatStandardName"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list BinaryFormatText.gc"
 	comment "The binary format of a document."
       end
 

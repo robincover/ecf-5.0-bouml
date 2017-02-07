@@ -1,6 +1,6 @@
 format 212
 "Base Classes" // UML::Base Classes
-  revision 196
+  revision 204
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -838,6 +838,30 @@ ${members}};
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value "TODO: Update error code list"
 	comment "A code that uniquely identifies an error.  Allowable values set forth in court policy."
+      end
+
+      attribute 13130370 "systemEnvironment"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "cbrn:MessageStatus/cbrn:SystemOperatingModeCode"
+	key "niem-profile:niem:Type" value "cbrn:SystemEventType"
+	key "niem-profile:niem:Property" value "nc:SystemOperatingMode, (cbrn:SystemOperatingModeCode)"
+	key "niem-profile:niem:BaseType" value "cbrncl:SystemOperatingModeCodeType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The system environment (e.g. production, test, development) in which the error occured."
       end
     end
 

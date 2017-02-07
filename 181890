@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 56
+  revision 63
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -768,7 +768,7 @@ format 212
 	key "niem-profile:niem:Type" value "caserequest:GetCaseRequestMessageType"
 	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
 	key "niem-profile:niem:BaseType" value "niem-xs:string"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "1,2"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "Court case number."
@@ -812,7 +812,7 @@ format 212
 	key "niem-profile:niem:Type" value "caserequest:GetCaseRequestMessageType"
 	key "niem-profile:niem:Property" value "nc:CaseTrackingID"
 	key "niem-profile:niem:BaseType" value "niem-xs:string"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "1,2"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -3848,6 +3848,30 @@ format 212
 	    classrelation_ref 3942274 // <generalisation>
 	  b parent class_ref 909826 // RequestMessage
       end
+
+      attribute 14429058 "caseTypeCode"
+	public explicit_type "string"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyrequest:GetPolicyRequestMessage/ecf:CaseTypeCode"
+	key "niem-profile:niem:Type" value "policyrequest:GetPolicyRequestMessageType"
+	key "niem-profile:niem:Property" value "ecf:CaseTypeCode"
+	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "A case type"
+      end
     end
 
     classdiagram 135938 "GetPolicyRequestMessage"
@@ -4407,6 +4431,54 @@ ${members}};
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
 	key "niem-profile:niem:Notes" value ""
+      end
+
+      attribute 14429186 "maximumAllowedAttachmentPages"
+	public explicit_type "int"
+	multiplicity "0,1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:MaximumAllowedAttachmentPageQuantity"
+	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
+	key "niem-profile:niem:Property" value "policyresponse:MaximumAllowedAttachmentPageQuantity"
+	key "niem-profile:niem:BaseType" value "nc:NumericType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "The maximum allowed number of pages in an attachment."
+      end
+
+      attribute 14429314 "filerPerformsServiceIndicator"
+	public explicit_type "bool"
+	multiplicity "0..1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "policyresponse:GetPolicyResponseMessage/policyresponse:DevelopmentPolicy/policyresponse:FilerRequiredToServendicator"
+	key "niem-profile:niem:Type" value "policyresponse:DevelopmentPolicyType"
+	key "niem-profile:niem:Property" value "policyresponse:FilerRequiredToServeIndicator"
+	key "niem-profile:niem:BaseType" value "niem-xs:boolean"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value ""
+	key "niem-profile:niem:OldMultiplicity" value ""
+	key "niem-profile:niem:Notes" value ""
+	comment "Indicator whether the filer is required to serve"
       end
     end
 
