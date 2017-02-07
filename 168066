@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 35
+  revision 36
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -390,6 +390,7 @@ ${members}};
 	public return_type class_ref 136834 // GetPolicyResponseMessage
 	nparams 1
 	  param in name "" type class_ref 130562 // GetPolicyRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -420,6 +421,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 198914 // AllocateCourtDateMessage
+	multiplicity "1"
 	
 	
 	
@@ -432,6 +434,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 2107138 // DocumentStampInformationMessage
+	multiplicity "1"
 	
 	
 	
@@ -444,6 +447,7 @@ ${members}};
 	public return_type class_ref 145282 // GetCaseResponseMessage
 	nparams 1
 	  param in name "" type class_ref 145154 // GetCaseRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -456,6 +460,7 @@ ${members}};
 	public return_type class_ref 133890 // GetCaseListResponseMessage
 	nparams 1
 	  param in name "" type class_ref 133762 // GetCaseListRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -468,6 +473,7 @@ ${members}};
 	public return_type class_ref 134274 // GetDocumentResponseMessage
 	nparams 1
 	  param in name "" type class_ref 134146 // GetDocumentRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -480,6 +486,7 @@ ${members}};
 	public return_type class_ref 142338 // GetServiceInformationResponseMessage
 	nparams 1
 	  param in name "" type class_ref 142210 // GetServiceInformationRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -525,6 +532,7 @@ ${members}};
 	public return_type class_ref 199554 // GetCourtScheduleResponseMessage
 	nparams 1
 	  param in name "" type class_ref 199426 // GetCourtScheduleRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -537,6 +545,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 5257730 // NotifyCourtDateMessage
+	multiplicity "1"
 	
 	
 	
@@ -549,6 +558,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 199170 // ReserveCourtDateMessage
+	multiplicity "1"
 	
 	
 	
@@ -579,6 +589,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 5257730 // NotifyCourtDateMessage
+	multiplicity "1"
 	
 	
 	
@@ -591,7 +602,9 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 2
 	  param in name "" type class_ref 132738 // NotifyFilingReviewCompleteMessage
+	multiplicity "1"
 	  param in name "" type class_ref 135938 // PaymentMessage
+	multiplicity "0..1"
 	
 	
 	
@@ -622,6 +635,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 1498626 // CancelFilingMessage
+	multiplicity "1"
 	
 	
 	
@@ -634,6 +648,7 @@ ${members}};
 	public return_type class_ref 134530 // GetFeesCalculationResponseMessage
 	nparams 1
 	  param in name "" type class_ref 134402 // GetFeesCalculationRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -646,6 +661,7 @@ ${members}};
 	public return_type class_ref 133506 // GetFilingListResponseMessage
 	nparams 1
 	  param in name "" type class_ref 133250 // GetFilingListRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -658,6 +674,7 @@ ${members}};
 	public return_type class_ref 133122 // GetFilingStatusResponseMessage
 	nparams 1
 	  param in name "" type class_ref 132994 // GetFilingStatusRequestMessage
+	multiplicity "1"
 	
 	
 	
@@ -670,6 +687,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 132738 // NotifyFilingReviewCompleteMessage
+	multiplicity "1"
 	
 	
 	
@@ -682,6 +700,7 @@ ${members}};
 	public return_type class_ref 145666 // MessageReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 2113666 // NotifyDocumentStampInformationMessage
+	multiplicity "1"
 	
 	
 	
@@ -727,6 +746,7 @@ ${members}};
 	public return_type class_ref 142082 // ServiceReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 130690 // CoreFilingMessage
+	multiplicity "1"
 	
 	
 	
@@ -739,6 +759,7 @@ ${members}};
 	public return_type class_ref 142082 // ServiceReceiptMessage
 	nparams 1
 	  param in name "" type class_ref 130690 // CoreFilingMessage
+	multiplicity "1"
 	
 	
 	

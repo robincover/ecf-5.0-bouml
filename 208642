@@ -1,6 +1,6 @@
 format 212
 "NIEMExtension" // NIEM::NIEMExtension
-  revision 1
+  revision 2
   modified_by 2 "JamesECabral"
   // class settings
   
