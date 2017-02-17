@@ -2,7 +2,7 @@ format 212
 
 classcanvas 128002 class_ref 5257730 // NotifyCourtDateMessage
   classdiagramsettings member_max_width 0 end
-  xyz 82 169 2000
+  xyz 39 167 2000
 end
 classcanvas 128130 class_ref 145922 // ElectronicFilingCallbackMessage
   classdiagramsettings hide_attributes yes member_max_width 0 end

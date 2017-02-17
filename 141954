@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 234
+  revision 235
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1598,7 +1598,7 @@ ${items}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value "Genericode code list SensitivityText.gc"
-	key "niem-profile:niem:CodeList" value "Court-specific code list"
+	key "niem-profile:niem:CodeList" value "unsecured; restricted; secured;"
 	comment "Indicator by the filer that something in the message requires sensitive or confidential treatment.  (This replaces the former \"request to seal\" document metadata.)"
       end
 

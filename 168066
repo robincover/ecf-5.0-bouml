@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 36
+  revision 38
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -538,7 +538,7 @@ ${members}};
 	
 	
 	
-	comment "An operation to query for a schedule of available cout dates."
+	comment "An operation to query for a schedule of upcoming court events"
       end
 
       operation 156162 "NotifyCourtDate"
@@ -565,6 +565,19 @@ ${members}};
 	
 	
 	comment "An operation to reserve a court date."
+      end
+
+      operation 176130 "GetCourtAvailability"
+	public return_type class_ref 6684418 // GetCourtAvailabilityResponseMessage
+	nparams 1
+	  param in name "" type class_ref 6684290 // GetCourtAvailabilityRequestMessage
+	multiplicity "1"
+	
+	
+	
+	
+	
+	comment "An operation to query for a schedule of available cout dates."
       end
     end
 
