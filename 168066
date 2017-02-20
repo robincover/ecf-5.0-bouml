@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 38
+  revision 39
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -567,18 +567,6 @@ ${members}};
 	comment "An operation to reserve a court date."
       end
 
-      operation 176130 "GetCourtAvailability"
-	public return_type class_ref 6684418 // GetCourtAvailabilityResponseMessage
-	nparams 1
-	  param in name "" type class_ref 6684290 // GetCourtAvailabilityRequestMessage
-	multiplicity "1"
-	
-	
-	
-	
-	
-	comment "An operation to query for a schedule of available cout dates."
-      end
     end
 
     class 129410 "FilingAssemblyMDE"
