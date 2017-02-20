@@ -1,16 +1,11 @@
 window_sizes 3840 2035 1079 2755 1747 211
 cleanlooks_style
-selected classinstance_ref 7742338 // GetCourtAvailabilityResponseMessage
+selected 
+  package_ref 129 // ecf-5.0-bouml
 open
+  usecaseview_ref 141058 // Use Cases
   class_ref 198786 // CourtSchedulingMDE
-  
-  package_ref 141954 // Messages - Filing
-  
-  package_ref 195074 // Messages - Scheduling
-  class_ref 6684290 // GetCourtAvailabilityRequestMessage
-  class_ref 6684418 // GetCourtAvailabilityResponseMessage
   classview_ref 165634 // GetCourtScheduleRequestMessage
-  class_ref 199554 // GetCourtScheduleResponseMessage
   
   package_ref 201602 // NIEM
 end

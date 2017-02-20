@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 67
+  revision 75
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -584,10 +584,10 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
 	key "niem-profile:niem:XPath" value "caserequest:CaseQueryCriteria/caserequest:CalendarEventTypeCodeFilterText"
 	key "niem-profile:niem:Type" value "caserequest:CaseQueryCriteriaType"
-	key "niem-profile:niem:Property" value "caserequest:CalendarEventTypeCodeFilterText"
+	key "niem-profile:niem:Property" value "ecf:CourtEventTypeCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list CourtEventTypeCode.gc"
 	key "niem-profile:niem:CodeList" value ""
 	comment "Filter criterion indicating that only calendar entries of a specified type are being requested."
       end
@@ -1012,8 +1012,8 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseCourtEvent/j:CourtEventSchedule/j:ScheduleDayStartTime"
 	key "niem-profile:niem:Type" value "nc:ScheduleDayType"
-	key "niem-profile:niem:Property" value "nc:ScheduleDayRepresentation, (nc:ScheduleDate), (nc:ScheduleDayStartTime)"
-	key "niem-profile:niem:BaseType" value "nc:DateType"
+	key "niem-profile:niem:Property" value "nc:ScheduleDayStartTime"
+	key "niem-profile:niem:BaseType" value "niem-xs:time"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -1104,8 +1104,8 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseCourtEvent/j:CourtEventSchedule/nc:ScheduleDayEndTime"
 	key "niem-profile:niem:Type" value "nc:ScheduleDayType"
-	key "niem-profile:niem:Property" value "nc:ScheduleDayRepresentation, (nc:ScheduleDate), (nc:ScheduleDayEndTime)"
-	key "niem-profile:niem:BaseType" value "nc:DateType"
+	key "niem-profile:niem:Property" value "nc:ScheduleDayEndTime"
+	key "niem-profile:niem:BaseType" value "niem-xs:time"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
@@ -2007,370 +2007,6 @@ format 212
     end
   end
 
-  classview 386306 "GetCourtAvailabilityRequestMessage"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    comment "A request for the availability of a court for a specific event"
-    class 6684290 "GetCourtAvailabilityRequestMessage"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      associated_diagram classdiagram_ref 251650 // GetCourtAvailabilityRequestMessage
-      ncouples 9
-      key "niem-profile:niem:XPath" value "availabilityrequest:GetCourtAvailabilityRequestMessage"
-      key "niem-profile:niem:Type" value "availabilityrequest:GetCourtAvailabilityRequestMessageType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:RequestMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      comment "A request for the availability of a court for a specific event"
-      classrelation 5123970 // <generalisation>
-	relation 5121666 ---|>
-	  a public
-	    classrelation_ref 5123970 // <generalisation>
-	  b parent class_ref 132226 // BaseMessage
-      end
-
-      attribute 14523394 "messageExtension"
-	public type class_ref 2113794 // extension
-	multiplicity "*"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "An extension point for the enclosing message."
-      end
-
-      attribute 14523522 "judgeName"
-	public explicit_type "string"
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "The name of a judicial official"
-      end
-
-      attribute 14523650 "judgeID"
-	public type class_ref 156162 // id
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "An identifier for a judicial official"
-      end
-
-      attribute 14523778 "courtUnitID"
-	public type class_ref 156162 // id
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "An identifier for a court unit/division	"
-      end
-
-      attribute 14523906 "dateRange"
-	public type class_ref 6627842 // time
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "A starting end ending range of dates and times"
-      end
-
-      attribute 14524034 "caseType"
-	public explicit_type "string"
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "A type of court case"
-      end
-
-      attribute 14524162 "eventType"
-	public explicit_type "string"
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "A type of court event"
-      end
-    end
-
-    classinstance 7742210 "GetCourtAvailabilityRequestMessage"
-      stereotype "niem-profile:niem"
-      type class_ref 6684290 // GetCourtAvailabilityRequestMessage
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:XPath" value "availabilityrequest:GetCourtAvailabilityRequestMessage"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "availabilityrequest:GetCourtAvailabilityRequestMessage"
-      key "niem-profile:niem:BaseType" value "availabilityrequest:GetCourtAvailabilityRequestMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      comment "A request for the availability of a court for a specific event"
-    end
-
-    classdiagram 251650 "GetCourtAvailabilityRequestMessage"
-      classdiagramsettings member_max_width 0 end
-      comment "A request for the availability of a court for a specific event"
-      size Letter-Landscape
-    end
-  end
-
-  classview 386434 "GetCourtAvailabilityResponseMessage"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    comment "The availability of a court for a specific event"
-    class 6684418 "GetCourtAvailabilityResponseMessage"
-      visibility package stereotype "niem-profile:niem"
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      associated_diagram classdiagram_ref 251778 // GetCourtAvailabilityResponseMessage
-      ncouples 9
-      key "niem-profile:niem:XPath" value "availabilityresponse:GetCourtAvailabilityResponseMessage"
-      key "niem-profile:niem:Type" value "availabilityresponse:GetCourtAvailabilityResponseMessageType"
-      key "niem-profile:niem:Property" value ""
-      key "niem-profile:niem:BaseType" value "ecf:ResponseMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      comment "The availability of a court for a specific event"
-      classrelation 5124098 // <generalisation>
-	relation 5121794 ---|>
-	  a public
-	    classrelation_ref 5124098 // <generalisation>
-	  b parent class_ref 132226 // BaseMessage
-      end
-
-      attribute 14524418 "messageExtension"
-	public type class_ref 2113794 // extension
-	multiplicity "0..1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "An extension point for the enclosing message."
-      end
-
-      attribute 14524546 "courtAvailability"
-	public explicit_type "calendar"
-	multiplicity "1"
-	stereotype "niem-profile:niem"
-	cpp_decl ""
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
-	key "niem-profile:niem:CodeList" value ""
-	key "niem-profile:niem:OldXPath" value ""
-	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
-	comment "A schedule of dates/times a court is available"
-      end
-    end
-
-    classinstance 7742338 "GetCourtAvailabilityResponseMessage"
-      stereotype "niem-profile:niem"
-      type class_ref 6684418 // GetCourtAvailabilityResponseMessage
-      attributes
-        end
-      relations
-        end
-      ncouples 9
-      key "niem-profile:niem:XPath" value "availabilityresponse:GetCourtAvailabilityResponseMessage"
-      key "niem-profile:niem:Type" value ""
-      key "niem-profile:niem:Property" value "availabilityresponse:GetCourtAvailabilityResponseMessage"
-      key "niem-profile:niem:BaseType" value "availabilityresponse:GetCourtAvailabilityResponseMessageType"
-      key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:CodeList" value ""
-      key "niem-profile:niem:OldXPath" value ""
-      key "niem-profile:niem:OldMultiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
-      comment "The availability of a court for a specific event"
-    end
-
-    classdiagram 251778 "GetCourtAvailabilityResponseMessage"
-      classdiagramsettings member_max_width 0 end
-      comment "The availability of a court for a specific event"
-      size Letter-Landscape
-    end
-  end
-
   classview 165634 "GetCourtScheduleRequestMessage"
     
     classdiagramsettings member_max_width 0 end
@@ -2407,7 +2043,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:RequestMessageType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "DISCUSS: Define exchange content in UML"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "A request for the schedule of upcoming events in a court"
       classrelation 222850 // <generalisation>
@@ -2453,11 +2089,11 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:GetCourtScheduleRequestMessage/j:Judge/nc:RoleOfPerson/nc:PersonName"
+	key "niem-profile:niem:Type" value "schedulerequest:GetCourtScheduleRequestMessageType"
+	key "niem-profile:niem:Property" value "j:Judge"
+	key "niem-profile:niem:BaseType" value "j:JudicialOfficialType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
@@ -2477,11 +2113,11 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:GetCourtScheduleRequestMessage/j:Judge/j:JudicialOfficialRegistrationIdentification"
+	key "niem-profile:niem:Type" value "j:JudicialOfficialType"
+	key "niem-profile:niem:Property" value "j:JudicialOfficialRegistrationIdentification"
+	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
@@ -2501,11 +2137,11 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:GetCourtScheduleRequestMessage/j:CourtAdministrativeUnitText"
+	key "niem-profile:niem:Type" value "schedulerequest:GetCourtScheduleRequestMessageType"
+	key "niem-profile:niem:Property" value "j:CourtAdministrativeUnitText"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
@@ -2525,11 +2161,11 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:GetCourtScheduleRequestMessage/nc:DateRange"
+	key "niem-profile:niem:Type" value "schedulerequest:GetCourtScheduleRequestMessageType"
+	key "niem-profile:niem:Property" value "nc:DateRange"
+	key "niem-profile:niem:BaseType" value "nc:DateRangeType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
@@ -2549,15 +2185,15 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:GetCourtScheduleRequestMessage/ecf:CaseTypeCode"
+	key "niem-profile:niem:Type" value "schedulerequest:GetCourtScheduleRequestMessageType"
+	key "niem-profile:niem:Property" value "ecf:CaseTypeCode"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list CaseTypeCode.gc"
 	comment "A type of court case"
       end
 
@@ -2573,15 +2209,15 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "schedulerequest:GetCourtScheduleRequestMessage/ecf:CourtEventTypeCode"
+	key "niem-profile:niem:Type" value "schedulerequest:GetCourtScheduleRequestMessageType"
+	key "niem-profile:niem:Property" value "ecf:CourtEventTypeCode"
+	key "niem-profile:niem:BaseType" value "nc:TextType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "Genericode code list CourtEventTypeCode.gc"
 	comment "A type of court event"
       end
     end
@@ -2649,7 +2285,7 @@ format 212
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "ecf:ResponseMessageType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "DISCUSS: Define exchange content in UML"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "The schedule of upcoming events in a court"
       classrelation 222978 // <generalisation>
@@ -2695,11 +2331,11 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 9
-	key "niem-profile:niem:XPath" value ""
-	key "niem-profile:niem:Type" value ""
-	key "niem-profile:niem:Property" value ""
-	key "niem-profile:niem:BaseType" value ""
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:XPath" value "scheduleresponse:GetCourtScheduleResponseMessage/xcal:icalendar/xcal:xcalendar/xcal:components/xcal:vevent"
+	key "niem-profile:niem:Type" value "scheduleresponse:GetCourtScheduleResponseMessageType"
+	key "niem-profile:niem:Property" value "xcal:icalendar"
+	key "niem-profile:niem:BaseType" value "xcal:IcalendarType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""

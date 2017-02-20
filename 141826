@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 218
+  revision 226
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -6612,6 +6612,7 @@ format 212
 	key "niem-profile:niem:OldXPath" value "j:Charge/criminal:ChargeAugmentation/j:PersonChargeAssociation"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
+	comment "A charge associated with a defendant"
       end
 
       attribute 9584130 "physicalFeature"

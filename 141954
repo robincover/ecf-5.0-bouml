@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 235
+  revision 243
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -3080,6 +3080,7 @@ ${items}};
 	relation 3995266 o-->
 	  stereotype "niem-profile:niem"
 	  a role_name "organizationLocation" public
+	    comment "The location of an organization"
 	    classrelation_ref 3997442 // organizationLocation (<directional aggregation>)
 	  b parent class_ref 5365890 // Location
 	ncouples 9
