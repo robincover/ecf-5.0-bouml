@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 243
+  revision 248
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1012,12 +1012,12 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/j:CaseOfficial/j:CaseOfficialRoleText"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseOfficial/ecf:CaseOfficialAugmentation/ecf:CaseOfficialRoleCode"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseOfficial/ecf:CaseOfficialAugmentation/ecf:CaseParticipantRoleCode"
 	key "niem-profile:niem:Type" value "ecf:CaseOfficialAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:CaseOfficialRoleCode"
+	key "niem-profile:niem:Property" value "ecf:CaseParticipantRoleCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:Notes" value "Genericode code list CaseOfficialRoleCode.gc"
+	key "niem-profile:niem:Notes" value "Genericode code list ecf:CaseParticipantRoleCode.gc"
 	key "niem-profile:niem:CodeList" value "Conflict defender; Defendant counsel; Guardian at litem=Child's attorney; Interpleader attorney; Intervenor attorney; Lead attorney; Plaintiff defender; Private defense counsel; Pro hac vice; Prosecutor; Public defender=Defendant's appointed counsel; Third party plaintiff attorney"
 	comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust)."
       end
@@ -1106,7 +1106,7 @@ ${items}};
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Genericode code list CaseParticipantRoleCode.gc"
-	key "niem-profile:niem:CodeList" value "Administrator; Bail bondsman; Beneficiary; Case worker; Defendant; Friend of court; Garnishee; Heir; Interested party; Intervenor; Next of kin; Petitioner; Plaintiff; Probation officer; Respondent; Special Master; Special Representative; Surety; Third party defendant; Third party plaintiff"
+	key "niem-profile:niem:CodeList" value "Administrator; Bail bondsman; Beneficiary; Case worker; Defendant; Executor; Friend of court; Garnishee; Heir; Interested party; Intervenor; Next friend; Next of kin; Petitioner; Plaintiff; Probation officer; Respondent; Special Master; Special Representative; Surety; Third party defendant; Third party plaintiff; Trustee; CASA=Court appointed special advocate; Conflict defender; Defendant counsel; Guardian ad litem=Child's attorney; Interpleader attorney; Intervenor attorney; Lead attorney; Plaintiff attorney; Private defense counsel; Pro hac vice; Prosecutor; Public defender=Defendant's appointed counsel; Respondent attorney; Third party plaintiff attorney"
 	comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust).
 "
       end
@@ -1305,7 +1305,7 @@ ${items}};
 	key "niem-profile:niem:Property" value "ecf:CaseParticipantRoleCode"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
-	key "niem-profile:niem:Notes" value "DISCUSS: See CaseOfficialRoleCode.gc (attorneys) and CaseParticipantRoleCode.gc  (other persons and organizations).  Should we have separate code lists for non-attorney person and organization participants?"
+	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust).
 "
@@ -5574,7 +5574,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "docket:RecordDocketingMessageType"
 	key "niem-profile:niem:Property" value "docket:CorrectedFiling"
 	key "niem-profile:niem:BaseType" value "filing:FilingMessageType"
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -6081,7 +6081,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "ecf:MessageStatusAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:ServiceRecipientID"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the submitterID for filings in this case, and asynchronous responses to filings."

@@ -1,6 +1,6 @@
 format 212
 "UML" // UML
-  revision 39
+  revision 40
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -566,7 +566,6 @@ ${members}};
 	
 	comment "An operation to reserve a court date."
       end
-
     end
 
     class 129410 "FilingAssemblyMDE"

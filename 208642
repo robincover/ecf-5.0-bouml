@@ -576,7 +576,7 @@ format 212
       comment "Indicator that filing fees were waived or deferred in the case in the lower court."
     end
 
-    classinstance 7724546 "RuleCollectionNumber"
+    classinstance 7724418 "RuleCollectionNumber"
       type class_ref 6653570 // NumericType
       attributes
         end
@@ -587,7 +587,7 @@ format 212
       comment "An organized set or book of rules of the court that include the rule(s) in question."
     end
 
-    classinstance 7724674 "RuleCollectionText"
+    classinstance 7724546 "RuleCollectionText"
       type class_ref 6636546 // TextType
       attributes
         end
@@ -2131,7 +2131,7 @@ format 212
       comment "The person or organization in whose name the account is established and maintained."
     end
 
-    classinstance 7732994 "PaidTime"
+    classinstance 7732866 "PaidTime"
       type class_ref 6635522 // abstract
       attributes
         end
@@ -2539,7 +2539,7 @@ format 212
       end
     end
 
-    classinstance 7734402 "VehicleAugmentation"
+    classinstance 7734274 "VehicleAugmentation"
       type class_ref 6673154 // VehicleAugmentationType
       attributes
         end
@@ -3251,7 +3251,7 @@ format 212
       comment "The bail amount recommended by the prosecutor."
     end
 
-    classinstance 7725442 "SentenceAugmentation"
+    classinstance 7725314 "SentenceAugmentation"
       type class_ref 6668674 // SentenceAugmentationType
       attributes
         end
@@ -3504,6 +3504,7 @@ format 212
 
       attribute 14676738 "docket:CorrectedFiling"
 	public type class_ref 6665986 // FilingMessageType
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -3577,7 +3578,7 @@ format 212
       end
     end
 
-    classinstance 7724930 "SealCaseIndicator"
+    classinstance 7724802 "SealCaseIndicator"
       type class_ref 6635906 // boolean
       attributes
         end
@@ -4872,7 +4873,7 @@ format 212
       
       ncouples 2
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseOfficialAugmentationType"
-      key "Notes" value "Genericode code list CaseOfficialRoleCode.gc"
+      key "Notes" value "Genericode code list ecf:CaseParticipantRoleCode.gc"
       comment "A party represented by an attorney"
       classrelation 5220866 // <generalisation>
 	relation 5218562 ---|>
@@ -4881,7 +4882,7 @@ format 212
 	  b parent class_ref 6635778 // AugmentationType
       end
 
-      attribute 14700290 "ecf:CaseOfficialRoleCode"
+      attribute 14700290 "ecf:CaseParticipantRoleCode"
 	public type class_ref 6636546 // TextType
 	multiplicity "0,1"
 	cpp_decl ""
@@ -4892,8 +4893,8 @@ format 212
 	mysql_decl ""
 	MysqlColumn
 	ncouples 1
-	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseOfficialRoleCode"
-	comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust)."
+	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseParticipantRoleCode"
+	comment "A type of participant in a court case"
       end
 
       attribute 14699522 "ecf:CaseRepresentedParty"
@@ -4910,19 +4911,6 @@ format 212
 	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseRepresentedParty"
 	comment "A party represented by an attorney"
       end
-    end
-
-    classinstance 7724418 "CaseOfficialRoleCode"
-      type class_ref 6636546 // TextType
-      attributes
-        end
-      relations
-        end
-      ncouples 3
-      key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseOfficialRoleCode"
-      key "Notes" value "Genericode code list CaseOfficialRoleCode.gc"
-      key "codeList" value "Conflict defender; Defendant counsel; Guardian at litem=Child's attorney; Interpleader attorney; Intervenor attorney; Lead attorney; Plaintiff defender; Private defense counsel; Pro hac vice; Prosecutor; Public defender=Defendant's appointed counsel; Third party plaintiff attorney"
-      comment "A code that describes the role played by a person or organization in a case.  Allowed values are set forth in Court Policy. Examples: Lead attorney, guardian ad litem, friend of court, court appointed special advocate (CASA), caseworker, probation officer, bail bondsman, interested person, interested party, intervenor, heir, trustee or beneficiary (e.g., of a trust)."
     end
 
     classinstance 7711618 "CaseOtherEntityAttorney"
@@ -4944,8 +4932,8 @@ format 212
         end
       ncouples 3
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseParticipantRoleCode"
-      key "Notes" value "Genericode code list CaseParticipantRoleCode.gc; DISCUSS: See CaseOfficialRoleCode.gc (attorneys) and CaseParticipantRoleCode.gc  (other persons and organizations).  Should we have separate code lists for non-attorney person and organization participants?"
-      key "codeList" value "Administrator; Bail bondsman; Beneficiary; Case worker; Defendant; Friend of court; Garnishee; Heir; Interested party; Intervenor; Next of kin; Petitioner; Plaintiff; Probation officer; Respondent; Special Master; Special Representative; Surety; Third party defendant; Third party plaintiff"
+      key "Notes" value "Genericode code list CaseParticipantRoleCode.gc; Genericode code list ecf:CaseParticipantRoleCode.gc"
+      key "codeList" value "Administrator; Bail bondsman; Beneficiary; Case worker; Defendant; Executor; Friend of court; Garnishee; Heir; Interested party; Intervenor; Next friend; Next of kin; Petitioner; Plaintiff; Probation officer; Respondent; Special Master; Special Representative; Surety; Third party defendant; Third party plaintiff; Trustee; CASA=Court appointed special advocate; Conflict defender; Defendant counsel; Guardian ad litem=Child's attorney; Interpleader attorney; Intervenor attorney; Lead attorney; Plaintiff attorney; Private defense counsel; Pro hac vice; Prosecutor; Public defender=Defendant's appointed counsel; Respondent attorney; Third party plaintiff attorney"
       comment "A type of participant in a court case"
     end
 
@@ -5842,7 +5830,7 @@ format 212
       end
     end
 
-    classinstance 7733122 "EntityAssociationTypeCode"
+    classinstance 7732994 "EntityAssociationTypeCode"
       type class_ref 6636546 // TextType
       attributes
         end
@@ -6063,7 +6051,7 @@ format 212
       end
     end
 
-    classinstance 7726466 "MessageStatusAugmentation"
+    classinstance 7726338 "MessageStatusAugmentation"
       type class_ref 6670722 // MessageStatusAugmentationType
       attributes
         end
@@ -6098,7 +6086,7 @@ format 212
 
       attribute 14701826 "ecf:ServiceRecipientID"
 	public type class_ref 6637058 // IdentificationType
-	multiplicity "1,1"
+	multiplicity "0,1"
 	cpp_decl ""
 	java_decl ""
 	php_decl ""
@@ -6351,9 +6339,8 @@ format 212
       explicit_switch_type ""
       mysql_decl ""
       
-      ncouples 2
+      ncouples 1
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,PersonAugmentationType"
-      key "Notes" value "DISCUSS: See CaseOfficialRoleCode.gc (attorneys) and CaseParticipantRoleCode.gc  (other persons and organizations).  Should we have separate code lists for non-attorney person and organization participants?"
       comment "Information useable to contact this person, such as address, telephone number(s), and email address."
       classrelation 5213826 // <generalisation>
 	relation 5211522 ---|>
@@ -6842,7 +6829,7 @@ format 212
       comment "This association will be present for each document that the clerk review process approves for sending to the court record system (where it may be rejected or recorded.)"
     end
 
-    classinstance 7725058 "SealDocumentIndicator"
+    classinstance 7724930 "SealDocumentIndicator"
       type class_ref 6635906 // boolean
       attributes
         end
@@ -6853,7 +6840,7 @@ format 212
       comment "Clerk instruction to court record system to seal this document."
     end
 
-    classinstance 7725186 "SendingMDELocationID"
+    classinstance 7725058 "SendingMDELocationID"
       type class_ref 6637058 // IdentificationType
       attributes
         end
@@ -6877,7 +6864,7 @@ format 212
       comment "An identifier, from a list of allowed values defined in the Court Filing specification, of a message profile supported by this court."
     end
 
-    classinstance 7726210 "ServiceRecipientID"
+    classinstance 7726082 "ServiceRecipientID"
       type class_ref 6637058 // IdentificationType
       attributes
         end
@@ -6888,7 +6875,7 @@ format 212
       comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the submitterID for filings in this case, and asynchronous responses to filings."
     end
 
-    classinstance 7728898 "ServiceStatusCode"
+    classinstance 7728770 "ServiceStatusCode"
       type class_ref 6639874 // normalizedString
       attributes
         end
@@ -6901,7 +6888,7 @@ format 212
       comment "Enumerated values: unrecognized - filerID is not recognized, received - filing received by MDE, sent - filing sent by MDE to service recipient  Future versions may add additional values, such as: delivered - filing delivered to service recipient. (i.e. under the control of the recipient) opened - filing opened by service recipient"
     end
 
-    classinstance 7727106 "SignatureAugmentation"
+    classinstance 7726978 "SignatureAugmentation"
       type class_ref 6674690 // SignatureAugmentationType
       attributes
         end
@@ -6947,7 +6934,7 @@ format 212
       end
     end
 
-    classinstance 7727234 "SignatureProfileCode"
+    classinstance 7727106 "SignatureProfileCode"
       type class_ref 6639874 // normalizedString
       attributes
         end
@@ -6960,7 +6947,7 @@ format 212
       comment "An identifier from the Court Filing specification that indicates the Signature Profile governing the structure of this signature."
     end
 
-    classinstance 7727490 "SpecialHandlingInstructionsText"
+    classinstance 7727362 "SpecialHandlingInstructionsText"
       type class_ref 6636546 // TextType
       attributes
         end
@@ -7184,7 +7171,7 @@ format 212
     ncouples 2
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/feesresponse"
     key "path" value "feesresponse.xsd"
-    classinstance 7732738 "FeesCalculationAmount"
+    classinstance 7732610 "FeesCalculationAmount"
       type class_ref 6638082 // AmountType
       attributes
         end
@@ -9190,7 +9177,7 @@ format 212
       comment "The version of court policy reported by this message.  Up to the court to define the format of this, and describe in human-readable court policy."
     end
 
-    classinstance 7724802 "RuntimePolicy"
+    classinstance 7724674 "RuntimePolicy"
       type class_ref 6668930 // RuntimePolicyType
       attributes
         end
@@ -9379,7 +9366,7 @@ format 212
       end
     end
 
-    classinstance 7731714 "SupportedOperations"
+    classinstance 7731586 "SupportedOperations"
       type class_ref 6671490 // SupportedOperationsType
       attributes
         end
@@ -9426,7 +9413,7 @@ format 212
       end
     end
 
-    classinstance 7731458 "SupportedServiceInteractionProfiles"
+    classinstance 7731330 "SupportedServiceInteractionProfiles"
       type class_ref 6672898 // SupportedServiceInteractionProfilesType
       attributes
         end
@@ -9511,7 +9498,7 @@ format 212
       end
     end
 
-    classinstance 7731586 "SupportedSignaturesProfiles"
+    classinstance 7731458 "SupportedSignaturesProfiles"
       type class_ref 6674818 // SupportedSignatureProfilesType
       attributes
         end
@@ -9522,7 +9509,7 @@ format 212
       comment "A signature profile approved for use with ECF by the OASIS LegalXML Member Section Electronic Court Filing Technical Committee that is supported by this court."
     end
 
-    classinstance 7734018 "URLAttachmentSupportedIndicator"
+    classinstance 7733890 "URLAttachmentSupportedIndicator"
       type class_ref 6635906 // boolean
       attributes
         end
@@ -9564,7 +9551,7 @@ format 212
       comment "The estimated duration of a court hearing"
     end
 
-    classinstance 7728002 "PotentialStartTimeRange"
+    classinstance 7727874 "PotentialStartTimeRange"
       type class_ref 6641154 // DateRangeType
       attributes
         end
@@ -10038,7 +10025,7 @@ format 212
     ncouples 2
     key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/serveprocess"
     key "path" value "serveprocess.xsd"
-    classinstance 7726082 "ServeProcessMessage"
+    classinstance 7725954 "ServeProcessMessage"
       type class_ref 6672770 // ServeProcessMessageType
       attributes
         end

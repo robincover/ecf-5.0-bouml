@@ -1,11 +1,12 @@
-window_sizes 3840 2035 1079 2755 1747 211
+window_sizes 2736 1699 577 2153 1411 211
 cleanlooks_style
-selected 
-  package_ref 129 // ecf-5.0-bouml
+marked
+  attribute_ref 158722 // serviceRecipientID
+  attribute_ref 159106 // serviceRecipientID
+end
+selected classrelation_ref 223106 // correctedCoreFiling (<directional aggregation>)
 open
-  usecaseview_ref 141058 // Use Cases
-  class_ref 198786 // CourtSchedulingMDE
-  classview_ref 165634 // GetCourtScheduleRequestMessage
+  class_ref 145794 // RecordDocketingMessage
   
   package_ref 201602 // NIEM
 end
