@@ -4969,7 +4969,7 @@ format 212
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseTypeCode"
       key "Notes" value "Genericode code list CaseTypeCode.gc"
       key "codeList" value "appellate;bankruptcy;civil;criminal;domestic;juvenile;traffic"
-      comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
+      comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
     end
 
     classinstance 7661186 "CauseOfActionCode"
@@ -8393,7 +8393,7 @@ format 212
 	MysqlColumn
 	ncouples 1
 	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseTypeCode"
-	comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 14691458 "policyrequest:GetPolicyRequestMessageAugmentationPoint"
@@ -9163,7 +9163,7 @@ format 212
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/policyresponse,OperationNameCode"
       key "Notes" value "Genericode code list OperationNameCode.gc"
       key "codeList" value "AllocateCourtDate; DocumentStampInformation; GetCase; GetCaseList; GetCourtSchedule; GetDocument; GetFilingList; GetFilingStatus; GetPolicy; GetServiceInformation; NotifyCourtDate; NotifyFilingReviewComplete; NotifyDocketingComplete; NotifyDocumentStampInformation; RecordFiling; ReserveCourtDate; ReviewFiling; ServeFiling"
-      comment "Indicates whether the e-filing system supports the GetFeesCalculation query."
+      comment "Indicates whether the e-filing system supports a certain operation."
     end
 
     classinstance 7718274 "PolicyVersionID"
@@ -9314,7 +9314,7 @@ format 212
 	MysqlColumn
 	ncouples 1
 	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/policyresponse,OperationNameCode"
-	comment "Indicates whether the e-filing system supports the GetFeesCalculation query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
     end
 
@@ -9342,7 +9342,7 @@ format 212
       ncouples 2
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/policyresponse,SupportedCaseCategoriesType"
       key "Notes" value "Genericode code list CaseTypeCode.gc"
-      comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
+      comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       classrelation 5222018 // <generalisation>
 	relation 5219714 ---|>
 	  a public
@@ -9362,7 +9362,7 @@ format 212
 	MysqlColumn
 	ncouples 1
 	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseTypeCode"
-	comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
     end
 
@@ -9389,7 +9389,7 @@ format 212
       
       ncouples 1
       key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/policyresponse,SupportedOperationsType"
-      comment "Indicates whether the e-filing system supports the GetFeesCalculation query."
+      comment "Indicates whether the e-filing system supports a certain operation."
       classrelation 5222274 // <generalisation>
 	relation 5219970 ---|>
 	  a public
@@ -9409,7 +9409,7 @@ format 212
 	MysqlColumn
 	ncouples 1
 	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/policyresponse,OperationNameCode"
-	comment "Indicates whether the e-filing system supports the GetFeesCalculation query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
     end
 
@@ -9833,7 +9833,7 @@ format 212
 	MysqlColumn
 	ncouples 1
 	key "URI" value "https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf,CaseTypeCode"
-	comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 14683010 "ecf:CourtEventTypeCode"

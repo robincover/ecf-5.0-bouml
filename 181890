@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 75
+  revision 76
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -5256,7 +5256,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value "Genericode code list CaseTypeCode.gc"
 	key "niem-profile:niem:CodeList" value "appellate;bankruptcy;civil;criminal;domestic;juvenile;traffic"
-	comment "Indicates whether the e-filing system supports electronic filing of bankruptcy cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 206722 "civilFilingSupportedIndicator"
@@ -5279,7 +5279,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports electronic filing of civil cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 206850 "criminalFilingSupportedIndicator"
@@ -5302,7 +5302,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports electronic filing of criminal cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 206978 "domesticFilingSupportedIndicator"
@@ -5325,7 +5325,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports electronic filing of domestic cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 207106 "juvenileFilingsupportedIndicator"
@@ -5348,7 +5348,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports electronic filing of juvenile cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
 
       attribute 207234 "trafficCitationFilingSupportedIndicator"
@@ -5371,7 +5371,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports electronic filing of traffic citation cases."
+	comment "Indicates whether the e-filing system supports electronic filing of a certain case type."
       end
     end
 
@@ -5461,7 +5461,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetFeesCalculation query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
 
       attribute 206082 "getCaseListSupportedIndicator"
@@ -5484,7 +5484,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetCaseList query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
 
       attribute 206210 "getCaseSupportedIndicator"
@@ -5507,7 +5507,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetCase query. The court must send case information back to the Filing Assembly MDE in the Filing Review Callback message, or support the GetCaseQuery.  To be compliant with the specification, a court must do at least one of these."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
 
       attribute 206338 "getDocumentSupportedIndicator"
@@ -5530,7 +5530,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetDocument query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
 
       attribute 205826 "getFilingListSuportedIndicator"
@@ -5553,7 +5553,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetFilingList query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
 
       attribute 205954 "getFilingStatusSupportedIndicator"
@@ -5576,7 +5576,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetFilingStatus query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
 
       attribute 206466 "getServiceInformationSupportedIndicator"
@@ -5599,7 +5599,7 @@ ${members}};
 	key "niem-profile:niem:Multiplicity" value "1,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
-	comment "Indicates whether the e-filing system supports the GetServiceInformation query."
+	comment "Indicates whether the e-filing system supports a certain operation."
       end
     end
 

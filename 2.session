@@ -1,12 +1,12 @@
-window_sizes 2736 1699 577 2153 1411 211
+window_sizes 2724 1699 577 2141 1411 211
 cleanlooks_style
 marked
   attribute_ref 158722 // serviceRecipientID
   attribute_ref 159106 // serviceRecipientID
 end
-selected classrelation_ref 223106 // correctedCoreFiling (<directional aggregation>)
+selected 
+  package_ref 129 // ecf-5.0-bouml
 open
-  class_ref 145794 // RecordDocketingMessage
   
   package_ref 201602 // NIEM
 end
