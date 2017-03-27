@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 76
+  revision 79
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1359,7 +1359,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Case/j:CaseAugmentation/ecf:CaseCourtEvent/ecf:CourtEventDocument, ecf:CourtEventDocumentReference"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseCourtEventj:CaseCourtEvent/ecf:CourtEventAugmentation/ecf:ConnectedDocument"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseCourtEvent/ecf:CourtEventAugmentation/ecf:ConnectedDocument"
 	key "niem-profile:niem:Type" value "ecf:CourtEventAugmentationType"
 	key "niem-profile:niem:Property" value "@ecf:ConnectedDocument"
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
@@ -1619,11 +1619,11 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseOtherEntity/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilerIdentification"
-	key "niem-profile:niem:Type" value "ecf:PersonAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:FilerIdentification"
+	key "niem-profile:niem:XPath" value "nc:Case/j:CaseAugmentation/j:CaseOtherEntity/nc:EntityOrganization/ecf:OrganizationAugmentation/ecf:FilingPartyID"
+	key "niem-profile:niem:Type" value "ecf:OrganizationAugmentationType"
+	key "niem-profile:niem:Property" value "ecf:FilingPartyID"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
-	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "A unique identifier assigned by the filing assembly MDE for the person who is managing the interface between the filer and the filing assembly MDE. This person will receive secondary service on behalf of the filer. This is also the serviceRecipientID for subsequent filings in this case, and asynchronous responses to this filing."
@@ -1808,7 +1808,7 @@ format 212
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
 	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/nc:DocumentAssociation/nc:SecondaryDocument/nc:DicumentIdentification/nc:IdenificationID, nc:DocumentAssociation/nc:PrimaryDocument/nc:DicumentIdentification/nc:IdenificationID"
 	key "niem-profile:niem:Type" value "nc:DocumentAssociationType"
-	key "niem-profile:niem:Property" value "@nc:PrimaryDocument, @nc:SecondaryDocument"
+	key "niem-profile:niem:Property" value "@nc:PrimaryDocument, nc:SecondaryDocument"
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
@@ -2655,9 +2655,9 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "documentresponse:DocumentResponseMessage/nc:Document/nc:DocumentSubmitter/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:XPath" value "documentresponse:GetDocumentResponseMessage/nc:Document/nc:DocumentSubmitter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilerIdentification"
+	key "niem-profile:niem:XPath" value "documentresponse:GetDocumentResponseMessage/nc:Document/nc:DocumentSubmitter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilingPartyID"
 	key "niem-profile:niem:Type" value "ecf:PersonAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:FilerIdentification"
+	key "niem-profile:niem:Property" value "ecf:FilingPartyID"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -3088,7 +3088,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "filinglistrequest:FilingListQueryMessage/nc:DocumentSubmitter"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "filinglistrequest:GetFilingListRequestMessage/nc:DocumentSubmitter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilerIdentification"
+	key "niem-profile:niem:XPath" value "filinglistrequest:GetFilingListRequestMessage/nc:DocumentSubmitter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilingPartyID"
 	key "niem-profile:niem:Type" value "filinglistrequest:GetFilingListRequestMessageType"
 	key "niem-profile:niem:Property" value "nc:DocumentSubmitter"
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
@@ -3431,7 +3431,7 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "filinglistresponse:MatchingFiling/nc:DocumentSubmitter/nc:EntityOrganization/nc:OrganizationID, filinglistreponse:MatchingFiling/nc:DocumentSubmitter/nc:EntityPerson/nc:PersonID"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "ecf:MatchingFiling/nc:DocumentSubmitter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilerIdentification"
+	key "niem-profile:niem:XPath" value "ecf:MatchingFiling/nc:DocumentSubmitter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilingPartyID"
 	key "niem-profile:niem:Type" value "nc:DocumentType"
 	key "niem-profile:niem:Property" value "nc:DocumentSubmitter"
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
@@ -3594,9 +3594,9 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:QueryMessage/ecf:QuerySubmitter/nc:EntityPerson/nc:PersonOtherIdentification"
 	key "niem-profile:niem:OldMultiplicity" value "1,1"
-	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/ecf:FilerIdentification"
+	key "niem-profile:niem:XPath" value "filingstatusrequest:GetFilingStatusRequestMessage/ecf:FilingPartyID"
 	key "niem-profile:niem:Type" value "ecf:CaseFilingType"
-	key "niem-profile:niem:Property" value "ecf:FilerIdentification"
+	key "niem-profile:niem:Property" value "ecf:FilingPartyID"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""
@@ -3868,9 +3868,9 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "filingstatusresponse:GetFilingStatusResponseMessage/ecf:MatchingFiling/nc:DocumentSubmiter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilerIdentification"
+	key "niem-profile:niem:XPath" value "filingstatusresponse:GetFilingStatusResponseMessage/ecf:MatchingFiling/nc:DocumentSubmiter/nc:EntityPerson/ecf:PersonAugmentation/ecf:FilingPartyID"
 	key "niem-profile:niem:Type" value "ecf:PersonAugmentationType"
-	key "niem-profile:niem:Property" value "ecf:FilerIdentification"
+	key "niem-profile:niem:Property" value "ecf:FilingPartyID"
 	key "niem-profile:niem:BaseType" value "nc:IdentificationType"
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value ""

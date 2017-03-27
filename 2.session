@@ -1,13 +1,11 @@
-window_sizes 2724 1699 577 2141 1411 211
+window_sizes 2724 1699 553 2165 1411 211
 cleanlooks_style
 marked
   attribute_ref 158722 // serviceRecipientID
   attribute_ref 159106 // serviceRecipientID
 end
 selected 
-  package_ref 129 // ecf-5.0-bouml
-open
-  
   package_ref 201602 // NIEM
+open
 end
 end
