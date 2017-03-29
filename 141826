@@ -1,6 +1,6 @@
 format 212
 "Case Type Extensions" // UML::Case Type Extensions
-  revision 229
+  revision 232
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -4229,7 +4229,7 @@ format 212
 	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:Notes" value "Genericode code list FiduciaryTypeCode.gc"
 	key "niem-profile:niem:CodeList" value "Conservator of the estate; Conservator of the person; Guardian; Trustee"
-	comment "Legal description of the role of the fiduciary.  This is needed in addition to the Case Role Code (in the Review Filing message structure) because that code only defines the roles of other actors and other parties; the fiduciary per the specification is the initiating party. Examples: guardian, trustee, conservator of the person, conservator of the estate."
+	comment "Legal description of the role of a fiduciary. Examples: guardian, trustee, conservator of the person, conservator of the estate."
       end
 
       classrelation 184450 // personInformation (<directional aggregation>)
@@ -7348,7 +7348,7 @@ format 212
 	key "niem-profile:niem:Type" value "nc:PersonAssociationType"
 	key "niem-profile:niem:Property" value "@nc:Person"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
-	key "niem-profile:niem:Multiplicity" value "2,2"
+	key "niem-profile:niem:Multiplicity" value "2,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end

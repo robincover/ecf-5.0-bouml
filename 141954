@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 251
+  revision 257
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1662,6 +1662,13 @@ ${items}};
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "An extension point for the enclosing message."
+      end
+
+      classrelation 5274754 // <directional aggregation>
+	relation 5272450 o-->
+	  a role_name "" public
+	    classrelation_ref 5274754 // <directional aggregation>
+	  b parent class_ref 145794 // RecordDocketingMessage
       end
     end
 
@@ -3580,7 +3587,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "nc:PersonAssociationType"
 	key "niem-profile:niem:Property" value "@nc:Person"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
-	key "niem-profile:niem:Multiplicity" value "2,2"
+	key "niem-profile:niem:Multiplicity" value "2,unbounded"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end
@@ -5560,21 +5567,21 @@ ${items}};
 	comment "The court unique identifier for the case into which this filing is being made.  If the filing initiates the case, then this is either assigned by the clerk during review, or is left unassigned, in which case the court record MDE must assign the case identifier."
       end
 
-      classrelation 223106 // correctedCoreFiling (<directional aggregation>)
+      classrelation 223106 // originalFiling (<directional aggregation>)
 	relation 220930 o-->
 	  stereotype "niem-profile:niem"
-	  a role_name "correctedCoreFiling" multiplicity "0..1" public
-	    comment "The complete CoreFilingMessage sumbitted for review with any corrections applied by the clerk prior to accepting into the court record."
-	    classrelation_ref 223106 // correctedCoreFiling (<directional aggregation>)
+	  a role_name "originalFiling" multiplicity "0..1" public
+	    comment "The complete FilingMessage sumbitted for review without any corrections applied by the clerk prior to accepting into the court record."
+	    classrelation_ref 223106 // originalFiling (<directional aggregation>)
 	  b parent class_ref 130690 // CoreFilingMessage
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value ""
 	key "niem-profile:niem:OldMultiplicity" value ""
-	key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage/docket:CorrectedFiling"
+	key "niem-profile:niem:XPath" value "docket:RecordDocketingMessage/filing:FilingMessage"
 	key "niem-profile:niem:Type" value "docket:RecordDocketingMessageType"
-	key "niem-profile:niem:Property" value "docket:CorrectedFiling"
+	key "niem-profile:niem:Property" value "filing:FilingMessage"
 	key "niem-profile:niem:BaseType" value "filing:FilingMessageType"
-	key "niem-profile:niem:Multiplicity" value ""
+	key "niem-profile:niem:Multiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
       end

@@ -18,7 +18,7 @@ classcanvas 128642 class_ref 132482 // ReviewedDocument
 end
 classcanvas 128898 class_ref 130690 // CoreFilingMessage
   classdiagramsettings member_max_width 0 end
-  xyz 40 329 2000
+  xyz 14 46 2000
 end
 classcanvas 129154 class_ref 131586 // Case
   classdiagramsettings member_max_width 0 end
@@ -40,14 +40,20 @@ relationcanvas 128770 relation_ref 169858 // <directional aggregation>
   multiplicity_a_pos 835 413 3000 no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 220930 // <directional aggregation>
-  from ref 128130 z 2001 stereotype "<<niem>>" xyz 358.5 388.5 3000 to ref 128898
-  role_a_pos 418 364 3000 no_role_b
-  multiplicity_a_pos 418 413 3000 no_multiplicity_b
+  from ref 128130 z 2001 stereotype "<<niem>>" xyz 337 242 3000 to ref 128898
+  role_a_pos 318 158 3000 no_role_b
+  multiplicity_a_pos 318 207 3000 no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 3358850 // <directional aggregation>
-  from ref 128130 z 2001 stereotype "<<niem>>" xyz 584.5 508.5 3000 to ref 129154
+  from ref 128130 z 2001 stereotype "<<niem>>" xyz 584 508 3000 to ref 129154
   role_a_pos 642 509 3000 no_role_b
   multiplicity_a_pos 609 509 3000 multiplicity_b_pos 609 515 3000
+end
+relationcanvas 130050 relation_ref 5272578 // <directional aggregation>
+  from ref 128130 z 2001 stereotype "<<niem>>" xyz 425 264 3000 to point 440 230
+  line 130306 z 2001 to ref 128898
+  role_a_pos 362 156 3000 no_role_b
+  multiplicity_a_pos 362 205 3000 no_multiplicity_b
 end
 preferred_whz 1360 824 1
 end
