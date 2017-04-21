@@ -1,6 +1,6 @@
 format 212
 "Messages - Request/Response" // UML::Messages - Request/Response
-  revision 82
+  revision 85
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -1902,9 +1902,9 @@ format 212
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/ecf:DocumentAttachment"
 	key "niem-profile:niem:OldMultiplicity" value "1,unbounded"
-	key "niem-profile:niem:XPath" value "nc:Document/ecf:DocumentAugmentation/ecf:ConnectedDocument"
-	key "niem-profile:niem:Type" value "ecf:DocumentAugmentationType"
-	key "niem-profile:niem:Property" value "@ecf:ConnectedDocument"
+	key "niem-profile:niem:XPath" value "filing:FilingMessage/filing:FilingConnectedDocument"
+	key "niem-profile:niem:Type" value "filing:FilingMessageType"
+	key "niem-profile:niem:Property" value "@filing:FilingConnectedDocument"
 	key "niem-profile:niem:BaseType" value "nc:DocumentType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
 	key "niem-profile:niem:Notes" value ""
@@ -4670,7 +4670,7 @@ ${members}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "nc:DocumentType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value "DISCUSS: Different MDEs may have different extensions. In policy, should we report code lists and schema extensions by each MDE?"
+      key "niem-profile:niem:Notes" value ""
       key "niem-profile:niem:CodeList" value ""
       comment "A structure representing a court-specific data structure passed to a particular operation on a particular MDE."
       attribute 147714 "argumentSchema"

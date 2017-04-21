@@ -1,6 +1,6 @@
 format 212
 "Messages - Filing" // UML::Messages - Filing
-  revision 257
+  revision 262
   modified_by 2 "JamesECabral"
   // class settings
   
@@ -668,7 +668,7 @@ ${items}};
 	key "niem-profile:niem:Property" value "j:CaseOtherEntity"
 	key "niem-profile:niem:BaseType" value "nc:EntityType"
 	key "niem-profile:niem:Multiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value ""
+	key "niem-profile:niem:Notes" value "DISCUSS: Is nc:CaseOtherEntity appropriate or should we define an extension (e.g. ecf:CaseParticipant)?"
 	key "niem-profile:niem:CodeList" value ""
       end
 
@@ -2163,7 +2163,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "nc:DocumentAssociationType"
 	key "niem-profile:niem:Property" value "nc:DocumentAssociationAugmentationPoint, (ecf:DocumentAssociationAugmentation)"
 	key "niem-profile:niem:BaseType" value "ecf:DocumentAssociationAugmentationType"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentMetadata/ecf:PriorRelatedDocumentID"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
@@ -2187,7 +2187,7 @@ ${items}};
 	key "niem-profile:niem:Type" value "ecf:DocumentAssociationAugmentationType"
 	key "niem-profile:niem:Property" value "ecf:DocumentRelatedCode"
 	key "niem-profile:niem:BaseType" value "niem-xs:normalizedString"
-	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:Multiplicity" value "1,1"
 	key "niem-profile:niem:CodeList" value "parent;prior-related"
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentMetadata/ecf:PriorRelatedDocumentID"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
@@ -2533,7 +2533,7 @@ ${items}};
 	key "niem-profile:niem:CodeList" value ""
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:Base64BinaryObject"
 	key "niem-profile:niem:OldMultiplicity" value "0,unbounded"
-	key "niem-profile:niem:Notes" value "DISCUSS: Deprecate embedding documents in XML?"
+	key "niem-profile:niem:Notes" value ""
 	comment "The binary contents of a document."
       end
 
@@ -2578,7 +2578,7 @@ ${items}};
 	key "niem-profile:niem:Property" value "nc:BinaryFormatText"
 	key "niem-profile:niem:BaseType" value "nc:TextType"
 	key "niem-profile:niem:Multiplicity" value "0,1"
-	key "niem-profile:niem:CodeList" value "application/json=json; application/msword=doc; application/pdf=pdf; application/rtf=rtf; application/vnd.ms-excel=xls; application/vnd.ms-powerpoint=ppt; application/vnd.oasis.opendocument.presentation=odp; application/vnd.oasis.opendocument.spreadsheet=ods; application/vnd.oasis.opendocument.text=odt; application/vnd.openxmlformats-officedocument.presentationml.presentation=pptx; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=xlsx; application/vnd.openxmlformats-officedocument.wordprocessingml.document=docx; application/wordperfect=wp, wp5, wp6, wpd; application/xml=xml; image/gif=gif; image/jpeg=jpg; image/tiff=tiff; text/html=html; text/plain=txt"
+	key "niem-profile:niem:CodeList" value "application/json=json; application/msword=doc; application/pdf=pdf; application/rtf=rtf; application/vnd.ms-excel=xls; application/vnd.ms-powerpoint=ppt; application/vnd.oasis.opendocument.presentation=odp; application/vnd.oasis.opendocument.spreadsheet =ods; application/vnd.oasis.opendocument.text=odt; application/vnd.openxmlformats-officedocument.presentationml.presentation=pptx; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=xlsx; application/vnd.openxmlformats-officedocument.wordprocessingml.document=docx; application/wordperfect=wp, wp5, wp6, wpd; application/xml=xml; image/gif=gif; image/jpeg=jpg; image/tiff=tiff; text/html=html; text/plain=txt; "
 	key "niem-profile:niem:OldXPath" value "ecf:Document/ecf:DocumentRendition/ecf:DocumentRenditionMetadata/nc:DocumentBinary/nc:BinaryFormatStandardName"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value "Genericode code list BinaryFormatText.gc"
@@ -2936,7 +2936,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:EntityPerson"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Entity/nc:Person"
+	key "niem-profile:niem:XPath" value "nc:Entity/nc:EntityPerson"
 	key "niem-profile:niem:Type" value "nc:EntityType"
 	key "niem-profile:niem:Property" value "nc:EntityRepresentation, (@nc:EntityPerson)"
 	key "niem-profile:niem:BaseType" value "nc:PersonType"
@@ -2960,7 +2960,7 @@ ${items}};
 	ncouples 9
 	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:EntityOrganization"
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
-	key "niem-profile:niem:XPath" value "nc:Entity/nc:Organization"
+	key "niem-profile:niem:XPath" value "nc:Entity/nc:EntityOrganization"
 	key "niem-profile:niem:Type" value "nc:EntityType"
 	key "niem-profile:niem:Property" value "nc:EntityRepresentation, (@nc:EntityOrganization)"
 	key "niem-profile:niem:BaseType" value "nc:OrganizationType"
@@ -2968,6 +2968,30 @@ ${items}};
 	key "niem-profile:niem:Notes" value ""
 	key "niem-profile:niem:CodeList" value ""
 	comment "An organzation entity."
+      end
+
+      attribute 14711554 "property"
+	public explicit_type "string"
+	multiplicity "0,1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Entity/ecf:EntityItem"
+	key "niem-profile:niem:Type" value "nc:EntityType"
+	key "niem-profile:niem:Property" value "nc:EntityRepresentation, (@ecf:EntityItem)"
+	key "niem-profile:niem:BaseType" value "nc:ItemType"
+	key "niem-profile:niem:Multiplicity" value "0,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Entity/nc:EntityItem"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "A property entity"
       end
     end
 
@@ -3634,7 +3658,7 @@ ${items}};
       key "niem-profile:niem:Property" value ""
       key "niem-profile:niem:BaseType" value "structures:ObjectType"
       key "niem-profile:niem:Multiplicity" value ""
-      key "niem-profile:niem:Notes" value ""
+      key "niem-profile:niem:Notes" value "DISCUS: NIEM 3.x no longer defines nc:EntityItem.  Can we use nc:EntityOrganization or we need an extension (e.g. ecf:EntityItem)?"
       key "niem-profile:niem:CodeList" value ""
       comment "An inanimate object that is named as a party in a case.  Examples include an automobile, airplane, gun, or cash sought to be forfeited to the state as an instrumentality of a crime or a vessel against which a warrant issues in an admiralty case."
       classrelation 155906 // <realization>
@@ -3784,6 +3808,30 @@ ${items}};
 	key "niem-profile:niem:OldMultiplicity" value "0,1"
 	key "niem-profile:niem:Notes" value ""
 	comment "The value of an item."
+      end
+
+      attribute 14800770 "valueAmount"
+	public explicit_type "string"
+	multiplicity "1"
+	stereotype "niem-profile:niem"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	ncouples 9
+	key "niem-profile:niem:XPath" value "nc:Item/nc:ItemValue/nc:ItemValueAmount"
+	key "niem-profile:niem:Type" value "nc:ItemValueType"
+	key "niem-profile:niem:Property" value "nc:ItemValueAmount"
+	key "niem-profile:niem:BaseType" value "nc:AmountType"
+	key "niem-profile:niem:Multiplicity" value "1,1"
+	key "niem-profile:niem:CodeList" value ""
+	key "niem-profile:niem:OldXPath" value "nc:Item/nc:ItemValue"
+	key "niem-profile:niem:OldMultiplicity" value "0,1"
+	key "niem-profile:niem:Notes" value ""
+	comment "The amount an item is worth."
       end
     end
 
